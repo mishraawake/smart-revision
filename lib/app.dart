@@ -27,7 +27,7 @@ class SmartRevisionApp extends StatelessWidget {
         builder: (context, _) {
           final junior = state.current?.isJunior ?? state.lastWasJunior;
           return MaterialApp(
-            title: 'Smart Revision',
+            title: 'RevUp',
             debugShowCheckedModeBanner: false,
             theme: buildTheme(junior ? Tier.junior : Tier.senior),
             home: !state.loaded

@@ -1,17 +1,30 @@
-# smart_revision
+# RevUp
 
-CBSE NCERT flashcard revision for Classes 1-10
+Flashcard revision for CBSE students, Classes 1–10, built on NCERT chapters.
+Works offline; progress stays on the phone.
 
-## Getting Started
+- **Junior mode (Classes 1–5):** big buttons, read-aloud on every text block, an owl mascot.
+- **Senior mode (Classes 6–10):** denser layout, scheduling hints, weekly streak view.
+- **Spaced repetition:** "Knew it" brings a card back in 1, 4, 10, 21, then 45 days; "Didn't know" brings it back in 10 minutes.
+- **Motivation:** daily goal ring, streaks, stars and badges.
 
-This project is a starting point for a Flutter application.
+Sample decks are included for Class 2 and Class 8 (`assets/decks/`).
 
-A few resources to get you started if this is your first Flutter project:
+## Run
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+```sh
+flutter pub get
+flutter run          # phone with USB debugging, or an emulator
+flutter test
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Project layout
+
+| Path | What's there |
+|---|---|
+| `lib/screens/` | Profile picker, Today, Subjects, Chapters, Review, Session complete, Badges |
+| `lib/state/app_state.dart` | Profiles, queues, answering, streaks and stars |
+| `lib/logic/` | Scheduler (spaced repetition) and badge rules |
+| `lib/theme/` | Design tokens and the Junior/Senior tiers |
+| `assets/decks/` | NCERT decks as JSON, one file per class |
+| `assets/icon/` | Launcher icon sources (regenerate with `dart run flutter_launcher_icons`) |

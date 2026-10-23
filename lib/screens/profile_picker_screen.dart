@@ -161,7 +161,7 @@ class _SeniorPicker extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(16, 24, 16, 24),
       children: [
         const Text(
-          'Smart Revision',
+          'RevUp',
           style: TextStyle(
             fontSize: 15,
             fontWeight: FontWeight.w800,
