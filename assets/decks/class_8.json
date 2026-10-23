@@ -1,0 +1,57 @@
+{
+  "classLevel": 8,
+  "subjects": [
+    {
+      "id": "science",
+      "name": "Science",
+      "chapters": [
+        {
+          "id": "c8-sci-01",
+          "number": 1,
+          "title": "Crop Production and Management",
+          "cards": [
+            {"id": "c8s1-01", "front": "What are kharif crops?", "back": "Crops sown in the rainy season", "explain": "Kharif crops are sown around June–July. Paddy, maize and cotton are examples.", "source": "NCERT Class 8 Science, Chapter 1"},
+            {"id": "c8s1-02", "front": "Name two rabi crops.", "back": "Wheat and gram", "explain": "Rabi crops are sown in winter (October–November). Pea, mustard and linseed are also rabi crops.", "source": "NCERT Class 8 Science, Chapter 1"},
+            {"id": "c8s1-03", "front": "Why is soil ploughed before sowing?", "back": "To loosen and turn it", "explain": "Loose soil lets roots go deeper and breathe easily, and helps earthworms and microbes grow.", "source": "NCERT Class 8 Science, Chapter 1"},
+            {"id": "c8s1-04", "front": "What is a weedicide?", "back": "A chemical that kills weeds", "explain": "2,4-D is a weedicide. It is sprayed in fields to kill weeds without harming the crop.", "source": "NCERT Class 8 Science, Chapter 1"},
+            {"id": "c8s1-05", "front": "What is the cutting of a mature crop called?", "back": "Harvesting", "explain": "In India harvesting is done by hand with a sickle or by a machine called a harvester.", "source": "NCERT Class 8 Science, Chapter 1"},
+            {"id": "c8s1-06", "front": "How is manure different from fertiliser?", "back": "Manure is organic; fertilisers are man-made salts", "explain": "Manure comes from decomposed plant and animal waste and improves soil texture. Fertilisers are rich in specific nutrients like N, P and K.", "source": "NCERT Class 8 Science, Chapter 1"}
+          ]
+        },
+        {
+          "id": "c8-sci-02",
+          "number": 2,
+          "title": "Microorganisms: Friend and Foe",
+          "cards": [
+            {"id": "c8s2-01", "front": "Which microorganism turns milk into curd?", "back": "Lactobacillus", "backWord": "a bacterium", "explain": "It multiplies in milk and converts it into curd. Bacteria are also used to make cheese and pickles.", "source": "NCERT Class 8 Science, Chapter 2"},
+            {"id": "c8s2-02", "front": "Which microorganism makes bread dough rise?", "back": "Yeast", "backWord": "a fungus", "explain": "Yeast respires and releases carbon dioxide. The gas bubbles fill the dough and increase its volume.", "source": "NCERT Class 8 Science, Chapter 2"},
+            {"id": "c8s2-03", "front": "What is the conversion of sugar into alcohol called?", "back": "Fermentation", "explain": "Louis Pasteur discovered fermentation in 1857. Yeast is used for it.", "source": "NCERT Class 8 Science, Chapter 2"},
+            {"id": "c8s2-04", "front": "Who discovered penicillin?", "back": "Alexander Fleming", "explain": "In 1929 Fleming noticed that a mould stopped the growth of bacteria. It was the first antibiotic.", "source": "NCERT Class 8 Science, Chapter 2"},
+            {"id": "c8s2-05", "front": "Which disease does the female Anopheles mosquito carry?", "back": "Malaria", "explain": "It carries the protozoan Plasmodium, which causes malaria.", "source": "NCERT Class 8 Science, Chapter 2"},
+            {"id": "c8s2-06", "front": "Which bacterium fixes nitrogen in the root nodules of legumes?", "back": "Rhizobium", "explain": "Rhizobium lives in the root nodules of beans and peas and fixes nitrogen from the air.", "source": "NCERT Class 8 Science, Chapter 2"},
+            {"id": "c8s2-07", "front": "Name a disease caused by a virus.", "back": "Polio", "explain": "Common cold, influenza, measles, polio and chickenpox are caused by viruses.", "source": "NCERT Class 8 Science, Chapter 2"},
+            {"id": "c8s2-08", "front": "Why is salt used to preserve pickles?", "back": "It stops bacteria from growing", "explain": "Salt draws water out of bacteria, so they cannot grow. Sugar works the same way in jams.", "source": "NCERT Class 8 Science, Chapter 2"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "maths",
+      "name": "Maths",
+      "chapters": [
+        {
+          "id": "c8-maths-01",
+          "number": 1,
+          "title": "Rational Numbers",
+          "cards": [
+            {"id": "c8m1-01", "front": "What is the additive identity for rational numbers?", "back": "0", "explain": "For any rational number a, a + 0 = 0 + a = a.", "source": "NCERT Class 8 Maths, Chapter 1"},
+            {"id": "c8m1-02", "front": "What is the multiplicative inverse of -3/5?", "back": "-5/3", "explain": "(-3/5) × (-5/3) = 1. A number times its reciprocal is 1.", "source": "NCERT Class 8 Maths, Chapter 1"},
+            {"id": "c8m1-03", "front": "Which rational number has no reciprocal?", "back": "0", "explain": "No number multiplied by 0 gives 1.", "source": "NCERT Class 8 Maths, Chapter 1"},
+            {"id": "c8m1-04", "front": "Is division commutative for rational numbers?", "back": "No", "explain": "(1/2) ÷ (1/4) = 2, but (1/4) ÷ (1/2) = 1/2.", "source": "NCERT Class 8 Maths, Chapter 1"},
+            {"id": "c8m1-05", "front": "Find a rational number between 1/4 and 1/2.", "back": "3/8", "explain": "The mean (1/4 + 1/2) ÷ 2 = 3/8 always lies between them.", "source": "NCERT Class 8 Maths, Chapter 1"}
+          ]
+        }
+      ]
+    }
+  ]
+}

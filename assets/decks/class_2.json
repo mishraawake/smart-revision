@@ -1,0 +1,77 @@
+{
+  "classLevel": 2,
+  "subjects": [
+    {
+      "id": "maths",
+      "name": "Maths",
+      "chapters": [
+        {
+          "id": "c2-maths-01",
+          "number": 1,
+          "title": "What is Long, What is Round?",
+          "cards": [
+            {"id": "c2m1-01", "front": "Which one can roll: a ball or a book?", "back": "A ball", "explain": "Round things can roll."},
+            {"id": "c2m1-02", "front": "Which one can slide but not roll: a brick or a bangle?", "back": "A brick", "explain": "Flat sides slide. Round edges roll."},
+            {"id": "c2m1-03", "front": "Is a pencil long or round?", "back": "Long", "explain": "A pencil is long and thin."},
+            {"id": "c2m1-04", "front": "Which shape has no corners?", "back": "A circle", "explain": "A circle is round all the way."},
+            {"id": "c2m1-05", "front": "Can a coin roll?", "back": "Yes", "explain": "Stand a coin on its edge and it rolls."}
+          ]
+        },
+        {
+          "id": "c2-maths-02",
+          "number": 2,
+          "title": "Counting in Groups",
+          "cards": [
+            {"id": "c2m2-01", "front": "3 plates, 2 mangoes on each. How many mangoes in all?", "hint": "Count in 2s: two, four…", "back": "6", "backWord": "six", "explain": "2 + 2 + 2 = 6"},
+            {"id": "c2m2-02", "front": "Count in 2s: 2, 4, 6, … What comes next?", "back": "8", "backWord": "eight", "explain": "Add 2 each time."},
+            {"id": "c2m2-03", "front": "4 hands. How many fingers in all?", "hint": "Count in 5s.", "back": "20", "backWord": "twenty", "explain": "5 + 5 + 5 + 5 = 20"},
+            {"id": "c2m2-04", "front": "Count in 5s: 5, 10, 15, … What comes next?", "back": "20", "backWord": "twenty", "explain": "Add 5 each time."},
+            {"id": "c2m2-05", "front": "2 bags, 3 apples in each. How many apples?", "hint": "Count in 3s.", "back": "6", "backWord": "six", "explain": "3 + 3 = 6"},
+            {"id": "c2m2-06", "front": "Count in 3s: 3, 6, 9, … What comes next?", "back": "12", "backWord": "twelve", "explain": "Add 3 each time."},
+            {"id": "c2m2-07", "front": "How many pairs of socks make 10 socks?", "hint": "A pair is 2.", "back": "5", "backWord": "five", "explain": "2 + 2 + 2 + 2 + 2 = 10"}
+          ]
+        },
+        {
+          "id": "c2-maths-04",
+          "number": 4,
+          "title": "Counting in Tens",
+          "cards": [
+            {"id": "c2m4-01", "front": "Count in 10s: 10, 20, 30, … What comes next?", "back": "40", "backWord": "forty", "explain": "Add 10 each time."},
+            {"id": "c2m4-02", "front": "How many tens make 50?", "back": "5", "backWord": "five", "explain": "10 + 10 + 10 + 10 + 10 = 50"},
+            {"id": "c2m4-03", "front": "3 tens and 4 ones make which number?", "back": "34", "backWord": "thirty-four", "explain": "30 + 4 = 34"},
+            {"id": "c2m4-04", "front": "What is 10 more than 26?", "back": "36", "backWord": "thirty-six", "explain": "26 + 10 = 36"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "english",
+      "name": "English",
+      "chapters": [
+        {
+          "id": "c2-eng-01",
+          "number": 1,
+          "title": "Opposite Words",
+          "cards": [
+            {"id": "c2e1-01", "front": "What is the opposite of big?", "back": "Small", "explain": "An elephant is big. An ant is small."},
+            {"id": "c2e1-02", "front": "What is the opposite of hot?", "back": "Cold", "explain": "Tea is hot. Ice is cold."},
+            {"id": "c2e1-03", "front": "What is the opposite of up?", "back": "Down", "explain": "The kite goes up. The ball comes down."},
+            {"id": "c2e1-04", "front": "What is the opposite of happy?", "back": "Sad"},
+            {"id": "c2e1-05", "front": "What is the opposite of day?", "back": "Night"}
+          ]
+        },
+        {
+          "id": "c2-eng-02",
+          "number": 2,
+          "title": "Naming Words",
+          "cards": [
+            {"id": "c2e2-01", "front": "Find the naming word: The cat sleeps.", "back": "cat", "explain": "A naming word names a person, place, animal or thing."},
+            {"id": "c2e2-02", "front": "Find the naming word: Riya runs fast.", "back": "Riya", "explain": "Riya is the name of a person."},
+            {"id": "c2e2-03", "front": "One cat, two …?", "back": "cats", "explain": "Add -s for more than one."},
+            {"id": "c2e2-04", "front": "One box, two …?", "back": "boxes", "explain": "Words ending in x take -es."}
+          ]
+        }
+      ]
+    }
+  ]
+}
