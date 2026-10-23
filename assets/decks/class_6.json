@@ -1,0 +1,77 @@
+{
+  "classLevel": 6,
+  "subjects": [
+    {
+      "id": "science",
+      "name": "Science",
+      "chapters": [
+        {
+          "id": "c6-sci-01",
+          "number": 1,
+          "title": "Food and Nutrition",
+          "cards": [
+            {"id": "c6s1-01", "front": "Which nutrient helps the body grow and repair itself?", "back": "Proteins", "explain": "Pulses, milk, eggs and paneer are rich in proteins.", "wrong": ["Carbohydrates", "Fats", "Water"]},
+            {"id": "c6s1-02", "front": "What colour does iodine solution turn when added to starch?", "back": "Blue-black", "explain": "This is the test for starch.", "wrong": ["Red", "Yellow", "Green"]},
+            {"id": "c6s1-03", "front": "Lack of vitamin C causes which disease?", "back": "Scurvy", "explain": "Scurvy causes bleeding gums. Citrus fruits and amla prevent it.", "wrong": ["Rickets", "Night blindness", "Beriberi"]},
+            {"id": "c6s1-04", "front": "Lack of iodine causes which disease?", "back": "Goitre", "explain": "Goitre is a swelling of the thyroid gland in the neck. Iodised salt prevents it.", "wrong": ["Anaemia", "Scurvy", "Rickets"]},
+            {"id": "c6s1-05", "front": "Which of these is rich in carbohydrates?", "back": "Rice", "explain": "Rice, wheat and potatoes are rich in carbohydrates, which give energy.", "wrong": ["Paneer", "Eggs", "Fish"]}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "maths",
+      "name": "Maths",
+      "chapters": [
+        {
+          "id": "c6-maths-01",
+          "number": 1,
+          "title": "Factors and Multiples",
+          "cards": [
+            {"id": "c6m1-01", "front": "What is the smallest whole number?", "back": "0", "explain": "Whole numbers are 0, 1, 2, 3, …", "wrong": ["1", "-1", "10"]},
+            {"id": "c6m1-02", "front": "What is the smallest prime number?", "back": "2", "explain": "2 is also the only even prime number.", "wrong": ["1", "3", "0"]},
+            {"id": "c6m1-03", "front": "What is the HCF of 12 and 18?", "back": "6", "explain": "Factors of 12: 1, 2, 3, 4, 6, 12. Factors of 18: 1, 2, 3, 6, 9, 18. The highest common one is 6.", "wrong": ["3", "36", "2"]},
+            {"id": "c6m1-04", "front": "What is the LCM of 4 and 6?", "back": "12", "explain": "Multiples of 4: 4, 8, 12… Multiples of 6: 6, 12… The lowest common one is 12.", "wrong": ["24", "2", "10"]},
+            {"id": "c6m1-05", "front": "Is 1 a prime number?", "back": "No", "explain": "A prime has exactly two factors. 1 has only one factor.", "wrong": ["Yes"]}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "social",
+      "name": "Social Science",
+      "chapters": [
+        {
+          "id": "c6-ss-01",
+          "number": 1,
+          "title": "The Earth in the Solar System",
+          "cards": [
+            {"id": "c6g1-01", "front": "Which is the largest planet in the solar system?", "back": "Jupiter", "wrong": ["Saturn", "Earth", "Neptune"]},
+            {"id": "c6g1-02", "front": "Which planet is closest to the Sun?", "back": "Mercury", "wrong": ["Venus", "Mars", "Earth"]},
+            {"id": "c6g1-03", "front": "Which imaginary line divides the Earth into the Northern and Southern Hemispheres?", "back": "The Equator", "explain": "The Equator is at 0° latitude.", "wrong": ["The Prime Meridian", "The Tropic of Cancer", "The Arctic Circle"]},
+            {"id": "c6g1-04", "front": "Which planet is called the Red Planet?", "back": "Mars", "explain": "Iron oxide in its soil makes Mars look red.", "wrong": ["Jupiter", "Venus", "Mercury"]},
+            {"id": "c6g1-05", "front": "How long does the Earth take to go once around the Sun?", "back": "About 365 days", "explain": "One revolution makes a year. One rotation on its axis makes a day.", "wrong": ["24 hours", "30 days", "About 100 days"]}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "english",
+      "name": "English",
+      "chapters": [
+        {
+          "id": "c6-eng-01",
+          "number": 1,
+          "title": "Parts of Speech",
+          "cards": [
+            {"id": "c6e1-01", "front": "A word that describes a noun is called a …?", "back": "Adjective", "wrong": ["Verb", "Adverb", "Pronoun"]},
+            {"id": "c6e1-02", "front": "Find the pronoun: She is my friend.", "back": "She", "explain": "A pronoun takes the place of a noun.", "wrong": ["is", "friend"]},
+            {"id": "c6e1-03", "front": "Find the adverb: He ran quickly.", "back": "quickly", "explain": "An adverb tells us how, when or where something happens.", "wrong": ["He", "ran"]},
+            {"id": "c6e1-04", "front": "Which word is a conjunction?", "back": "and", "explain": "Conjunctions join words or sentences: and, but, because.", "wrong": ["table", "blue", "slowly"]},
+            {"id": "c6e1-05", "front": "Find the preposition: The cat is under the bed.", "back": "under", "explain": "A preposition shows position: in, on, under, behind.", "wrong": ["cat", "bed", "is"]}
+          ]
+        }
+      ]
+    }
+  ]
+}

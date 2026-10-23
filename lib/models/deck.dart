@@ -87,6 +87,7 @@ class Flashcard {
     this.backWord,
     this.explain,
     this.source,
+    this.wrong = const [],
   });
 
   factory Flashcard.fromJson(
@@ -103,6 +104,7 @@ class Flashcard {
     backWord: json['backWord'] as String?,
     explain: json['explain'] as String?,
     source: json['source'] as String?,
+    wrong: [...?(json['wrong'] as List?)?.cast<String>()],
   );
 
   final String id;
@@ -118,4 +120,8 @@ class Flashcard {
   final String? backWord;
   final String? explain;
   final String? source;
+
+  /// Hand-written wrong answers for quizzes. May be empty; the quiz fills
+  /// in options from other cards.
+  final List<String> wrong;
 }

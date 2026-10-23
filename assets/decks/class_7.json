@@ -1,0 +1,77 @@
+{
+  "classLevel": 7,
+  "subjects": [
+    {
+      "id": "science",
+      "name": "Science",
+      "chapters": [
+        {
+          "id": "c7-sci-01",
+          "number": 1,
+          "title": "Acids, Bases and Salts",
+          "cards": [
+            {"id": "c7s1-01", "front": "What colour does blue litmus turn in an acid?", "back": "Red", "wrong": ["Stays blue", "Green", "Yellow"]},
+            {"id": "c7s1-02", "front": "What colour does red litmus turn in a base?", "back": "Blue", "wrong": ["Stays red", "Green", "Pink"]},
+            {"id": "c7s1-03", "front": "Which acid is found in lemons and oranges?", "back": "Citric acid", "explain": "Vinegar has acetic acid; curd has lactic acid; tamarind has tartaric acid.", "wrong": ["Lactic acid", "Acetic acid", "Tartaric acid"]},
+            {"id": "c7s1-04", "front": "An acid reacts with a base to form salt and water. What is this reaction called?", "back": "Neutralisation", "explain": "An antacid neutralises extra acid in the stomach.", "wrong": ["Rusting", "Evaporation", "Crystallisation"]},
+            {"id": "c7s1-05", "front": "Turmeric paper turns which colour in a basic solution?", "back": "Red", "explain": "Turmeric is a natural indicator. It stays yellow in acids.", "wrong": ["Yellow", "Blue", "Green"]}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "maths",
+      "name": "Maths",
+      "chapters": [
+        {
+          "id": "c7-maths-01",
+          "number": 1,
+          "title": "Integers",
+          "cards": [
+            {"id": "c7m1-01", "front": "(−5) + 8 = ?", "back": "3", "explain": "Start at −5 on the number line and move 8 steps right.", "wrong": ["-3", "13", "-13"]},
+            {"id": "c7m1-02", "front": "(−4) × (−3) = ?", "back": "12", "explain": "Negative × negative = positive.", "wrong": ["-12", "7", "-7"]},
+            {"id": "c7m1-03", "front": "(−20) ÷ 4 = ?", "back": "-5", "explain": "Negative ÷ positive = negative.", "wrong": ["5", "-16", "-80"]},
+            {"id": "c7m1-04", "front": "Which is greater: −3 or −7?", "back": "-3", "explain": "−3 is to the right of −7 on the number line.", "wrong": ["-7"]},
+            {"id": "c7m1-05", "front": "What is the additive inverse of 9?", "back": "-9", "explain": "9 + (−9) = 0.", "wrong": ["9", "1/9", "0"]}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "social",
+      "name": "Social Science",
+      "chapters": [
+        {
+          "id": "c7-ss-01",
+          "number": 1,
+          "title": "Sultans and Mughals",
+          "cards": [
+            {"id": "c7h1-01", "front": "Who founded the Mughal Empire in India?", "back": "Babur", "wrong": ["Akbar", "Humayun", "Aurangzeb"]},
+            {"id": "c7h1-02", "front": "In which year was the First Battle of Panipat fought?", "back": "1526", "explain": "Babur defeated Ibrahim Lodi.", "wrong": ["1556", "1761", "1206"]},
+            {"id": "c7h1-03", "front": "Which Mughal emperor built the Taj Mahal?", "back": "Shah Jahan", "explain": "He built it in memory of his wife Mumtaz Mahal.", "wrong": ["Akbar", "Jahangir", "Babur"]},
+            {"id": "c7h1-04", "front": "Who was the first woman ruler of the Delhi Sultanate?", "back": "Razia Sultan", "wrong": ["Nur Jahan", "Rani Lakshmibai", "Chand Bibi"]},
+            {"id": "c7h1-05", "front": "What was Akbar's idea of 'peace with all' called?", "back": "Sulh-i kul", "wrong": ["Jizya", "Zabt", "Mansabdari"]}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "english",
+      "name": "English",
+      "chapters": [
+        {
+          "id": "c7-eng-01",
+          "number": 1,
+          "title": "Synonyms and Antonyms",
+          "cards": [
+            {"id": "c7e1-01", "front": "Which word means the same as 'happy'?", "back": "Joyful", "wrong": ["Angry", "Tired", "Sad"]},
+            {"id": "c7e1-02", "front": "What is the opposite of 'ancient'?", "back": "Modern", "wrong": ["Old", "Historic", "Ruined"]},
+            {"id": "c7e1-03", "front": "Which word means the same as 'begin'?", "back": "Start", "wrong": ["End", "Stop", "Finish"]},
+            {"id": "c7e1-04", "front": "What is the opposite of 'generous'?", "back": "Selfish", "wrong": ["Kind", "Giving", "Noble"]},
+            {"id": "c7e1-05", "front": "Which word means the same as 'quick'?", "back": "Fast", "wrong": ["Slow", "Late", "Lazy"]}
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "classLevel": 3,
+  "subjects": [
+    {
+      "id": "maths",
+      "name": "Maths",
+      "chapters": [
+        {
+          "id": "c3-maths-01",
+          "number": 1,
+          "title": "Numbers up to 999",
+          "cards": [
+            {"id": "c3m1-01", "front": "What is the place value of 4 in 347?", "back": "40", "backWord": "forty", "explain": "4 is in the tens place, so it stands for 4 tens = 40.", "wrong": ["4", "400", "7"]},
+            {"id": "c3m1-02", "front": "Which is the biggest: 512, 521 or 215?", "back": "521", "explain": "All have 5 hundreds except 215. Then compare tens: 2 tens is more than 1 ten.", "wrong": ["512", "215"]},
+            {"id": "c3m1-03", "front": "What is 100 more than 245?", "back": "345", "explain": "Add 1 to the hundreds digit: 245 → 345.", "wrong": ["255", "145", "346"]},
+            {"id": "c3m1-04", "front": "Write 'four hundred and six' in numbers.", "back": "406", "explain": "4 hundreds, 0 tens, 6 ones.", "wrong": ["460", "46", "4006"]},
+            {"id": "c3m1-05", "front": "How many tens are there in 70?", "back": "7", "backWord": "seven", "explain": "70 = 10 + 10 + 10 + 10 + 10 + 10 + 10.", "wrong": ["70", "10", "17"]}
+          ]
+        },
+        {
+          "id": "c3-maths-02",
+          "number": 2,
+          "title": "Adding and Subtracting",
+          "cards": [
+            {"id": "c3m2-01", "front": "36 + 25 = ?", "back": "61", "explain": "6 + 5 = 11: write 1, carry 1. 3 + 2 + 1 = 6.", "wrong": ["51", "62", "511"]},
+            {"id": "c3m2-02", "front": "50 − 18 = ?", "back": "32", "explain": "50 − 20 = 30, then add back 2: 32.", "wrong": ["42", "38", "22"]},
+            {"id": "c3m2-03", "front": "A box has 24 pencils. 9 are taken out. How many are left?", "back": "15", "explain": "24 − 9 = 15", "wrong": ["13", "33", "16"]},
+            {"id": "c3m2-04", "front": "Which is the same as 7 + 8?", "back": "8 + 7", "explain": "Changing the order of adding does not change the answer.", "wrong": ["8 − 7", "7 × 8", "15 + 1"]}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "english",
+      "name": "English",
+      "chapters": [
+        {
+          "id": "c3-eng-01",
+          "number": 1,
+          "title": "Naming and Action Words",
+          "cards": [
+            {"id": "c3e1-01", "front": "Find the action word: The dog barks.", "back": "barks", "explain": "An action word (verb) tells what someone does.", "wrong": ["dog", "The"]},
+            {"id": "c3e1-02", "front": "Which is a naming word: run, table or quickly?", "back": "table", "explain": "A naming word (noun) names a thing.", "wrong": ["run", "quickly"]},
+            {"id": "c3e1-03", "front": "What is the plural of 'child'?", "back": "children", "explain": "Some words change completely: one child, two children.", "wrong": ["childs", "childes", "childrens"]},
+            {"id": "c3e1-04", "front": "Choose the right word: I ___ a book.", "back": "have", "explain": "We say I have, you have, but he has.", "wrong": ["has", "haves"]},
+            {"id": "c3e1-05", "front": "What is the opposite of 'early'?", "back": "late", "wrong": ["fast", "soon", "first"]}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "evs",
+      "name": "EVS",
+      "chapters": [
+        {
+          "id": "c3-evs-01",
+          "number": 1,
+          "title": "Plants and Animals Around Us",
+          "cards": [
+            {"id": "c3v1-01", "front": "Which part of a plant makes its food?", "back": "Leaf", "explain": "Leaves use sunlight, air and water to make food.", "wrong": ["Root", "Stem", "Flower"]},
+            {"id": "c3v1-02", "front": "Which part of a plant takes in water from the soil?", "back": "Root", "explain": "Roots grow into the soil and soak up water.", "wrong": ["Leaf", "Flower", "Fruit"]},
+            {"id": "c3v1-03", "front": "Which animal gives us wool?", "back": "Sheep", "explain": "Sheep grow thick wool, which is cut off without hurting them.", "wrong": ["Cow", "Hen", "Dog"]},
+            {"id": "c3v1-04", "front": "Which animal is called the 'ship of the desert'?", "back": "Camel", "explain": "Camels can walk a long way in the hot desert without water.", "wrong": ["Horse", "Elephant", "Donkey"]},
+            {"id": "c3v1-05", "front": "What do we call a baby cow?", "back": "Calf", "wrong": ["Kid", "Cub", "Puppy"]},
+            {"id": "c3v1-06", "front": "Where does a bird lay its eggs?", "back": "In a nest", "wrong": ["In a den", "In a stable", "In a burrow"]}
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,8 +1,11 @@
+import 'dart:math';
+
 import 'package:flutter/widgets.dart';
 
 import '../data/deck_repository.dart';
 import '../data/profile_store.dart';
 import '../logic/badges.dart';
+import '../logic/quiz.dart';
 import '../logic/scheduler.dart';
 import '../models/deck.dart';
 import '../models/profile.dart';
@@ -207,6 +210,71 @@ class AppState extends ChangeNotifier {
         .toList();
   }
 
+  // ---- Quizzes ------------------------------------------------------------
+
+  /// Up to [count] questions from one chapter.
+  List<QuizQuestion> chapterQuiz(
+    Chapter ch, {
+    int count = 10,
+    Random? random,
+  }) => QuizBuilder.build(
+    ch.cards,
+    pool: deck!.allCards,
+    count: count,
+    random: random,
+  );
+
+  /// Up to [count] questions across every subject, spread evenly.
+  List<QuizQuestion> mixedQuiz({int count = 20, Random? random}) {
+    if (deck == null) return [];
+    final rng = random ?? Random();
+    final perSubject = [
+      for (final s in deck!.subjects) s.cards.toList()..shuffle(rng),
+    ];
+    final picked = <Flashcard>[];
+    for (
+      var i = 0;
+      picked.length < count && perSubject.any((l) => i < l.length);
+      i++
+    ) {
+      for (final l in perSubject) {
+        if (i < l.length && picked.length < count) picked.add(l[i]);
+      }
+    }
+    return QuizBuilder.build(
+      picked,
+      pool: deck!.allCards,
+      count: count,
+      random: rng,
+    );
+  }
+
+  /// Records a finished quiz. When it [countsTowardsRevision], every answer
+  /// schedules its card like "Knew it" / "Didn't know" and earns stars;
+  /// otherwise it is just for fun.
+  Future<SessionSummary> finishQuiz(
+    QuizSession quiz, {
+    required Duration duration,
+    bool countsTowardsRevision = true,
+  }) async {
+    final goalBefore = goalDoneToday;
+    for (final a in quiz.answers) {
+      await answer(
+        a.question.card,
+        knew: a.correct,
+        practice: !countsTowardsRevision,
+      );
+    }
+    return finishSession(
+      knew: quiz.score,
+      missed: quiz.missed,
+      duration: duration,
+      goalDoneBefore: goalBefore,
+      practice: !countsTowardsRevision,
+      quiz: true,
+    );
+  }
+
   int dueOn(DateTime day) {
     if (deck == null) return 0;
     final end = DateTime(day.year, day.month, day.day + 1);
@@ -271,6 +339,7 @@ class AppState extends ChangeNotifier {
     required Duration duration,
     required int goalDoneBefore,
     bool practice = false,
+    bool quiz = false,
   }) async {
     final p = current!;
     final t = now();
@@ -284,7 +353,8 @@ class AppState extends ChangeNotifier {
       final reviewed = knew + missed.length;
       goalReached =
           goalDoneBefore < p.dailyGoal && goalDoneToday >= p.dailyGoal;
-      stars = reviewed + (goalReached ? 3 : 0);
+      // Flashcards reward effort; quizzes reward correct answers.
+      stars = (quiz ? knew : reviewed) + (goalReached ? 3 : 0);
       p.stars += stars;
       if (p.lastStudyDay != today) {
         p.streak = streakBefore + 1;

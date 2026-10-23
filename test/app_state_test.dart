@@ -2,6 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:smart_revision/data/deck_repository.dart';
 import 'package:smart_revision/data/profile_store.dart';
+import 'package:smart_revision/logic/quiz.dart';
 import 'package:smart_revision/state/app_state.dart';
 
 void main() {
@@ -111,9 +112,81 @@ void main() {
   });
 
   test('classes without decks load no content', () async {
-    await state.addProfile('Kabir', 6);
+    await state.addProfile('Kabir', 11);
     await state.select(state.profiles.last);
     expect(state.deck, isNull);
     expect(state.todayQueue(), isEmpty);
+  });
+
+  group('quizzes', () {
+    QuizSession playHalfRight(List<QuizQuestion> questions) {
+      final quiz = QuizSession(questions);
+      while (!quiz.finished) {
+        final q = quiz.current;
+        quiz.answer(
+          quiz.index.isEven
+              ? q.correctIndex
+              : (q.correctIndex + 1) % q.options.length,
+        );
+      }
+      return quiz;
+    }
+
+    test('a chapter quiz only asks about that chapter', () {
+      final ch = state.deck!.subjects.first.chapters[1];
+      final qs = state.chapterQuiz(ch);
+      expect(qs, hasLength(ch.cards.length));
+      expect(qs.every((q) => q.card.chapterId == ch.id), isTrue);
+    });
+
+    test('a mixed quiz spreads questions across subjects', () async {
+      await state.addProfile('Diya', 8);
+      await state.select(state.profiles.last);
+      final qs = state.mixedQuiz(count: 20);
+      expect(qs, hasLength(20));
+      expect(qs.map((q) => q.card.subjectId).toSet(), {
+        'science',
+        'maths',
+        'social',
+        'english',
+      });
+    });
+
+    test(
+      'a counted quiz schedules cards and stars correct answers only',
+      () async {
+        final ch = state.deck!.subjects.first.chapters[1];
+        final quiz = playHalfRight(state.chapterQuiz(ch));
+        final summary = await state.finishQuiz(
+          quiz,
+          duration: const Duration(minutes: 2),
+        );
+
+        expect(summary.knew, quiz.score);
+        expect(summary.starsEarned, quiz.score);
+        for (final a in quiz.answers) {
+          expect(state.stateOf(a.question.card)!.learnt, a.correct);
+        }
+        expect(state.goalDoneToday, quiz.answers.length);
+      },
+    );
+
+    test('a just-for-fun quiz changes nothing', () async {
+      final ch = state.deck!.subjects.first.chapters[1];
+      final quiz = playHalfRight(state.chapterQuiz(ch));
+      final summary = await state.finishQuiz(
+        quiz,
+        duration: Duration.zero,
+        countsTowardsRevision: false,
+      );
+
+      expect(summary.starsEarned, 0);
+      expect(state.current!.stars, 0);
+      expect(state.goalDoneToday, 0);
+      expect(
+        quiz.answers.every((a) => state.stateOf(a.question.card) == null),
+        isTrue,
+      );
+    });
   });
 }

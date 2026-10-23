@@ -775,7 +775,7 @@ class NoContentView extends StatelessWidget {
             ),
             const SizedBox(height: 8),
             const Text(
-              'This early version has Class 2 and Class 8 decks.',
+              'Decks are available for Classes 1 to 10.',
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 16, color: AppColors.inkMuted),
             ),

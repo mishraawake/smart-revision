@@ -10,11 +10,11 @@
           "number": 1,
           "title": "What is Long, What is Round?",
           "cards": [
-            {"id": "c2m1-01", "front": "Which one can roll: a ball or a book?", "back": "A ball", "explain": "Round things can roll."},
-            {"id": "c2m1-02", "front": "Which one can slide but not roll: a brick or a bangle?", "back": "A brick", "explain": "Flat sides slide. Round edges roll."},
-            {"id": "c2m1-03", "front": "Is a pencil long or round?", "back": "Long", "explain": "A pencil is long and thin."},
-            {"id": "c2m1-04", "front": "Which shape has no corners?", "back": "A circle", "explain": "A circle is round all the way."},
-            {"id": "c2m1-05", "front": "Can a coin roll?", "back": "Yes", "explain": "Stand a coin on its edge and it rolls."}
+            {"id": "c2m1-01", "front": "Which one can roll: a ball or a book?", "back": "A ball", "explain": "Round things can roll.", "wrong": ["A book"]},
+            {"id": "c2m1-02", "front": "Which one can slide but not roll: a brick or a bangle?", "back": "A brick", "explain": "Flat sides slide. Round edges roll.", "wrong": ["A bangle"]},
+            {"id": "c2m1-03", "front": "Is a pencil long or round?", "back": "Long", "explain": "A pencil is long and thin.", "wrong": ["Round"]},
+            {"id": "c2m1-04", "front": "Which shape has no corners?", "back": "A circle", "explain": "A circle is round all the way.", "wrong": ["A square", "A triangle", "A rectangle"]},
+            {"id": "c2m1-05", "front": "Can a coin roll?", "back": "Yes", "explain": "Stand a coin on its edge and it rolls.", "wrong": ["No"]}
           ]
         },
         {
@@ -38,7 +38,7 @@
           "cards": [
             {"id": "c2m4-01", "front": "Count in 10s: 10, 20, 30, … What comes next?", "back": "40", "backWord": "forty", "explain": "Add 10 each time."},
             {"id": "c2m4-02", "front": "How many tens make 50?", "back": "5", "backWord": "five", "explain": "10 + 10 + 10 + 10 + 10 = 50"},
-            {"id": "c2m4-03", "front": "3 tens and 4 ones make which number?", "back": "34", "backWord": "thirty-four", "explain": "30 + 4 = 34"},
+            {"id": "c2m4-03", "front": "3 tens and 4 ones make which number?", "back": "34", "backWord": "thirty-four", "explain": "30 + 4 = 34", "wrong": ["43", "7", "304"]},
             {"id": "c2m4-04", "front": "What is 10 more than 26?", "back": "36", "backWord": "thirty-six", "explain": "26 + 10 = 36"}
           ]
         }
@@ -53,11 +53,11 @@
           "number": 1,
           "title": "Opposite Words",
           "cards": [
-            {"id": "c2e1-01", "front": "What is the opposite of big?", "back": "Small", "explain": "An elephant is big. An ant is small."},
-            {"id": "c2e1-02", "front": "What is the opposite of hot?", "back": "Cold", "explain": "Tea is hot. Ice is cold."},
-            {"id": "c2e1-03", "front": "What is the opposite of up?", "back": "Down", "explain": "The kite goes up. The ball comes down."},
-            {"id": "c2e1-04", "front": "What is the opposite of happy?", "back": "Sad"},
-            {"id": "c2e1-05", "front": "What is the opposite of day?", "back": "Night"}
+            {"id": "c2e1-01", "front": "What is the opposite of big?", "back": "Small", "explain": "An elephant is big. An ant is small.", "wrong": ["Tall", "Huge", "Fat"]},
+            {"id": "c2e1-02", "front": "What is the opposite of hot?", "back": "Cold", "explain": "Tea is hot. Ice is cold.", "wrong": ["Warm", "Sunny", "Wet"]},
+            {"id": "c2e1-03", "front": "What is the opposite of up?", "back": "Down", "explain": "The kite goes up. The ball comes down.", "wrong": ["Over", "Top", "High"]},
+            {"id": "c2e1-04", "front": "What is the opposite of happy?", "back": "Sad", "wrong": ["Glad", "Funny", "Kind"]},
+            {"id": "c2e1-05", "front": "What is the opposite of day?", "back": "Night", "wrong": ["Sun", "Morning", "Light"]}
           ]
         },
         {
@@ -65,10 +65,10 @@
           "number": 2,
           "title": "Naming Words",
           "cards": [
-            {"id": "c2e2-01", "front": "Find the naming word: The cat sleeps.", "back": "cat", "explain": "A naming word names a person, place, animal or thing."},
-            {"id": "c2e2-02", "front": "Find the naming word: Riya runs fast.", "back": "Riya", "explain": "Riya is the name of a person."},
-            {"id": "c2e2-03", "front": "One cat, two …?", "back": "cats", "explain": "Add -s for more than one."},
-            {"id": "c2e2-04", "front": "One box, two …?", "back": "boxes", "explain": "Words ending in x take -es."}
+            {"id": "c2e2-01", "front": "Find the naming word: The cat sleeps.", "back": "cat", "explain": "A naming word names a person, place, animal or thing.", "wrong": ["sleeps", "The"]},
+            {"id": "c2e2-02", "front": "Find the naming word: Riya runs fast.", "back": "Riya", "explain": "Riya is the name of a person.", "wrong": ["runs", "fast"]},
+            {"id": "c2e2-03", "front": "One cat, two …?", "back": "cats", "explain": "Add -s for more than one.", "wrong": ["cates", "caties", "cat"]},
+            {"id": "c2e2-04", "front": "One box, two …?", "back": "boxes", "explain": "Words ending in x take -es.", "wrong": ["boxs", "boxen", "box"]}
           ]
         }
       ]

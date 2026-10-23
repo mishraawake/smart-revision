@@ -1,0 +1,77 @@
+{
+  "classLevel": 9,
+  "subjects": [
+    {
+      "id": "science",
+      "name": "Science",
+      "chapters": [
+        {
+          "id": "c9-sci-01",
+          "number": 1,
+          "title": "Matter in Our Surroundings",
+          "cards": [
+            {"id": "c9s1-01", "front": "What are the three common states of matter?", "back": "Solid, liquid and gas", "wrong": ["Hot, cold and warm", "Soil, water and air", "Ice, steam and fog"]},
+            {"id": "c9s1-02", "front": "What is the change of a solid directly into a gas called?", "back": "Sublimation", "explain": "Camphor and naphthalene balls sublime.", "wrong": ["Evaporation", "Condensation", "Melting"]},
+            {"id": "c9s1-03", "front": "At what temperature does pure water boil at sea level?", "back": "100 °C", "wrong": ["0 °C", "50 °C", "212 °C"]},
+            {"id": "c9s1-04", "front": "What effect does evaporation have on the surroundings?", "back": "It causes cooling", "explain": "Particles that escape take heat with them. That is why sweating cools us.", "wrong": ["It causes heating", "It causes freezing", "It has no effect"]},
+            {"id": "c9s1-05", "front": "What is the SI unit of temperature?", "back": "Kelvin", "explain": "0 °C = 273 K (more precisely 273.15 K).", "wrong": ["Celsius", "Fahrenheit", "Joule"]}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "maths",
+      "name": "Maths",
+      "chapters": [
+        {
+          "id": "c9-maths-01",
+          "number": 1,
+          "title": "Number Systems",
+          "cards": [
+            {"id": "c9m1-01", "front": "Is √2 rational or irrational?", "back": "Irrational", "explain": "√2 cannot be written as p/q with integers p and q (q ≠ 0).", "wrong": ["Rational"]},
+            {"id": "c9m1-02", "front": "Which of these is a rational number?", "back": "0.75", "explain": "0.75 = 3/4.", "wrong": ["π", "√3", "√5"]},
+            {"id": "c9m1-03", "front": "Write 0.5 in the form p/q.", "back": "1/2", "wrong": ["5/1", "1/5", "5/100"]},
+            {"id": "c9m1-04", "front": "Simplify 2³ × 2².", "back": "32", "explain": "Add the powers: 2⁵ = 32.", "wrong": ["64", "10", "12"]},
+            {"id": "c9m1-05", "front": "What kind of decimal expansion does an irrational number have?", "back": "Non-terminating and non-repeating", "wrong": ["Terminating", "Non-terminating and repeating", "Always ends in zero"]}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "social",
+      "name": "Social Science",
+      "chapters": [
+        {
+          "id": "c9-ss-01",
+          "number": 1,
+          "title": "The French Revolution",
+          "cards": [
+            {"id": "c9h1-01", "front": "In which year did the French Revolution begin?", "back": "1789", "wrong": ["1776", "1857", "1815"]},
+            {"id": "c9h1-02", "front": "Which fortress-prison was stormed on 14 July 1789?", "back": "The Bastille", "wrong": ["The Tower of London", "Versailles", "The Louvre"]},
+            {"id": "c9h1-03", "front": "Which French king was executed in 1793?", "back": "Louis XVI", "wrong": ["Louis XIV", "Napoleon Bonaparte", "Louis XV"]},
+            {"id": "c9h1-04", "front": "Complete the slogan: Liberty, Equality and …", "back": "Fraternity", "wrong": ["Justice", "Unity", "Peace"]},
+            {"id": "c9h1-05", "front": "Who wrote 'The Social Contract'?", "back": "Jean-Jacques Rousseau", "wrong": ["Voltaire", "Montesquieu", "John Locke"]}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "english",
+      "name": "English",
+      "chapters": [
+        {
+          "id": "c9-eng-01",
+          "number": 1,
+          "title": "Figures of Speech",
+          "cards": [
+            {"id": "c9e1-01", "front": "'As brave as a lion' is an example of …?", "back": "Simile", "explain": "A simile compares using 'as' or 'like'.", "wrong": ["Metaphor", "Personification", "Alliteration"]},
+            {"id": "c9e1-02", "front": "'Time is a thief' is an example of …?", "back": "Metaphor", "explain": "A metaphor says one thing is another, without 'like' or 'as'.", "wrong": ["Simile", "Hyperbole", "Onomatopoeia"]},
+            {"id": "c9e1-03", "front": "'The wind whispered through the trees' is an example of …?", "back": "Personification", "explain": "Giving human actions to non-human things.", "wrong": ["Simile", "Alliteration", "Pun"]},
+            {"id": "c9e1-04", "front": "'Buzz' and 'hiss' are examples of …?", "back": "Onomatopoeia", "explain": "Words that sound like what they describe.", "wrong": ["Metaphor", "Irony", "Simile"]},
+            {"id": "c9e1-05", "front": "'Peter Piper picked a peck of pickled peppers' shows …?", "back": "Alliteration", "explain": "Repeating the same starting sound.", "wrong": ["Rhyme", "Hyperbole", "Metaphor"]}
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -98,8 +98,8 @@ void main() {
     await addStudent(tester, 'Diya', 8);
     await tapAndWait(tester, find.text('Diya').first);
 
-    expect(find.text("Start today's review · 19 due"), findsOneWidget);
-    await tester.tap(find.text("Start today's review · 19 due"));
+    expect(find.text("Start today's review · 29 due"), findsOneWidget);
+    await tester.tap(find.text("Start today's review · 29 due"));
     await tester.pumpAndSettle();
     expect(find.text('1/15'), findsOneWidget);
 
@@ -115,6 +115,6 @@ void main() {
 
     await tester.tap(find.text('Back to Today'));
     await tester.pumpAndSettle();
-    expect(find.text("Start today's review · 4 due"), findsOneWidget);
+    expect(find.text("Start today's review · 14 due"), findsOneWidget);
   });
 }

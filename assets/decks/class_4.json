@@ -1,0 +1,71 @@
+{
+  "classLevel": 4,
+  "subjects": [
+    {
+      "id": "maths",
+      "name": "Maths",
+      "chapters": [
+        {
+          "id": "c4-maths-01",
+          "number": 1,
+          "title": "Multiplication",
+          "cards": [
+            {"id": "c4m1-01", "front": "6 × 7 = ?", "back": "42", "explain": "6 sevens: 7, 14, 21, 28, 35, 42.", "wrong": ["36", "48", "13"]},
+            {"id": "c4m1-02", "front": "What is 9 × 0?", "back": "0", "explain": "Any number times zero is zero.", "wrong": ["9", "1", "90"]},
+            {"id": "c4m1-03", "front": "A tricycle has 3 wheels. How many wheels do 5 tricycles have?", "back": "15", "explain": "5 × 3 = 15", "wrong": ["8", "12", "18"]},
+            {"id": "c4m1-04", "front": "What is 12 × 10?", "back": "120", "explain": "To multiply by 10, put a 0 at the end.", "wrong": ["22", "1200", "102"]},
+            {"id": "c4m1-05", "front": "Which is the same as 4 × 3?", "back": "3 × 4", "explain": "Changing the order of multiplying does not change the answer.", "wrong": ["4 + 3", "4 − 3", "43"]}
+          ]
+        },
+        {
+          "id": "c4-maths-02",
+          "number": 2,
+          "title": "Measurement",
+          "cards": [
+            {"id": "c4m2-01", "front": "How many centimetres make 1 metre?", "back": "100", "wrong": ["10", "1000", "60"]},
+            {"id": "c4m2-02", "front": "How many grams make 1 kilogram?", "back": "1000", "wrong": ["100", "10", "500"]},
+            {"id": "c4m2-03", "front": "How many minutes make 1 hour?", "back": "60", "wrong": ["100", "30", "24"]},
+            {"id": "c4m2-04", "front": "How many millilitres make 1 litre?", "back": "1000", "wrong": ["100", "10", "500"]},
+            {"id": "c4m2-05", "front": "How many hours are there in a day?", "back": "24", "wrong": ["12", "60", "7"]}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "english",
+      "name": "English",
+      "chapters": [
+        {
+          "id": "c4-eng-01",
+          "number": 1,
+          "title": "Describing Words",
+          "cards": [
+            {"id": "c4e1-01", "front": "Find the describing word: a tall tree", "back": "tall", "explain": "A describing word (adjective) tells us more about a noun.", "wrong": ["tree", "a"]},
+            {"id": "c4e1-02", "front": "big → ? (comparing two things)", "back": "bigger", "explain": "big, bigger, biggest. Double the g before adding -er.", "wrong": ["more big", "biger", "biggest"]},
+            {"id": "c4e1-03", "front": "Which is a describing word: soft, jump or chair?", "back": "soft", "wrong": ["jump", "chair"]},
+            {"id": "c4e1-04", "front": "What is the opposite of 'brave'?", "back": "cowardly", "wrong": ["strong", "bold", "kind"]},
+            {"id": "c4e1-05", "front": "Choose the right word: ___ elephant", "back": "an", "explain": "Use 'an' before a vowel sound: an elephant, an apple.", "wrong": ["a"]}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "evs",
+      "name": "EVS",
+      "chapters": [
+        {
+          "id": "c4-evs-01",
+          "number": 1,
+          "title": "Food and Water",
+          "cards": [
+            {"id": "c4v1-01", "front": "Which food gives us more energy: rice or salt?", "back": "Rice", "explain": "Rice is rich in carbohydrates, which give energy.", "wrong": ["Salt"]},
+            {"id": "c4v1-02", "front": "Which vitamin does our skin make in sunlight?", "back": "Vitamin D", "explain": "Vitamin D keeps bones and teeth strong.", "wrong": ["Vitamin A", "Vitamin C", "Vitamin B"]},
+            {"id": "c4v1-03", "front": "Which is a good way to make water safe to drink?", "back": "Boiling it", "explain": "Boiling kills most germs in water.", "wrong": ["Freezing it", "Adding sugar", "Adding colour"]},
+            {"id": "c4v1-04", "front": "Which part of the body helps us taste food?", "back": "Tongue", "wrong": ["Nose", "Ear", "Eye"]},
+            {"id": "c4v1-05", "front": "Which of these grows under the ground?", "back": "Potato", "explain": "A potato is a stem that grows underground.", "wrong": ["Mango", "Tomato", "Brinjal"]}
+          ]
+        }
+      ]
+    }
+  ]
+}

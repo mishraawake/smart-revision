@@ -1,0 +1,77 @@
+{
+  "classLevel": 10,
+  "subjects": [
+    {
+      "id": "science",
+      "name": "Science",
+      "chapters": [
+        {
+          "id": "c10-sci-01",
+          "number": 1,
+          "title": "Chemical Reactions and Equations",
+          "cards": [
+            {"id": "c10s1-01", "front": "What is formed when iron rusts?", "back": "Iron oxide", "explain": "Rust is hydrated iron(III) oxide. Iron needs both oxygen and moisture to rust.", "wrong": ["Iron sulphate", "Iron chloride", "Pure iron"]},
+            {"id": "c10s1-02", "front": "What forms when magnesium ribbon burns in air?", "back": "Magnesium oxide", "explain": "2Mg + O₂ → 2MgO. It burns with a dazzling white flame.", "wrong": ["Magnesium chloride", "Magnesium hydroxide", "Magnesium sulphate"]},
+            {"id": "c10s1-03", "front": "What is a reaction that releases heat called?", "back": "Exothermic", "explain": "Respiration and burning of fuels are exothermic.", "wrong": ["Endothermic", "Displacement", "Decomposition"]},
+            {"id": "c10s1-04", "front": "Fe + CuSO₄ → FeSO₄ + Cu is which type of reaction?", "back": "Displacement", "explain": "Iron is more reactive than copper, so it displaces copper.", "wrong": ["Combination", "Decomposition", "Neutralisation"]},
+            {"id": "c10s1-05", "front": "Which gas turns lime water milky?", "back": "Carbon dioxide", "wrong": ["Oxygen", "Hydrogen", "Nitrogen"]}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "maths",
+      "name": "Maths",
+      "chapters": [
+        {
+          "id": "c10-maths-01",
+          "number": 1,
+          "title": "Real Numbers and Quadratics",
+          "cards": [
+            {"id": "c10m1-01", "front": "For two positive integers, HCF × LCM equals …?", "back": "Their product", "wrong": ["Their sum", "Their difference", "1"]},
+            {"id": "c10m1-02", "front": "What are the roots of x² − 5x + 6 = 0?", "back": "2 and 3", "explain": "x² − 5x + 6 = (x − 2)(x − 3).", "wrong": ["-2 and -3", "1 and 6", "5 and 6"]},
+            {"id": "c10m1-03", "front": "What is the discriminant of ax² + bx + c = 0?", "back": "b² − 4ac", "wrong": ["b² + 4ac", "4ac − b²", "√(b² − 4ac)"]},
+            {"id": "c10m1-04", "front": "If the discriminant is negative, the roots are …?", "back": "Not real", "wrong": ["Real and equal", "Real and distinct", "Both zero"]},
+            {"id": "c10m1-05", "front": "Write 140 as a product of primes.", "back": "2² × 5 × 7", "wrong": ["2 × 5 × 7", "4 × 35", "2 × 7 × 10"]}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "social",
+      "name": "Social Science",
+      "chapters": [
+        {
+          "id": "c10-ss-01",
+          "number": 1,
+          "title": "Resources and Development",
+          "cards": [
+            {"id": "c10g1-01", "front": "Which soil is best for growing cotton?", "back": "Black soil", "explain": "Black (regur) soil holds moisture well.", "wrong": ["Laterite soil", "Desert soil", "Alluvial soil"]},
+            {"id": "c10g1-02", "front": "Which is the most widespread soil in India?", "back": "Alluvial soil", "wrong": ["Black soil", "Red soil", "Laterite soil"]},
+            {"id": "c10g1-03", "front": "Resources that can be renewed or reproduced are called …?", "back": "Renewable resources", "explain": "Solar energy, wind and forests are renewable.", "wrong": ["Non-renewable resources", "Fossil fuels", "Minerals"]},
+            {"id": "c10g1-04", "front": "Where was the 1992 Earth Summit held?", "back": "Rio de Janeiro", "wrong": ["New York", "Geneva", "Kyoto"]},
+            {"id": "c10g1-05", "front": "What are rows of trees planted to break the force of wind called?", "back": "Shelter belts", "explain": "They help stop soil erosion in dry areas.", "wrong": ["Terrace farming", "Strip cropping", "Contour ploughing"]}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "english",
+      "name": "English",
+      "chapters": [
+        {
+          "id": "c10-eng-01",
+          "number": 1,
+          "title": "Reported Speech and Modals",
+          "cards": [
+            {"id": "c10e1-01", "front": "He said, \"I will come tomorrow.\" → He said that he ___ come the next day.", "back": "would", "explain": "'Will' moves back to 'would' in reported speech.", "wrong": ["will", "shall", "can"]},
+            {"id": "c10e1-02", "front": "Which modal shows ability?", "back": "can", "wrong": ["must", "should", "may"]},
+            {"id": "c10e1-03", "front": "Which modal shows strong obligation?", "back": "must", "wrong": ["might", "could", "may"]},
+            {"id": "c10e1-04", "front": "Choose: If I ___ you, I would apologise.", "back": "were", "explain": "For imagined situations we use 'were' for all subjects.", "wrong": ["am", "be", "will be"]},
+            {"id": "c10e1-05", "front": "Choose: Neither of the boys ___ present.", "back": "was", "explain": "'Neither' is singular, so it takes a singular verb.", "wrong": ["were", "are", "be"]}
+          ]
+        }
+      ]
+    }
+  ]
+}

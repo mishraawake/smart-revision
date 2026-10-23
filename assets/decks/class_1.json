@@ -1,0 +1,66 @@
+{
+  "classLevel": 1,
+  "subjects": [
+    {
+      "id": "maths",
+      "name": "Maths",
+      "chapters": [
+        {
+          "id": "c1-maths-01",
+          "number": 1,
+          "title": "Numbers 1 to 20",
+          "cards": [
+            {"id": "c1m1-01", "front": "What comes after 9?", "back": "10", "backWord": "ten", "explain": "8, 9, 10. Ten comes after nine.", "wrong": ["8", "11", "19"]},
+            {"id": "c1m1-02", "front": "How many fingers are on one hand?", "back": "5", "backWord": "five", "explain": "Count them: 1, 2, 3, 4, 5.", "wrong": ["4", "6", "10"]},
+            {"id": "c1m1-03", "front": "Which is more: 7 or 4?", "back": "7", "backWord": "seven", "explain": "7 comes after 4 when we count, so 7 is more.", "wrong": ["4"]},
+            {"id": "c1m1-04", "front": "2 + 3 = ?", "hint": "Hold up 2 fingers, then 3 more.", "back": "5", "backWord": "five", "explain": "2 and 3 more make 5.", "wrong": ["4", "6", "23"]},
+            {"id": "c1m1-05", "front": "What comes just before 15?", "back": "14", "backWord": "fourteen", "explain": "13, 14, 15. Fourteen comes before fifteen.", "wrong": ["16", "13", "51"]},
+            {"id": "c1m1-06", "front": "5 − 2 = ?", "hint": "Take 2 away from 5.", "back": "3", "backWord": "three", "explain": "5 take away 2 leaves 3.", "wrong": ["7", "2", "4"]}
+          ]
+        },
+        {
+          "id": "c1-maths-02",
+          "number": 2,
+          "title": "Shapes Around Us",
+          "cards": [
+            {"id": "c1m2-01", "front": "How many sides does a triangle have?", "back": "3", "backWord": "three", "explain": "Tri means three. A triangle has 3 sides.", "wrong": ["4", "2", "5"]},
+            {"id": "c1m2-02", "front": "Which shape has 4 equal sides?", "back": "Square", "explain": "A square has 4 sides, all the same length.", "wrong": ["Triangle", "Circle", "Star"]},
+            {"id": "c1m2-03", "front": "How many corners does a circle have?", "back": "0", "backWord": "zero", "explain": "A circle is round. It has no corners.", "wrong": ["1", "2", "4"]},
+            {"id": "c1m2-04", "front": "A ball is shaped like a …?", "back": "Sphere", "explain": "A sphere is round all over, like a ball.", "wrong": ["Cube", "Cone", "Triangle"]},
+            {"id": "c1m2-05", "front": "Which shape is a dice?", "back": "Cube", "explain": "A dice has 6 flat square faces. That is a cube.", "wrong": ["Sphere", "Cone", "Circle"]}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "english",
+      "name": "English",
+      "chapters": [
+        {
+          "id": "c1-eng-01",
+          "number": 1,
+          "title": "Letters and Sounds",
+          "cards": [
+            {"id": "c1e1-01", "front": "Which letter comes after A?", "back": "B", "explain": "A, B, C, D…", "wrong": ["C", "D", "Z"]},
+            {"id": "c1e1-02", "front": "A is for …?", "back": "Apple", "explain": "Apple starts with the sound 'a'.", "wrong": ["Ball", "Cat", "Dog"]},
+            {"id": "c1e1-03", "front": "Which word rhymes with cat?", "back": "hat", "explain": "Cat and hat both end with 'at'.", "wrong": ["cup", "dog", "sun"]},
+            {"id": "c1e1-04", "front": "How many vowels are there in English?", "back": "5", "backWord": "five", "explain": "The vowels are a, e, i, o, u.", "wrong": ["3", "4", "26"]},
+            {"id": "c1e1-05", "front": "Which one is a vowel: b, e or t?", "back": "e", "explain": "a, e, i, o, u are vowels.", "wrong": ["b", "t"]}
+          ]
+        },
+        {
+          "id": "c1-eng-02",
+          "number": 2,
+          "title": "Colours",
+          "cards": [
+            {"id": "c1e2-01", "front": "What colour is the sky on a sunny day?", "back": "Blue", "wrong": ["Green", "Red", "Black"]},
+            {"id": "c1e2-02", "front": "What colour is a ripe banana?", "back": "Yellow", "wrong": ["Blue", "Purple", "Black"]},
+            {"id": "c1e2-03", "front": "Mix blue and yellow. What colour do you get?", "back": "Green", "explain": "Blue and yellow paint make green.", "wrong": ["Orange", "Purple", "Pink"]},
+            {"id": "c1e2-04", "front": "Mix red and white. What colour do you get?", "back": "Pink", "explain": "Red and white paint make pink.", "wrong": ["Green", "Brown", "Blue"]},
+            {"id": "c1e2-05", "front": "What colour is milk?", "back": "White", "wrong": ["Red", "Green", "Blue"]}
+          ]
+        }
+      ]
+    }
+  ]
+}
