@@ -20,6 +20,9 @@ class FirebaseAccountService implements AccountService {
   final FirebaseAuth _auth;
   final FirebaseFirestore _db;
 
+  /// The number the current code was sent to. Every session field below
+  /// belongs to it; a code for another number must never sign in here.
+  String? _codeFor;
   String? _verificationId;
   int? _resendToken;
   ConfirmationResult? _webConfirmation;
@@ -72,16 +75,25 @@ class FirebaseAccountService implements AccountService {
   @override
   Future<void> sendOtp(String phone, {bool call = false}) => _run(() async {
     final number = '+91$phone';
+    // A resend token only works for the number it came with.
+    final resend = _codeFor == phone ? _resendToken : null;
+    _codeFor = phone;
+    _verificationId = null;
+    _webConfirmation = null;
     if (kIsWeb) {
       _webConfirmation = await _auth.signInWithPhoneNumber(number);
       return;
     }
+    // Callbacks from an earlier request (another number) can still arrive
+    // a minute later; only this request's count.
+    bool current() => _codeFor == phone;
     final sent = Completer<void>();
     await _auth.verifyPhoneNumber(
       phoneNumber: number,
-      forceResendingToken: _resendToken,
+      forceResendingToken: resend,
       // Some Android phones read the SMS themselves and sign in directly.
       verificationCompleted: (credential) async {
+        if (!current()) return;
         try {
           await _auth.signInWithCredential(credential);
         } on FirebaseAuthException {
@@ -95,18 +107,23 @@ class FirebaseAccountService implements AccountService {
         }
       },
       codeSent: (id, token) {
+        if (!current()) return;
         _verificationId = id;
         _resendToken = token;
         if (!sent.isCompleted) sent.complete();
       },
-      codeAutoRetrievalTimeout: (id) => _verificationId = id,
+      codeAutoRetrievalTimeout: (id) {
+        if (current()) _verificationId = id;
+      },
     );
     return sent.future;
   });
 
   @override
   Future<bool> verifyOtp(String phone, String code) => _run(() async {
-    if (_auth.currentUser?.phoneNumber == '+91$phone') return true;
+    final number = '+91$phone';
+    if (_codeFor != phone) return false;
+    if (_auth.currentUser?.phoneNumber == number) return true;
     try {
       if (kIsWeb) {
         final c = _webConfirmation;
@@ -117,6 +134,13 @@ class FirebaseAccountService implements AccountService {
         if (id == null) return false;
         await _auth.signInWithCredential(
           PhoneAuthProvider.credential(verificationId: id, smsCode: code),
+        );
+      }
+      // Belt and braces: whoever is signed in must own the typed number.
+      if (_auth.currentUser?.phoneNumber != number) {
+        await _auth.signOut();
+        throw const AccountException(
+          'That code was for a different number. Ask for a new code.',
         );
       }
       return true;
@@ -149,7 +173,13 @@ class FirebaseAccountService implements AccountService {
   });
 
   @override
-  Future<void> signOut() => _auth.signOut();
+  Future<void> signOut() {
+    _codeFor = null;
+    _verificationId = null;
+    _resendToken = null;
+    _webConfirmation = null;
+    return _auth.signOut();
+  }
 
   // ---- Student sign-up ----------------------------------------------------
 
