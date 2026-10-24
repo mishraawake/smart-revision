@@ -92,7 +92,7 @@ class _AddExamSheetState extends State<_AddExamSheet> {
               ),
               const SizedBox(height: 4),
               const Text(
-                "Ullu will plan your revision so you're ready on the day.",
+                "Ollie will plan your revision so you're ready on the day.",
                 style: TextStyle(fontSize: 15, color: AppColors.inkMuted),
               ),
               const SizedBox(height: 16),

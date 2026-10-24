@@ -356,7 +356,7 @@ class _RingPainter extends CustomPainter {
   bool shouldRepaint(_RingPainter old) => old.fraction != fraction;
 }
 
-/// Ullu's feather colours, by wardrobe id.
+/// Ollie's feather colours, by wardrobe id.
 const owlColours = {
   'purple': Color(0xFF8B5CF6),
   'blue': Color(0xFF3B82F6),
@@ -366,7 +366,7 @@ const owlColours = {
   'gold': Color(0xFFEAB308),
 };
 
-/// "Ullu" the owl. Placeholder art until the final mascot arrives.
+/// "Ollie" the owl. Placeholder art until the final mascot arrives.
 class Owl extends StatelessWidget {
   const Owl({
     super.key,
@@ -385,7 +385,7 @@ class Owl extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Semantics(
-    label: sleeping ? 'Ullu the owl, resting' : 'Ullu the owl',
+    label: sleeping ? 'Ollie the owl, resting' : 'Ollie the owl',
     image: true,
     child: CustomPaint(
       size: Size.square(size),
@@ -398,7 +398,7 @@ class Owl extends StatelessWidget {
   );
 }
 
-/// The studying student's own Ullu, dressed as they chose.
+/// The studying student's own Ollie, dressed as they chose.
 class MyOwl extends StatelessWidget {
   const MyOwl({super.key, this.size = 88, this.sleeping = false});
 

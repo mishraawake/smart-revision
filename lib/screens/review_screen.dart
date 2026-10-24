@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 import '../logic/scheduler.dart';
@@ -57,7 +59,9 @@ class _ReviewScreenState extends State<ReviewScreen> {
     _busy = true;
     final state = AppScope.read(context);
     SpeakerScope.of(context).stop();
-    await state.answer(_card, knew: knew, practice: widget.practice);
+    // The card is graded straight away; only the save to disk is slow, so
+    // the next card shows without waiting for it.
+    final saved = state.answer(_card, knew: knew, practice: widget.practice);
     if (knew) {
       _knew++;
     } else {
@@ -69,8 +73,10 @@ class _ReviewScreenState extends State<ReviewScreen> {
         _revealed = false;
       });
       _busy = false;
+      unawaited(saved);
       return;
     }
+    await saved;
     final summary = await state.finishSession(
       knew: _knew,
       missed: _missed,

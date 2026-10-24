@@ -340,12 +340,12 @@ class _AllDone extends StatelessWidget {
               ),
             ),
             ReadAloudButton(
-              'All done for today! Ullu is resting. New cards come tomorrow.',
+              'All done for today! Ollie is resting. New cards come tomorrow.',
             ),
           ],
         ),
         const Text(
-          'Ullu is resting. New cards come tomorrow.',
+          'Ollie is resting. New cards come tomorrow.',
           style: TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.w700,

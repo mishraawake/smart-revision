@@ -1,4 +1,4 @@
-/// Things for Ullu that unlock as a student's star total grows. Nothing is
+/// Things for Ollie that unlock as a student's star total grows. Nothing is
 /// spent: stars only ever go up, and badges count them.
 class OwlItem {
   const OwlItem(this.id, this.name, this.stars);

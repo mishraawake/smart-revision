@@ -216,7 +216,7 @@ class Profile {
   /// Tests coming up, soonest first.
   final List<Exam> exams;
 
-  /// Ullu's look, from the wardrobe on the Me tab.
+  /// Ollie's look, from the wardrobe on the Me tab.
   String owlColor;
   String owlHat;
 

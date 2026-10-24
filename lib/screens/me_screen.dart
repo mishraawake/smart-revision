@@ -18,7 +18,7 @@ import 'my_chapters_screen.dart';
 import 'onboarding_screen.dart';
 import 'progress_screen.dart';
 
-/// The student's own space: who they are, their Ullu, their goal, what's
+/// The student's own space: who they are, their Ollie, their goal, what's
 /// been done at school, their tests.
 class MeScreen extends StatelessWidget {
   const MeScreen({super.key});
@@ -283,7 +283,7 @@ class _EditSheetState extends State<_EditSheet> {
   );
 }
 
-// ---- Ullu ------------------------------------------------------------------
+// ---- Ollie ------------------------------------------------------------------
 
 class _OwlCard extends StatelessWidget {
   const _OwlCard({required this.profile});
@@ -307,7 +307,7 @@ class _OwlCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Text(
-                      'Ullu',
+                      'Ollie',
                       style: TextStyle(
                         fontFamily: Fonts.display,
                         fontSize: 22,

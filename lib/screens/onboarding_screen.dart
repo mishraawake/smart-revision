@@ -79,7 +79,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         const Center(child: Owl(size: 140, hat: 'cap')),
         const SizedBox(height: 24),
         const Text(
-          'Hi! I\'m Ullu.',
+          'Hi! I\'m Ollie.',
           textAlign: TextAlign.center,
           style: TextStyle(
             fontFamily: Fonts.display,
@@ -198,7 +198,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         ),
         const SizedBox(height: 8),
         const Text(
-          'What should Ullu call you?',
+          'What should Ollie call you?',
           style: TextStyle(
             fontFamily: Fonts.display,
             fontSize: 28,
@@ -241,7 +241,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         if (name.isEmpty) ...[
           const SizedBox(height: 8),
           const Text(
-            'No name? That\'s fine. Ullu will call you Friend.',
+            'No name? That\'s fine. Ollie will call you Friend.',
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 14, color: AppColors.inkMuted),
           ),

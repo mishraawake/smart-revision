@@ -117,7 +117,7 @@ void main() {
       expect(state.deck!.classLevel, 9);
     });
 
-    test('Ullu is dressed with what stars have unlocked', () async {
+    test('Ollie is dressed with what stars have unlocked', () async {
       expect(Wardrobe.nextUnlock(0)!.name, 'Sky blue');
       expect(Wardrobe.nextUnlock(12)!.name, 'Graduation cap');
       await state.dressOwl(colour: 'blue', hat: 'cap');
@@ -167,7 +167,7 @@ void main() {
     );
     await tester.pumpAndSettle();
 
-    expect(find.text("Hi! I'm Ullu."), findsOneWidget);
+    expect(find.text("Hi! I'm Ollie."), findsOneWidget);
     expect(find.text('Parent or teacher? Sign in here'), findsOneWidget);
     await tester.tap(find.text("Let's start"));
     await tester.pumpAndSettle();
@@ -183,7 +183,7 @@ void main() {
     await tester.tap(find.text('Me'));
     await tester.pumpAndSettle();
     expect(find.text('My daily goal'), findsOneWidget);
-    expect(find.text('Ullu'), findsOneWidget);
+    expect(find.text('Ollie'), findsOneWidget);
     await tester.scrollUntilVisible(
       find.text('Parent or teacher? Sign in'),
       300,
