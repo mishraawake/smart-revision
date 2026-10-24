@@ -4,6 +4,9 @@
     {
       "id": "science",
       "name": "Science",
+      "colour": "#CFFAFE",
+      "ink": "#155E75",
+      "glyph": "Sc",
       "chapters": [
         {
           "id": "c8-sci-01",
@@ -40,6 +43,9 @@
     {
       "id": "maths",
       "name": "Maths",
+      "colour": "#EDE9FE",
+      "ink": "#5B21B6",
+      "glyph": "12+",
       "chapters": [
         {
           "id": "c8-maths-01",
@@ -59,6 +65,9 @@
     {
       "id": "social",
       "name": "Social Science",
+      "colour": "#FEF3C7",
+      "ink": "#92400E",
+      "glyph": "SS",
       "chapters": [
         {
           "id": "c8-ss-01",
@@ -78,6 +87,9 @@
     {
       "id": "english",
       "name": "English",
+      "colour": "#DBEAFE",
+      "ink": "#1E40AF",
+      "glyph": "Ab",
       "chapters": [
         {
           "id": "c8-eng-01",

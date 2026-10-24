@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../models/deck.dart';
+
 /// Colours from the Phase 1 design system board.
 abstract final class AppColors {
   static const primary = Color(0xFF4338CA);
@@ -49,9 +51,25 @@ class SubjectStyle {
     'social': SubjectStyle(Color(0xFFFEF3C7), Color(0xFF92400E), 'SS'),
   };
 
+  /// Looks set in the content sheet; they win over the built-in ones.
+  static final _fromDeck = <String, SubjectStyle>{};
+
   static SubjectStyle of(String subjectId) =>
+      _fromDeck[subjectId] ??
       _styles[subjectId] ??
       const SubjectStyle(AppColors.primaryTint, AppColors.onPrimaryTint, '•');
+
+  /// Uses a subject's colours and glyph from its deck. Missing parts keep
+  /// the built-in look.
+  static void useDeck(Subject s) {
+    if (s.colour == null && s.ink == null && s.glyph == null) return;
+    final base = of(s.id);
+    _fromDeck[s.id] = SubjectStyle(
+      s.colour == null ? base.background : Color(s.colour!),
+      s.ink == null ? base.foreground : Color(s.ink!),
+      s.glyph ?? base.glyph,
+    );
+  }
 }
 
 abstract final class Fonts {

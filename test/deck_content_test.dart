@@ -1,9 +1,11 @@
 import 'dart:math';
 
+import 'package:flutter/painting.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:smart_revision/data/deck_repository.dart';
 import 'package:smart_revision/logic/quiz.dart';
 import 'package:smart_revision/models/deck.dart';
+import 'package:smart_revision/theme/tokens.dart';
 
 /// Checks every bundled deck, so a typo in the JSON fails the build instead
 /// of breaking a student's session.
@@ -116,5 +118,19 @@ void main() {
         expect('___'.allMatches(b.text), hasLength(1), reason: c.id);
       }
     }
+  });
+
+  test('subject colours and badges come from the deck', () {
+    final science = decks[8]!.subjects.firstWhere((s) => s.id == 'science');
+    expect(science.colour, 0xFFCFFAFE);
+    expect(science.ink, 0xFF155E75);
+    expect(science.glyph, 'Sc');
+
+    SubjectStyle.useDeck(
+      Subject(id: 'hindi', name: 'Hindi', chapters: [], colour: 0xFFFFE4E6),
+    );
+    final hindi = SubjectStyle.of('hindi');
+    expect(hindi.background, const Color(0xFFFFE4E6));
+    expect(hindi.glyph, '•', reason: 'parts the sheet leaves empty fall back');
   });
 }

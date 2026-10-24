@@ -4,6 +4,9 @@
     {
       "id": "maths",
       "name": "Maths",
+      "colour": "#EDE9FE",
+      "ink": "#5B21B6",
+      "glyph": "12+",
       "chapters": [
         {
           "id": "c1-maths-01",
@@ -14,9 +17,9 @@
             {"id": "c1m1-01", "front": "What comes after 9?", "back": "10", "backWord": "ten", "explain": "8, 9, 10. Ten comes after nine.", "wrong": ["8", "11", "19"]},
             {"id": "c1m1-02", "front": "How many fingers are on one hand?", "back": "5", "backWord": "five", "explain": "Count them: 1, 2, 3, 4, 5.", "wrong": ["4", "6", "10"]},
             {"id": "c1m1-03", "front": "Which is more: 7 or 4?", "back": "7", "backWord": "seven", "explain": "7 comes after 4 when we count, so 7 is more.", "wrong": ["4"]},
-            {"id": "c1m1-04", "front": "2 + 3 = ?", "hint": "Hold up 2 fingers, then 3 more.", "back": "5", "backWord": "five", "explain": "2 and 3 more make 5.", "wrong": ["4", "6", "23"]},
+            {"id": "c1m1-04", "front": "2 + 3 = ?", "back": "5", "backWord": "five", "hint": "Hold up 2 fingers, then 3 more.", "explain": "2 and 3 more make 5.", "wrong": ["4", "6", "23"]},
             {"id": "c1m1-05", "front": "What comes just before 15?", "back": "14", "backWord": "fourteen", "explain": "13, 14, 15. Fourteen comes before fifteen.", "wrong": ["16", "13", "51"]},
-            {"id": "c1m1-06", "front": "5 − 2 = ?", "hint": "Take 2 away from 5.", "back": "3", "backWord": "three", "explain": "5 take away 2 leaves 3.", "wrong": ["7", "2", "4"]}
+            {"id": "c1m1-06", "front": "5 − 2 = ?", "back": "3", "backWord": "three", "hint": "Take 2 away from 5.", "explain": "5 take away 2 leaves 3.", "wrong": ["7", "2", "4"]}
           ]
         },
         {
@@ -37,6 +40,9 @@
     {
       "id": "english",
       "name": "English",
+      "colour": "#DBEAFE",
+      "ink": "#1E40AF",
+      "glyph": "Ab",
       "chapters": [
         {
           "id": "c1-eng-01",

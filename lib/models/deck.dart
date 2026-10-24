@@ -19,13 +19,23 @@ class ClassDeck {
 }
 
 class Subject {
-  Subject({required this.id, required this.name, required this.chapters});
+  Subject({
+    required this.id,
+    required this.name,
+    required this.chapters,
+    this.colour,
+    this.ink,
+    this.glyph,
+  });
 
   factory Subject.fromJson(Map<String, dynamic> json) {
     final id = json['id'] as String;
     return Subject(
       id: id,
       name: json['name'] as String,
+      colour: _hex(json['colour'] as String?),
+      ink: _hex(json['ink'] as String?),
+      glyph: json['glyph'] as String?,
       chapters: [
         for (final c in json['chapters'] as List)
           Chapter.fromJson(c as Map<String, dynamic>, subjectId: id),
@@ -33,9 +43,19 @@ class Subject {
     );
   }
 
+  /// "#1E40AF" → 0xFF1E40AF.
+  static int? _hex(String? s) =>
+      s == null ? null : 0xFF000000 | int.parse(s.substring(1), radix: 16);
+
   final String id;
   final String name;
   final List<Chapter> chapters;
+
+  /// Badge background and text colours (ARGB) and badge text, from the
+  /// content sheet. Null keeps the app's built-in look for the subject.
+  final int? colour;
+  final int? ink;
+  final String? glyph;
 
   Iterable<Flashcard> get cards => chapters.expand((c) => c.cards);
 }

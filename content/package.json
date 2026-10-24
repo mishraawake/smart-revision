@@ -1,0 +1,10 @@
+{
+  "name": "revup-content",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "template": "node template.js",
+    "export": "node export.js",
+    "test": "node --test test/*.test.js"
+  }
+}

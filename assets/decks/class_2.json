@@ -4,6 +4,9 @@
     {
       "id": "maths",
       "name": "Maths",
+      "colour": "#EDE9FE",
+      "ink": "#5B21B6",
+      "glyph": "12+",
       "chapters": [
         {
           "id": "c2-maths-01",
@@ -24,13 +27,13 @@
           "title": "Counting in Groups",
           "pairs": [["2 groups of 3", "6"], ["2 groups of 5", "10"], ["4 groups of 2", "8"], ["3 groups of 4", "12"]],
           "cards": [
-            {"id": "c2m2-01", "front": "3 plates, 2 mangoes on each. How many mangoes in all?", "hint": "Count in 2s: two, four…", "back": "6", "backWord": "six", "explain": "2 + 2 + 2 = 6", "tf": {"text": "2 + 2 + 2 is the same as 3 groups of 2.", "answer": true}},
+            {"id": "c2m2-01", "front": "3 plates, 2 mangoes on each. How many mangoes in all?", "back": "6", "backWord": "six", "hint": "Count in 2s: two, four…", "explain": "2 + 2 + 2 = 6", "tf": {"text": "2 + 2 + 2 is the same as 3 groups of 2.", "answer": true}},
             {"id": "c2m2-02", "front": "Count in 2s: 2, 4, 6, … What comes next?", "back": "8", "backWord": "eight", "explain": "Add 2 each time.", "blank": {"text": "Count in 2s: 2, 4, 6, ___, 10.", "answer": "8"}},
-            {"id": "c2m2-03", "front": "4 hands. How many fingers in all?", "hint": "Count in 5s.", "back": "20", "backWord": "twenty", "explain": "5 + 5 + 5 + 5 = 20"},
+            {"id": "c2m2-03", "front": "4 hands. How many fingers in all?", "back": "20", "backWord": "twenty", "hint": "Count in 5s.", "explain": "5 + 5 + 5 + 5 = 20"},
             {"id": "c2m2-04", "front": "Count in 5s: 5, 10, 15, … What comes next?", "back": "20", "backWord": "twenty", "explain": "Add 5 each time."},
-            {"id": "c2m2-05", "front": "2 bags, 3 apples in each. How many apples?", "hint": "Count in 3s.", "back": "6", "backWord": "six", "explain": "3 + 3 = 6"},
+            {"id": "c2m2-05", "front": "2 bags, 3 apples in each. How many apples?", "back": "6", "backWord": "six", "hint": "Count in 3s.", "explain": "3 + 3 = 6"},
             {"id": "c2m2-06", "front": "Count in 3s: 3, 6, 9, … What comes next?", "back": "12", "backWord": "twelve", "explain": "Add 3 each time."},
-            {"id": "c2m2-07", "front": "How many pairs of socks make 10 socks?", "hint": "A pair is 2.", "back": "5", "backWord": "five", "explain": "2 + 2 + 2 + 2 + 2 = 10"}
+            {"id": "c2m2-07", "front": "How many pairs of socks make 10 socks?", "back": "5", "backWord": "five", "hint": "A pair is 2.", "explain": "2 + 2 + 2 + 2 + 2 = 10"}
           ]
         },
         {
@@ -50,6 +53,9 @@
     {
       "id": "english",
       "name": "English",
+      "colour": "#DBEAFE",
+      "ink": "#1E40AF",
+      "glyph": "Ab",
       "chapters": [
         {
           "id": "c2-eng-01",

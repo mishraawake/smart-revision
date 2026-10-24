@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 import '../models/deck.dart';
+import '../theme/tokens.dart';
 
 /// Loads NCERT decks. Phase 1 ships decks inside the app, so every chapter is
 /// available offline; downloading decks from a server comes later.
@@ -22,6 +23,7 @@ class DeckRepository {
         'assets/decks/class_$classLevel.json',
       );
       deck = ClassDeck.fromJson(jsonDecode(raw) as Map<String, dynamic>);
+      deck.subjects.forEach(SubjectStyle.useDeck);
     } on FlutterError {
       deck = null; // Asset not bundled for this class.
     }

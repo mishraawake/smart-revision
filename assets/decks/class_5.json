@@ -4,6 +4,9 @@
     {
       "id": "maths",
       "name": "Maths",
+      "colour": "#EDE9FE",
+      "ink": "#5B21B6",
+      "glyph": "12+",
       "chapters": [
         {
           "id": "c5-maths-01",
@@ -36,6 +39,9 @@
     {
       "id": "english",
       "name": "English",
+      "colour": "#DBEAFE",
+      "ink": "#1E40AF",
+      "glyph": "Ab",
       "chapters": [
         {
           "id": "c5-eng-01",
@@ -55,6 +61,9 @@
     {
       "id": "evs",
       "name": "EVS",
+      "colour": "#CCFBF1",
+      "ink": "#115E59",
+      "glyph": "EVS",
       "chapters": [
         {
           "id": "c5-evs-01",
