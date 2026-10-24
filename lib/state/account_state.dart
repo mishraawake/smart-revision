@@ -196,6 +196,20 @@ class AccountState extends ChangeNotifier {
   Future<List<ChildRecord>> loadChildren() async =>
       _syncs ? service.loadChildren() : const [];
 
+  /// Puts children that exist only on this phone onto the account, e.g.
+  /// ones made before signing in or while offline.
+  Future<void> uploadMissing(Iterable<ChildRecord> onPhone) async {
+    if (!_syncs) return;
+    try {
+      final saved = {for (final c in await service.loadChildren()) c.id};
+      for (final c in onPhone) {
+        if (!saved.contains(c.id)) await service.saveChild(c);
+      }
+    } on AccountException {
+      // Offline; next time.
+    }
+  }
+
   /// Keeps the server copy of a parent's child up to date. Fails quietly:
   /// the profile works on the phone either way and syncs next time.
   Future<void> saveChild(ChildRecord child) async {

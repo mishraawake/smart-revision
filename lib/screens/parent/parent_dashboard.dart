@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 import '../../data/account_service.dart';
@@ -34,8 +36,20 @@ class _ParentDashboardState extends State<ParentDashboard> {
   }
 
   Future<void> _refreshRequests() async {
+    final accounts = AccountScope.read(context);
+    unawaited(
+      accounts.uploadMissing([
+        for (final p in AppScope.read(context).profiles)
+          ChildRecord(
+            id: p.id,
+            name: p.name,
+            classLevel: p.classLevel,
+            avatar: p.avatar,
+          ),
+      ]),
+    );
     try {
-      await AccountScope.read(context).loadRequests();
+      await accounts.loadRequests();
     } on AccountException {
       // Offline; shown next time.
     }

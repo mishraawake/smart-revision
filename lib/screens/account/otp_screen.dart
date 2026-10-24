@@ -114,14 +114,27 @@ class _OtpScreenState extends State<OtpScreen> {
     try {
       await accounts.signIn(widget.role, widget.phone);
       if (widget.role == Role.parent) {
-        // Children saved from another phone come back.
-        for (final c in await accounts.loadChildren()) {
+        // Children saved from another phone come back, and ones made on
+        // this phone before signing in go up.
+        final saved = await accounts.loadChildren();
+        for (final c in saved) {
           if (app.profiles.any((p) => p.id == c.id)) continue;
           await app.addProfile(
             c.name,
             c.classLevel,
             avatar: c.avatar,
             id: c.id,
+          );
+        }
+        for (final p in [...app.profiles]) {
+          if (saved.any((c) => c.id == p.id)) continue;
+          await accounts.saveChild(
+            ChildRecord(
+              id: p.id,
+              name: p.name,
+              classLevel: p.classLevel,
+              avatar: p.avatar,
+            ),
           );
         }
         await accounts.loadRequests();

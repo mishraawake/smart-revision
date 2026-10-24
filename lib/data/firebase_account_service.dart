@@ -56,6 +56,8 @@ class FirebaseAccountService implements AccountService {
 
   static String _authMessage(FirebaseAuthException e) => switch (e.code) {
     'invalid-phone-number' => "That number doesn't look right.",
+    'operation-not-allowed' =>
+      "Phone sign-in isn't switched on for this number's country yet.",
     'too-many-requests' ||
     'quota-exceeded' => 'Too many tries. Please wait a while and try again.',
     'network-request-failed' =>
@@ -236,6 +238,7 @@ class FirebaseAccountService implements AccountService {
 
   @override
   Future<List<ApprovalRequest>> requestsForMe() => _run(() async {
+    if (_myDigits.length != 10) return const [];
     final q = await _db
         .collection('approvalRequests')
         .where('parentPhone', isEqualTo: _myDigits)

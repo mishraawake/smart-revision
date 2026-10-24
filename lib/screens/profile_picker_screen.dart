@@ -294,8 +294,10 @@ class _SeniorPicker extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 12),
-        const Text(
-          'No passwords · profiles stay on this phone',
+        Text(
+          AccountScope.maybeOf(context)?.service.isDemo == false
+              ? "No passwords · saved to the parent's account"
+              : 'No passwords · profiles stay on this phone',
           textAlign: TextAlign.center,
           style: TextStyle(fontSize: 13, color: AppColors.inkMuted),
         ),

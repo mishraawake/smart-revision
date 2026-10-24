@@ -208,6 +208,10 @@ class PhoneField extends StatelessWidget {
         ),
         decoration: InputDecoration(
           hintText: '10-digit number',
+          // Says why Send OTP is still off while typing.
+          helperText: controller.text.isEmpty || controller.text.length == 10
+              ? null
+              : '${controller.text.length}/10 digits',
           prefixIcon: Container(
             width: 64,
             margin: const EdgeInsets.only(right: 12),
