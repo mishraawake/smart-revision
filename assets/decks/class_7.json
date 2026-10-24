@@ -9,6 +9,7 @@
           "id": "c7-sci-01",
           "number": 1,
           "title": "Acids, Bases and Salts",
+          "pairs": [["Lemon", "Citric acid"], ["Curd", "Lactic acid"], ["Vinegar", "Acetic acid"], ["Tamarind", "Tartaric acid"]],
           "cards": [
             {"id": "c7s1-01", "front": "What colour does blue litmus turn in an acid?", "back": "Red", "wrong": ["Stays blue", "Green", "Yellow"]},
             {"id": "c7s1-02", "front": "What colour does red litmus turn in a base?", "back": "Blue", "wrong": ["Stays red", "Green", "Pink"]},
@@ -27,6 +28,7 @@
           "id": "c7-maths-01",
           "number": 1,
           "title": "Integers",
+          "pairs": [["(−4) × (−3)", "12"], ["(−5) + 8", "3"], ["(−20) ÷ 4", "−5"], ["7 − 10", "−3"]],
           "cards": [
             {"id": "c7m1-01", "front": "(−5) + 8 = ?", "back": "3", "explain": "Start at −5 on the number line and move 8 steps right.", "wrong": ["-3", "13", "-13"]},
             {"id": "c7m1-02", "front": "(−4) × (−3) = ?", "back": "12", "explain": "Negative × negative = positive.", "wrong": ["-12", "7", "-7"]},
@@ -45,6 +47,7 @@
           "id": "c7-ss-01",
           "number": 1,
           "title": "Sultans and Mughals",
+          "pairs": [["Babur", "Founded the Mughal Empire"], ["Shah Jahan", "Built the Taj Mahal"], ["Akbar", "Sulh-i kul"], ["Razia Sultan", "First woman sultan of Delhi"]],
           "cards": [
             {"id": "c7h1-01", "front": "Who founded the Mughal Empire in India?", "back": "Babur", "wrong": ["Akbar", "Humayun", "Aurangzeb"]},
             {"id": "c7h1-02", "front": "In which year was the First Battle of Panipat fought?", "back": "1526", "explain": "Babur defeated Ibrahim Lodi.", "wrong": ["1556", "1761", "1206"]},
@@ -63,6 +66,7 @@
           "id": "c7-eng-01",
           "number": 1,
           "title": "Synonyms and Antonyms",
+          "pairs": [["Happy", "Joyful"], ["Begin", "Start"], ["Quick", "Fast"], ["Big", "Large"]],
           "cards": [
             {"id": "c7e1-01", "front": "Which word means the same as 'happy'?", "back": "Joyful", "wrong": ["Angry", "Tired", "Sad"]},
             {"id": "c7e1-02", "front": "What is the opposite of 'ancient'?", "back": "Modern", "wrong": ["Old", "Historic", "Ruined"]},

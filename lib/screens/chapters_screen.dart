@@ -5,7 +5,12 @@ import '../state/app_state.dart';
 import '../theme/app_theme.dart';
 import '../theme/tokens.dart';
 import '../widgets/common.dart';
+import '../models/profile.dart';
+import 'quiz/quiz_intro_screen.dart';
 import 'review_screen.dart';
+
+String _quizLabel(QuizRecord? best) =>
+    best == null ? 'Quiz' : 'Quiz · best ${best.score}/${best.total}';
 
 class ChaptersScreen extends StatelessWidget {
   const ChaptersScreen({super.key, required this.subjectId});
@@ -192,6 +197,21 @@ class _ChapterRow extends StatelessWidget {
                     fontSize: junior ? 16 : 13,
                     fontWeight: FontWeight.w700,
                     color: AppColors.inkMuted,
+                  ),
+                ),
+                const SizedBox(height: 8),
+                FilledButton.tonalIcon(
+                  onPressed: () => openQuiz(context, chapter: chapter),
+                  icon: const Icon(Icons.quiz_rounded),
+                  label: Text(_quizLabel(state.bestQuiz(chapter.id))),
+                  style: FilledButton.styleFrom(
+                    minimumSize: Size(0, junior ? 48 : 40),
+                    backgroundColor: AppColors.primaryTint,
+                    foregroundColor: AppColors.onPrimaryTint,
+                    textStyle: TextStyle(
+                      fontSize: junior ? 17 : 14,
+                      fontWeight: FontWeight.w800,
+                    ),
                   ),
                 ),
               ],

@@ -6,7 +6,9 @@ import '../theme/app_theme.dart';
 import '../theme/tokens.dart';
 import '../widgets/common.dart';
 import 'chapters_screen.dart';
+import 'quiz/quiz_intro_screen.dart';
 import 'review_screen.dart';
+import '../widgets/format.dart';
 
 class TodayScreen extends StatelessWidget {
   const TodayScreen({super.key, required this.onOpenSubjects});
@@ -144,11 +146,7 @@ class _JuniorToday extends StatelessWidget {
         ),
         const SizedBox(height: 20),
         if (queue.isEmpty)
-          _AllDone(
-            streak: streak,
-            onPractise: () =>
-                startReview(context, state.practiceQueue(), practice: true),
-          )
+          _AllDone(streak: streak, onPractise: () => openQuiz(context))
         else
           _JuniorStartButton(
             waiting: waiting,
@@ -368,7 +366,7 @@ class _AllDone extends StatelessWidget {
               fontWeight: FontWeight.w700,
             ),
           ),
-          child: const Text('Practise for fun'),
+          child: const Text('Play a quiz for fun'),
         ),
       ],
     ),
@@ -472,21 +470,33 @@ class _SeniorToday extends StatelessWidget {
     return ListView(
       padding: const EdgeInsets.fromLTRB(16, 20, 16, 16),
       children: [
-        Text(
-          '${_days[t.weekday - 1]}, ${t.day} ${_months[t.month - 1]} · Class ${p.classLevel}',
-          style: const TextStyle(
-            fontSize: 13,
-            fontWeight: FontWeight.w700,
-            color: AppColors.inkMuted,
-          ),
-        ),
-        Text(
-          '${_greeting(t)}, ${p.name}',
-          style: const TextStyle(
-            fontFamily: Fonts.display,
-            fontSize: 24,
-            fontWeight: FontWeight.w700,
-          ),
+        Row(
+          children: [
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    '${_days[t.weekday - 1]}, ${t.day} ${_months[t.month - 1]} · Class ${p.classLevel}',
+                    style: const TextStyle(
+                      fontSize: 13,
+                      fontWeight: FontWeight.w700,
+                      color: AppColors.inkMuted,
+                    ),
+                  ),
+                  Text(
+                    '${_greeting(t)}, ${p.name}',
+                    style: const TextStyle(
+                      fontFamily: Fonts.display,
+                      fontSize: 24,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SwitchStudentButton(),
+          ],
         ),
         const SizedBox(height: 10),
         Wrap(

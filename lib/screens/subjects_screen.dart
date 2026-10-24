@@ -4,7 +4,9 @@ import '../state/app_state.dart';
 import '../theme/app_theme.dart';
 import '../theme/tokens.dart';
 import '../widgets/common.dart';
+import '../widgets/format.dart';
 import 'chapters_screen.dart';
+import 'quiz/quiz_intro_screen.dart';
 import 'today_screen.dart';
 
 class SubjectsScreen extends StatelessWidget {
@@ -34,7 +36,10 @@ class SubjectsScreen extends StatelessWidget {
                 ),
               ),
             ),
-            if (junior) const ReadAloudButton('Subjects. Pick one.'),
+            if (junior)
+              const ReadAloudButton('Subjects. Pick one.')
+            else
+              const SwitchStudentButton(),
           ],
         ),
         Text(
@@ -118,6 +123,43 @@ class SubjectsScreen extends StatelessWidget {
                   ],
                 ],
               ),
+            ),
+          ),
+        if (!junior)
+          SoftCard(
+            padding: 14,
+            onTap: () => openQuiz(context),
+            child: const Row(
+              children: [
+                CircleAvatar(
+                  radius: 26,
+                  backgroundColor: AppColors.primaryTint,
+                  child: Icon(Icons.shuffle_rounded, color: AppColors.primary),
+                ),
+                SizedBox(width: 14),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Mixed quiz',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w800,
+                        ),
+                      ),
+                      Text(
+                        'Questions across all subjects',
+                        style: TextStyle(
+                          fontSize: 13,
+                          color: AppColors.inkMuted,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Icon(Icons.chevron_right_rounded, color: AppColors.inkMuted),
+              ],
             ),
           ),
       ],

@@ -73,15 +73,47 @@ void main() {
     }
   });
 
-  test('every card can be asked as a quiz question', () {
+  test('every card can be asked as a multiple-choice question', () {
     final rng = Random(1);
     for (final deck in decks.values) {
       final pool = deck.allCards.toList();
       for (final c in pool) {
-        final q = QuizBuilder.question(c, pool: pool, random: rng);
+        final q = QuizBuilder.mcq(c, pool: pool, random: rng);
         expect(q, isNotNull, reason: '${c.id} has no wrong options');
-        expect(q!.options.length, greaterThanOrEqualTo(2), reason: c.id);
-        expect(q.correct, c.back);
+        expect(q!.correct, c.back);
+      }
+    }
+  });
+
+  test('every chapter has usable match pairs and makes a full quiz', () {
+    final rng = Random(2);
+    for (final deck in decks.values) {
+      final junior = deck.classLevel <= 5;
+      for (final ch in deck.chapters) {
+        final lefts = ch.pairs.map((p) => p.left.toLowerCase()).toSet();
+        final rights = ch.pairs.map((p) => p.right.toLowerCase()).toSet();
+        expect(ch.pairs.length, greaterThanOrEqualTo(4), reason: ch.id);
+        expect(lefts, hasLength(ch.pairs.length), reason: ch.id);
+        expect(rights, hasLength(ch.pairs.length), reason: ch.id);
+
+        final qs = QuizBuilder.build(
+          ch.cards,
+          pool: deck.allCards,
+          chapters: [ch],
+          count: 5,
+          junior: junior,
+          random: rng,
+        );
+        expect(qs, hasLength(5), reason: ch.id);
+        expect(qs.whereType<MatchQuestion>(), hasLength(1), reason: ch.id);
+      }
+    }
+  });
+
+  test('hand-written blanks contain exactly one gap', () {
+    for (final c in decks.values.expand((d) => d.allCards)) {
+      if (c.blank case final b?) {
+        expect('___'.allMatches(b.text), hasLength(1), reason: c.id);
       }
     }
   });

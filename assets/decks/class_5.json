@@ -9,6 +9,7 @@
           "id": "c5-maths-01",
           "number": 1,
           "title": "Fractions",
+          "pairs": [["Half", "1/2"], ["Quarter", "1/4"], ["Three quarters", "3/4"], ["Whole", "4/4"]],
           "cards": [
             {"id": "c5m1-01", "front": "A pizza is cut into 4 equal slices. What fraction is 1 slice?", "back": "1/4", "backWord": "one quarter", "explain": "1 part out of 4 equal parts.", "wrong": ["4/1", "1/2", "3/4"]},
             {"id": "c5m1-02", "front": "Which is bigger: 1/2 or 1/4?", "back": "1/2", "explain": "Half a roti is more than a quarter of the same roti.", "wrong": ["1/4"]},
@@ -21,6 +22,7 @@
           "id": "c5-maths-02",
           "number": 2,
           "title": "Shapes and Angles",
+          "pairs": [["Triangle", "3 sides"], ["Square", "4 sides"], ["Pentagon", "5 sides"], ["Hexagon", "6 sides"]],
           "cards": [
             {"id": "c5m2-01", "front": "How many degrees is a right angle?", "back": "90°", "explain": "The corner of a book is a right angle.", "wrong": ["45°", "180°", "360°"]},
             {"id": "c5m2-02", "front": "How many sides does a hexagon have?", "back": "6", "wrong": ["5", "8", "7"]},
@@ -39,6 +41,7 @@
           "id": "c5-eng-01",
           "number": 1,
           "title": "Tenses",
+          "pairs": [["Go", "Went"], ["Eat", "Ate"], ["Run", "Ran"], ["See", "Saw"]],
           "cards": [
             {"id": "c5e1-01", "front": "What is the past tense of 'go'?", "back": "went", "wrong": ["goed", "gone", "going"]},
             {"id": "c5e1-02", "front": "What is the past tense of 'eat'?", "back": "ate", "wrong": ["eated", "eaten", "eats"]},
@@ -57,6 +60,7 @@
           "id": "c5-evs-01",
           "number": 1,
           "title": "Our Body and Health",
+          "pairs": [["Heart", "Pumps blood"], ["Lungs", "Breathing"], ["Stomach", "Digests food"], ["Brain", "Thinking"]],
           "cards": [
             {"id": "c5v1-01", "front": "Which organ pumps blood around the body?", "back": "Heart", "wrong": ["Lungs", "Brain", "Stomach"]},
             {"id": "c5v1-02", "front": "Which organs help us breathe?", "back": "Lungs", "wrong": ["Heart", "Liver", "Kidneys"]},

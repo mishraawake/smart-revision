@@ -1,13 +1,18 @@
 import 'package:flutter_tts/flutter_tts.dart';
 
+enum SpeechSpeed { slow, normal, fast }
+
 /// Read-aloud for Junior screens. Every Junior text block has a button that
 /// calls [say].
 abstract class Speaker {
+  /// Set from the Settings screen.
+  SpeechSpeed speed = SpeechSpeed.normal;
+
   Future<void> say(String text, {bool slow = true});
   Future<void> stop();
 }
 
-class TtsSpeaker implements Speaker {
+class TtsSpeaker extends Speaker {
   final _tts = FlutterTts();
   bool _ready = false;
 
@@ -25,7 +30,12 @@ class TtsSpeaker implements Speaker {
   Future<void> say(String text, {bool slow = true}) async {
     await _init();
     await _tts.stop();
-    await _tts.setSpeechRate(slow ? 0.4 : 0.5);
+    final shift = switch (speed) {
+      SpeechSpeed.slow => -0.12,
+      SpeechSpeed.normal => 0.0,
+      SpeechSpeed.fast => 0.12,
+    };
+    await _tts.setSpeechRate((slow ? 0.4 : 0.5) + shift);
     await _tts.speak(text);
   }
 
@@ -33,7 +43,7 @@ class TtsSpeaker implements Speaker {
   Future<void> stop() => _tts.stop();
 }
 
-class SilentSpeaker implements Speaker {
+class SilentSpeaker extends Speaker {
   final spoken = <String>[];
 
   @override

@@ -58,3 +58,18 @@ abstract final class Fonts {
   static const display = 'Baloo2';
   static const body = 'Nunito';
 }
+
+/// The grown-up screens (sign-in, parent, teacher, settings): same indigo,
+/// a neutral ground, 1px lines instead of coloured shadows.
+abstract final class AdultColors {
+  static const ground = Color(0xFFF6F4EF);
+  static const line = Color(0xFFE6E1D7);
+  static const field = Color(0xFFCFC8BA);
+  static const chip = Color(0xFFEFEBE3);
+  static const chipInk = Color(0xFF3D3654);
+
+  static const mastered = Color(0xFFDCFCE7);
+  static const masteredInk = Color(0xFF14532D);
+  static const needsWork = Color(0xFFFFEDD5);
+  static const needsWorkInk = Color(0xFF9A3412);
+}

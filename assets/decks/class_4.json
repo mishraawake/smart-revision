@@ -9,6 +9,7 @@
           "id": "c4-maths-01",
           "number": 1,
           "title": "Multiplication",
+          "pairs": [["6 × 7", "42"], ["8 × 5", "40"], ["9 × 3", "27"], ["4 × 4", "16"]],
           "cards": [
             {"id": "c4m1-01", "front": "6 × 7 = ?", "back": "42", "explain": "6 sevens: 7, 14, 21, 28, 35, 42.", "wrong": ["36", "48", "13"]},
             {"id": "c4m1-02", "front": "What is 9 × 0?", "back": "0", "explain": "Any number times zero is zero.", "wrong": ["9", "1", "90"]},
@@ -21,6 +22,7 @@
           "id": "c4-maths-02",
           "number": 2,
           "title": "Measurement",
+          "pairs": [["1 metre", "100 cm"], ["1 kilogram", "1000 g"], ["1 hour", "60 minutes"], ["1 day", "24 hours"]],
           "cards": [
             {"id": "c4m2-01", "front": "How many centimetres make 1 metre?", "back": "100", "wrong": ["10", "1000", "60"]},
             {"id": "c4m2-02", "front": "How many grams make 1 kilogram?", "back": "1000", "wrong": ["100", "10", "500"]},
@@ -39,6 +41,7 @@
           "id": "c4-eng-01",
           "number": 1,
           "title": "Describing Words",
+          "pairs": [["Big", "Bigger"], ["Small", "Smaller"], ["Happy", "Happier"], ["Good", "Better"]],
           "cards": [
             {"id": "c4e1-01", "front": "Find the describing word: a tall tree", "back": "tall", "explain": "A describing word (adjective) tells us more about a noun.", "wrong": ["tree", "a"]},
             {"id": "c4e1-02", "front": "big → ? (comparing two things)", "back": "bigger", "explain": "big, bigger, biggest. Double the g before adding -er.", "wrong": ["more big", "biger", "biggest"]},
@@ -57,6 +60,7 @@
           "id": "c4-evs-01",
           "number": 1,
           "title": "Food and Water",
+          "pairs": [["Rice", "Carbohydrates"], ["Dal", "Protein"], ["Milk", "Calcium"], ["Orange", "Vitamin C"]],
           "cards": [
             {"id": "c4v1-01", "front": "Which food gives us more energy: rice or salt?", "back": "Rice", "explain": "Rice is rich in carbohydrates, which give energy.", "wrong": ["Salt"]},
             {"id": "c4v1-02", "front": "Which vitamin does our skin make in sunlight?", "back": "Vitamin D", "explain": "Vitamin D keeps bones and teeth strong.", "wrong": ["Vitamin A", "Vitamin C", "Vitamin B"]},

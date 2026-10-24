@@ -5,6 +5,7 @@ import 'package:flutter/widgets.dart';
 import '../data/deck_repository.dart';
 import '../data/profile_store.dart';
 import '../logic/badges.dart';
+import '../logic/levels.dart';
 import '../logic/quiz.dart';
 import '../logic/scheduler.dart';
 import '../models/deck.dart';
@@ -25,12 +26,14 @@ class SessionSummary {
     required this.newBadges,
     required this.dueTomorrow,
     required this.practice,
+    this.xpEarned = 0,
   });
 
   final int knew;
   final List<Flashcard> missed;
   final Duration duration;
   final int starsEarned;
+  final int xpEarned;
   final int streakBefore;
   final int streakAfter;
   final bool goalReached;
@@ -39,6 +42,36 @@ class SessionSummary {
   final bool practice;
 
   int get total => knew + missed.length;
+}
+
+class QuizSummary {
+  QuizSummary({
+    required this.quiz,
+    required this.duration,
+    required this.quizStars,
+    required this.starsEarned,
+    required this.xpEarned,
+    required this.previousBest,
+    required this.session,
+  });
+
+  final QuizSession quiz;
+  final Duration duration;
+
+  /// 0–3 stars for this quiz's score.
+  final int quizStars;
+
+  /// Stars added to the student's total (one per right answer).
+  final int starsEarned;
+  final int xpEarned;
+
+  /// Best earlier score on the same chapter quiz, if any.
+  final QuizRecord? previousBest;
+  final SessionSummary session;
+
+  int get score => quiz.score;
+  int get total => quiz.total;
+  List<BadgeDef> get newBadges => session.newBadges;
 }
 
 class AppState extends ChangeNotifier {
@@ -71,17 +104,17 @@ class AppState extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future<void> addProfile(String name, int classLevel) async {
-    profiles.add(
-      Profile(
-        id: '${now().microsecondsSinceEpoch}',
-        name: name.trim(),
-        classLevel: classLevel,
-        avatar: profiles.length,
-      ),
+  Future<Profile> addProfile(String name, int classLevel, {int? avatar}) async {
+    final p = Profile(
+      id: '${now().microsecondsSinceEpoch}',
+      name: name.trim(),
+      classLevel: classLevel,
+      avatar: avatar ?? profiles.length,
     );
+    profiles.add(p);
     await store.saveProfiles(profiles);
     notifyListeners();
+    return p;
   }
 
   Future<void> select(Profile p) async {
@@ -115,6 +148,8 @@ class AppState extends ChangeNotifier {
     return p.goalDay == dayKey(now()) ? p.goalDone : 0;
   }
 
+  Level get level => Level.of(current!.xp);
+
   double learntFraction(Iterable<Flashcard> cards) {
     final list = cards.toList();
     if (list.isEmpty) return 0;
@@ -125,7 +160,86 @@ class AppState extends ChangeNotifier {
   }
 
   bool isStarted(Chapter ch) =>
-      ch.cards.any((c) => current!.cards.containsKey(c.id));
+      ch.cards.any((c) => current!.cards.containsKey(c.id)) ||
+      bestQuiz(ch.id) != null;
+
+  /// Best score on this chapter's quiz.
+  QuizRecord? bestQuiz(String chapterId) {
+    QuizRecord? best;
+    for (final q in current!.quizzes) {
+      if (q.chapterId != chapterId) continue;
+      if (best == null || q.accuracy > best.accuracy) best = q;
+    }
+    return best;
+  }
+
+  /// Cards you know well plus quiz accuracy: the average of the learnt share
+  /// and the best quiz score, or just the learnt share before any quiz.
+  double chapterMastery(Chapter ch) {
+    final learnt = learntFraction(ch.cards);
+    final best = bestQuiz(ch.id);
+    return best == null ? learnt : (learnt + best.accuracy) / 2;
+  }
+
+  double subjectMastery(Subject s) => s.chapters.isEmpty
+      ? 0
+      : s.chapters.map(chapterMastery).reduce((a, b) => a + b) /
+            s.chapters.length;
+
+  /// Best quiz stars across the subject's chapters, out of 3 per chapter.
+  (int earned, int max) subjectQuizStars(Subject s) {
+    var earned = 0;
+    for (final ch in s.chapters) {
+      final best = bestQuiz(ch.id);
+      if (best != null) earned += quizStars(best.score, best.total);
+    }
+    return (earned, s.chapters.length * 3);
+  }
+
+  /// Finished quizzes, newest first.
+  List<QuizRecord> get quizHistory => current!.quizzes.reversed.toList();
+
+  /// Cards and questions done on [day].
+  int activityOn(DateTime day) => current!.activity[dayKey(day)] ?? 0;
+
+  bool studiedOn(DateTime day) =>
+      current!.studyDays.contains(dayKey(day)) || activityOn(day) > 0;
+
+  Chapter? chapterById(String? id) =>
+      id == null ? null : deck?.chapters.where((c) => c.id == id).firstOrNull;
+
+  BadgeFacts badgeFacts() {
+    final p = current!;
+    final learnt = <String, int>{};
+    for (final c in deck?.allCards ?? const <Flashcard>[]) {
+      if (p.cards[c.id]?.learnt ?? false) {
+        learnt[c.subjectId] = (learnt[c.subjectId] ?? 0) + 1;
+      }
+    }
+    return BadgeFacts(
+      profile: p,
+      streak: streakOf(p),
+      learntBySubject: learnt,
+      subjectIds: {...?deck?.subjects.map((s) => s.id)},
+      masteredChapters: {
+        for (final s in deck?.subjects ?? const <Subject>[])
+          s.id: (
+            s.chapters.where((ch) => chapterMastery(ch) >= 0.8).length,
+            s.chapters.length,
+          ),
+      },
+    );
+  }
+
+  List<BadgeDef> get badgeList {
+    final facts = badgeFacts();
+    return [
+      for (final b in BadgeDef.forTier(junior: current!.isJunior))
+        if (b.availableFor(facts)) b,
+    ];
+  }
+
+  // ---- Review queues ------------------------------------------------------
 
   bool _isDue(Flashcard c, DateTime at) {
     final s = current!.cards[c.id];
@@ -210,85 +324,13 @@ class AppState extends ChangeNotifier {
         .toList();
   }
 
-  // ---- Quizzes ------------------------------------------------------------
-
-  /// Up to [count] questions from one chapter.
-  List<QuizQuestion> chapterQuiz(
-    Chapter ch, {
-    int count = 10,
-    Random? random,
-  }) => QuizBuilder.build(
-    ch.cards,
-    pool: deck!.allCards,
-    count: count,
-    random: random,
-  );
-
-  /// Up to [count] questions across every subject, spread evenly.
-  List<QuizQuestion> mixedQuiz({int count = 20, Random? random}) {
-    if (deck == null) return [];
-    final rng = random ?? Random();
-    final perSubject = [
-      for (final s in deck!.subjects) s.cards.toList()..shuffle(rng),
-    ];
-    final picked = <Flashcard>[];
-    for (
-      var i = 0;
-      picked.length < count && perSubject.any((l) => i < l.length);
-      i++
-    ) {
-      for (final l in perSubject) {
-        if (i < l.length && picked.length < count) picked.add(l[i]);
-      }
-    }
-    return QuizBuilder.build(
-      picked,
-      pool: deck!.allCards,
-      count: count,
-      random: rng,
-    );
-  }
-
-  /// Records a finished quiz. When it [countsTowardsRevision], every answer
-  /// schedules its card like "Knew it" / "Didn't know" and earns stars;
-  /// otherwise it is just for fun.
-  Future<SessionSummary> finishQuiz(
-    QuizSession quiz, {
-    required Duration duration,
-    bool countsTowardsRevision = true,
-  }) async {
-    final goalBefore = goalDoneToday;
-    for (final a in quiz.answers) {
-      await answer(
-        a.question.card,
-        knew: a.correct,
-        practice: !countsTowardsRevision,
-      );
-    }
-    return finishSession(
-      knew: quiz.score,
-      missed: quiz.missed,
-      duration: duration,
-      goalDoneBefore: goalBefore,
-      practice: !countsTowardsRevision,
-      quiz: true,
-    );
-  }
-
   int dueOn(DateTime day) {
     if (deck == null) return 0;
     final end = DateTime(day.year, day.month, day.day + 1);
     return deck!.allCards.where((c) => _isDue(c, end)).length;
   }
 
-  Chapter? get lastChapter {
-    final id = current?.lastChapterId;
-    if (id == null || deck == null) return null;
-    return deck!.subjects
-        .expand((s) => s.chapters)
-        .where((c) => c.id == id)
-        .firstOrNull;
-  }
+  Chapter? get lastChapter => chapterById(current?.lastChapterId);
 
   Subject? subjectById(String id) =>
       deck?.subjects.where((s) => s.id == id).firstOrNull;
@@ -299,20 +341,131 @@ class AppState extends ChangeNotifier {
     final sunday = DateTime(t.year, t.month, t.day - t.weekday % 7);
     return [
       for (var i = 0; i < 7; i++)
-        current!.studyDays.contains(
-          dayKey(DateTime(sunday.year, sunday.month, sunday.day + i)),
-        ),
+        studiedOn(DateTime(sunday.year, sunday.month, sunday.day + i)),
     ];
+  }
+
+  // ---- Quizzes ------------------------------------------------------------
+
+  /// Junior quizzes are always 5 questions; Senior picks 5, 8 or 10.
+  int get defaultQuizLength => current!.isJunior ? 5 : 10;
+
+  /// Questions from one chapter.
+  List<QuizQuestion> chapterQuiz(Chapter ch, {int? count, Random? random}) =>
+      QuizBuilder.build(
+        ch.cards,
+        pool: deck!.allCards,
+        chapters: [ch],
+        count: count ?? defaultQuizLength,
+        junior: current!.isJunior,
+        random: random,
+      );
+
+  /// Questions across every subject, spread evenly.
+  List<QuizQuestion> mixedQuiz({int? count, Random? random}) {
+    if (deck == null) return [];
+    final n = count ?? (current!.isJunior ? 5 : 20);
+    final rng = random ?? Random();
+    final perSubject = [
+      for (final s in deck!.subjects) s.cards.toList()..shuffle(rng),
+    ];
+    final picked = <Flashcard>[];
+    for (
+      var i = 0;
+      picked.length < n && perSubject.any((l) => i < l.length);
+      i++
+    ) {
+      for (final l in perSubject) {
+        if (i < l.length && picked.length < n) picked.add(l[i]);
+      }
+    }
+    return QuizBuilder.build(
+      picked,
+      pool: deck!.allCards,
+      chapters: deck!.chapters,
+      count: n,
+      junior: current!.isJunior,
+      random: rng,
+    );
+  }
+
+  /// Records a finished quiz. When it [countsTowardsRevision], each answer
+  /// schedules its card like "Knew it" / "Didn't know" (mistakes go back to
+  /// the review deck), and XP, stars and history are kept; otherwise it is
+  /// just for fun.
+  Future<QuizSummary> finishQuiz(
+    QuizSession quiz, {
+    required Duration duration,
+    Chapter? chapter,
+    bool countsTowardsRevision = true,
+  }) async {
+    final p = current!;
+    final goalBefore = goalDoneToday;
+    final previousBest = chapter == null ? null : bestQuiz(chapter.id);
+    final stars3 = quizStars(quiz.score, quiz.total);
+    var xp = 0;
+
+    if (countsTowardsRevision) {
+      for (final a in quiz.answers) {
+        if (a.question.card case final card?) {
+          await answer(card, knew: a.correct, save: false);
+        } else {
+          _addActivity(1);
+        }
+        if (a.correct) {
+          xp += Xp.perRightAnswer - (a.hintUsed ? Xp.hintCost : 0);
+        }
+      }
+      if (stars3 == 3) xp += Xp.threeStarBonus;
+      p.xp += xp;
+      p.quizzes.add(
+        QuizRecord(
+          subjectId: chapter?.subjectId,
+          chapterId: chapter?.id,
+          at: now(),
+          score: quiz.score,
+          total: quiz.total,
+          seconds: duration.inSeconds,
+        ),
+      );
+      if (chapter != null) {
+        p.lastSubjectId = chapter.subjectId;
+        p.lastChapterId = chapter.id;
+      }
+    }
+    final session = await finishSession(
+      knew: quiz.score,
+      missed: quiz.missed,
+      duration: duration,
+      goalDoneBefore: goalBefore,
+      practice: !countsTowardsRevision,
+      quiz: true,
+    );
+    return QuizSummary(
+      quiz: quiz,
+      duration: duration,
+      quizStars: stars3,
+      starsEarned: session.starsEarned,
+      xpEarned: xp + session.xpEarned,
+      previousBest: previousBest,
+      session: session,
+    );
   }
 
   // ---- Answering ----------------------------------------------------------
 
   CardState? stateOf(Flashcard c) => current!.cards[c.id];
 
+  void _addActivity(int n) {
+    final key = dayKey(now());
+    current!.activity[key] = (current!.activity[key] ?? 0) + n;
+  }
+
   Future<void> answer(
     Flashcard card, {
     required bool knew,
     bool practice = false,
+    bool save = true,
   }) async {
     final p = current!;
     final t = now();
@@ -324,15 +477,19 @@ class AppState extends ChangeNotifier {
         p.goalDone = 0;
       }
       p.goalDone++;
+      _addActivity(1);
     }
     p.lastSubjectId = card.subjectId;
     p.lastChapterId = card.chapterId;
     p.lastStudiedAt = t;
-    await store.saveProfiles(profiles);
-    notifyListeners();
+    if (save) {
+      await store.saveProfiles(profiles);
+      notifyListeners();
+    }
   }
 
-  /// Awards stars, streak and badges once a session ends.
+  /// Awards stars, streak, XP for the daily goal and badges once a session
+  /// ends.
   Future<SessionSummary> finishSession({
     required int knew,
     required List<Flashcard> missed,
@@ -346,6 +503,7 @@ class AppState extends ChangeNotifier {
     final today = dayKey(t);
     final streakBefore = streakOf(p);
     var stars = 0;
+    var xp = 0;
     var goalReached = false;
     final newBadges = <BadgeDef>[];
 
@@ -356,26 +514,45 @@ class AppState extends ChangeNotifier {
       // Flashcards reward effort; quizzes reward correct answers.
       stars = (quiz ? knew : reviewed) + (goalReached ? 3 : 0);
       p.stars += stars;
+      if (goalReached) {
+        xp = Xp.dailyGoalBonus;
+        p.xp += xp;
+      }
       if (p.lastStudyDay != today) {
+        final last = p.lastStudyDay == null
+            ? null
+            : DateTime.tryParse(p.lastStudyDay!);
+        if (last != null &&
+            DateTime(t.year, t.month, t.day).difference(last).inDays > 3) {
+          p.events.add('comeback');
+        }
         p.streak = streakBefore + 1;
         p.lastStudyDay = today;
       }
+      if (t.hour < 8) p.events.add('earlyBird');
       p.studyDays.add(today);
-      for (final b in BadgeDef.all) {
-        if (!p.badges.contains(b.id) && b.earned(p, deck)) {
-          p.badges.add(b.id);
+      p.lastStudiedAt = t;
+      final facts = badgeFacts();
+      for (final b in BadgeDef.forTier(junior: p.isJunior)) {
+        if (!p.badges.containsKey(b.id) &&
+            b.availableFor(facts) &&
+            b.earned(facts)) {
+          p.badges[b.id] = today;
           newBadges.add(b);
         }
       }
-      await store.saveProfiles(profiles);
-      notifyListeners();
     }
+    // Practice counts as study time for the parent's minutes chart.
+    p.seconds[today] = (p.seconds[today] ?? 0) + duration.inSeconds;
+    await store.saveProfiles(profiles);
+    notifyListeners();
 
     return SessionSummary(
       knew: knew,
       missed: missed,
       duration: duration,
       starsEarned: stars,
+      xpEarned: xp,
       streakBefore: streakBefore,
       streakAfter: streakOf(p),
       goalReached: goalReached,

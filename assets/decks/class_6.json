@@ -9,6 +9,7 @@
           "id": "c6-sci-01",
           "number": 1,
           "title": "Food and Nutrition",
+          "pairs": [["Vitamin C", "Scurvy"], ["Vitamin D", "Rickets"], ["Iodine", "Goitre"], ["Vitamin A", "Night blindness"]],
           "cards": [
             {"id": "c6s1-01", "front": "Which nutrient helps the body grow and repair itself?", "back": "Proteins", "explain": "Pulses, milk, eggs and paneer are rich in proteins.", "wrong": ["Carbohydrates", "Fats", "Water"]},
             {"id": "c6s1-02", "front": "What colour does iodine solution turn when added to starch?", "back": "Blue-black", "explain": "This is the test for starch.", "wrong": ["Red", "Yellow", "Green"]},
@@ -27,6 +28,7 @@
           "id": "c6-maths-01",
           "number": 1,
           "title": "Factors and Multiples",
+          "pairs": [["HCF of 12 and 18", "6"], ["LCM of 4 and 6", "12"], ["Smallest prime", "2"], ["Smallest whole number", "0"]],
           "cards": [
             {"id": "c6m1-01", "front": "What is the smallest whole number?", "back": "0", "explain": "Whole numbers are 0, 1, 2, 3, …", "wrong": ["1", "-1", "10"]},
             {"id": "c6m1-02", "front": "What is the smallest prime number?", "back": "2", "explain": "2 is also the only even prime number.", "wrong": ["1", "3", "0"]},
@@ -45,6 +47,7 @@
           "id": "c6-ss-01",
           "number": 1,
           "title": "The Earth in the Solar System",
+          "pairs": [["Largest planet", "Jupiter"], ["Red Planet", "Mars"], ["Closest to the Sun", "Mercury"], ["Our planet", "Earth"]],
           "cards": [
             {"id": "c6g1-01", "front": "Which is the largest planet in the solar system?", "back": "Jupiter", "wrong": ["Saturn", "Earth", "Neptune"]},
             {"id": "c6g1-02", "front": "Which planet is closest to the Sun?", "back": "Mercury", "wrong": ["Venus", "Mars", "Earth"]},
@@ -63,6 +66,7 @@
           "id": "c6-eng-01",
           "number": 1,
           "title": "Parts of Speech",
+          "pairs": [["Noun", "Table"], ["Verb", "Run"], ["Adjective", "Soft"], ["Adverb", "Quickly"]],
           "cards": [
             {"id": "c6e1-01", "front": "A word that describes a noun is called a …?", "back": "Adjective", "wrong": ["Verb", "Adverb", "Pronoun"]},
             {"id": "c6e1-02", "front": "Find the pronoun: She is my friend.", "back": "She", "explain": "A pronoun takes the place of a noun.", "wrong": ["is", "friend"]},

@@ -9,6 +9,7 @@
           "id": "c8-sci-01",
           "number": 1,
           "title": "Crop Production and Management",
+          "pairs": [["Kharif crop", "Paddy"], ["Rabi crop", "Wheat"], ["Weedicide", "Kills weeds"], ["Sickle", "Harvesting"]],
           "cards": [
             {"id": "c8s1-01", "front": "What are kharif crops?", "back": "Crops sown in the rainy season", "explain": "Kharif crops are sown around June–July. Paddy, maize and cotton are examples.", "wrong": ["Crops sown in winter", "Crops grown only in deserts", "Crops that need no water"]},
             {"id": "c8s1-02", "front": "Name two rabi crops.", "back": "Wheat and gram", "explain": "Rabi crops are sown in winter (October–November). Pea, mustard and linseed are also rabi crops.", "wrong": ["Paddy and maize", "Cotton and groundnut", "Maize and soybean"]},
@@ -22,14 +23,15 @@
           "id": "c8-sci-02",
           "number": 2,
           "title": "Microorganisms: Friend and Foe",
+          "pairs": [["Yeast", "Bread"], ["Lactobacillus", "Curd"], ["Rhizobium", "Nitrogen fixation"], ["Plasmodium", "Malaria"]],
           "cards": [
             {"id": "c8s2-01", "front": "Which microorganism turns milk into curd?", "back": "Lactobacillus", "backWord": "a bacterium", "explain": "It multiplies in milk and converts it into curd. Bacteria are also used to make cheese and pickles.", "wrong": ["Yeast", "Rhizobium", "Penicillium"]},
-            {"id": "c8s2-02", "front": "Which microorganism makes bread dough rise?", "back": "Yeast", "backWord": "a fungus", "explain": "Yeast respires and releases carbon dioxide. The gas bubbles fill the dough and increase its volume.", "wrong": ["Lactobacillus", "Rhizobium", "Amoeba"]},
+            {"id": "c8s2-02", "front": "Which microorganism makes bread dough rise?", "back": "Yeast", "backWord": "a fungus", "explain": "Yeast respires and releases carbon dioxide. The gas bubbles fill the dough and increase its volume.", "wrong": ["Lactobacillus", "Rhizobium", "Amoeba"], "tf": {"text": "Yeast makes bread dough rise by giving off carbon dioxide.", "answer": true}},
             {"id": "c8s2-03", "front": "What is the conversion of sugar into alcohol called?", "back": "Fermentation", "explain": "Louis Pasteur discovered fermentation in 1857. Yeast is used for it.", "wrong": ["Pasteurisation", "Nitrogen fixation", "Decomposition"]},
             {"id": "c8s2-04", "front": "Who discovered penicillin?", "back": "Alexander Fleming", "explain": "In 1929 Fleming noticed that a mould stopped the growth of bacteria. It was the first antibiotic.", "wrong": ["Louis Pasteur", "Edward Jenner", "Robert Koch"]},
             {"id": "c8s2-05", "front": "Which disease does the female Anopheles mosquito carry?", "back": "Malaria", "explain": "It carries the protozoan Plasmodium, which causes malaria.", "wrong": ["Dengue", "Cholera", "Typhoid"]},
-            {"id": "c8s2-06", "front": "Which bacterium fixes nitrogen in the root nodules of legumes?", "back": "Rhizobium", "explain": "Rhizobium lives in the root nodules of beans and peas and fixes nitrogen from the air.", "wrong": ["Lactobacillus", "Yeast", "Plasmodium"]},
-            {"id": "c8s2-07", "front": "Which of these diseases is caused by a virus?", "back": "Polio", "explain": "Common cold, influenza, measles, polio and chickenpox are caused by viruses.", "wrong": ["Tuberculosis", "Typhoid", "Cholera"]},
+            {"id": "c8s2-06", "front": "Which bacterium fixes nitrogen in the root nodules of legumes?", "back": "Rhizobium", "explain": "Rhizobium lives in the root nodules of beans and peas and fixes nitrogen from the air.", "wrong": ["Lactobacillus", "Yeast", "Plasmodium"], "blank": {"text": "___ bacteria fix nitrogen in the root nodules of leguminous plants.", "answer": "Rhizobium"}},
+            {"id": "c8s2-07", "front": "Which of these diseases is caused by a virus?", "back": "Polio", "explain": "Common cold, influenza, measles, polio and chickenpox are caused by viruses.", "wrong": ["Tuberculosis", "Typhoid", "Cholera"], "tf": {"text": "Antibiotics can cure the common cold and flu.", "answer": false}},
             {"id": "c8s2-08", "front": "Why is salt used to preserve pickles?", "back": "It stops bacteria from growing", "explain": "Salt draws water out of bacteria, so they cannot grow. Sugar works the same way in jams.", "wrong": ["It adds colour", "It makes bacteria grow faster", "It adds vitamins"]}
           ]
         }
@@ -43,6 +45,7 @@
           "id": "c8-maths-01",
           "number": 1,
           "title": "Rational Numbers",
+          "pairs": [["Additive identity", "0"], ["Multiplicative identity", "1"], ["Reciprocal of 2/3", "3/2"], ["Additive inverse of 5", "−5"]],
           "cards": [
             {"id": "c8m1-01", "front": "What is the additive identity for rational numbers?", "back": "0", "explain": "For any rational number a, a + 0 = 0 + a = a.", "wrong": ["1", "-1", "Infinity"]},
             {"id": "c8m1-02", "front": "What is the multiplicative inverse of -3/5?", "back": "-5/3", "explain": "(-3/5) × (-5/3) = 1. A number times its reciprocal is 1.", "wrong": ["5/3", "3/5", "-3/5"]},
@@ -61,6 +64,7 @@
           "id": "c8-ss-01",
           "number": 1,
           "title": "The Indian Constitution",
+          "pairs": [["Republic Day", "26 January"], ["Independence Day", "15 August"], ["Drafting Committee chair", "B. R. Ambedkar"], ["Makes laws", "Parliament"]],
           "cards": [
             {"id": "c8c1-01", "front": "When did the Constitution of India come into effect?", "back": "26 January 1950", "explain": "We celebrate this day as Republic Day.", "wrong": ["15 August 1947", "26 November 1949", "2 October 1950"]},
             {"id": "c8c1-02", "front": "Who chaired the Drafting Committee of the Constitution?", "back": "Dr B. R. Ambedkar", "wrong": ["Jawaharlal Nehru", "Dr Rajendra Prasad", "Sardar Vallabhbhai Patel"]},
@@ -79,6 +83,7 @@
           "id": "c8-eng-01",
           "number": 1,
           "title": "Grammar and Usage",
+          "pairs": [["Break the ice", "Start a conversation"], ["Piece of cake", "Very easy"], ["Under the weather", "Unwell"], ["Once in a blue moon", "Very rarely"]],
           "cards": [
             {"id": "c8e1-01", "front": "She said, \"I am tired.\" → She said that she ___ tired.", "back": "was", "explain": "In reported speech, 'am' usually moves back to 'was'.", "wrong": ["is", "am", "were"]},
             {"id": "c8e1-02", "front": "Make it passive: The boy kicked the ball.", "back": "The ball was kicked by the boy.", "wrong": ["The ball kicked the boy.", "The ball is kicked by the boy.", "The boy was kicked by the ball."]},

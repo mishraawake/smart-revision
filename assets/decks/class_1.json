@@ -9,6 +9,7 @@
           "id": "c1-maths-01",
           "number": 1,
           "title": "Numbers 1 to 20",
+          "pairs": [["2 + 2", "4"], ["3 + 3", "6"], ["5 + 5", "10"], ["4 + 5", "9"]],
           "cards": [
             {"id": "c1m1-01", "front": "What comes after 9?", "back": "10", "backWord": "ten", "explain": "8, 9, 10. Ten comes after nine.", "wrong": ["8", "11", "19"]},
             {"id": "c1m1-02", "front": "How many fingers are on one hand?", "back": "5", "backWord": "five", "explain": "Count them: 1, 2, 3, 4, 5.", "wrong": ["4", "6", "10"]},
@@ -22,6 +23,7 @@
           "id": "c1-maths-02",
           "number": 2,
           "title": "Shapes Around Us",
+          "pairs": [["Ball", "Sphere"], ["Dice", "Cube"], ["Pizza", "Circle"], ["Ice-cream cone", "Cone"]],
           "cards": [
             {"id": "c1m2-01", "front": "How many sides does a triangle have?", "back": "3", "backWord": "three", "explain": "Tri means three. A triangle has 3 sides.", "wrong": ["4", "2", "5"]},
             {"id": "c1m2-02", "front": "Which shape has 4 equal sides?", "back": "Square", "explain": "A square has 4 sides, all the same length.", "wrong": ["Triangle", "Circle", "Star"]},
@@ -40,6 +42,7 @@
           "id": "c1-eng-01",
           "number": 1,
           "title": "Letters and Sounds",
+          "pairs": [["A", "Apple"], ["B", "Ball"], ["C", "Cat"], ["D", "Dog"]],
           "cards": [
             {"id": "c1e1-01", "front": "Which letter comes after A?", "back": "B", "explain": "A, B, C, D…", "wrong": ["C", "D", "Z"]},
             {"id": "c1e1-02", "front": "A is for …?", "back": "Apple", "explain": "Apple starts with the sound 'a'.", "wrong": ["Ball", "Cat", "Dog"]},
@@ -52,6 +55,7 @@
           "id": "c1-eng-02",
           "number": 2,
           "title": "Colours",
+          "pairs": [["Sky", "Blue"], ["Grass", "Green"], ["Banana", "Yellow"], ["Milk", "White"]],
           "cards": [
             {"id": "c1e2-01", "front": "What colour is the sky on a sunny day?", "back": "Blue", "wrong": ["Green", "Red", "Black"]},
             {"id": "c1e2-02", "front": "What colour is a ripe banana?", "back": "Yellow", "wrong": ["Blue", "Purple", "Black"]},

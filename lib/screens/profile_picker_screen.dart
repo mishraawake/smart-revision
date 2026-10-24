@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../models/account.dart';
 import '../models/profile.dart';
+import '../state/account_state.dart';
 import '../state/app_state.dart';
 import '../theme/app_theme.dart';
 import '../theme/tokens.dart';
@@ -15,12 +17,35 @@ class ProfilePickerScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final state = AppScope.of(context);
     final junior = Tier.of(context).isJunior;
+    final accounts = AccountScope.maybeOf(context);
     return Scaffold(
       body: SafeArea(
         child: junior
             ? _JuniorPicker(state: state)
             : _SeniorPicker(state: state),
       ),
+      // Only parents get the grown-up view; a student's own phone doesn't.
+      bottomNavigationBar: accounts?.account?.role == Role.parent
+          ? SafeArea(
+              child: Padding(
+                padding: const EdgeInsets.only(bottom: 8),
+                child: Center(
+                  heightFactor: 1,
+                  child: TextButton.icon(
+                    onPressed: () => accounts!.setAdultMode(true),
+                    icon: const Icon(Icons.lock_outline, size: 18),
+                    label: const Text(
+                      'For parents',
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w800,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            )
+          : null,
     );
   }
 }
@@ -236,7 +261,7 @@ class _SeniorPicker extends StatelessWidget {
                     const SizedBox(width: 12),
                     Expanded(
                       child: Text(
-                        '${p.name} Â· ${_subjectName(p.lastSubjectId)}, ${timeAgo(state.now(), p.lastStudiedAt!)}',
+                        '${p.name} · ${_subjectName(p.lastSubjectId)}, ${timeAgo(state.now(), p.lastStudiedAt!)}',
                         style: const TextStyle(fontSize: 15),
                       ),
                     ),
@@ -270,7 +295,7 @@ class _SeniorPicker extends StatelessWidget {
         ),
         const SizedBox(height: 12),
         const Text(
-          'No passwords Â· profiles stay on this phone',
+          'No passwords · profiles stay on this phone',
           textAlign: TextAlign.center,
           style: TextStyle(fontSize: 13, color: AppColors.inkMuted),
         ),

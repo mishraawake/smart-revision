@@ -13,8 +13,9 @@ class ClassDeck {
   final int classLevel;
   final List<Subject> subjects;
 
-  Iterable<Flashcard> get allCards =>
-      subjects.expand((s) => s.chapters).expand((c) => c.cards);
+  Iterable<Chapter> get chapters => subjects.expand((s) => s.chapters);
+
+  Iterable<Flashcard> get allCards => chapters.expand((c) => c.cards);
 }
 
 class Subject {
@@ -46,6 +47,7 @@ class Chapter {
     required this.number,
     required this.title,
     required this.cards,
+    this.pairs = const [],
   });
 
   factory Chapter.fromJson(
@@ -66,6 +68,10 @@ class Chapter {
             chapterId: id,
           ),
       ],
+      pairs: [
+        for (final p in (json['pairs'] as List?) ?? const [])
+          MatchPair((p as List)[0] as String, p[1] as String),
+      ],
     );
   }
 
@@ -74,6 +80,33 @@ class Chapter {
   final int number;
   final String title;
   final List<Flashcard> cards;
+
+  /// Short pairs for "Match the pairs" questions, such as Yeast ↔ Bread.
+  final List<MatchPair> pairs;
+}
+
+class MatchPair {
+  const MatchPair(this.left, this.right);
+
+  final String left;
+  final String right;
+}
+
+/// A hand-written true-or-false sentence about a card.
+class TrueFalse {
+  const TrueFalse(this.text, this.answer);
+
+  final String text;
+  final bool answer;
+}
+
+/// A hand-written sentence with a gap, such as "Count in twos: two, four,
+/// six, ___, ten." The gap is written as three underscores.
+class Blank {
+  const Blank(this.text, this.answer);
+
+  final String text;
+  final String answer;
 }
 
 class Flashcard {
@@ -88,24 +121,36 @@ class Flashcard {
     this.explain,
     this.source,
     this.wrong = const [],
+    this.trueFalse,
+    this.blank,
   });
 
   factory Flashcard.fromJson(
     Map<String, dynamic> json, {
     required String subjectId,
     required String chapterId,
-  }) => Flashcard(
-    id: json['id'] as String,
-    subjectId: subjectId,
-    chapterId: chapterId,
-    front: json['front'] as String,
-    back: json['back'] as String,
-    hint: json['hint'] as String?,
-    backWord: json['backWord'] as String?,
-    explain: json['explain'] as String?,
-    source: json['source'] as String?,
-    wrong: [...?(json['wrong'] as List?)?.cast<String>()],
-  );
+  }) {
+    final tf = json['tf'] as Map<String, dynamic>?;
+    final blank = json['blank'] as Map<String, dynamic>?;
+    return Flashcard(
+      id: json['id'] as String,
+      subjectId: subjectId,
+      chapterId: chapterId,
+      front: json['front'] as String,
+      back: json['back'] as String,
+      hint: json['hint'] as String?,
+      backWord: json['backWord'] as String?,
+      explain: json['explain'] as String?,
+      source: json['source'] as String?,
+      wrong: [...?(json['wrong'] as List?)?.cast<String>()],
+      trueFalse: tf == null
+          ? null
+          : TrueFalse(tf['text'] as String, tf['answer'] as bool),
+      blank: blank == null
+          ? null
+          : Blank(blank['text'] as String, blank['answer'] as String),
+    );
+  }
 
   final String id;
   final String subjectId;
@@ -124,4 +169,7 @@ class Flashcard {
   /// Hand-written wrong answers for quizzes. May be empty; the quiz fills
   /// in options from other cards.
   final List<String> wrong;
+
+  final TrueFalse? trueFalse;
+  final Blank? blank;
 }

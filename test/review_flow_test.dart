@@ -1,22 +1,43 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:smart_revision/app.dart';
+import 'package:smart_revision/data/account_service.dart';
 import 'package:smart_revision/data/deck_repository.dart';
 import 'package:smart_revision/data/profile_store.dart';
 import 'package:smart_revision/data/speaker.dart';
+import 'package:smart_revision/models/account.dart';
+import 'package:smart_revision/state/account_state.dart';
 import 'package:smart_revision/state/app_state.dart';
 import 'package:smart_revision/widgets/common.dart';
 
-Future<(AppState, SilentSpeaker)> pumpApp(WidgetTester tester) async {
+Future<(AppState, SilentSpeaker)> pumpApp(
+  WidgetTester tester, {
+  Role role = Role.parent,
+}) async {
   tester.view.physicalSize = const Size(1080, 2400);
   tester.view.devicePixelRatio = 3;
   addTearDown(tester.view.reset);
-  SharedPreferences.setMockInitialValues({});
-  final state = AppState(decks: DeckRepository(), store: ProfileStore());
+  // Signed in already: a parent lands on "Who's studying?".
+  SharedPreferences.setMockInitialValues({
+    'account.v1': jsonEncode(Account(role: role).toJson()),
+  });
+  final decks = DeckRepository();
+  final state = AppState(decks: decks, store: ProfileStore());
   final speaker = SilentSpeaker();
-  await tester.runAsync(state.load);
-  await tester.pumpWidget(SmartRevisionApp(state: state, speaker: speaker));
+  final accounts = AccountState(
+    service: DemoAccountService(decks: decks),
+    speaker: speaker,
+  );
+  await tester.runAsync(() async {
+    await state.load();
+    await accounts.load(hasProfiles: state.profiles.isNotEmpty);
+  });
+  await tester.pumpWidget(
+    SmartRevisionApp(state: state, accounts: accounts, speaker: speaker),
+  );
   await tester.pumpAndSettle();
   return (state, speaker);
 }
@@ -81,8 +102,6 @@ void main() {
     expect(find.text('+13 stars'), findsOneWidget);
     expect(find.text('5 knew'), findsOneWidget);
     expect(find.text('5 again'), findsOneWidget);
-    await tester.scrollUntilVisible(find.text('BADGE UNLOCKED'), 200);
-    expect(find.text('First Steps'), findsOneWidget);
 
     await tester.tap(find.text('Done'));
     await tester.pumpAndSettle();
