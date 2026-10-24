@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../data/account_service.dart';
 import '../../models/account.dart';
 import '../../state/account_state.dart';
 import '../../widgets/common.dart';
@@ -39,12 +40,19 @@ class _StudentSignupScreenState extends State<StudentSignupScreen> {
     setState(() => _sending = true);
     final accounts = AccountScope.read(context);
     final nav = Navigator.of(context);
-    await accounts.requestApproval(
-      name: _name.text.trim(),
-      classLevel: _class!,
-      avatar: _avatar,
-      parentPhone: _phone.text,
-    );
+    try {
+      await accounts.requestApproval(
+        name: _name.text.trim(),
+        classLevel: _class!,
+        avatar: _avatar,
+        parentPhone: _phone.text,
+      );
+    } on AccountException catch (e) {
+      if (!mounted) return;
+      setState(() => _sending = false);
+      showAccountError(context, e);
+      return;
+    }
     // The app's home is now the waiting screen.
     nav.popUntil((r) => r.isFirst);
   }

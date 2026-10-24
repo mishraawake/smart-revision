@@ -333,7 +333,7 @@ describe('classes', () => {
       teacherUid,
       createdAt: serverTimestamp(),
     });
-    batch.set(doc(db, 'joinCodes/K7M2QX'), { classId: 'k1', teacherUid });
+    batch.set(doc(db, 'joinCodes/K7M2QX'), { classId: 'k1', teacherUid, classLevel: 8 });
     return batch.commit();
   }
 
@@ -500,5 +500,150 @@ describe('assignments', () => {
       'classes/k1/assignments/a1/submissions/c1': { score: 8, total: 10, answers: [], finishedAt: now() },
     });
     await assertFails(getDoc(doc(otherParent(), 'classes/k1/assignments/a1/submissions/c1')));
+  });
+});
+
+// ---- The app's own flows -----------------------------------------------------
+// Mirrors FirebaseAccountService call for call, so a query the rules would
+// reject on a real phone fails here first.
+
+describe('app flows', () => {
+  test('student signs up, parent approves, student finds their child', async () => {
+    await seed({ 'users/parent1': users['users/parent1'] });
+    // requestApproval (anonymous student)
+    await assertSucceeds(
+      setDoc(doc(student(), 'approvalRequests/r1'), {
+        studentUid: 'student1',
+        name: 'Diya',
+        classLevel: 8,
+        avatar: 2,
+        parentPhone: PARENT_PHONE,
+        status: 'pending',
+        createdAt: serverTimestamp(),
+      }),
+    );
+    // requestsForMe
+    const db = parent();
+    const pending = await assertSucceeds(
+      getDocs(
+        query(
+          collection(db, 'approvalRequests'),
+          where('parentPhone', '==', PARENT_PHONE),
+          where('status', '==', 'pending'),
+        ),
+      ),
+    );
+    if (pending.size !== 1) throw new Error('parent should see the request');
+    // approve: read studentUid, then batch
+    const req = await assertSucceeds(getDoc(doc(db, 'approvalRequests/r1')));
+    const batch = writeBatch(db);
+    batch.update(doc(db, 'approvalRequests/r1'), { status: 'approved', decidedAt: serverTimestamp() });
+    batch.set(doc(db, 'children/c1'), {
+      parentUid: 'parent1',
+      studentUid: req.data().studentUid,
+      fromRequest: 'r1',
+      name: 'Diya',
+      classLevel: 8,
+      avatar: 2,
+      createdAt: serverTimestamp(),
+    });
+    await assertSucceeds(batch.commit());
+    // approvedChildId
+    await assertSucceeds(getDoc(doc(student(), 'approvalRequests/r1')));
+    const mine = await assertSucceeds(
+      getDocs(query(collection(student(), 'children'), where('studentUid', '==', 'student1'))),
+    );
+    if (mine.docs[0]?.id !== 'c1') throw new Error('student should find c1');
+    // register student
+    await assertSucceeds(
+      setDoc(doc(student(), 'users/student1'), { role: 'student', createdAt: serverTimestamp() }),
+    );
+  });
+
+  test('parent restores children and saves edits', async () => {
+    await seed({ 'users/parent1': users['users/parent1'], 'children/c1': aChild });
+    const got = await assertSucceeds(
+      getDocs(query(collection(parent(), 'children'), where('parentUid', '==', 'parent1'))),
+    );
+    if (got.size !== 1) throw new Error('expected one child');
+    // saveChild: get then update
+    await assertSucceeds(getDoc(doc(parent(), 'children/c1')));
+    await assertSucceeds(
+      updateDoc(doc(parent(), 'children/c1'), { name: 'Aaru', classLevel: 3, avatar: 2 }),
+    );
+    // saveChild for a new one: get (missing) then set
+    await assertSucceeds(getDoc(doc(parent(), 'children/c2')));
+  });
+
+  test('teacher makes a class, student joins by code, work flows both ways', async () => {
+    await seed({
+      ...users,
+      'children/c1': { ...aChild, name: 'Diya', classLevel: 8, studentUid: 'student1' },
+    });
+    // createClass: code free? then batch
+    const t = teacher();
+    await assertSucceeds(getDoc(doc(t, 'joinCodes/K7M2QX')));
+    const b = writeBatch(t);
+    b.set(doc(t, 'classes/k1'), { ...aClass, createdAt: serverTimestamp() });
+    b.set(doc(t, 'joinCodes/K7M2QX'), { classId: 'k1', teacherUid: 'teacher1', classLevel: 8 });
+    await assertSucceeds(b.commit());
+    // loadClasses
+    await assertSucceeds(
+      getDocs(query(collection(t, 'classes'), where('teacherUid', '==', 'teacher1'))),
+    );
+    // joinClass by the student's own login
+    const s = student();
+    const code = await assertSucceeds(getDoc(doc(s, 'joinCodes/K7M2QX')));
+    if (code.data().classLevel !== 8) throw new Error('code should carry the class');
+    // Not a member yet: the app treats a denied read as "not in".
+    await assertFails(getDoc(doc(s, 'classes/k1/members/c1')));
+    const child = await assertSucceeds(getDoc(doc(s, 'children/c1')));
+    const jb = writeBatch(s);
+    jb.update(doc(s, 'classes/k1'), { memberUids: arrayUnion('student1') });
+    jb.set(doc(s, 'classes/k1/members/c1'), {
+      uids: [child.data().parentUid, 'student1'],
+      name: child.data().name,
+      parentApproved: false,
+      joinedAt: serverTimestamp(),
+    });
+    await assertSucceeds(jb.commit());
+    // The parent approves sharing.
+    await assertSucceeds(updateDoc(doc(parent(), 'classes/k1/members/c1'), { parentApproved: true }));
+
+    // Teacher loads members and sets a quiz.
+    await assertSucceeds(getDocs(collection(t, 'classes/k1/members')));
+    await assertSucceeds(
+      getDocs(query(collection(t, 'classes/k1/assignments'))),
+    );
+    await assertSucceeds(
+      setDoc(doc(t, 'classes/k1/assignments/a1'), {
+        kind: 'quiz',
+        subjectId: 'science',
+        chapterId: 'c8-sci-01',
+        due: Timestamp.fromMillis(Date.now() + 86400000),
+        createdAt: Timestamp.now(),
+      }),
+    );
+
+    // assignmentsFor: classes containing me, my member row, work, my submission
+    const mineClasses = await assertSucceeds(
+      getDocs(query(collection(s, 'classes'), where('memberUids', 'array-contains', 'student1'))),
+    );
+    if (mineClasses.size !== 1) throw new Error('student should see the class');
+    await assertSucceeds(getDoc(doc(s, 'classes/k1/members/c1')));
+    await assertSucceeds(getDocs(collection(s, 'classes/k1/assignments')));
+    await assertSucceeds(getDoc(doc(s, 'classes/k1/assignments/a1/submissions/c1')));
+
+    // submit
+    await assertSucceeds(
+      setDoc(doc(s, 'classes/k1/assignments/a1/submissions/c1'), {
+        score: 7,
+        total: 10,
+        answers: [{ cardId: 'c8s1-01', right: false, given: 'Crops sown in winter' }],
+        finishedAt: serverTimestamp(),
+      }),
+    );
+    // results
+    await assertSucceeds(getDocs(collection(t, 'classes/k1/assignments/a1/submissions')));
   });
 });

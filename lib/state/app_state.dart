@@ -104,9 +104,20 @@ class AppState extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future<Profile> addProfile(String name, int classLevel, {int? avatar}) async {
+  /// Told about profiles made on this phone, so they can be saved to the
+  /// parent's account.
+  void Function(Profile p)? onProfileAdded;
+
+  /// [id] is given when the child already exists on the server (an approved
+  /// student, or one restored on a new phone); those aren't reported back.
+  Future<Profile> addProfile(
+    String name,
+    int classLevel, {
+    int? avatar,
+    String? id,
+  }) async {
     final p = Profile(
-      id: '${now().microsecondsSinceEpoch}',
+      id: id ?? '${now().microsecondsSinceEpoch}',
       name: name.trim(),
       classLevel: classLevel,
       avatar: avatar ?? profiles.length,
@@ -114,6 +125,7 @@ class AppState extends ChangeNotifier {
     profiles.add(p);
     await store.saveProfiles(profiles);
     notifyListeners();
+    if (id == null) onProfileAdded?.call(p);
     return p;
   }
 

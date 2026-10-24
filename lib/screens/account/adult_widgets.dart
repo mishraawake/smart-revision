@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import '../../data/account_service.dart';
 import '../../theme/app_theme.dart';
 import '../../theme/tokens.dart';
 import '../../widgets/common.dart';
@@ -694,3 +695,8 @@ class AppMark extends StatelessWidget {
     ],
   );
 }
+
+/// Shows an [AccountException]'s message as a snackbar.
+void showAccountError(BuildContext context, AccountException e) =>
+    ScaffoldMessenger.of(context)
+        .showSnackBar(SnackBar(content: Text(e.message)));

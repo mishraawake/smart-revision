@@ -113,7 +113,12 @@ service cloud.firestore {
     // ---- Children --------------------------------------------------------
 
     match /children/{childId} {
-      allow read: if caresFor(childId);
+      // A missing child reads as empty (the app checks before creating);
+      // there is nothing in it to leak.
+      allow get: if signedIn() && (resource == null
+        || resource.data.parentUid == uid() || resource.data.get('studentUid', null) == uid());
+      allow list: if signedIn()
+        && (resource.data.parentUid == uid() || resource.data.get('studentUid', null) == uid());
 
       // Added by a parent directly, or made from an approved student request,
       // which links the student's own login.
@@ -196,10 +201,13 @@ service cloud.firestore {
 
       allow create: if isRole('teacher')
         && code.matches('^[A-HJ-NP-Z2-9]{6}$')
-        && request.resource.data.keys().hasOnly(['classId', 'teacherUid'])
+        && request.resource.data.keys().hasOnly(['classId', 'teacherUid', 'classLevel'])
         && request.resource.data.teacherUid == uid()
         && getAfter(/databases/$(database)/documents/classes/$(request.resource.data.classId)).data.teacherUid == uid()
-        && getAfter(/databases/$(database)/documents/classes/$(request.resource.data.classId)).data.joinCode == code;
+        && getAfter(/databases/$(database)/documents/classes/$(request.resource.data.classId)).data.joinCode == code
+        // Lets a student be told "this code is for Class 8" before joining.
+        && getAfter(/databases/$(database)/documents/classes/$(request.resource.data.classId)).data.classLevel
+          == request.resource.data.classLevel;
 
       allow delete: if signedIn() && resource.data.teacherUid == uid();
     }

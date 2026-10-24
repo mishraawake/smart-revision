@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import '../../logic/levels.dart';
 import '../../logic/quiz.dart';
 import '../../models/deck.dart';
+import '../../state/account_state.dart';
 import '../../state/app_state.dart';
 import '../../theme/app_theme.dart';
 import '../../theme/tokens.dart';
@@ -187,6 +188,24 @@ class _QuizScreenState extends State<QuizScreen> {
         duration: DateTime.now().difference(_started),
         chapter: widget.chapter,
       );
+      if (!mounted) return;
+      // Hands it in if a teacher set a quiz on this chapter.
+      if (widget.chapter case final ch?) {
+        AccountScope.maybeOf(context)?.submitQuiz(
+          AppScope.read(context).current!.id,
+          ch.id,
+          score: _session.score,
+          total: _session.total,
+          answers: [
+            for (final a in _session.answers)
+              {
+                'cardId': a.question.card?.id,
+                'right': a.correct,
+                'given': a.given,
+              },
+          ],
+        );
+      }
       if (!mounted) return;
       Navigator.of(context).pushReplacement(
         MaterialPageRoute<void>(

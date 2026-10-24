@@ -168,7 +168,8 @@ class _AssignmentResultsScreenState extends State<AssignmentResultsScreen> {
                             : 'Last active ${shortDate(now, s.lastActive!).toLowerCase()}',
                       ),
                   ],
-                  if (r.notYet.isNotEmpty) ...[
+                  if (r.notYet.isNotEmpty &&
+                      AccountScope.of(context).service.canRemind) ...[
                     const SizedBox(height: 16),
                     SecondaryButton(
                       label: _reminded

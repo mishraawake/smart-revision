@@ -19,17 +19,57 @@ abstract class AccountService {
   /// The code [verifyOtp] accepts in demo mode, shown as a hint.
   String? get demoOtp;
 
+  /// Throws [AccountException] with a message for the user when the code
+  /// can't be sent (bad number, too many tries, no internet).
   Future<void> sendOtp(String phone, {bool call = false});
   Future<bool> verifyOtp(String phone, String code);
 
-  /// Texts the parent a link to approve [name]'s account.
+  /// After the OTP: records who this number belongs to. Throws
+  /// [AccountException] if the number is already set up with another role.
+  Future<void> register(Role role, String phone);
+  Future<void> signOut();
+
+  /// Sends [name]'s request to the parent's phone number.
   Future<ApprovalRequest> requestApproval({
     required String name,
     required int classLevel,
     required int avatar,
     required String parentPhone,
   });
-  Future<bool> isApproved(ApprovalRequest request);
+
+  /// The child id once the parent has said yes; null while waiting.
+  Future<String?> approvedChildId(ApprovalRequest request);
+
+  // ---- Parent ---------------------------------------------------------------
+
+  /// Children saved for this parent, to restore profiles on a new phone.
+  Future<List<ChildRecord>> loadChildren();
+  Future<void> saveChild(ChildRecord child);
+
+  /// Students who gave this parent's number and are waiting.
+  Future<List<ApprovalRequest>> requestsForMe();
+
+  /// Says yes and returns the new child's id.
+  Future<String> approve(ApprovalRequest request);
+  Future<void> decline(ApprovalRequest request);
+
+  // ---- Student --------------------------------------------------------------
+
+  /// [childId] joins the class with [code]; [classLevel] must match.
+  Future<JoinResult> joinClass(String code, ChildRecord child);
+  Future<List<StudentAssignment>> assignmentsFor(String childId);
+  Future<void> submit(
+    StudentAssignment a,
+    String childId, {
+    required int score,
+    required int total,
+    required List<Map<String, Object?>> answers,
+  });
+
+  // ---- Teacher --------------------------------------------------------------
+
+  /// False until push reminders exist; the button is hidden.
+  bool get canRemind;
 
   Future<List<TeacherClass>> loadClasses();
   Future<TeacherClass> createClass({
@@ -45,6 +85,15 @@ abstract class AccountService {
     Chapter chapter,
   );
   Future<void> remind(TeacherClass c, Assignment a);
+}
+
+/// A failure worth showing the user as is.
+class AccountException implements Exception {
+  const AccountException(this.message);
+  final String message;
+
+  @override
+  String toString() => message;
 }
 
 class DemoAccountService implements AccountService {
@@ -90,8 +139,55 @@ class DemoAccountService implements AccountService {
   );
 
   @override
-  Future<bool> isApproved(ApprovalRequest request) async =>
-      now().difference(request.sentAt) >= approvalDelay;
+  Future<String?> approvedChildId(ApprovalRequest request) async =>
+      now().difference(request.sentAt) >= approvalDelay ? request.id : null;
+
+  @override
+  Future<void> register(Role role, String phone) async {}
+
+  @override
+  Future<void> signOut() async {}
+
+  // Children live only on the phone in demo mode.
+  @override
+  Future<List<ChildRecord>> loadChildren() async => const [];
+
+  @override
+  Future<void> saveChild(ChildRecord child) async {}
+
+  @override
+  Future<List<ApprovalRequest>> requestsForMe() async => const [];
+
+  @override
+  Future<String> approve(ApprovalRequest request) async => request.id;
+
+  @override
+  Future<void> decline(ApprovalRequest request) async {}
+
+  /// The sample class's code joins; anything else is wrong.
+  @override
+  Future<JoinResult> joinClass(String code, ChildRecord child) async {
+    final c = (await loadClasses()).where((c) => c.joinCode == code);
+    if (c.isEmpty) return JoinResult.badCode;
+    if (c.first.classLevel != child.classLevel) return JoinResult.wrongClass;
+    return JoinResult.joined;
+  }
+
+  @override
+  Future<List<StudentAssignment>> assignmentsFor(String childId) async =>
+      const [];
+
+  @override
+  Future<void> submit(
+    StudentAssignment a,
+    String childId, {
+    required int score,
+    required int total,
+    required List<Map<String, Object?>> answers,
+  }) async {}
+
+  @override
+  bool get canRemind => true;
 
   // ---- Classes ------------------------------------------------------------
 

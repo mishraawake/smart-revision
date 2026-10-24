@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../data/account_service.dart';
 import '../../logic/insights.dart';
+import '../../models/account.dart';
 import '../../models/deck.dart';
 import '../../models/profile.dart';
 import '../../state/account_state.dart';
@@ -10,6 +12,7 @@ import '../../widgets/common.dart';
 import '../../widgets/format.dart';
 import '../account/add_child_screen.dart';
 import '../account/adult_widgets.dart';
+import '../join_class_dialog.dart';
 
 /// One child at a time: this week's minutes, streak, chapters mastered,
 /// weak chapters and recent quizzes.
@@ -25,7 +28,47 @@ class _ParentDashboardState extends State<ParentDashboard> {
   String? _childId;
 
   @override
+  void initState() {
+    super.initState();
+    _refreshRequests();
+  }
+
+  Future<void> _refreshRequests() async {
+    try {
+      await AccountScope.read(context).loadRequests();
+    } on AccountException {
+      // Offline; shown next time.
+    }
+  }
+
+  Future<void> _decide(ApprovalRequest r, {required bool yes}) async {
+    final accounts = AccountScope.read(context);
+    final app = AppScope.read(context);
+    final messenger = ScaffoldMessenger.of(context);
+    try {
+      if (yes) {
+        final id = await accounts.approve(r);
+        final p = await app.addProfile(
+          r.name,
+          r.classLevel,
+          avatar: r.avatar,
+          id: id,
+        );
+        setState(() => _childId = p.id);
+        messenger.showSnackBar(
+          SnackBar(content: Text('${r.name} can start revising now')),
+        );
+      } else {
+        await accounts.decline(r);
+      }
+    } on AccountException catch (e) {
+      messenger.showSnackBar(SnackBar(content: Text(e.message)));
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final requests = AccountScope.of(context).requests;
     final app = AppScope.of(context);
     final kids = app.profiles;
     final now = app.now();
@@ -92,7 +135,32 @@ class _ParentDashboardState extends State<ParentDashboard> {
             ],
           ),
         ),
-        const SizedBox(height: 16),
+        for (final r in requests) ...[
+          const SizedBox(height: 12),
+          _RequestCard(
+            request: r,
+            onApprove: () => _decide(r, yes: true),
+            onDecline: () => _decide(r, yes: false),
+          ),
+        ],
+        if (child != null) ...[
+          const SizedBox(height: 12),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: TextButton.icon(
+              onPressed: () => showJoinClassDialog(context, child),
+              icon: const Icon(Icons.group_add_outlined, size: 20),
+              label: Text(
+                "Join ${child.name}'s class",
+                style: const TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.w800,
+                ),
+              ),
+            ),
+          ),
+        ],
+        const SizedBox(height: 8),
         if (child == null)
           AdultCard(
             child: Column(
@@ -128,6 +196,74 @@ class _ParentDashboardState extends State<ParentDashboard> {
       ],
     );
   }
+}
+
+/// A Class 6–10 student who gave this parent's number.
+class _RequestCard extends StatelessWidget {
+  const _RequestCard({
+    required this.request,
+    required this.onApprove,
+    required this.onDecline,
+  });
+
+  final ApprovalRequest request;
+  final VoidCallback onApprove;
+  final VoidCallback onDecline;
+
+  @override
+  Widget build(BuildContext context) => AdultCard(
+    selected: true,
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Row(
+          children: [
+            Avatar(name: request.name, index: request.avatar, size: 44),
+            const SizedBox(width: 12),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    '${request.name} wants to join',
+                    style: const TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w800,
+                    ),
+                  ),
+                  Text(
+                    'Class ${request.classLevel} · asked from their own phone',
+                    style: labelStyle,
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+        const SizedBox(height: 12),
+        const Text(
+          'Approving lets them sign in on their phone. You will see their '
+          'progress here.',
+          style: mutedStyle,
+        ),
+        const SizedBox(height: 12),
+        Row(
+          children: [
+            Expanded(
+              child: SecondaryButton(
+                label: 'Not my child',
+                onPressed: onDecline,
+              ),
+            ),
+            const SizedBox(width: 10),
+            Expanded(
+              child: PrimaryButton(label: 'Approve', onPressed: onApprove),
+            ),
+          ],
+        ),
+      ],
+    ),
+  );
 }
 
 class _ChildTab extends StatelessWidget {

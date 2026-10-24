@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import '../../data/account_service.dart';
 import '../../models/account.dart';
 import '../../state/account_state.dart';
 import '../../state/app_state.dart';
@@ -65,7 +66,13 @@ class _OtpScreenState extends State<OtpScreen> {
   Future<void> _resend({bool call = false}) async {
     final accounts = AccountScope.read(context);
     final messenger = ScaffoldMessenger.of(context);
-    await accounts.service.sendOtp(widget.phone, call: call);
+    try {
+      await accounts.service.sendOtp(widget.phone, call: call);
+    } on AccountException catch (e) {
+      if (mounted) showAccountError(context, e);
+      return;
+    }
+    if (!mounted) return;
     setState(_startTimer);
     messenger.showSnackBar(
       SnackBar(
@@ -85,7 +92,15 @@ class _OtpScreenState extends State<OtpScreen> {
     final accounts = AccountScope.read(context);
     final app = AppScope.read(context);
     final nav = Navigator.of(context);
-    final ok = await accounts.service.verifyOtp(widget.phone, _code.text);
+    final bool ok;
+    try {
+      ok = await accounts.service.verifyOtp(widget.phone, _code.text);
+    } on AccountException catch (e) {
+      if (!mounted) return;
+      setState(() => _checking = false);
+      showAccountError(context, e);
+      return;
+    }
     if (!mounted) return;
     if (!ok) {
       setState(() {
@@ -96,7 +111,28 @@ class _OtpScreenState extends State<OtpScreen> {
       _focus.requestFocus();
       return;
     }
-    await accounts.signIn(widget.role, widget.phone);
+    try {
+      await accounts.signIn(widget.role, widget.phone);
+      if (widget.role == Role.parent) {
+        // Children saved from another phone come back.
+        for (final c in await accounts.loadChildren()) {
+          if (app.profiles.any((p) => p.id == c.id)) continue;
+          await app.addProfile(
+            c.name,
+            c.classLevel,
+            avatar: c.avatar,
+            id: c.id,
+          );
+        }
+        await accounts.loadRequests();
+      }
+    } on AccountException catch (e) {
+      await accounts.service.signOut();
+      if (!mounted) return;
+      setState(() => _checking = false);
+      showAccountError(context, e);
+      return;
+    }
     nav.popUntil((r) => r.isFirst);
     if (widget.role == Role.parent && app.profiles.isEmpty) {
       await nav.push(

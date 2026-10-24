@@ -86,8 +86,10 @@ class AccountState extends ChangeNotifier {
     }
   }
 
-  /// Called once the OTP checks out.
+  /// Called once the OTP checks out. Throws [AccountException] if the number
+  /// is already set up for another role.
   Future<void> signIn(Role role, String phone) async {
+    await service.register(role, phone);
     account = Account(
       role: role,
       phone: phone,
@@ -100,11 +102,15 @@ class AccountState extends ChangeNotifier {
   }
 
   Future<void> signOut() async {
+    await service.signOut();
     account = null;
     pending = null;
     adultMode = false;
     classes = [];
     classIndex = 0;
+    requests = [];
+    assignments = [];
+    _assignmentsChild = null;
     await _saveAccount();
     final prefs = await SharedPreferences.getInstance();
     await prefs.remove(_requestKey);
@@ -145,16 +151,114 @@ class AccountState extends ChangeNotifier {
 
   /// Checks once; returns the request when it has just been approved so the
   /// caller can create the student's profile.
-  Future<ApprovalRequest?> checkApproval() async {
+  Future<(ApprovalRequest, String)?> checkApproval() async {
     final r = pending;
-    if (r == null || !await service.isApproved(r)) return null;
+    if (r == null) return null;
+    final childId = await service.approvedChildId(r);
+    if (childId == null) return null;
+    await service.register(Role.student, '');
     pending = null;
     account = Account(role: Role.student);
     final prefs = await SharedPreferences.getInstance();
     await prefs.remove(_requestKey);
     await _saveAccount();
     notifyListeners();
+    return (r, childId);
+  }
+
+  // ---- Parent -------------------------------------------------------------
+
+  /// Students waiting for this parent to say yes.
+  List<ApprovalRequest> requests = [];
+
+  bool get _syncs => !service.isDemo && account?.role == Role.parent;
+
+  Future<void> loadRequests() async {
+    if (!_syncs) return;
+    requests = await service.requestsForMe();
+    notifyListeners();
+  }
+
+  /// Returns the new child's id for the caller to add a profile.
+  Future<String> approve(ApprovalRequest r) async {
+    final id = await service.approve(r);
+    requests = [...requests]..remove(r);
+    notifyListeners();
+    return id;
+  }
+
+  Future<void> decline(ApprovalRequest r) async {
+    await service.decline(r);
+    requests = [...requests]..remove(r);
+    notifyListeners();
+  }
+
+  Future<List<ChildRecord>> loadChildren() async =>
+      _syncs ? service.loadChildren() : const [];
+
+  /// Keeps the server copy of a parent's child up to date. Fails quietly:
+  /// the profile works on the phone either way and syncs next time.
+  Future<void> saveChild(ChildRecord child) async {
+    if (!_syncs) return;
+    try {
+      await service.saveChild(child);
+    } on AccountException {
+      // Offline; try again on the next change.
+    }
+  }
+
+  // ---- Student ------------------------------------------------------------
+
+  /// Open work from teachers for the profile being studied.
+  List<StudentAssignment> assignments = [];
+  String? _assignmentsChild;
+
+  Future<void> loadAssignments(String childId) async {
+    _assignmentsChild = childId;
+    if (service.isDemo || account == null) return;
+    try {
+      final list = await service.assignmentsFor(childId);
+      if (_assignmentsChild != childId) return; // Switched student meanwhile.
+      assignments = list;
+      notifyListeners();
+    } on AccountException {
+      // Offline: keep what we had.
+    }
+  }
+
+  Future<JoinResult> joinClass(String code, ChildRecord child) async {
+    final r = await service.joinClass(code.trim().toUpperCase(), child);
+    if (r == JoinResult.joined) await loadAssignments(child.id);
     return r;
+  }
+
+  /// Hands in a finished quiz if a teacher set one on this chapter.
+  Future<void> submitQuiz(
+    String childId,
+    String chapterId, {
+    required int score,
+    required int total,
+    required List<Map<String, Object?>> answers,
+  }) async {
+    final open = assignments.where(
+      (a) =>
+          !a.done &&
+          a.assignment.kind == AssignmentKind.quiz &&
+          a.assignment.chapterId == chapterId,
+    );
+    if (open.isEmpty) return;
+    try {
+      await service.submit(
+        open.first,
+        childId,
+        score: score,
+        total: total,
+        answers: answers,
+      );
+      await loadAssignments(childId);
+    } on AccountException {
+      // Offline: the score stays on the phone; the teacher won't see it.
+    }
   }
 
   // ---- Teacher ------------------------------------------------------------

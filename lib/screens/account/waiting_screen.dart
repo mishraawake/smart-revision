@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
+import '../../data/account_service.dart';
 import '../../data/share.dart';
 import '../../models/account.dart';
 import '../../state/account_state.dart';
@@ -55,13 +56,20 @@ class _WaitingScreenState extends State<WaitingScreen> {
   Future<void> _check() async {
     final accounts = AccountScope.read(context);
     final app = AppScope.read(context);
-    final approved = await accounts.checkApproval();
+    final (ApprovalRequest, String)? approved;
+    try {
+      approved = await accounts.checkApproval();
+    } on AccountException {
+      return; // Offline; the next tick tries again.
+    }
     if (approved == null) return;
     _poll?.cancel();
+    final (r, childId) = approved;
     final p = await app.addProfile(
-      approved.name,
-      approved.classLevel,
-      avatar: approved.avatar,
+      r.name,
+      r.classLevel,
+      avatar: r.avatar,
+      id: childId,
     );
     await app.select(p);
   }
@@ -78,10 +86,13 @@ class _WaitingScreenState extends State<WaitingScreen> {
     );
   }
 
-  String get _message =>
-      '${widget.request.name} wants to revise with RevUp (Class '
-      '${widget.request.classLevel}). Tap the link in the SMS from RevUp to '
-      'say yes.';
+  String _message(bool demo) => demo
+      ? '${widget.request.name} wants to revise with RevUp (Class '
+            '${widget.request.classLevel}). Tap the link in the SMS from RevUp '
+            'to say yes.'
+      : '${widget.request.name} wants to revise with RevUp (Class '
+            '${widget.request.classLevel}). Open RevUp, log in as a parent with '
+            'this number and tap Approve.';
 
   @override
   Widget build(BuildContext context) {
@@ -134,7 +145,11 @@ class _WaitingScreenState extends State<WaitingScreen> {
         Text.rich(
           TextSpan(
             children: [
-              const TextSpan(text: 'We texted a link to '),
+              TextSpan(
+                text: demo
+                    ? 'We texted a link to '
+                    : 'Ask your parent to open RevUp and log in with ',
+              ),
               TextSpan(
                 text: maskPhone(r.parentPhone),
                 style: const TextStyle(
@@ -142,7 +157,11 @@ class _WaitingScreenState extends State<WaitingScreen> {
                   color: AppColors.ink,
                 ),
               ),
-              const TextSpan(text: '. Ask them to tap it and say yes.'),
+              TextSpan(
+                text: demo
+                    ? '. Ask them to tap it and say yes.'
+                    : '. Your request is waiting there.',
+              ),
             ],
           ),
           textAlign: TextAlign.center,
@@ -166,7 +185,7 @@ class _WaitingScreenState extends State<WaitingScreen> {
                 state: _StepState.current,
                 number: 2,
                 title: 'Parent approves',
-                sub: 'The link works for 48 hours',
+                sub: 'They have 48 hours to say yes',
               ),
               const SizedBox(height: 14),
               const _Step(
@@ -197,24 +216,26 @@ class _WaitingScreenState extends State<WaitingScreen> {
       ],
       bottom: [
         PrimaryButton(
-          label: 'Share link on WhatsApp',
+          label: 'Tell them on WhatsApp',
           icon: Icons.share_outlined,
-          onPressed: () => shareText(context, _message),
+          onPressed: () => shareText(context, _message(demo)),
         ),
-        const SizedBox(height: 10),
-        SecondaryButton(
-          label: _wait > 0
-              ? 'Resend SMS in 0:${_wait.toString().padLeft(2, '0')}'
-              : 'Resend SMS',
-          onPressed: _wait > 0
-              ? null
-              : () {
-                  setState(_startResendTimer);
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('SMS sent again')),
-                  );
-                },
-        ),
+        if (demo) ...[
+          const SizedBox(height: 10),
+          SecondaryButton(
+            label: _wait > 0
+                ? 'Resend SMS in 0:${_wait.toString().padLeft(2, '0')}'
+                : 'Resend SMS',
+            onPressed: _wait > 0
+                ? null
+                : () {
+                    setState(_startResendTimer);
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(content: Text('SMS sent again')),
+                    );
+                  },
+          ),
+        ],
         LinkButton(label: 'Wrong number? Change it', onPressed: _changeNumber),
       ],
     );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../data/account_service.dart';
 import '../../models/account.dart';
 import '../../state/account_state.dart';
 import '../../theme/tokens.dart';
@@ -47,7 +48,14 @@ class _PhoneScreenState extends State<PhoneScreen> {
   Future<void> _send() async {
     setState(() => _sending = true);
     final accounts = AccountScope.read(context);
-    await accounts.service.sendOtp(_phone.text);
+    try {
+      await accounts.service.sendOtp(_phone.text);
+    } on AccountException catch (e) {
+      if (!mounted) return;
+      setState(() => _sending = false);
+      showAccountError(context, e);
+      return;
+    }
     if (!mounted) return;
     setState(() => _sending = false);
     await pushAdult(

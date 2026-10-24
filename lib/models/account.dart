@@ -83,6 +83,7 @@ String maskPhone(String digits) =>
 
 class ClassStudent {
   const ClassStudent({
+    this.id = '',
     required this.name,
     this.lastActive,
     this.mastery,
@@ -90,6 +91,7 @@ class ClassStudent {
   });
 
   factory ClassStudent.fromJson(Map<String, dynamic> j) => ClassStudent(
+    id: j['id'] as String? ?? '',
     name: j['name'] as String,
     lastActive: j['lastActive'] == null
         ? null
@@ -98,6 +100,8 @@ class ClassStudent {
     awaitingParent: j['awaitingParent'] as bool? ?? false,
   );
 
+  /// The child's id on the server; empty in demo mode.
+  final String id;
   final String name;
   final DateTime? lastActive;
 
@@ -113,6 +117,7 @@ class ClassStudent {
   }
 
   Map<String, dynamic> toJson() => {
+    'id': id,
     'name': name,
     'lastActive': lastActive?.toIso8601String(),
     'mastery': mastery,
@@ -286,3 +291,40 @@ class QuestionStat {
   /// The wrong answer picked most, as "B · text".
   final String? commonWrong;
 }
+
+// ---- Synced records ------------------------------------------------------
+
+/// A child as stored on the server, used to restore profiles on a new phone.
+class ChildRecord {
+  const ChildRecord({
+    required this.id,
+    required this.name,
+    required this.classLevel,
+    required this.avatar,
+  });
+
+  final String id;
+  final String name;
+  final int classLevel;
+  final int avatar;
+}
+
+/// Work a teacher set, as the student sees it.
+class StudentAssignment {
+  const StudentAssignment({
+    required this.classId,
+    required this.classLabel,
+    required this.assignment,
+    required this.done,
+  });
+
+  final String classId;
+
+  /// "Class 8 · Section B".
+  final String classLabel;
+  final Assignment assignment;
+  final bool done;
+}
+
+/// What joining a class with a code came to.
+enum JoinResult { joined, alreadyIn, badCode, wrongClass }

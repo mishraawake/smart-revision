@@ -9,6 +9,7 @@ import 'chapters_screen.dart';
 import 'quiz/quiz_intro_screen.dart';
 import 'review_screen.dart';
 import '../widgets/format.dart';
+import '../widgets/teacher_work.dart';
 
 class TodayScreen extends StatelessWidget {
   const TodayScreen({super.key, required this.onOpenSubjects});
@@ -73,6 +74,7 @@ class _JuniorToday extends StatelessWidget {
             ),
           ],
         ),
+        const TeacherWork(),
         const SizedBox(height: 16),
         Row(
           children: [
@@ -498,6 +500,7 @@ class _SeniorToday extends StatelessWidget {
             const SwitchStudentButton(),
           ],
         ),
+        const TeacherWork(),
         const SizedBox(height: 10),
         Wrap(
           spacing: 8,
