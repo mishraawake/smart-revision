@@ -66,6 +66,19 @@ abstract class AccountService {
     required List<Map<String, Object?>> answers,
   });
 
+  /// The child's progress as saved on the server (Profile JSON), or null.
+  Future<Map<String, dynamic>?> loadProgress(String childId);
+  Future<void> saveProgress(String childId, Map<String, dynamic> profile);
+
+  Future<List<ClassMembership>> membershipsFor(String childId);
+
+  /// Tells the teacher the child was active and how they are doing.
+  Future<void> reportProgress(
+    String classId,
+    String childId, {
+    required double mastery,
+  });
+
   // ---- Teacher --------------------------------------------------------------
 
   /// False until push reminders exist; the button is hidden.
@@ -184,6 +197,26 @@ class DemoAccountService implements AccountService {
     required int score,
     required int total,
     required List<Map<String, Object?>> answers,
+  }) async {}
+
+  @override
+  Future<Map<String, dynamic>?> loadProgress(String childId) async => null;
+
+  @override
+  Future<void> saveProgress(
+    String childId,
+    Map<String, dynamic> profile,
+  ) async {}
+
+  @override
+  Future<List<ClassMembership>> membershipsFor(String childId) async =>
+      const [];
+
+  @override
+  Future<void> reportProgress(
+    String classId,
+    String childId, {
+    required double mastery,
   }) async {}
 
   @override

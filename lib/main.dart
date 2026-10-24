@@ -8,6 +8,7 @@ import 'data/speaker.dart';
 import 'firebase/environment.dart';
 import 'models/account.dart';
 import 'state/account_state.dart';
+import 'state/progress_sync.dart';
 import 'state/app_state.dart';
 
 Future<void> main() async {
@@ -30,17 +31,28 @@ Future<void> main() async {
       avatar: p.avatar,
     ),
   );
-  // Teachers' work for whoever is studying now.
+  final progress = ProgressSync(app: state, accounts: accounts);
+  state.onSessionEnd = progress.afterSession;
+
+  // Whoever starts studying: their progress from other phones, and
+  // teachers' work.
   String? studying;
   state.addListener(() {
-    final id = state.current?.id;
-    if (id == studying) return;
-    studying = id;
-    if (id != null) accounts.loadAssignments(id);
+    final p = state.current;
+    if (p?.id == studying) return;
+    studying = p?.id;
+    if (p == null) return;
+    progress.sync(p);
+    accounts.loadAssignments(p.id);
   });
 
   // Coming back to the app picks up what changed meanwhile.
-  AppLifecycleListener(onResume: accounts.refresh);
+  AppLifecycleListener(
+    onResume: () {
+      accounts.refresh();
+      if (state.current case final p?) progress.sync(p);
+    },
+  );
 
   state.load().then(
     (_) => accounts.load(hasProfiles: state.profiles.isNotEmpty),

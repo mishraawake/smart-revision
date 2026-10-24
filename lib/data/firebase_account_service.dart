@@ -426,6 +426,64 @@ class FirebaseAccountService implements AccountService {
         }),
   );
 
+  // ---- Progress -----------------------------------------------------------
+
+  DocumentReference<Map<String, dynamic>> _progress(String childId) =>
+      _db.doc('children/$childId/progress/state');
+
+  @override
+  Future<Map<String, dynamic>?> loadProgress(String childId) => _run(() async {
+    final snap = await _progress(childId).get();
+    return (snap.data()?['profile'] as Map?)?.cast<String, dynamic>();
+  });
+
+  @override
+  Future<void> saveProgress(String childId, Map<String, dynamic> profile) =>
+      _run(
+        () => _progress(
+          childId,
+        ).set({'profile': profile, 'updatedAt': FieldValue.serverTimestamp()}),
+      );
+
+  @override
+  Future<List<ClassMembership>> membershipsFor(String childId) => _run(
+    () async {
+      final classes = await _db
+          .collection('classes')
+          .where('memberUids', arrayContains: _uid)
+          .get();
+      final out = <ClassMembership>[];
+      for (final c in classes.docs) {
+        try {
+          final m = await c.reference.collection('members').doc(childId).get();
+          if (!m.exists) continue;
+          out.add(
+            ClassMembership(
+              classId: c.id,
+              subjectId: c['subjectId'] as String,
+              approved: m['parentApproved'] == true,
+            ),
+          );
+        } on FirebaseException {
+          continue; // Another child of this parent is the member.
+        }
+      }
+      return out;
+    },
+  );
+
+  @override
+  Future<void> reportProgress(
+    String classId,
+    String childId, {
+    required double mastery,
+  }) => _run(
+    () => _db.doc('classes/$classId/members/$childId').update({
+      'lastActive': FieldValue.serverTimestamp(),
+      'mastery': mastery.clamp(0.0, 1.0),
+    }),
+  );
+
   // ---- Teacher ------------------------------------------------------------
 
   static Assignment _assignment(DocumentSnapshot<Map<String, dynamic>> d) {

@@ -328,3 +328,18 @@ class StudentAssignment {
 
 /// What joining a class with a code came to.
 enum JoinResult { joined, alreadyIn, badCode, wrongClass }
+
+/// A class a child belongs to, for reporting progress to the teacher.
+class ClassMembership {
+  const ClassMembership({
+    required this.classId,
+    required this.subjectId,
+    required this.approved,
+  });
+
+  final String classId;
+  final String subjectId;
+
+  /// A parent has agreed; until then nothing is shared with the teacher.
+  final bool approved;
+}

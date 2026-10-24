@@ -104,6 +104,16 @@ class AppState extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// Told when a session or quiz has been saved, to sync it.
+  void Function()? onSessionEnd;
+
+  /// Saves every profile and redraws, after progress was changed from
+  /// outside (merged in from another phone).
+  Future<void> persist() async {
+    await store.saveProfiles(profiles);
+    notifyListeners();
+  }
+
   /// Told about profiles made on this phone, so they can be saved to the
   /// parent's account.
   void Function(Profile p)? onProfileAdded;
@@ -558,6 +568,7 @@ class AppState extends ChangeNotifier {
     p.seconds[today] = (p.seconds[today] ?? 0) + duration.inSeconds;
     await store.saveProfiles(profiles);
     notifyListeners();
+    onSessionEnd?.call();
 
     return SessionSummary(
       knew: knew,

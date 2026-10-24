@@ -153,8 +153,15 @@ service cloud.firestore {
 
       allow delete: if signedIn() && resource.data.parentUid == uid();
 
+      // One document, "state", holding the whole progress record. Either
+      // phone that studies as this child merges into it.
       match /progress/{docId} {
-        allow read, write: if caresFor(childId);
+        allow read: if caresFor(childId);
+        allow write: if caresFor(childId)
+          && docId == 'state'
+          && request.resource.data.keys().hasOnly(['profile', 'updatedAt'])
+          && request.resource.data.profile is map
+          && request.resource.data.updatedAt == request.time;
       }
     }
 
@@ -300,12 +307,12 @@ service cloud.firestore {
             && member(classId, childId).parentApproved == true
             && request.resource.data.keys().hasOnly(['score', 'total', 'answers', 'finishedAt'])
             && request.resource.data.total is int
-            && request.resource.data.total >= 1 && request.resource.data.total <= 50
+            && request.resource.data.total >= 1 && request.resource.data.total <= 200
             && request.resource.data.score is int
             && request.resource.data.score >= 0
             && request.resource.data.score <= request.resource.data.total
             && request.resource.data.answers is list
-            && request.resource.data.answers.size() <= 50
+            && request.resource.data.answers.size() <= 200
             && request.resource.data.finishedAt == request.time;
 
           allow delete: if false;

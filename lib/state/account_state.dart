@@ -261,9 +261,26 @@ class AccountState extends ChangeNotifier {
           a.assignment.chapterId == chapterId,
     );
     if (open.isEmpty) return;
+    await submitWork(
+      open.first,
+      childId,
+      score: score,
+      total: total,
+      answers: answers,
+    );
+  }
+
+  /// Hands in [work] and refreshes the homework list.
+  Future<void> submitWork(
+    StudentAssignment work,
+    String childId, {
+    required int score,
+    required int total,
+    required List<Map<String, Object?>> answers,
+  }) async {
     try {
       await service.submit(
-        open.first,
+        work,
         childId,
         score: score,
         total: total,
@@ -271,7 +288,7 @@ class AccountState extends ChangeNotifier {
       );
       await loadAssignments(childId);
     } on AccountException {
-      // Offline: the score stays on the phone; the teacher won't see it.
+      // Offline: the work stays on the phone; the teacher won't see it.
     }
   }
 

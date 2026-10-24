@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../models/account.dart';
-import '../screens/chapters_screen.dart';
+import '../screens/review_screen.dart';
 import '../screens/join_class_dialog.dart';
 import '../screens/quiz/quiz_intro_screen.dart';
 import '../screens/teacher/teacher_shell.dart' show dueLabel;
@@ -108,14 +108,14 @@ class _Item extends StatelessWidget {
         borderRadius: BorderRadius.circular(14),
         child: InkWell(
           borderRadius: BorderRadius.circular(14),
+          // A deck reviews exactly the cards set, due or not, so the
+          // homework can be finished (a chapter review skips learnt cards).
           onTap: () => quiz
               ? openQuiz(context, chapter: chapter)
-              : Navigator.of(context).push(
-                  MaterialPageRoute<void>(
-                    builder: (_) =>
-                        ChaptersScreen(subjectId: chapter.subjectId),
-                  ),
-                ),
+              : startReview(context, [
+                  for (final c in chapter.cards)
+                    if (a.cardIds?.contains(c.id) ?? true) c,
+                ]),
           child: Padding(
             padding: const EdgeInsets.all(12),
             child: Row(

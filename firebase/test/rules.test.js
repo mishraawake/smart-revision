@@ -198,8 +198,17 @@ describe('children', () => {
     await assertFails(getDoc(doc(otherParent(), 'children/c1')));
     await assertFails(getDoc(doc(teacher(), 'children/c1')));
 
-    await assertSucceeds(setDoc(doc(student(), 'children/c1/progress/cards'), { n: 1 }));
-    await assertFails(setDoc(doc(stranger(), 'children/c1/progress/cards'), { n: 1 }));
+    const progress = () => ({ profile: { stars: 3 }, updatedAt: serverTimestamp() });
+    await assertSucceeds(setDoc(doc(student(), 'children/c1/progress/state'), progress()));
+    await assertSucceeds(setDoc(doc(parent(), 'children/c1/progress/state'), progress()));
+    await assertSucceeds(getDoc(doc(parent(), 'children/c1/progress/state')));
+    await assertFails(setDoc(doc(stranger(), 'children/c1/progress/state'), progress()));
+    await assertFails(getDoc(doc(teacher(), 'children/c1/progress/state')));
+    // One record only, in the expected shape.
+    await assertFails(setDoc(doc(parent(), 'children/c1/progress/other'), progress()));
+    await assertFails(
+      setDoc(doc(parent(), 'children/c1/progress/state'), { ...progress(), extra: 1 }),
+    );
   });
 
   test('the parent cannot hand the child to someone else', async () => {
@@ -645,5 +654,77 @@ describe('app flows', () => {
     );
     // results
     await assertSucceeds(getDocs(collection(t, 'classes/k1/assignments/a1/submissions')));
+  });
+});
+
+describe('progress sync and deck homework', () => {
+  beforeEach(() =>
+    seed({
+      ...users,
+      'children/c1': { ...aChild, name: 'Diya', classLevel: 8, studentUid: 'student1' },
+      'classes/k1': { ...aClass, memberUids: ['student1'] },
+      'classes/k1/members/c1': {
+        uids: ['parent1', 'student1'],
+        name: 'Diya',
+        parentApproved: true,
+        joinedAt: now(),
+      },
+      'classes/k1/assignments/d1': {
+        kind: 'deck',
+        subjectId: 'science',
+        chapterId: 'c8-sci-01',
+        due: now(),
+        createdAt: now(),
+      },
+    }),
+  );
+
+  test('a missing progress record reads as empty, then saves', async () => {
+    const s = student();
+    const got = await assertSucceeds(getDoc(doc(s, 'children/c1/progress/state')));
+    if (got.exists()) throw new Error('should start empty');
+    await assertSucceeds(
+      setDoc(doc(s, 'children/c1/progress/state'), {
+        profile: { cards: { 'c8s1-01': { box: 1, due: '2026-10-25', at: '2026-10-24' } } },
+        updatedAt: serverTimestamp(),
+      }),
+    );
+  });
+
+  test('membership lookup and progress report to the teacher', async () => {
+    const s = student();
+    await assertSucceeds(
+      getDocs(query(collection(s, 'classes'), where('memberUids', 'array-contains', 'student1'))),
+    );
+    await assertSucceeds(getDoc(doc(s, 'classes/k1/members/c1')));
+    await assertSucceeds(
+      updateDoc(doc(s, 'classes/k1/members/c1'), {
+        lastActive: serverTimestamp(),
+        mastery: 0.62,
+      }),
+    );
+    await assertFails(
+      updateDoc(doc(s, 'classes/k1/members/c1'), { lastActive: serverTimestamp(), mastery: 1.5 }),
+    );
+  });
+
+  test('a whole chapter deck can be handed in', async () => {
+    const answers = Array.from({ length: 60 }, (_, i) => ({ cardId: `k${i}`, right: i % 2 === 0 }));
+    await assertSucceeds(
+      setDoc(doc(student(), 'classes/k1/assignments/d1/submissions/c1'), {
+        score: 30,
+        total: 60,
+        answers,
+        finishedAt: serverTimestamp(),
+      }),
+    );
+    await assertFails(
+      setDoc(doc(student(), 'classes/k1/assignments/d1/submissions/c1'), {
+        score: 30,
+        total: 201,
+        answers: [],
+        finishedAt: serverTimestamp(),
+      }),
+    );
   });
 });
