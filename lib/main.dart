@@ -39,6 +39,9 @@ Future<void> main() async {
     if (id != null) accounts.loadAssignments(id);
   });
 
+  // Coming back to the app picks up what changed meanwhile.
+  AppLifecycleListener(onResume: accounts.refresh);
+
   state.load().then(
     (_) => accounts.load(hasProfiles: state.profiles.isNotEmpty),
   );

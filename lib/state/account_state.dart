@@ -275,6 +275,26 @@ class AccountState extends ChangeNotifier {
     }
   }
 
+  /// Reloads what the signed-in role sees: a teacher's classes, a
+  /// parent's requests, the studying child's homework. Called on pull-down
+  /// and when the app comes back to the front.
+  Future<void> refresh() async {
+    if (service.isDemo || account == null) return;
+    try {
+      switch (account!.role) {
+        case Role.teacher:
+          await loadClasses();
+        case Role.parent:
+          await loadRequests();
+        case Role.student:
+          break;
+      }
+      if (_assignmentsChild case final id?) await loadAssignments(id);
+    } on AccountException {
+      // Offline; keep what is on screen.
+    }
+  }
+
   // ---- Teacher ------------------------------------------------------------
 
   Future<void> loadClasses() async {
