@@ -1,0 +1,313 @@
+rules_version = '2';
+
+// RevUp data model. Children are the unit everything hangs off: a Junior
+// studies on a parent's phone (signed in as the parent), a Class 6–10
+// student may also have their own anonymous login once a parent approves.
+//
+// users/{uid}                  role, phone, consent
+// children/{childId}           parentUid, studentUid?, name, classLevel, avatar
+//   progress/{doc}             study state, synced from the phone
+// approvalRequests/{id}        a student asking a parent (by phone) to say yes
+// joinCodes/{code}             code -> classId, so a class can be found by code
+// classes/{classId}            teacherUid, joinCode, memberUids[]
+//   members/{childId}          uids[], parentApproved, lastActive, mastery
+//   assignments/{id}           deck or quiz, chapter, due
+//     submissions/{childId}    score and answers
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ---- Helpers ---------------------------------------------------------
+
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function uid() {
+      return request.auth.uid;
+    }
+
+    // "+919876543210" when signed in by phone, otherwise null.
+    function phone() {
+      return request.auth.token.get('phone_number', null);
+    }
+
+    function role() {
+      return get(/databases/$(database)/documents/users/$(uid())).data.role;
+    }
+
+    function isRole(r) {
+      return signedIn()
+        && exists(/databases/$(database)/documents/users/$(uid()))
+        && role() == r;
+    }
+
+    function changes() {
+      return request.resource.data.diff(resource.data).affectedKeys();
+    }
+
+    function child(childId) {
+      return get(/databases/$(database)/documents/children/$(childId)).data;
+    }
+
+    // The parent who owns the child, or the child's own login.
+    function caresFor(childId) {
+      let c = child(childId);
+      return signedIn() && (c.parentUid == uid() || c.get('studentUid', null) == uid());
+    }
+
+    function cls(classId) {
+      return get(/databases/$(database)/documents/classes/$(classId)).data;
+    }
+
+    function teaches(classId) {
+      return signedIn() && cls(classId).teacherUid == uid();
+    }
+
+    function inClass(classId) {
+      return signedIn() && uid() in cls(classId).memberUids;
+    }
+
+    // As it will be once the current batch lands (joining writes both).
+    function inClassAfter(classId) {
+      return signedIn()
+        && uid() in getAfter(/databases/$(database)/documents/classes/$(classId)).data.memberUids;
+    }
+
+    function member(classId, childId) {
+      return get(/databases/$(database)/documents/classes/$(classId)/members/$(childId)).data;
+    }
+
+    function validName(n) {
+      return n is string && n.size() >= 1 && n.size() <= 40;
+    }
+
+    function validPhone(p) {
+      return p is string && p.matches('^[6-9][0-9]{9}$');
+    }
+
+    // ---- Users -----------------------------------------------------------
+
+    match /users/{userId} {
+      allow read: if signedIn() && userId == uid();
+
+      // Parents and teachers sign in by phone and must use their own number.
+      // A student account grants nothing by itself; access comes from a
+      // child record that a parent links to it.
+      allow create: if signedIn() && userId == uid()
+        && request.resource.data.keys().hasOnly(['role', 'phone', 'consentAt', 'createdAt'])
+        && request.resource.data.createdAt == request.time
+        && (
+          (request.resource.data.role in ['parent', 'teacher']
+            && phone() != null
+            && request.resource.data.phone == phone())
+          || (request.resource.data.role == 'student'
+            && !('phone' in request.resource.data))
+        );
+
+      allow update: if signedIn() && userId == uid()
+        && changes().hasOnly(['consentAt']);
+
+      allow delete: if signedIn() && userId == uid();
+    }
+
+    // ---- Children --------------------------------------------------------
+
+    match /children/{childId} {
+      allow read: if caresFor(childId);
+
+      // Added by a parent directly, or made from an approved student request,
+      // which links the student's own login.
+      allow create: if isRole('parent')
+        && request.resource.data.parentUid == uid()
+        && request.resource.data.keys().hasOnly(
+          ['parentUid', 'studentUid', 'fromRequest', 'name', 'classLevel', 'avatar', 'createdAt'])
+        && validName(request.resource.data.name)
+        && request.resource.data.classLevel is int
+        && request.resource.data.classLevel >= 1 && request.resource.data.classLevel <= 10
+        && request.resource.data.avatar is int
+        && request.resource.data.avatar >= 0 && request.resource.data.avatar <= 5
+        && request.resource.data.createdAt == request.time
+        && (
+          !('studentUid' in request.resource.data)
+          || (
+            // The request must be one this parent approved in the same batch.
+            getAfter(/databases/$(database)/documents/approvalRequests/$(request.resource.data.fromRequest)).data.studentUid
+              == request.resource.data.studentUid
+            && getAfter(/databases/$(database)/documents/approvalRequests/$(request.resource.data.fromRequest)).data.status
+              == 'approved'
+            && getAfter(/databases/$(database)/documents/approvalRequests/$(request.resource.data.fromRequest)).data.parentPhone
+              == phone().replace('^[+]91', '')
+          )
+        );
+
+      allow update: if signedIn() && resource.data.parentUid == uid()
+        && changes().hasOnly(['name', 'classLevel', 'avatar'])
+        && validName(request.resource.data.name)
+        && request.resource.data.classLevel is int
+        && request.resource.data.classLevel >= 1 && request.resource.data.classLevel <= 10;
+
+      allow delete: if signedIn() && resource.data.parentUid == uid();
+
+      match /progress/{docId} {
+        allow read, write: if caresFor(childId);
+      }
+    }
+
+    // ---- Student sign-up -------------------------------------------------
+
+    match /approvalRequests/{requestId} {
+      // The student who asked, or the parent whose number they gave.
+      allow read: if signedIn() && (
+        resource.data.studentUid == uid()
+        || (phone() != null && phone() == '+91' + resource.data.parentPhone)
+      );
+
+      allow create: if signedIn()
+        && request.resource.data.keys().hasOnly(
+          ['studentUid', 'name', 'classLevel', 'avatar', 'parentPhone', 'status', 'createdAt'])
+        && request.resource.data.studentUid == uid()
+        && request.resource.data.status == 'pending'
+        && validName(request.resource.data.name)
+        && request.resource.data.classLevel is int
+        && request.resource.data.classLevel >= 6 && request.resource.data.classLevel <= 10
+        && request.resource.data.avatar is int
+        && validPhone(request.resource.data.parentPhone)
+        && request.resource.data.createdAt == request.time;
+
+      // Only that parent decides, once, within 48 hours.
+      allow update: if isRole('parent')
+        && phone() == '+91' + resource.data.parentPhone
+        && resource.data.status == 'pending'
+        && request.resource.data.status in ['approved', 'declined']
+        && changes().hasOnly(['status', 'decidedAt'])
+        && request.resource.data.decidedAt == request.time
+        && request.time < resource.data.createdAt + duration.value(48, 'h');
+
+      // The student can withdraw it, e.g. to fix a wrong number.
+      allow delete: if signedIn() && resource.data.studentUid == uid();
+    }
+
+    // ---- Classes ---------------------------------------------------------
+
+    // Looked up one code at a time; never listed, so codes can't be harvested.
+    match /joinCodes/{code} {
+      allow get: if signedIn();
+      allow list: if false;
+
+      allow create: if isRole('teacher')
+        && code.matches('^[A-HJ-NP-Z2-9]{6}$')
+        && request.resource.data.keys().hasOnly(['classId', 'teacherUid'])
+        && request.resource.data.teacherUid == uid()
+        && getAfter(/databases/$(database)/documents/classes/$(request.resource.data.classId)).data.teacherUid == uid()
+        && getAfter(/databases/$(database)/documents/classes/$(request.resource.data.classId)).data.joinCode == code;
+
+      allow delete: if signedIn() && resource.data.teacherUid == uid();
+    }
+
+    match /classes/{classId} {
+      allow read: if signedIn()
+        && (resource.data.teacherUid == uid() || uid() in resource.data.memberUids);
+
+      allow create: if isRole('teacher')
+        && request.resource.data.keys().hasOnly(
+          ['teacherUid', 'school', 'subjectId', 'classLevel', 'section', 'joinCode', 'size', 'memberUids', 'createdAt'])
+        && request.resource.data.teacherUid == uid()
+        && request.resource.data.memberUids == []
+        && request.resource.data.classLevel is int
+        && request.resource.data.classLevel >= 1 && request.resource.data.classLevel <= 10
+        && request.resource.data.section is string && request.resource.data.section.size() <= 3
+        && request.resource.data.createdAt == request.time
+        && getAfter(/databases/$(database)/documents/joinCodes/$(request.resource.data.joinCode)).data.classId == classId;
+
+      allow update: if signedIn() && (
+        // The teacher edits details and may remove people, never add them.
+        (resource.data.teacherUid == uid()
+          && !changes().hasAny(['teacherUid', 'joinCode', 'createdAt'])
+          && request.resource.data.memberUids.toSet().difference(resource.data.memberUids.toSet()).size() == 0)
+        // Anyone holding the join code (and so the class id) adds or removes
+        // only themselves.
+        || (changes().hasOnly(['memberUids'])
+          && (
+            request.resource.data.memberUids.toSet() == resource.data.memberUids.toSet().union([uid()].toSet())
+            || request.resource.data.memberUids.toSet() == resource.data.memberUids.toSet().difference([uid()].toSet())
+          ))
+      );
+
+      allow delete: if signedIn() && resource.data.teacherUid == uid();
+
+      // One row per child in the class.
+      match /members/{childId} {
+        allow read: if teaches(classId)
+          || (signedIn() && uid() in resource.data.uids);
+
+        // Joined by the child's parent or the child's own login. A parent
+        // joining counts as approval; a student waits for their parent.
+        allow create: if caresFor(childId)
+          && inClassAfter(classId)
+          && request.resource.data.keys().hasOnly(['uids', 'name', 'parentApproved', 'joinedAt'])
+          && request.resource.data.name == child(childId).name
+          && request.resource.data.uids.hasAll([child(childId).parentUid])
+          && request.resource.data.uids.toSet().difference(
+              [child(childId).parentUid, child(childId).get('studentUid', '')].toSet()).size() == 0
+          && request.resource.data.parentApproved == (child(childId).parentUid == uid())
+          && request.resource.data.joinedAt == request.time;
+
+        allow update: if signedIn() && uid() in resource.data.uids && (
+          // The parent says yes.
+          (child(childId).parentUid == uid()
+            && changes().hasOnly(['parentApproved'])
+            && request.resource.data.parentApproved == true)
+          // Progress the teacher sees, only once a parent has agreed.
+          || (resource.data.parentApproved == true
+            && changes().hasOnly(['lastActive', 'mastery'])
+            && request.resource.data.lastActive == request.time
+            && request.resource.data.mastery is number
+            && request.resource.data.mastery >= 0 && request.resource.data.mastery <= 1)
+        );
+
+        allow delete: if teaches(classId)
+          || (signedIn() && uid() in resource.data.uids);
+      }
+
+      match /assignments/{assignmentId} {
+        allow read: if teaches(classId) || inClass(classId);
+
+        allow create, update: if teaches(classId)
+          && request.resource.data.keys().hasOnly(
+            ['kind', 'subjectId', 'chapterId', 'cardIds', 'due', 'createdAt'])
+          && request.resource.data.kind in ['deck', 'quiz']
+          && request.resource.data.due is timestamp
+          && (!('cardIds' in request.resource.data)
+            || (request.resource.data.cardIds is list && request.resource.data.cardIds.size() <= 50));
+
+        allow delete: if teaches(classId);
+
+        match /submissions/{childId} {
+          allow read: if teaches(classId)
+            || (signedIn() && uid() in member(classId, childId).uids);
+
+          // Only for an approved member, about their own work.
+          allow create, update: if signedIn()
+            && uid() in member(classId, childId).uids
+            && member(classId, childId).parentApproved == true
+            && request.resource.data.keys().hasOnly(['score', 'total', 'answers', 'finishedAt'])
+            && request.resource.data.total is int
+            && request.resource.data.total >= 1 && request.resource.data.total <= 50
+            && request.resource.data.score is int
+            && request.resource.data.score >= 0
+            && request.resource.data.score <= request.resource.data.total
+            && request.resource.data.answers is list
+            && request.resource.data.answers.size() <= 50
+            && request.resource.data.finishedAt == request.time;
+
+          allow delete: if false;
+        }
+      }
+    }
+
+    // Everything else is closed.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

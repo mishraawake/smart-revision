@@ -1,0 +1,7 @@
+{
+  "projects": {
+    "default": "revup-staging-80514",
+    "staging": "revup-staging-80514",
+    "prod": "revup-prod-2bacd"
+  }
+}
