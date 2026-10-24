@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../data/speaker.dart';
+import '../firebase/environment.dart';
 import '../models/account.dart';
 import '../state/account_state.dart';
 import '../state/app_state.dart';
@@ -142,11 +143,7 @@ class SettingsScreen extends StatelessWidget {
           onPressed: () => _logOut(context),
         ),
         const SizedBox(height: 12),
-        Text(
-          accounts.service.isDemo ? 'RevUp · test version' : 'RevUp',
-          textAlign: TextAlign.center,
-          style: labelStyle,
-        ),
+        _VersionLine(demo: accounts.service.isDemo),
       ],
     );
   }
@@ -179,6 +176,94 @@ class SettingsScreen extends StatelessWidget {
     nav.popUntil((r) => r.isFirst);
     app.signOut();
     await accounts.signOut();
+  }
+}
+
+/// "RevUp". Seven taps opens the hidden staging/production switch.
+class _VersionLine extends StatefulWidget {
+  const _VersionLine({required this.demo});
+  final bool demo;
+
+  @override
+  State<_VersionLine> createState() => _VersionLineState();
+}
+
+class _VersionLineState extends State<_VersionLine> {
+  static const _tapsNeeded = 7;
+  var _taps = 0;
+
+  Future<void> _tap() async {
+    if (++_taps < _tapsNeeded) return;
+    _taps = 0;
+    final code = TextEditingController();
+    final env = await showDialog<AppEnv>(
+      context: context,
+      builder: (context) => StatefulBuilder(
+        builder: (context, setDialog) {
+          final ok = code.text == Environment.switchCode;
+          return AlertDialog(
+            title: const Text('Developer: environment'),
+            content: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Text('Now on ${Environment.current?.name ?? 'none'}.'),
+                const SizedBox(height: 12),
+                TextField(
+                  controller: code,
+                  autofocus: true,
+                  obscureText: true,
+                  keyboardType: TextInputType.number,
+                  decoration: const InputDecoration(labelText: 'Code'),
+                  onChanged: (_) => setDialog(() {}),
+                ),
+                if (ok) ...[
+                  const SizedBox(height: 12),
+                  const Text(
+                    'Switching clears all data on this phone, signs out and '
+                    'closes the app. Reopen it to continue.',
+                    style: mutedStyle,
+                  ),
+                ],
+              ],
+            ),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(context),
+                child: const Text('Cancel'),
+              ),
+              for (final e in AppEnv.values)
+                if (ok && e != Environment.current)
+                  FilledButton(
+                    onPressed: () => Navigator.pop(context, e),
+                    child: Text(
+                      e == AppEnv.prod ? 'Use production' : 'Use staging',
+                    ),
+                  ),
+            ],
+          );
+        },
+      ),
+    );
+    code.dispose();
+    if (env != null) await Environment.switchTo(env);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final env = Environment.isStaging ? ' · staging' : '';
+    return GestureDetector(
+      onTap: _tap,
+      behavior: HitTestBehavior.opaque,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 8),
+        child: Text(
+          widget.demo ? 'RevUp · test version$env' : 'RevUp$env',
+          textAlign: TextAlign.center,
+          style: labelStyle,
+        ),
+      ),
+    );
   }
 }
 

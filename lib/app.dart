@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'data/speaker.dart';
+import 'firebase/environment.dart';
 import 'models/account.dart';
 import 'screens/account/role_screen.dart';
 import 'screens/account/waiting_screen.dart';
@@ -11,6 +12,7 @@ import 'screens/teacher/teacher_shell.dart';
 import 'state/account_state.dart';
 import 'state/app_state.dart';
 import 'theme/app_theme.dart';
+import 'theme/tokens.dart';
 import 'widgets/common.dart';
 
 class SmartRevisionApp extends StatelessWidget {
@@ -40,6 +42,14 @@ class SmartRevisionApp extends StatelessWidget {
               title: 'RevUp',
               debugShowCheckedModeBanner: false,
               theme: buildTheme(junior ? Tier.junior : Tier.senior),
+              builder: (context, child) => Environment.isStaging
+                  ? Banner(
+                      message: 'STAGING',
+                      location: BannerLocation.topEnd,
+                      color: AppColors.streak,
+                      child: child!,
+                    )
+                  : child!,
               home: _home(),
             );
           },
