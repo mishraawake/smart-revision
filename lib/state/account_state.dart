@@ -51,9 +51,9 @@ class AccountState extends ChangeNotifier {
   TeacherClass? get currentClass =>
       classes.isEmpty ? null : classes[classIndex.clamp(0, classes.length - 1)];
 
-  /// Loads what was saved. [hasProfiles] marks phones set up before sign-in
-  /// existed: they carry on as a parent's phone without signing in.
-  Future<void> load({required bool hasProfiles}) async {
+  /// Loads what was saved. No account means the phone belongs to its
+  /// student(s); parents and teachers sign in only for their tasks.
+  Future<void> load() async {
     final prefs = await SharedPreferences.getInstance();
     final a = prefs.getString(_accountKey);
     final r = prefs.getString(_requestKey);
@@ -68,10 +68,6 @@ class AccountState extends ChangeNotifier {
         ? AppSettings()
         : AppSettings.fromJson(jsonDecode(s) as Map<String, dynamic>);
     speaker?.speed = settings.speed;
-    if (account == null && pending == null && hasProfiles) {
-      account = Account(role: Role.parent);
-      await _saveAccount();
-    }
     if (account?.role == Role.teacher) await loadClasses();
     loaded = true;
     notifyListeners();

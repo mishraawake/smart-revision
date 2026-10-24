@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../models/account.dart';
+import 'account/adult_widgets.dart' show pushAdult;
+import 'account/role_screen.dart';
 import '../models/profile.dart';
 import '../state/account_state.dart';
 import '../state/app_state.dart';
@@ -24,30 +26,53 @@ class ProfilePickerScreen extends StatelessWidget {
             ? _JuniorPicker(state: state)
             : _SeniorPicker(state: state),
       ),
-      // Only parents get the grown-up view; a student's own phone doesn't.
-      bottomNavigationBar: accounts?.account?.role == Role.parent
-          ? SafeArea(
-              child: Padding(
-                padding: const EdgeInsets.only(bottom: 8),
-                child: Center(
-                  heightFactor: 1,
-                  child: TextButton.icon(
-                    onPressed: () => accounts!.setAdultMode(true),
-                    icon: const Icon(Icons.lock_outline, size: 18),
-                    label: const Text(
-                      'For parents',
-                      style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.w800,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            )
-          : null,
+      // A signed-in parent goes back to their view; on a students' phone a
+      // grown-up can sign in for their tasks.
+      bottomNavigationBar: switch (accounts?.account?.role) {
+        Role.parent => _GrownUpLink(
+          label: 'For parents',
+          icon: Icons.lock_outline,
+          onPressed: () => accounts!.setAdultMode(true),
+        ),
+        null when accounts != null => _GrownUpLink(
+          label: 'Parent or teacher? Sign in',
+          icon: Icons.login_rounded,
+          onPressed: () => pushAdult(context, const RoleScreen()),
+        ),
+        _ => null,
+      },
     );
   }
+}
+
+class _GrownUpLink extends StatelessWidget {
+  const _GrownUpLink({
+    required this.label,
+    required this.icon,
+    required this.onPressed,
+  });
+
+  final String label;
+  final IconData icon;
+  final VoidCallback onPressed;
+
+  @override
+  Widget build(BuildContext context) => SafeArea(
+    child: Padding(
+      padding: const EdgeInsets.only(bottom: 8),
+      child: Center(
+        heightFactor: 1,
+        child: TextButton.icon(
+          onPressed: onPressed,
+          icon: Icon(icon, size: 18),
+          label: Text(
+            label,
+            style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w800),
+          ),
+        ),
+      ),
+    ),
+  );
 }
 
 class _JuniorPicker extends StatelessWidget {

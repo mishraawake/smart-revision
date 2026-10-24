@@ -33,7 +33,7 @@ Future<(AppState, SilentSpeaker)> pumpApp(
   );
   await tester.runAsync(() async {
     await state.load();
-    await accounts.load(hasProfiles: state.profiles.isNotEmpty);
+    await accounts.load();
   });
   await tester.pumpWidget(
     SmartRevisionApp(state: state, accounts: accounts, speaker: speaker),

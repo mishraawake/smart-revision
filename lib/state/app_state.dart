@@ -14,6 +14,17 @@ import '../models/profile.dart';
 String dayKey(DateTime d) =>
     '${d.year.toString().padLeft(4, '0')}-${d.month.toString().padLeft(2, '0')}-${d.day.toString().padLeft(2, '0')}';
 
+/// How far along a chapter is, in words a student understands.
+enum ChapterLevel {
+  notStarted('Not started'),
+  learning('Learning'),
+  strong('Strong'),
+  mastered('Mastered');
+
+  const ChapterLevel(this.label);
+  final String label;
+}
+
 class SessionSummary {
   SessionSummary({
     required this.knew,
@@ -100,6 +111,12 @@ class AppState extends ChangeNotifier {
     final lastId = await store.loadLastProfileId();
     lastWasJunior =
         profiles.where((p) => p.id == lastId).firstOrNull?.isJunior ?? false;
+    // A phone with one student is that student's: open straight to them.
+    if (profiles.length == 1) {
+      current = profiles.first;
+      deck = await decks.load(current!.classLevel);
+      lastWasJunior = current!.isJunior;
+    }
     loaded = true;
     notifyListeners();
   }
@@ -293,7 +310,8 @@ class AppState extends ChangeNotifier {
             ...s.chapters.where((c) => c.id == p.lastChapterId),
             ...s.chapters.where((c) => c.id != p.lastChapterId),
           ])
-            ...ch.cards.where((c) => !p.cards.containsKey(c.id)),
+            if (isCovered(ch))
+              ...ch.cards.where((c) => !p.cards.containsKey(c.id)),
         ],
     ];
     final out = <Flashcard>[];
@@ -334,6 +352,153 @@ class AppState extends ChangeNotifier {
   ].take(sessionSize).toList();
 
   int chapterDue(Chapter ch) => _dueReviews(ch.cards, now()).length;
+
+  // ---- My chapters, mistakes, tests ---------------------------------------
+
+  /// Done at school, or every chapter while the student hasn't picked.
+  bool isCovered(Chapter ch) =>
+      current!.covered.isEmpty || current!.covered.contains(ch.id);
+
+  ChapterLevel levelOf(Chapter ch) {
+    if (!isStarted(ch)) return ChapterLevel.notStarted;
+    final m = chapterMastery(ch);
+    return m >= 0.8
+        ? ChapterLevel.mastered
+        : m >= 0.5
+        ? ChapterLevel.strong
+        : ChapterLevel.learning;
+  }
+
+  /// Cards whose last answer was wrong, most recent first. Answering one
+  /// right takes it off the list.
+  List<Flashcard> mistakes() {
+    final p = current!;
+    final out = [
+      for (final c in deck?.allCards ?? const <Flashcard>[])
+        if (p.cards[c.id] case final s? when s.box == 0 && s.at != null) c,
+    ];
+    out.sort((a, b) => p.cards[b.id]!.at!.compareTo(p.cards[a.id]!.at!));
+    return out;
+  }
+
+  /// Tests from today on, soonest first.
+  List<Exam> get upcomingExams {
+    final today = dayKey(now());
+    return [
+      for (final e in current!.exams)
+        if (e.day.compareTo(today) >= 0) e,
+    ]..sort((a, b) => a.day.compareTo(b.day));
+  }
+
+  List<Chapter> examChapters(Exam e) => [
+    for (final ch in deck?.chapters ?? const <Chapter>[])
+      if (e.chapterIds.contains(ch.id)) ch,
+  ];
+
+  /// Average mastery of the test's chapters, 0–1.
+  double examReadiness(Exam e) {
+    final chs = examChapters(e);
+    if (chs.isEmpty) return 0;
+    return chs.map(chapterMastery).reduce((a, b) => a + b) / chs.length;
+  }
+
+  int daysUntil(Exam e) {
+    final t = now();
+    return e.date.difference(DateTime(t.year, t.month, t.day)).inDays;
+  }
+
+  /// Cards not learnt yet across the test's chapters.
+  int examCardsLeft(Exam e) =>
+      [for (final ch in examChapters(e)) ...ch.cards]
+          .where((c) => !(current!.cards[c.id]?.learnt ?? false))
+          .length;
+
+  /// Revision for a test: mistakes first, then cards never seen, then the
+  /// learnt ones that are due soonest.
+  List<Flashcard> examQueue(Exam e) {
+    final p = current!;
+    final cards = [for (final ch in examChapters(e)) ...ch.cards];
+    int rank(Flashcard c) {
+      final s = p.cards[c.id];
+      if (s == null) return 1;
+      if (s.box == 0) return 0;
+      return 2;
+    }
+
+    cards.sort((a, b) {
+      final r = rank(a).compareTo(rank(b));
+      if (r != 0) return r;
+      final da = p.cards[a.id]?.due;
+      final db = p.cards[b.id]?.due;
+      return da == null || db == null ? 0 : da.compareTo(db);
+    });
+    return cards.take(sessionSize).toList();
+  }
+
+  // ---- The student's own choices -----------------------------------------
+
+  /// Told when a child's name, class or avatar changed, to update their
+  /// record on the parent's account.
+  void Function(Profile p)? onProfileEdited;
+
+  Future<void> editProfile({
+    required String name,
+    required int classLevel,
+    required int avatar,
+  }) async {
+    final p = current!;
+    final newClass = classLevel != p.classLevel;
+    p
+      ..name = name.trim()
+      ..classLevel = classLevel
+      ..avatar = avatar;
+    if (newClass) {
+      // Chapters and tests belong to the old class's books.
+      p.covered.clear();
+      p.exams.clear();
+      p.goalCards = null;
+      deck = await decks.load(classLevel);
+      lastWasJunior = p.isJunior;
+    }
+    await persist();
+    onProfileEdited?.call(p);
+  }
+
+  Future<void> setGoal(int cards) async {
+    current!.goalCards = cards;
+    await persist();
+  }
+
+  Future<void> setCovered(String chapterId, {required bool done}) async {
+    final c = current!.covered;
+    done ? c.add(chapterId) : c.remove(chapterId);
+    await persist();
+  }
+
+  Future<void> dressOwl({String? colour, String? hat}) async {
+    final p = current!;
+    if (colour != null) p.owlColor = colour;
+    if (hat != null) p.owlHat = hat;
+    await persist();
+  }
+
+  Future<void> addExam(String subjectId, DateTime day, List<String> chapters) {
+    current!.exams.add(
+      Exam(
+        id: '${now().microsecondsSinceEpoch}',
+        subjectId: subjectId,
+        day: dayKey(day),
+        chapterIds: chapters,
+      ),
+    );
+    current!.exams.sort((a, b) => a.day.compareTo(b.day));
+    return persist();
+  }
+
+  Future<void> removeExam(Exam e) {
+    current!.exams.remove(e);
+    return persist();
+  }
 
   /// Learnt cards, for practising after everything due is done.
   List<Flashcard> practiceQueue() {

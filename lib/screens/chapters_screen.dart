@@ -131,11 +131,15 @@ class _ChapterRow extends StatelessWidget {
     final frac = state.learntFraction(chapter.cards);
     final pct = (frac * 100).round();
     final started = state.isStarted(chapter);
-    final status = frac == 1
-        ? 'All learnt'
-        : started
-        ? '$pct%'
-        : 'Not started · ${chapter.cards.length} cards';
+    final status = [
+      if (!started)
+        'Not started · ${chapter.cards.length} cards'
+      else if (frac == 1)
+        '${state.levelOf(chapter).label} · all learnt'
+      else
+        '${state.levelOf(chapter).label} · $pct% learnt',
+      if (!state.isCovered(chapter)) 'not done at school yet',
+    ].join(' · ');
 
     return SoftCard(
       padding: junior ? 16 : 14,

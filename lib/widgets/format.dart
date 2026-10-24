@@ -40,8 +40,12 @@ String shortDate(DateTime now, DateTime d) {
   final diff = today.difference(day).inDays;
   if (diff == 0) return 'Today';
   if (diff == 1) return 'Yesterday';
-  return '${_weekdays[d.weekday - 1]} ${d.day} ${months[d.month - 1]}';
+  return dateLabel(d);
 }
+
+/// "Tue 20 Oct".
+String dateLabel(DateTime d) =>
+    '${_weekdays[d.weekday - 1]} ${d.day} ${months[d.month - 1]}';
 
 /// "6:42".
 String clock(Duration d) =>
@@ -63,7 +67,8 @@ class SwitchStudentButton extends StatelessWidget {
       excludeSemantics: true,
       child: InkWell(
         customBorder: const CircleBorder(),
-        onTap: state.signOut,
+        // A phone with one student is theirs; nobody to switch to.
+        onTap: state.profiles.length > 1 ? state.signOut : null,
         child: Avatar(name: p.name, index: p.avatar, size: size),
       ),
     );

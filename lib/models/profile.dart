@@ -42,6 +42,39 @@ class QuizRecord {
   };
 }
 
+/// A school test the student is preparing for.
+class Exam {
+  Exam({
+    required this.id,
+    required this.subjectId,
+    required this.day,
+    required this.chapterIds,
+  });
+
+  factory Exam.fromJson(Map<String, dynamic> j) => Exam(
+    id: j['id'] as String,
+    subjectId: j['subjectId'] as String,
+    day: j['day'] as String,
+    chapterIds: (j['chapterIds'] as List).cast<String>(),
+  );
+
+  final String id;
+  final String subjectId;
+
+  /// yyyy-mm-dd.
+  final String day;
+  final List<String> chapterIds;
+
+  DateTime get date => DateTime.parse(day);
+
+  Map<String, dynamic> toJson() => {
+    'id': id,
+    'subjectId': subjectId,
+    'day': day,
+    'chapterIds': chapterIds,
+  };
+}
+
 /// One student on this phone. No passwords; everything stays on the device.
 class Profile {
   Profile({
@@ -65,7 +98,14 @@ class Profile {
     this.lastSubjectId,
     this.lastChapterId,
     this.lastStudiedAt,
-  }) : studyDays = studyDays ?? {},
+    this.goalCards,
+    Set<String>? covered,
+    List<Exam>? exams,
+    this.owlColor = 'purple',
+    this.owlHat = 'none',
+  }) : covered = covered ?? {},
+       exams = exams ?? [],
+       studyDays = studyDays ?? {},
        activity = activity ?? {},
        seconds = seconds ?? {},
        cards = cards ?? {},
@@ -115,6 +155,14 @@ class Profile {
     lastStudiedAt: j['lastStudiedAt'] == null
         ? null
         : DateTime.parse(j['lastStudiedAt'] as String),
+    goalCards: j['goalCards'] as int?,
+    covered: {...?(j['covered'] as List?)?.cast<String>()},
+    exams: [
+      for (final e in (j['exams'] as List?) ?? const [])
+        Exam.fromJson((e as Map).cast<String, dynamic>()),
+    ],
+    owlColor: j['owlColor'] as String? ?? 'purple',
+    owlHat: j['owlHat'] as String? ?? 'none',
   );
 
   final String id;
@@ -158,8 +206,27 @@ class Profile {
   String? lastChapterId;
   DateTime? lastStudiedAt;
 
+  /// Cards a day the student chose; null means the default for their age.
+  int? goalCards;
+
+  /// Chapters their class has done at school. Empty means all of them, so
+  /// new cards come from everywhere until the student picks.
+  final Set<String> covered;
+
+  /// Tests coming up, soonest first.
+  final List<Exam> exams;
+
+  /// Ullu's look, from the wardrobe on the Me tab.
+  String owlColor;
+  String owlHat;
+
   bool get isJunior => classLevel <= 5;
-  int get dailyGoal => isJunior ? 10 : 30;
+  int get dailyGoal => goalCards ?? defaultGoal;
+  int get defaultGoal => isJunior ? 10 : 30;
+
+  /// The daily goal choices, in cards: light, normal, keen.
+  List<int> get goalChoices =>
+      isJunior ? const [5, 10, 15] : const [15, 30, 45];
 
   Map<String, dynamic> toJson() => {
     'id': id,
@@ -182,5 +249,10 @@ class Profile {
     'lastSubjectId': lastSubjectId,
     'lastChapterId': lastChapterId,
     'lastStudiedAt': lastStudiedAt?.toIso8601String(),
+    'goalCards': goalCards,
+    'covered': covered.toList(),
+    'exams': [for (final e in exams) e.toJson()],
+    'owlColor': owlColor,
+    'owlHat': owlHat,
   };
 }

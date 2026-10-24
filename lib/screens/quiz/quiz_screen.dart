@@ -1440,7 +1440,7 @@ class _Feedback extends StatelessWidget {
               ),
             ),
           ),
-          if (junior && right) const Owl(size: 64),
+          if (junior && right) const MyOwl(size: 64),
           if (!junior && right && q is! MatchQuestion)
             Text(
               '+$xp XP',

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'data/speaker.dart';
 import 'firebase/environment.dart';
 import 'models/account.dart';
-import 'screens/account/role_screen.dart';
+import 'screens/onboarding_screen.dart';
 import 'screens/account/waiting_screen.dart';
 import 'screens/home_shell.dart';
 import 'screens/parent/parent_shell.dart';
@@ -62,11 +62,12 @@ class SmartRevisionApp extends StatelessWidget {
     if (!state.loaded || !accounts.loaded) return const Scaffold();
     final account = accounts.account;
     if (account == null) {
-      final r = accounts.pending;
-      return r == null ? const RoleScreen() : WaitingScreen(request: r);
-    }
-    if (account.role == Role.teacher) return const TeacherShell();
-    if (account.role == Role.parent && accounts.adultMode) {
+      if (accounts.pending case final r?) return WaitingScreen(request: r);
+      // The phone is the student's: set one up, or open theirs.
+      if (state.profiles.isEmpty) return const OnboardingScreen();
+    } else if (account.role == Role.teacher) {
+      return const TeacherShell();
+    } else if (account.role == Role.parent && accounts.adultMode) {
       return const ParentShell();
     }
     return state.current == null

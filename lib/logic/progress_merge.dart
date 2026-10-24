@@ -71,6 +71,19 @@ bool mergeProgress(Profile into, Profile other) {
     into.lastChapterId = other.lastChapterId;
   }
 
+  // Choices the student made: this phone's, unless it never chose.
+  into.goalCards ??= other.goalCards;
+  if (into.covered.isEmpty) into.covered.addAll(other.covered);
+  if (into.owlColor == 'purple') into.owlColor = other.owlColor;
+  if (into.owlHat == 'none') into.owlHat = other.owlHat;
+
+  // Tests added on either phone.
+  final tests = {for (final e in into.exams) e.id};
+  for (final e in other.exams) {
+    if (tests.add(e.id)) into.exams.add(e);
+  }
+  into.exams.sort((a, b) => a.day.compareTo(b.day));
+
   return jsonEncode(into.toJson()) != before;
 }
 

@@ -33,6 +33,14 @@ Future<void> main() async {
   );
   final progress = ProgressSync(app: state, accounts: accounts);
   state.onSessionEnd = progress.afterSession;
+  state.onProfileEdited = (p) => accounts.saveChild(
+    ChildRecord(
+      id: p.id,
+      name: p.name,
+      classLevel: p.classLevel,
+      avatar: p.avatar,
+    ),
+  );
 
   // Whoever starts studying: their progress from other phones, and
   // teachers' work.
@@ -54,8 +62,6 @@ Future<void> main() async {
     },
   );
 
-  state.load().then(
-    (_) => accounts.load(hasProfiles: state.profiles.isNotEmpty),
-  );
+  state.load().then((_) => accounts.load());
   runApp(SmartRevisionApp(state: state, accounts: accounts, speaker: speaker));
 }

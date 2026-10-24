@@ -164,7 +164,7 @@ class _JuniorIntro extends StatelessWidget {
                 child: ListView(
                   children: [
                     const SizedBox(height: 8),
-                    const Center(child: Owl(size: 132)),
+                    const Center(child: MyOwl(size: 132)),
                     const SizedBox(height: 8),
                     const Center(
                       child: Text(

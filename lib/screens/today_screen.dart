@@ -9,6 +9,7 @@ import 'chapters_screen.dart';
 import 'quiz/quiz_intro_screen.dart';
 import 'review_screen.dart';
 import '../widgets/format.dart';
+import '../widgets/study_extras.dart';
 import '../widgets/teacher_work.dart';
 
 class TodayScreen extends StatelessWidget {
@@ -51,7 +52,7 @@ class _JuniorToday extends StatelessWidget {
               message: 'Switch student',
               child: InkWell(
                 customBorder: const CircleBorder(),
-                onTap: state.signOut,
+                onTap: state.profiles.length > 1 ? state.signOut : null,
                 child: Avatar(name: p.name, index: p.avatar),
               ),
             ),
@@ -75,6 +76,7 @@ class _JuniorToday extends StatelessWidget {
           ],
         ),
         const TeacherWork(),
+        const StudyExtras(),
         const SizedBox(height: 16),
         Row(
           children: [
@@ -323,7 +325,7 @@ class _AllDone extends StatelessWidget {
     padding: 20,
     child: Column(
       children: [
-        const Owl(size: 96, sleeping: true),
+        const MyOwl(size: 96, sleeping: true),
         const SizedBox(height: 8),
         const Row(
           children: [
@@ -501,6 +503,7 @@ class _SeniorToday extends StatelessWidget {
           ],
         ),
         const TeacherWork(),
+        const StudyExtras(),
         const SizedBox(height: 10),
         Wrap(
           spacing: 8,
@@ -775,7 +778,7 @@ class NoContentView extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            if (Tier.of(context).isJunior) const Owl(size: 96),
+            if (Tier.of(context).isJunior) const MyOwl(size: 96),
             const SizedBox(height: 12),
             Text(
               'Class $classLevel decks are coming soon',

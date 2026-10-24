@@ -42,7 +42,7 @@ class _Junior extends StatelessWidget {
           Expanded(
             child: ListView(
               children: [
-                const Center(child: Owl(size: 120)),
+                const Center(child: MyOwl(size: 120)),
                 const SizedBox(height: 8),
                 Row(
                   children: [

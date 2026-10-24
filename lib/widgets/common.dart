@@ -3,6 +3,7 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 
 import '../data/speaker.dart';
+import '../state/app_state.dart';
 import '../theme/app_theme.dart';
 import '../theme/tokens.dart';
 
@@ -355,24 +356,72 @@ class _RingPainter extends CustomPainter {
   bool shouldRepaint(_RingPainter old) => old.fraction != fraction;
 }
 
+/// Ullu's feather colours, by wardrobe id.
+const owlColours = {
+  'purple': Color(0xFF8B5CF6),
+  'blue': Color(0xFF3B82F6),
+  'green': Color(0xFF10B981),
+  'pink': Color(0xFFEC4899),
+  'orange': Color(0xFFF97316),
+  'gold': Color(0xFFEAB308),
+};
+
 /// "Ullu" the owl. Placeholder art until the final mascot arrives.
 class Owl extends StatelessWidget {
-  const Owl({super.key, this.size = 88, this.sleeping = false});
+  const Owl({
+    super.key,
+    this.size = 88,
+    this.sleeping = false,
+    this.colour = 'purple',
+    this.hat = 'none',
+  });
 
   final double size;
   final bool sleeping;
+
+  /// Wardrobe ids; see logic/owl_wardrobe.dart.
+  final String colour;
+  final String hat;
 
   @override
   Widget build(BuildContext context) => Semantics(
     label: sleeping ? 'Ullu the owl, resting' : 'Ullu the owl',
     image: true,
-    child: CustomPaint(size: Size.square(size), painter: _OwlPainter(sleeping)),
+    child: CustomPaint(
+      size: Size.square(size),
+      painter: _OwlPainter(
+        sleeping,
+        owlColours[colour] ?? owlColours['purple']!,
+        hat,
+      ),
+    ),
   );
 }
 
-class _OwlPainter extends CustomPainter {
-  _OwlPainter(this.sleeping);
+/// The studying student's own Ullu, dressed as they chose.
+class MyOwl extends StatelessWidget {
+  const MyOwl({super.key, this.size = 88, this.sleeping = false});
+
+  final double size;
   final bool sleeping;
+
+  @override
+  Widget build(BuildContext context) {
+    final p = AppScope.of(context).current;
+    return Owl(
+      size: size,
+      sleeping: sleeping,
+      colour: p?.owlColor ?? 'purple',
+      hat: p?.owlHat ?? 'none',
+    );
+  }
+}
+
+class _OwlPainter extends CustomPainter {
+  _OwlPainter(this.sleeping, this.colour, this.hat);
+  final bool sleeping;
+  final Color colour;
+  final String hat;
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -383,7 +432,7 @@ class _OwlPainter extends CustomPainter {
       42,
       p..color = const Color(0xFFFFF1C9),
     );
-    p.color = const Color(0xFF8B5CF6);
+    p.color = colour;
     canvas.drawPath(
       Path()
         ..moveTo(26, 34)
@@ -436,10 +485,93 @@ class _OwlPainter extends CustomPainter {
         ..close(),
       p,
     );
+    _paintHat(canvas);
+  }
+
+  void _paintHat(Canvas canvas) {
+    final p = Paint();
+    switch (hat) {
+      case 'cap':
+        p.color = const Color(0xFF1F1A33);
+        canvas.drawRect(const Rect.fromLTRB(37, 22, 51, 29), p);
+        canvas.drawPath(
+          Path()
+            ..moveTo(28, 21)
+            ..lineTo(44, 15)
+            ..lineTo(60, 21)
+            ..lineTo(44, 26)
+            ..close(),
+          p,
+        );
+        p
+          ..color = const Color(0xFFF59E0B)
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = 1.6;
+        canvas.drawLine(const Offset(44, 20), const Offset(57, 23), p);
+        canvas.drawLine(const Offset(57, 23), const Offset(57, 31), p);
+      case 'bow':
+        p.color = const Color(0xFFEC4899);
+        canvas.drawPath(
+          Path()
+            ..moveTo(52, 27)
+            ..lineTo(45, 21)
+            ..lineTo(45, 33)
+            ..close()
+            ..moveTo(52, 27)
+            ..lineTo(59, 21)
+            ..lineTo(59, 33)
+            ..close(),
+          p,
+        );
+        canvas.drawCircle(
+          const Offset(52, 27),
+          2.5,
+          p..color = const Color(0xFFBE185D),
+        );
+      case 'crown':
+        p.color = const Color(0xFFF5B700);
+        canvas.drawPath(
+          Path()
+            ..moveTo(33, 30)
+            ..lineTo(32, 18)
+            ..lineTo(38, 24)
+            ..lineTo(44, 14)
+            ..lineTo(50, 24)
+            ..lineTo(56, 18)
+            ..lineTo(55, 30)
+            ..close(),
+          p,
+        );
+        canvas.drawCircle(
+          const Offset(44, 25),
+          2,
+          p..color = const Color(0xFFDC2626),
+        );
+      case 'headphones':
+        p
+          ..color = const Color(0xFF1F1A33)
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = 3.5;
+        canvas.drawArc(
+          const Rect.fromLTRB(22, 18, 66, 62),
+          math.pi,
+          math.pi,
+          false,
+          p,
+        );
+        p.style = PaintingStyle.fill;
+        final cup = RRect.fromRectAndRadius(
+          const Rect.fromLTWH(18, 36, 9, 16),
+          const Radius.circular(4),
+        );
+        canvas.drawRRect(cup, p..color = const Color(0xFF3B82F6));
+        canvas.drawRRect(cup.shift(const Offset(43, 0)), p);
+    }
   }
 
   @override
-  bool shouldRepaint(_OwlPainter old) => old.sleeping != sleeping;
+  bool shouldRepaint(_OwlPainter old) =>
+      old.sleeping != sleeping || old.colour != colour || old.hat != hat;
 }
 
 const avatarColors = [
