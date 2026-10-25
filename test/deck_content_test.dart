@@ -17,7 +17,7 @@ void main() {
     2: {'maths', 'english'},
     3: {'maths', 'english', 'evs'},
     4: {'maths', 'english', 'evs'},
-    5: {'maths', 'english', 'evs'},
+    5: {'maths', 'science', 'social'},
     6: {'maths', 'science', 'social', 'english'},
     7: {'maths', 'science', 'social', 'english'},
     8: {'maths', 'science', 'social', 'english'},

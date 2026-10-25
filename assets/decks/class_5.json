@@ -2,6 +2,169 @@
   "classLevel": 5,
   "subjects": [
     {
+      "id": "science",
+      "name": "Science",
+      "colour": "#CFFAFE",
+      "ink": "#155E75",
+      "glyph": "Sc",
+      "chapters": [
+        {
+          "id": "c5c-sci-01",
+          "number": 1,
+          "title": "Solids, Liquids and Gases",
+          "pairs": [["Melting", "Solid → liquid"], ["Freezing", "Liquid → solid"], ["Evaporation", "Liquid → gas"], ["Condensation", "Gas → liquid"], ["Solute", "Salt"], ["Solvent", "Water"]],
+          "cards": [
+            {"id": "c5cs1-01", "front": "What is matter?", "back": "Anything that has mass and occupies space", "hint": "Think: mass + space", "explain": "Air, water, food and even our body are matter.", "source": "Collins Class 5 Science, Ch 1", "wrong": ["Anything that we can see", "Only living things", "Only solids and liquids"], "tf": {"text": "Air is not matter because we cannot see it.", "answer": false}, "blank": {"text": "Matter is anything that has mass and occupies ___.", "answer": "space"}, "level": 1, "concept": "matter"},
+            {"id": "c5cs1-02", "front": "What are the tiny particles that matter is made of?", "back": "Molecules", "explain": "Matter is made of molecules, and molecules are made of even tinier atoms.", "source": "Collins Class 5 Science, Ch 1", "wrong": ["Cells", "Grains", "Crystals"], "level": 1, "concept": "molecules"},
+            {"id": "c5cs1-03", "front": "What is the basic building block of all matter?", "back": "Atom", "hint": "Even smaller than a molecule", "explain": "Two or more atoms join together to form a molecule.", "source": "Collins Class 5 Science, Ch 1", "wrong": ["Molecule", "Element", "Cell"], "tf": {"text": "Atoms can be seen with the naked eye.", "answer": false}, "blank": {"text": "Two or more ___ join together to form a molecule.", "answer": "atoms"}, "level": 1, "concept": "atoms"},
+            {"id": "c5cs1-04", "front": "What is the space between two molecules called?", "back": "Intermolecular space", "explain": "It is smallest in solids and largest in gases.", "source": "Collins Class 5 Science, Ch 1", "wrong": ["Molecular gap", "Atomic space", "Free volume"], "level": 1, "concept": "intermolecular space"},
+            {"id": "c5cs1-05", "front": "What is the amount of matter in a body called?", "back": "Mass", "explain": "The amount of space an object occupies is its volume.", "source": "Collins Class 5 Science, Ch 1", "wrong": ["Volume", "Size", "Shape"], "level": 1, "concept": "mass and volume"},
+            {"id": "c5cs1-06", "front": "What is the amount of space an object occupies called?", "back": "Volume", "source": "Collins Class 5 Science, Ch 1", "wrong": ["Mass", "Weight", "Density"], "level": 1, "concept": "mass and volume"},
+            {"id": "c5cs1-07", "front": "What are the three states of matter?", "back": "Solid, liquid and gas", "explain": "The difference between them lies in how their molecules are arranged.", "source": "Collins Class 5 Science, Ch 1", "wrong": ["Solid, water and air", "Ice, water and steam", "Hard, soft and runny"], "level": 1, "concept": "states of matter"},
+            {"id": "c5cs1-08", "front": "In which state of matter are molecules most tightly packed?", "back": "Solid", "explain": "Strong attraction holds the molecules of a solid close together, so they cannot move.", "source": "Collins Class 5 Science, Ch 1", "wrong": ["Liquid", "Gas"], "tf": {"text": "In solids, the molecules are loosely packed.", "answer": false}, "blank": {"text": "In ___, the molecules are tightly packed.", "answer": "solids"}, "level": 1, "concept": "solids"},
+            {"id": "c5cs1-09", "front": "In which state is the force of attraction between molecules the least?", "back": "Gas", "explain": "Gas molecules have a lot of free space and move freely in all directions.", "source": "Collins Class 5 Science, Ch 1", "wrong": ["Solid", "Liquid"], "level": 1, "concept": "gases"},
+            {"id": "c5cs1-10", "front": "Why does a solid have a fixed shape and size?", "back": "Its molecules are tightly packed and cannot move", "explain": "Strong attraction keeps the molecules in place.", "source": "Collins Class 5 Science, Ch 1", "wrong": ["Its molecules move freely", "It has no molecules", "It is always cold"], "tf": {"text": "Solids can be compressed easily.", "answer": false}, "level": 2, "concept": "solids"},
+            {"id": "c5cs1-11", "front": "Why do liquids flow?", "back": "Their molecules can move", "explain": "Liquid molecules are more loosely packed than in solids, so they slide past each other.", "source": "Collins Class 5 Science, Ch 1", "wrong": ["Their molecules cannot move", "They have a fixed shape", "They are very heavy"], "blank": {"text": "Liquids flow from a ___ level to a lower level.", "answer": "higher"}, "level": 2, "concept": "liquids"},
+            {"id": "c5cs1-12", "front": "A liquid has a fixed volume. Does it have a fixed shape?", "back": "No – it takes the shape of its container", "explain": "Water in a glass and in a bottle has different shapes but the same volume.", "source": "Collins Class 5 Science, Ch 1", "wrong": ["Yes – always round", "Yes – always square", "No – and no fixed volume either"], "tf": {"text": "Liquids have a fixed volume but no fixed shape.", "answer": true}, "level": 2, "concept": "liquids"},
+            {"id": "c5cs1-13", "front": "Which state of matter can be compressed to a large extent?", "back": "Gas", "explain": "Gases have lots of free space between molecules – that is why we can fill so much air into a balloon or tyre.", "source": "Collins Class 5 Science, Ch 1", "wrong": ["Solid", "Liquid"], "level": 2, "concept": "gases"},
+            {"id": "c5cs1-14", "front": "What is solubility?", "back": "The ability of a substance to dissolve in another substance", "explain": "Sugar has high solubility in water.", "source": "Collins Class 5 Science, Ch 1", "wrong": ["The ability to melt", "The ability to float on water", "The ability to change colour"], "level": 1, "concept": "solubility"},
+            {"id": "c5cs1-15", "front": "The substance that dissolves is called the …?", "back": "Solute", "explain": "In salt water, salt is the solute.", "source": "Collins Class 5 Science, Ch 1", "wrong": ["Solvent", "Solution", "Mixture"], "blank": {"text": "A substance that dissolves in another substance is called a ___.", "answer": "solute"}, "level": 1, "concept": "solute and solvent"},
+            {"id": "c5cs1-16", "front": "The substance in which the solute dissolves is called the …?", "back": "Solvent", "explain": "In salt water, water is the solvent.", "source": "Collins Class 5 Science, Ch 1", "wrong": ["Solute", "Solution", "Liquid"], "level": 1, "concept": "solute and solvent"},
+            {"id": "c5cs1-17", "front": "Salt + water gives salt water. What is salt water called?", "back": "Solution", "explain": "Solute + solvent = solution.", "source": "Collins Class 5 Science, Ch 1", "wrong": ["Solute", "Solvent", "Compound"], "level": 2, "concept": "solution"},
+            {"id": "c5cs1-18", "front": "What is a uniform solution?", "back": "A solution where the solute spreads evenly through the solvent", "explain": "Salt breaks into molecules that spread evenly between the water molecules.", "source": "Collins Class 5 Science, Ch 1", "wrong": ["A solution with lumps at the bottom", "A solution that cannot be poured", "A solid that has melted"], "level": 2, "concept": "solution"},
+            {"id": "c5cs1-19", "front": "Sand, chalk powder and tea leaves do not dissolve in water. What are they called?", "back": "Insoluble substances", "explain": "Salt and sugar, which dissolve, are soluble substances.", "source": "Collins Class 5 Science, Ch 1", "wrong": ["Soluble substances", "Miscible liquids", "Solvents"], "tf": {"text": "Sugar is an insoluble substance.", "answer": false}, "level": 1, "concept": "soluble and insoluble"},
+            {"id": "c5cs1-20", "front": "Liquids that dissolve easily in water, like milk, are called …?", "back": "Miscible liquids", "explain": "Milk, glycerine and alcohol are miscible with water.", "source": "Collins Class 5 Science, Ch 1", "wrong": ["Immiscible liquids", "Insoluble liquids", "Solutes"], "level": 1, "concept": "miscible and immiscible"},
+            {"id": "c5cs1-21", "front": "Oil floats on water and does not mix. Oil is a … liquid.", "back": "Immiscible", "explain": "Oil and petrol are immiscible with water.", "source": "Collins Class 5 Science, Ch 1", "wrong": ["Miscible", "Soluble", "Uniform"], "tf": {"text": "Oil is miscible in water.", "answer": false}, "level": 1, "concept": "miscible and immiscible"},
+            {"id": "c5cs1-22", "front": "Why do bubbles come out when we open a bottle of soda?", "back": "Carbon dioxide dissolved under pressure escapes", "explain": "Soda has carbon dioxide dissolved in it under high pressure – this gives the fizz.", "source": "Collins Class 5 Science, Ch 1", "wrong": ["Oxygen is made inside the bottle", "The water starts boiling", "Sugar turns into gas"], "tf": {"text": "Carbon dioxide does not dissolve in water.", "answer": false}, "level": 3, "concept": "solubility of gases"},
+            {"id": "c5cs1-23", "front": "How do fish breathe under water?", "back": "They use oxygen dissolved in water", "explain": "Gases like oxygen and carbon dioxide dissolve in water. Aquatic plants use the dissolved carbon dioxide to make food.", "source": "Collins Class 5 Science, Ch 1", "wrong": ["They come up for air every minute", "They breathe water itself", "They do not need oxygen"], "level": 2, "concept": "solubility of gases"},
+            {"id": "c5cs1-24", "front": "Why is water called the universal solvent?", "back": "It can dissolve more substances than any other liquid", "source": "Collins Class 5 Science, Ch 1", "wrong": ["It is found everywhere", "It has no colour", "It never freezes"], "blank": {"text": "Water is known as the universal ___.", "answer": "solvent"}, "level": 2, "concept": "universal solvent"},
+            {"id": "c5cs1-25", "front": "A solid changing into a liquid on heating is called …?", "back": "Melting", "explain": "Ice melting into water is an example.", "source": "Collins Class 5 Science, Ch 1", "wrong": ["Freezing", "Evaporation", "Condensation"], "tf": {"text": "Melting of ice is a chemical change.", "answer": false}, "level": 1, "concept": "change of state"},
+            {"id": "c5cs1-26", "front": "A liquid changing into a gas on heating is called …?", "back": "Evaporation", "explain": "Wet clothes dry because the water evaporates.", "source": "Collins Class 5 Science, Ch 1", "wrong": ["Condensation", "Melting", "Freezing"], "level": 1, "concept": "change of state"},
+            {"id": "c5cs1-27", "front": "A liquid changing into a solid on cooling is called …?", "back": "Freezing", "explain": "Water kept in the freezer turns into ice.", "source": "Collins Class 5 Science, Ch 1", "wrong": ["Melting", "Condensation", "Evaporation"], "blank": {"text": "Water kept in the freezer turns into ice. This is called ___.", "answer": "freezing"}, "level": 1, "concept": "change of state"},
+            {"id": "c5cs1-28", "front": "A gas changing into a liquid on cooling is called …?", "back": "Condensation", "explain": "Water drops form outside a cold glass because water vapour in the air condenses. Dew forms the same way.", "source": "Collins Class 5 Science, Ch 1", "wrong": ["Evaporation", "Freezing", "Melting"], "level": 1, "concept": "change of state"},
+            {"id": "c5cs1-29", "front": "What happens to the molecules of a substance when it is heated?", "back": "They gain energy and move faster", "explain": "On cooling, molecules lose energy and slow down.", "source": "Collins Class 5 Science, Ch 1", "wrong": ["They lose energy and slow down", "They stop moving", "They disappear"], "tf": {"text": "The movement of molecules increases on cooling.", "answer": false}, "level": 2, "concept": "heating and cooling"},
+            {"id": "c5cs1-30", "front": "Most solids get bigger when heated. What is this called?", "back": "Expansion", "explain": "On cooling, solids contract (get smaller) as their molecules come closer.", "source": "Collins Class 5 Science, Ch 1", "wrong": ["Contraction", "Melting", "Condensation"], "blank": {"text": "Most solids ___ on heating and contract on cooling.", "answer": "expand"}, "level": 2, "concept": "expansion and contraction"},
+            {"id": "c5cs1-31", "front": "What is a physical change?", "back": "A temporary change where no new substance is formed", "explain": "It is usually reversible, like water ↔ ice.", "source": "Collins Class 5 Science, Ch 1", "wrong": ["A permanent change that forms a new substance", "A change that can never be reversed", "A change only in living things"], "tf": {"text": "Physical change is a permanent change.", "answer": false}, "level": 1, "concept": "physical change"},
+            {"id": "c5cs1-32", "front": "What is a chemical change?", "back": "A permanent change where new substances are formed", "explain": "Burning leaves gives ash, which is very different from leaves.", "source": "Collins Class 5 Science, Ch 1", "wrong": ["A temporary change with no new substance", "A change in shape only", "A change that is easy to reverse"], "blank": {"text": "A change that produces new substances is called a ___ change.", "answer": "chemical"}, "level": 1, "concept": "chemical change"},
+            {"id": "c5cs1-33", "front": "Melting chocolate in a pan – physical or chemical change?", "back": "Physical", "explain": "The melted chocolate can set again – no new substance is formed.", "source": "Collins Class 5 Science, Ch 1", "wrong": ["Chemical"], "level": 3, "concept": "physical vs chemical"},
+            {"id": "c5cs1-34", "front": "Baking a cookie – physical or chemical change?", "back": "Chemical", "explain": "Baked dough cannot turn back into raw dough – new substances form.", "source": "Collins Class 5 Science, Ch 1", "wrong": ["Physical"], "level": 3, "concept": "physical vs chemical"},
+            {"id": "c5cs1-35", "front": "Rusting of an iron nail – physical or chemical change?", "back": "Chemical", "explain": "Rust is a new substance and the change cannot be reversed.", "source": "Collins Class 5 Science, Ch 1", "wrong": ["Physical"], "tf": {"text": "Rusting of iron is a chemical change.", "answer": true}, "level": 3, "concept": "physical vs chemical"},
+            {"id": "c5cs1-36", "front": "Making a boat from paper – physical or chemical change?", "back": "Physical", "explain": "Only the shape changes; you can unfold it back.", "source": "Collins Class 5 Science, Ch 1", "wrong": ["Chemical"], "level": 3, "concept": "physical vs chemical"},
+            {"id": "c5cs1-37", "front": "Burning a candle involves which kind of change?", "back": "Both physical and chemical", "explain": "Wax melting is physical; wax burning to give heat, light and gases is chemical.", "source": "Collins Class 5 Science, Ch 1", "wrong": ["Only physical", "Only chemical", "No change"], "level": 3, "concept": "physical vs chemical"},
+            {"id": "c5cs1-38", "front": "How does the smell of food cooking in the kitchen spread through the whole house?", "back": "Gas molecules move freely in all directions", "explain": "The aroma is carried by gas molecules that spread out to fill the space.", "source": "Collins Class 5 Science, Ch 1", "wrong": ["The smell travels through the walls", "Liquids flow from the kitchen", "Solids carry the smell"], "level": 3, "concept": "gases"}
+          ]
+        },
+        {
+          "id": "c5c-sci-02",
+          "number": 2,
+          "title": "Air and Water",
+          "pairs": [["Nitrogen", "About 78% of air"], ["Oxygen", "About 21% of air"], ["Ozone layer", "Blocks UV rays"], ["Filtration", "Removes dirt using filter"]],
+          "cards": [
+            {"id": "c5cs2-01", "front": "What is the blanket of air around the Earth called?", "back": "Atmosphere", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Hydrosphere", "Lithosphere", "Ozone"]},
+            {"id": "c5cs2-02", "front": "Which gas makes up most of the air?", "back": "Nitrogen", "explain": "About 78% of air is nitrogen and about 21% is oxygen.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Oxygen", "Carbon dioxide", "Hydrogen"], "tf": {"text": "Oxygen is the gas found most in air.", "answer": false}},
+            {"id": "c5cs2-03", "front": "Which gas in air do we need to breathe?", "back": "Oxygen", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Nitrogen", "Carbon dioxide", "Argon"]},
+            {"id": "c5cs2-04", "front": "Which gas do plants take in to make food?", "back": "Carbon dioxide", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Oxygen", "Nitrogen", "Helium"]},
+            {"id": "c5cs2-05", "front": "The lowest layer of the atmosphere, where we live, is the …?", "back": "Troposphere", "explain": "Weather happens in this layer.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Stratosphere", "Mesosphere", "Exosphere"]},
+            {"id": "c5cs2-06", "front": "Which layer protects us from the Sun's harmful ultraviolet rays?", "back": "Ozone layer", "explain": "It is in the stratosphere.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Troposphere", "Exosphere", "Clouds"]},
+            {"id": "c5cs2-07", "front": "A blown-up balloon shows that air …?", "back": "Occupies space", "explain": "Air also has weight and exerts pressure.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Has no weight", "Has a colour", "Is a liquid"], "tf": {"text": "Air has weight.", "answer": true}},
+            {"id": "c5cs2-08", "front": "About how much of the Earth's surface is covered with water?", "back": "About three-fourths", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["About half", "About one-fourth", "All of it"]},
+            {"id": "c5cs2-09", "front": "Letting mud settle at the bottom of a glass of water is called …?", "back": "Sedimentation", "explain": "Pouring off the clear water after that is decantation.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Decantation", "Evaporation", "Chlorination"]},
+            {"id": "c5cs2-10", "front": "Which method kills germs in water at home?", "back": "Boiling", "explain": "Water is also cleaned with chlorine tablets (chlorination).", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Decantation", "Sedimentation", "Freezing"]}
+          ]
+        },
+        {
+          "id": "c5c-sci-03",
+          "number": 3,
+          "title": "Rocks and Minerals",
+          "pairs": [["Granite", "Igneous rock"], ["Sandstone", "Sedimentary rock"], ["Marble", "Metamorphic rock"], ["Diamond", "Hardest mineral"]],
+          "cards": [
+            {"id": "c5cs3-01", "front": "Rocks formed when hot molten magma cools down are called …?", "back": "Igneous rocks", "explain": "Granite and basalt are igneous rocks.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Sedimentary rocks", "Metamorphic rocks", "Minerals"]},
+            {"id": "c5cs3-02", "front": "Rocks formed from layers of sand, mud and pebbles pressed together are …?", "back": "Sedimentary rocks", "explain": "Sandstone and limestone are sedimentary rocks.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Igneous rocks", "Metamorphic rocks", "Ores"]},
+            {"id": "c5cs3-03", "front": "Rocks changed by great heat and pressure are called …?", "back": "Metamorphic rocks", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Igneous rocks", "Sedimentary rocks", "Fossils"]},
+            {"id": "c5cs3-04", "front": "Marble is formed from which rock?", "back": "Limestone", "explain": "The Taj Mahal is made of marble.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Granite", "Basalt", "Coal"]},
+            {"id": "c5cs3-05", "front": "In which type of rock are fossils usually found?", "back": "Sedimentary", "explain": "Remains of plants and animals get trapped in the layers.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Igneous", "Metamorphic"], "tf": {"text": "Fossils are usually found in igneous rocks.", "answer": false}},
+            {"id": "c5cs3-06", "front": "What are rocks made of?", "back": "Minerals", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Fossils", "Water", "Plants"]},
+            {"id": "c5cs3-07", "front": "What is the hardest mineral?", "back": "Diamond", "explain": "Talc is the softest mineral.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Talc", "Quartz", "Gold"]},
+            {"id": "c5cs3-08", "front": "Hot liquid rock inside the Earth is called …?", "back": "Magma", "explain": "When it comes out of a volcano it is called lava.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Lava", "Granite", "Ore"]},
+            {"id": "c5cs3-09", "front": "Rocks from which metals are taken out are called …?", "back": "Ores", "explain": "Iron is taken out of iron ore.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Fossils", "Gems", "Pebbles"]},
+            {"id": "c5cs3-10", "front": "The slow breaking down of rocks by wind, water and heat is called …?", "back": "Weathering", "explain": "Weathering of rocks forms soil.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Melting", "Freezing", "Mining"]}
+          ]
+        },
+        {
+          "id": "c5c-sci-04",
+          "number": 4,
+          "title": "Force and Energy",
+          "pairs": [["Push", "Opening a door away from you"], ["Pull", "Drawing water from a well"], ["Friction", "Slows moving things"], ["Gravity", "Pulls things to Earth"]],
+          "cards": [
+            {"id": "c5cs4-01", "front": "A push or a pull is called a …?", "back": "Force", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Energy", "Work", "Speed"]},
+            {"id": "c5cs4-02", "front": "Which force pulls everything towards the Earth?", "back": "Gravity", "explain": "That is why a ball thrown up comes down.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Friction", "Magnetic force", "Muscular force"]},
+            {"id": "c5cs4-03", "front": "Which force slows down a ball rolling on the ground?", "back": "Friction", "explain": "Friction acts between two surfaces that rub.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Gravity", "Magnetic force", "Electric force"]},
+            {"id": "c5cs4-04", "front": "The force we use to lift a bag with our hands is …?", "back": "Muscular force", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Magnetic force", "Gravity", "Friction"]},
+            {"id": "c5cs4-05", "front": "Which of these can a force NOT do: move, stop, change shape, or create energy from nothing?", "back": "Create energy from nothing", "explain": "A force can move, stop, speed up, slow down or change the shape or direction of an object.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Move an object", "Stop an object", "Change its shape"]},
+            {"id": "c5cs4-06", "front": "What is the ability to do work called?", "back": "Energy", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Force", "Friction", "Power cut"]},
+            {"id": "c5cs4-07", "front": "What is the main source of energy on Earth?", "back": "The Sun", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["The Moon", "Coal", "Wind"]},
+            {"id": "c5cs4-08", "front": "A bulb changes electrical energy into …?", "back": "Light energy", "explain": "It also gives some heat.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Sound energy", "Chemical energy", "Muscular energy"]},
+            {"id": "c5cs4-09", "front": "The energy stored in food and batteries is …?", "back": "Chemical energy", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Light energy", "Sound energy", "Magnetic energy"]},
+            {"id": "c5cs4-10", "front": "The energy of a moving object is called …?", "back": "Kinetic energy", "explain": "Stored energy due to position is potential energy.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Potential energy", "Chemical energy", "Solar energy"], "tf": {"text": "A rolling ball has kinetic energy.", "answer": true}}
+          ]
+        },
+        {
+          "id": "c5c-sci-05",
+          "number": 5,
+          "title": "Earth, Sun and Moon",
+          "pairs": [["Rotation", "Day and night"], ["Revolution", "Seasons"], ["Moon", "Earth's satellite"], ["Sun", "A star"]],
+          "cards": [
+            {"id": "c5cs5-01", "front": "The spinning of the Earth on its axis is called …?", "back": "Rotation", "explain": "It takes about 24 hours.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Revolution", "Orbit", "Eclipse"]},
+            {"id": "c5cs5-02", "front": "What causes day and night?", "back": "Rotation of the Earth", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Revolution of the Earth", "The Moon hiding the Sun", "Clouds"]},
+            {"id": "c5cs5-03", "front": "How long does the Earth take to go once around the Sun?", "back": "About 365¼ days", "explain": "The extra ¼ day adds up to a leap year every 4 years.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["24 hours", "30 days", "27 days"]},
+            {"id": "c5cs5-04", "front": "The Earth moving around the Sun is called …?", "back": "Revolution", "explain": "Revolution and the tilt of the Earth cause seasons.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Rotation", "Reflection", "Gravity"]},
+            {"id": "c5cs5-05", "front": "The path the Earth follows around the Sun is its …?", "back": "Orbit", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Axis", "Equator", "Atmosphere"]},
+            {"id": "c5cs5-06", "front": "What is the Moon to the Earth?", "back": "Its natural satellite", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["A planet", "A star", "A comet"]},
+            {"id": "c5cs5-07", "front": "Does the Moon make its own light?", "back": "No – it reflects sunlight", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Yes – it glows like the Sun", "Yes – only at night", "No – it reflects light from the Earth's cities"], "tf": {"text": "The Moon has its own light.", "answer": false}},
+            {"id": "c5cs5-08", "front": "The different shapes of the Moon we see in a month are called …?", "back": "Phases of the Moon", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Eclipses", "Seasons", "Orbits"]},
+            {"id": "c5cs5-09", "front": "On which night can we not see the Moon at all?", "back": "New Moon", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Full Moon", "Half Moon", "Crescent Moon"]},
+            {"id": "c5cs5-10", "front": "The Sun is a …?", "back": "Star", "explain": "It is the star nearest to us.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Planet", "Satellite", "Moon"]},
+            {"id": "c5cs5-11", "front": "When the Moon comes between the Sun and the Earth, it causes a …?", "back": "Solar eclipse", "explain": "When the Earth comes between the Sun and the Moon, it is a lunar eclipse.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Lunar eclipse", "Full Moon", "Sunset"]}
+          ]
+        },
+        {
+          "id": "c5c-sci-06",
+          "number": 6,
+          "title": "Light and Shadow",
+          "pairs": [["Sun", "Luminous"], ["Glass", "Transparent"], ["Butter paper", "Translucent"], ["Wood", "Opaque"]],
+          "cards": [
+            {"id": "c5cs6-01", "front": "Objects that give out their own light are called …?", "back": "Luminous", "explain": "The Sun, a candle flame and a bulb are luminous.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Non-luminous", "Opaque", "Transparent"]},
+            {"id": "c5cs6-02", "front": "Is the Moon luminous or non-luminous?", "back": "Non-luminous", "explain": "It only reflects sunlight.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Luminous"]},
+            {"id": "c5cs6-03", "front": "Objects that let all light pass through them, like clear glass, are …?", "back": "Transparent", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Translucent", "Opaque", "Luminous"]},
+            {"id": "c5cs6-04", "front": "Objects that let some light pass through them, like butter paper, are …?", "back": "Translucent", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Transparent", "Opaque", "Luminous"]},
+            {"id": "c5cs6-05", "front": "Objects that do not let any light pass through them are …?", "back": "Opaque", "explain": "Wood, stone and books are opaque.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Transparent", "Translucent", "Shiny"]},
+            {"id": "c5cs6-06", "front": "How does light travel?", "back": "In a straight line", "explain": "That is why opaque objects make shadows.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["In a curve", "In circles", "Zig-zag"], "tf": {"text": "Light can bend around an opaque object.", "answer": false}},
+            {"id": "c5cs6-07", "front": "What is needed to make a shadow?", "back": "A light source, an opaque object and a screen", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Only a mirror", "Only a transparent object", "Only darkness"]},
+            {"id": "c5cs6-08", "front": "When is your shadow the shortest?", "back": "At noon", "explain": "The Sun is overhead at noon.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["In the early morning", "In the evening", "At night"]},
+            {"id": "c5cs6-09", "front": "The bouncing back of light from a shiny surface is called …?", "back": "Reflection", "explain": "A mirror reflects light.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Shadow", "Refraction", "Eclipse"]},
+            {"id": "c5cs6-10", "front": "On which side of the object is its shadow formed?", "back": "The side away from the light", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["The side facing the light", "Always below the light", "Inside the object"]}
+          ]
+        },
+        {
+          "id": "c5c-sci-07",
+          "number": 7,
+          "title": "Pollution",
+          "pairs": [["Air pollution", "Smoke from factories"], ["Water pollution", "Sewage in rivers"], ["Noise pollution", "Loud horns"], ["Soil pollution", "Plastic waste in land"]],
+          "cards": [
+            {"id": "c5cs7-01", "front": "Harmful substances that make air, water or soil dirty are called …?", "back": "Pollutants", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Nutrients", "Minerals", "Solvents"]},
+            {"id": "c5cs7-02", "front": "Smoke from vehicles and factories causes …?", "back": "Air pollution", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Noise pollution", "Water pollution", "Soil erosion"]},
+            {"id": "c5cs7-03", "front": "Throwing garbage and sewage into rivers causes …?", "back": "Water pollution", "explain": "Polluted water can spread diseases like cholera.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Air pollution", "Noise pollution", "Light pollution"]},
+            {"id": "c5cs7-04", "front": "Loud sounds of horns and loudspeakers cause …?", "back": "Noise pollution", "explain": "Sound is measured in decibels (dB).", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Air pollution", "Water pollution", "Soil pollution"]},
+            {"id": "c5cs7-05", "front": "Waste that rots naturally, like fruit peels, is called …?", "back": "Biodegradable", "explain": "Plastic and glass are non-biodegradable.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Non-biodegradable", "Plastic", "Toxic"], "tf": {"text": "Plastic is biodegradable.", "answer": false}},
+            {"id": "c5cs7-06", "front": "What are the 3 Rs that help reduce pollution?", "back": "Reduce, Reuse, Recycle", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Read, Write, Recite", "Run, Rest, Repeat", "Remove, Refill, Return"]},
+            {"id": "c5cs7-07", "front": "Which cleaner fuel is used in many buses to reduce air pollution?", "back": "CNG", "explain": "CNG stands for Compressed Natural Gas.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Diesel", "Coal", "Wood"]},
+            {"id": "c5cs7-08", "front": "Chemicals sprayed on crops to kill pests can cause …?", "back": "Soil and water pollution", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Noise pollution", "Light pollution", "No pollution"]},
+            {"id": "c5cs7-09", "front": "Planting trees helps reduce air pollution because trees …?", "back": "Take in carbon dioxide and give oxygen", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Make noise", "Give out smoke", "Use up water"]}
+          ]
+        }
+      ]
+    },
+    {
       "id": "maths",
       "name": "Maths",
       "colour": "#EDE9FE",
@@ -9,73 +172,279 @@
       "glyph": "12+",
       "chapters": [
         {
-          "id": "c5-maths-01",
+          "id": "c5c-maths-01",
           "number": 1,
-          "title": "Fractions",
-          "pairs": [["Half", "1/2"], ["Quarter", "1/4"], ["Three quarters", "3/4"], ["Whole", "4/4"]],
+          "title": "Measurement",
+          "pairs": [["1 km", "1000 m"], ["1 m", "100 cm"], ["1 kg", "1000 g"], ["1 L", "1000 mL"]],
           "cards": [
-            {"id": "c5m1-01", "front": "A pizza is cut into 4 equal slices. What fraction is 1 slice?", "back": "1/4", "backWord": "one quarter", "explain": "1 part out of 4 equal parts.", "wrong": ["4/1", "1/2", "3/4"]},
-            {"id": "c5m1-02", "front": "Which is bigger: 1/2 or 1/4?", "back": "1/2", "explain": "Half a roti is more than a quarter of the same roti.", "wrong": ["1/4"]},
-            {"id": "c5m1-03", "front": "1/2 is the same as which fraction?", "back": "2/4", "explain": "2 quarters make a half.", "wrong": ["1/4", "3/4", "4/4"]},
-            {"id": "c5m1-04", "front": "What is half of 50?", "back": "25", "explain": "50 ÷ 2 = 25", "wrong": ["20", "100", "15"]},
-            {"id": "c5m1-05", "front": "Which fraction means the whole thing?", "back": "4/4", "explain": "All 4 parts out of 4 is the whole.", "wrong": ["1/4", "0/4", "2/4"]}
+            {"id": "c5cm1-01", "front": "How many metres make 1 kilometre?", "back": "1000 m", "explain": "1 km = 1000 m.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["100 m", "10 m", "10,000 m"], "tf": {"text": "1 km is equal to 100 m.", "answer": false}},
+            {"id": "c5cm1-02", "front": "How many centimetres make 1 metre?", "back": "100 cm", "explain": "1 m = 100 cm.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["10 cm", "1000 cm", "50 cm"]},
+            {"id": "c5cm1-03", "front": "How many millimetres make 1 centimetre?", "back": "10 mm", "explain": "1 cm = 10 mm.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["100 mm", "1000 mm", "5 mm"]},
+            {"id": "c5cm1-04", "front": "How many grams make 1 kilogram?", "back": "1000 g", "explain": "1 kg = 1000 g.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["100 g", "500 g", "10 g"]},
+            {"id": "c5cm1-05", "front": "How many millilitres make 1 litre?", "back": "1000 mL", "explain": "1 L = 1000 mL.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["100 mL", "10 mL", "500 mL"]},
+            {"id": "c5cm1-06", "front": "Convert 3 km 250 m into metres.", "back": "3250 m", "explain": "3 × 1000 + 250 = 3250 m.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["325 m", "3025 m", "32,500 m"]},
+            {"id": "c5cm1-07", "front": "Convert 4500 g into kilograms.", "back": "4.5 kg", "explain": "4500 ÷ 1000 = 4.5 kg.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["45 kg", "450 kg", "0.45 kg"]},
+            {"id": "c5cm1-08", "front": "Which unit would you use to measure the weight of a mouse?", "back": "Gram", "explain": "Small, light things are weighed in grams.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Kilogram", "Litre", "Metre"]},
+            {"id": "c5cm1-09", "front": "Which unit would you use to measure petrol in a car?", "back": "Litre", "explain": "Liquids are measured in litres and millilitres.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Kilogram", "Metre", "Gram"]},
+            {"id": "c5cm1-10", "front": "2 L 300 mL + 1 L 800 mL = ?", "back": "4 L 100 mL", "explain": "2300 + 1800 = 4100 mL = 4 L 100 mL.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["3 L 1100 mL", "3 L 100 mL", "4 L 800 mL"]}
           ]
         },
         {
-          "id": "c5-maths-02",
+          "id": "c5c-maths-02",
           "number": 2,
-          "title": "Shapes and Angles",
-          "pairs": [["Triangle", "3 sides"], ["Square", "4 sides"], ["Pentagon", "5 sides"], ["Hexagon", "6 sides"]],
+          "title": "Time and Temperature",
+          "pairs": [["1 hour", "60 minutes"], ["1 minute", "60 seconds"], ["1 day", "24 hours"], ["Leap year", "366 days"]],
           "cards": [
-            {"id": "c5m2-01", "front": "How many degrees is a right angle?", "back": "90°", "explain": "The corner of a book is a right angle.", "wrong": ["45°", "180°", "360°"]},
-            {"id": "c5m2-02", "front": "How many sides does a hexagon have?", "back": "6", "wrong": ["5", "8", "7"]},
-            {"id": "c5m2-03", "front": "An angle smaller than a right angle is called …?", "back": "Acute", "wrong": ["Obtuse", "Straight", "Reflex"]},
-            {"id": "c5m2-04", "front": "What is the perimeter of a square with side 5 cm?", "back": "20 cm", "explain": "Perimeter = 4 × side = 4 × 5 = 20 cm.", "wrong": ["25 cm", "10 cm", "15 cm"]},
-            {"id": "c5m2-05", "front": "What is the area of a rectangle 4 cm long and 3 cm wide?", "back": "12 sq cm", "explain": "Area = length × breadth = 4 × 3.", "wrong": ["7 sq cm", "14 sq cm", "24 sq cm"]}
+            {"id": "c5cm2-01", "front": "How many minutes are there in 1 hour?", "back": "60", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["100", "30", "24"]},
+            {"id": "c5cm2-02", "front": "How many hours are there in 1 day?", "back": "24", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["12", "60", "48"]},
+            {"id": "c5cm2-03", "front": "How many days are there in a leap year?", "back": "366", "explain": "February has 29 days in a leap year.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["365", "364", "360"], "tf": {"text": "A leap year has 365 days.", "answer": false}},
+            {"id": "c5cm2-04", "front": "Write 3:30 p.m. in the 24-hour clock.", "back": "15:30", "explain": "Add 12 to the hours after noon: 3 + 12 = 15.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["03:30", "13:30", "33:00"]},
+            {"id": "c5cm2-05", "front": "Write 20:45 in the 12-hour clock.", "back": "8:45 p.m.", "explain": "20 − 12 = 8, and it is after noon.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["8:45 a.m.", "10:45 p.m.", "2:45 p.m."]},
+            {"id": "c5cm2-06", "front": "A film starts at 2:15 p.m. and ends at 4:45 p.m. How long is it?", "back": "2 hours 30 minutes", "explain": "From 2:15 to 4:15 is 2 hours, then 30 more minutes.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["2 hours 15 minutes", "3 hours", "2 hours 45 minutes"]},
+            {"id": "c5cm2-07", "front": "Which instrument measures temperature?", "back": "Thermometer", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Barometer", "Speedometer", "Stopwatch"]},
+            {"id": "c5cm2-08", "front": "At what temperature does water freeze?", "back": "0 °C", "explain": "Water boils at 100 °C.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["100 °C", "37 °C", "10 °C"]},
+            {"id": "c5cm2-09", "front": "At what temperature does water boil?", "back": "100 °C", "explain": "On the Fahrenheit scale this is 212 °F.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["0 °C", "50 °C", "212 °C"]},
+            {"id": "c5cm2-10", "front": "What is the normal temperature of the human body?", "back": "37 °C", "explain": "It is the same as 98.6 °F.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["30 °C", "45 °C", "100 °C"], "tf": {"text": "Normal body temperature is 98.6 °F.", "answer": true}}
+          ]
+        },
+        {
+          "id": "c5c-maths-03",
+          "number": 3,
+          "title": "Geometry",
+          "pairs": [["Acute angle", "Less than 90°"], ["Right angle", "Exactly 90°"], ["Obtuse angle", "Between 90° and 180°"], ["Straight angle", "Exactly 180°"]],
+          "cards": [
+            {"id": "c5cm3-01", "front": "A line segment has how many end points?", "back": "2", "explain": "A ray has 1 end point; a line has none.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["1", "0", "3"]},
+            {"id": "c5cm3-02", "front": "A ray has how many end points?", "back": "1", "explain": "A ray starts at one point and goes on forever in one direction.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["2", "0", "3"]},
+            {"id": "c5cm3-03", "front": "Which tool is used to measure an angle?", "back": "Protractor", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Ruler", "Compass", "Divider"]},
+            {"id": "c5cm3-04", "front": "How many degrees is a right angle?", "back": "90°", "explain": "The corner of a page is a right angle.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["180°", "45°", "360°"]},
+            {"id": "c5cm3-05", "front": "An angle of 120° is a … angle.", "back": "Obtuse", "explain": "It is more than 90° but less than 180°.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Acute", "Right", "Straight"]},
+            {"id": "c5cm3-06", "front": "An angle of 35° is a … angle.", "back": "Acute", "explain": "It is less than 90°.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Obtuse", "Right", "Reflex"]},
+            {"id": "c5cm3-07", "front": "How many degrees is a straight angle?", "back": "180°", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["90°", "360°", "100°"]},
+            {"id": "c5cm3-08", "front": "The radius of a circle is 4 cm. What is its diameter?", "back": "8 cm", "explain": "Diameter = 2 × radius.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["2 cm", "4 cm", "16 cm"], "tf": {"text": "The diameter is half the radius.", "answer": false}},
+            {"id": "c5cm3-09", "front": "What is the fixed point in the middle of a circle called?", "back": "Centre", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Radius", "Diameter", "Arc"]},
+            {"id": "c5cm3-10", "front": "Lines that never meet, like railway tracks, are called …?", "back": "Parallel lines", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Intersecting lines", "Perpendicular lines", "Curved lines"]}
+          ]
+        },
+        {
+          "id": "c5c-maths-04",
+          "number": 4,
+          "title": "Perimeter, Area and Volume",
+          "pairs": [["Perimeter", "Distance around"], ["Area", "Surface covered"], ["Volume", "Space occupied"], ["Square cm", "Unit of area"]],
+          "cards": [
+            {"id": "c5cm4-01", "front": "What is the perimeter of a rectangle 6 cm long and 4 cm wide?", "back": "20 cm", "explain": "Perimeter = 2 × (l + b) = 2 × 10 = 20 cm.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["24 cm", "10 cm", "24 sq cm"]},
+            {"id": "c5cm4-02", "front": "What is the area of a rectangle 6 cm long and 4 cm wide?", "back": "24 sq cm", "explain": "Area = l × b = 6 × 4.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["20 sq cm", "10 sq cm", "24 cm"]},
+            {"id": "c5cm4-03", "front": "What is the perimeter of a square with side 7 cm?", "back": "28 cm", "explain": "Perimeter = 4 × side.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["49 cm", "14 cm", "21 cm"]},
+            {"id": "c5cm4-04", "front": "What is the area of a square with side 5 cm?", "back": "25 sq cm", "explain": "Area = side × side.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["20 sq cm", "10 sq cm", "25 cm"]},
+            {"id": "c5cm4-05", "front": "Area is measured in which kind of units?", "back": "Square units", "explain": "For example sq cm or sq m.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Cubic units", "Metres only", "Litres"]},
+            {"id": "c5cm4-06", "front": "Volume is measured in which kind of units?", "back": "Cubic units", "explain": "For example cubic cm (cm³).", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Square units", "Grams", "Metres only"]},
+            {"id": "c5cm4-07", "front": "Volume of a cuboid = ?", "back": "Length × breadth × height", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Length × breadth", "2 × (length + breadth)", "Length + breadth + height"]},
+            {"id": "c5cm4-08", "front": "What is the volume of a cube with side 3 cm?", "back": "27 cubic cm", "explain": "3 × 3 × 3 = 27.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["9 cubic cm", "12 cubic cm", "18 cubic cm"]},
+            {"id": "c5cm4-09", "front": "To put a fence around a garden, do you need its perimeter or area?", "back": "Perimeter", "explain": "A fence goes around the edge.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Area", "Volume"]},
+            {"id": "c5cm4-10", "front": "To cover a floor with tiles, do you need its perimeter or area?", "back": "Area", "explain": "Tiles cover the surface.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Perimeter", "Volume"], "tf": {"text": "To find how many tiles cover a floor we need its perimeter.", "answer": false}}
+          ]
+        },
+        {
+          "id": "c5c-maths-05",
+          "number": 5,
+          "title": "Shapes, Nets and Symmetry",
+          "pairs": [["Cube", "6 faces"], ["Triangle", "3 sides"], ["Circle", "No corners"], ["Square", "4 lines of symmetry"]],
+          "cards": [
+            {"id": "c5cm5-01", "front": "How many faces does a cube have?", "back": "6", "explain": "All 6 faces are squares.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["4", "8", "12"]},
+            {"id": "c5cm5-02", "front": "How many edges does a cube have?", "back": "12", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["6", "8", "10"]},
+            {"id": "c5cm5-03", "front": "How many vertices (corners) does a cube have?", "back": "8", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["6", "12", "4"]},
+            {"id": "c5cm5-04", "front": "A flat shape that can be folded to make a 3-D shape is called a …?", "back": "Net", "explain": "A net of a cube has 6 squares.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Face", "Edge", "Prism"]},
+            {"id": "c5cm5-05", "front": "How many lines of symmetry does a square have?", "back": "4", "explain": "2 through the middle of the sides and 2 along the diagonals.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["2", "1", "0"]},
+            {"id": "c5cm5-06", "front": "How many lines of symmetry does a rectangle have?", "back": "2", "explain": "Its diagonals are not lines of symmetry.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["4", "1", "0"], "tf": {"text": "A rectangle has 4 lines of symmetry.", "answer": false}},
+            {"id": "c5cm5-07", "front": "How many lines of symmetry does a circle have?", "back": "Countless (infinite)", "explain": "Any line through its centre is a line of symmetry.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["1", "2", "4"]},
+            {"id": "c5cm5-08", "front": "Which 3-D shape has 1 curved face, 1 flat face and 1 vertex?", "back": "Cone", "explain": "Like an ice-cream cone.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Cylinder", "Sphere", "Cube"]},
+            {"id": "c5cm5-09", "front": "Which 3-D shape has 2 flat circular faces and 1 curved face?", "back": "Cylinder", "explain": "Like a gas cylinder or a pipe.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Cone", "Sphere", "Cuboid"]},
+            {"id": "c5cm5-10", "front": "How many lines of symmetry does an equilateral triangle have?", "back": "3", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["1", "0", "6"]}
+          ]
+        },
+        {
+          "id": "c5c-maths-06",
+          "number": 6,
+          "title": "Data Handling",
+          "pairs": [["Tally marks", "Counting in groups of 5"], ["Pictograph", "Data shown with pictures"], ["Bar graph", "Data shown with bars"], ["Key", "Tells what one picture stands for"]],
+          "cards": [
+            {"id": "c5cm6-01", "front": "In tally marks, how many marks are in one bundle (with the line across)?", "back": "5", "explain": "Four lines and one across make 5.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["4", "10", "6"]},
+            {"id": "c5cm6-02", "front": "How do you write 13 in tally marks?", "back": "2 bundles of 5 and 3 lines", "explain": "5 + 5 + 3 = 13.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["1 bundle of 5 and 3 lines", "13 single lines in a row", "3 bundles of 5"]},
+            {"id": "c5cm6-03", "front": "A graph that uses pictures to show data is called a …?", "back": "Pictograph", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Bar graph", "Tally chart", "Line graph"]},
+            {"id": "c5cm6-04", "front": "In a pictograph, 1 picture = 10 children. 4 pictures = ?", "back": "40 children", "explain": "4 × 10 = 40.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["4 children", "14 children", "400 children"]},
+            {"id": "c5cm6-05", "front": "A graph that shows data with bars of different heights is a …?", "back": "Bar graph", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Pictograph", "Pie chart", "Map"]},
+            {"id": "c5cm6-06", "front": "In a bar graph, the tallest bar shows the … value.", "back": "Greatest", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Smallest", "Middle", "Wrong"]},
+            {"id": "c5cm6-07", "front": "A circle divided into slices to show data is called a …?", "back": "Pie chart", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Bar graph", "Pictograph", "Tally chart"]},
+            {"id": "c5cm6-08", "front": "What do we call information collected as numbers or facts?", "back": "Data", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Graph", "Key", "Scale"]},
+            {"id": "c5cm6-09", "front": "In a pictograph, what tells you what one picture stands for?", "back": "The key", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["The title", "The bars", "The scale on the side"], "tf": {"text": "Every bar in a bar graph must have the same width.", "answer": true}}
+          ]
+        },
+        {
+          "id": "c5c-maths-07",
+          "number": 7,
+          "title": "Mapping Skills",
+          "pairs": [["North", "Opposite of south"], ["East", "Where the Sun rises"], ["West", "Where the Sun sets"], ["Compass", "Finds directions"]],
+          "cards": [
+            {"id": "c5cm7-01", "front": "What are the four main directions?", "back": "North, south, east and west", "explain": "They are called cardinal directions.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Up, down, left and right", "Front, back, left and right", "North, south, up and down"]},
+            {"id": "c5cm7-02", "front": "In which direction does the Sun rise?", "back": "East", "explain": "It sets in the west.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["West", "North", "South"]},
+            {"id": "c5cm7-03", "front": "What is the opposite of north?", "back": "South", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["East", "West", "North-east"]},
+            {"id": "c5cm7-04", "front": "Which instrument shows directions?", "back": "Compass", "explain": "Its needle always points north–south.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Thermometer", "Protractor", "Clock"]},
+            {"id": "c5cm7-05", "front": "The direction between north and east is …?", "back": "North-east", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["South-east", "North-west", "South-west"]},
+            {"id": "c5cm7-06", "front": "On most maps, the top of the map is …?", "back": "North", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["South", "East", "West"]},
+            {"id": "c5cm7-07", "front": "What do we call the box on a map that explains its symbols?", "back": "Key (legend)", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Scale", "Compass", "Title"]},
+            {"id": "c5cm7-08", "front": "A map scale says 1 cm = 5 km. 3 cm on the map is how far really?", "back": "15 km", "explain": "3 × 5 = 15 km.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["8 km", "3 km", "5 km"]},
+            {"id": "c5cm7-09", "front": "If you face north, what is on your right?", "back": "East", "explain": "West is on your left.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["West", "South", "North"], "tf": {"text": "If you face north, west is on your right.", "answer": false}},
+            {"id": "c5cm7-10", "front": "What is a view of something seen from directly above called?", "back": "Top view", "explain": "Maps show the top view.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Side view", "Front view", "Back view"]}
           ]
         }
       ]
     },
     {
-      "id": "english",
-      "name": "English",
-      "colour": "#DBEAFE",
-      "ink": "#1E40AF",
-      "glyph": "Ab",
+      "id": "social",
+      "name": "Social Science",
+      "colour": "#FEF3C7",
+      "ink": "#92400E",
+      "glyph": "SS",
       "chapters": [
         {
-          "id": "c5-eng-01",
+          "id": "c5c-ss-01",
           "number": 1,
-          "title": "Tenses",
-          "pairs": [["Go", "Went"], ["Eat", "Ate"], ["Run", "Ran"], ["See", "Saw"]],
+          "title": "Environmental Pollution",
+          "pairs": [["5 June", "World Environment Day"], ["22 April", "Earth Day"], ["Smog", "Smoke + fog"], ["Deforestation", "Cutting down forests"]],
           "cards": [
-            {"id": "c5e1-01", "front": "What is the past tense of 'go'?", "back": "went", "wrong": ["goed", "gone", "going"]},
-            {"id": "c5e1-02", "front": "What is the past tense of 'eat'?", "back": "ate", "wrong": ["eated", "eaten", "eats"]},
-            {"id": "c5e1-03", "front": "Choose: Yesterday I ___ football.", "back": "played", "explain": "'Yesterday' tells us it is the past.", "wrong": ["play", "will play", "playing"]},
-            {"id": "c5e1-04", "front": "Which sentence is in the future tense?", "back": "I will sing.", "wrong": ["I sang.", "I sing.", "I am singing."]},
-            {"id": "c5e1-05", "front": "What is the plural of 'mouse'?", "back": "mice", "wrong": ["mouses", "mices", "meese"]}
+            {"id": "c5css1-01", "front": "Everything around us – air, water, land, plants and animals – is our …?", "back": "Environment", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Atmosphere", "Society", "Climate"]},
+            {"id": "c5css1-02", "front": "Making the environment dirty and harmful is called …?", "back": "Pollution", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Conservation", "Recycling", "Irrigation"]},
+            {"id": "c5css1-03", "front": "Smoke mixed with fog is called …?", "back": "Smog", "explain": "Smog makes it hard to see and breathe.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Mist", "Dew", "Steam"]},
+            {"id": "c5css1-04", "front": "Rain mixed with harmful gases from factories is called …?", "back": "Acid rain", "explain": "Acid rain has damaged the marble of the Taj Mahal.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Monsoon", "Drizzle", "Hail"]},
+            {"id": "c5css1-05", "front": "Cutting down forests on a large scale is called …?", "back": "Deforestation", "explain": "Planting new trees is afforestation.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Afforestation", "Irrigation", "Recycling"]},
+            {"id": "c5css1-06", "front": "When is World Environment Day celebrated?", "back": "5 June", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["22 April", "15 August", "2 October"], "tf": {"text": "Earth Day is celebrated on 22 April.", "answer": true}},
+            {"id": "c5css1-07", "front": "Which movement saw villagers hug trees to stop them being cut?", "back": "Chipko Movement", "explain": "It began in the hills of Uttarakhand in the 1970s.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Quit India Movement", "Swachh Bharat", "Dandi March"]},
+            {"id": "c5css1-08", "front": "The rise in the Earth's temperature due to pollution is called …?", "back": "Global warming", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Acid rain", "Smog", "Erosion"]},
+            {"id": "c5css1-09", "front": "Which national mission focuses on keeping India clean?", "back": "Swachh Bharat Abhiyan", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Make in India", "Digital India", "Chipko Movement"]}
           ]
-        }
-      ]
-    },
-    {
-      "id": "evs",
-      "name": "EVS",
-      "colour": "#CCFBF1",
-      "ink": "#115E59",
-      "glyph": "EVS",
-      "chapters": [
+        },
         {
-          "id": "c5-evs-01",
-          "number": 1,
-          "title": "Our Body and Health",
-          "pairs": [["Heart", "Pumps blood"], ["Lungs", "Breathing"], ["Stomach", "Digests food"], ["Brain", "Thinking"]],
+          "id": "c5c-ss-02",
+          "number": 2,
+          "title": "Natural Disasters",
+          "pairs": [["Seismograph", "Records earthquakes"], ["Tsunami", "Giant sea waves"], ["Drought", "No rain for long"], ["Cyclone", "Strong spinning winds"]],
           "cards": [
-            {"id": "c5v1-01", "front": "Which organ pumps blood around the body?", "back": "Heart", "wrong": ["Lungs", "Brain", "Stomach"]},
-            {"id": "c5v1-02", "front": "Which organs help us breathe?", "back": "Lungs", "wrong": ["Heart", "Liver", "Kidneys"]},
-            {"id": "c5v1-03", "front": "How many bones does an adult human have?", "back": "206", "wrong": ["106", "306", "200"]},
-            {"id": "c5v1-04", "front": "Malaria spreads through the bite of which insect?", "back": "Mosquito", "explain": "Keep water from collecting so mosquitoes cannot breed.", "wrong": ["Housefly", "Bee", "Ant"]},
-            {"id": "c5v1-05", "front": "Which sense organ helps us smell?", "back": "Nose", "wrong": ["Tongue", "Skin", "Ear"]}
+            {"id": "c5css2-01", "front": "A sudden shaking of the Earth's surface is called …?", "back": "Earthquake", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Cyclone", "Flood", "Drought"]},
+            {"id": "c5css2-02", "front": "Which instrument records earthquakes?", "back": "Seismograph", "explain": "Their strength is measured on the Richter scale.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Thermometer", "Barometer", "Compass"]},
+            {"id": "c5css2-03", "front": "Huge sea waves caused by an earthquake under the sea are called …?", "back": "Tsunami", "explain": "A tsunami hit India's coasts in December 2004.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Cyclone", "Tornado", "Landslide"]},
+            {"id": "c5css2-04", "front": "A long period with little or no rain is called a …?", "back": "Drought", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Flood", "Cyclone", "Tsunami"]},
+            {"id": "c5css2-05", "front": "When a river overflows and water covers dry land, it is a …?", "back": "Flood", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Drought", "Landslide", "Earthquake"]},
+            {"id": "c5css2-06", "front": "A storm with very strong winds spinning around a calm centre is a …?", "back": "Cyclone", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Drought", "Earthquake", "Avalanche"]},
+            {"id": "c5css2-07", "front": "Rocks and soil sliding down a hill is called a …?", "back": "Landslide", "explain": "Heavy rain can cause landslides in hilly areas.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Tsunami", "Volcano", "Drought"]},
+            {"id": "c5css2-08", "front": "An opening in the Earth from which lava comes out is a …?", "back": "Volcano", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Cave", "Valley", "Crater lake"]},
+            {"id": "c5css2-09", "front": "What should you do during an earthquake?", "back": "Drop, cover and hold on", "explain": "Get under a strong table and stay away from glass.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Run into the lift", "Stand near windows", "Go up to the terrace"], "tf": {"text": "During an earthquake we should use the lift.", "answer": false}},
+            {"id": "c5css2-10", "front": "Which body in India manages disasters at the national level?", "back": "NDMA", "explain": "National Disaster Management Authority.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["ISRO", "UNICEF", "RBI"]}
+          ]
+        },
+        {
+          "id": "c5c-ss-03",
+          "number": 3,
+          "title": "Evolution of Transport and Communication",
+          "pairs": [["Wheel", "Early transport invention"], ["Telephone", "Alexander Graham Bell"], ["Aeroplane", "Wright brothers"], ["Printing press", "Johannes Gutenberg"]],
+          "cards": [
+            {"id": "c5css3-01", "front": "Which invention changed transport the most in early times?", "back": "The wheel", "explain": "Wheels made carts and chariots possible.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["The engine", "The sail", "The road"]},
+            {"id": "c5css3-02", "front": "Who improved the steam engine, leading to steam trains and ships?", "back": "James Watt", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Graham Bell", "Thomas Edison", "Wright brothers"]},
+            {"id": "c5css3-03", "front": "When and where did the first train in India run?", "back": "1853, Bombay to Thane", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["1947, Delhi to Agra", "1900, Calcutta to Madras", "1857, Lucknow to Kanpur"]},
+            {"id": "c5css3-04", "front": "Who made the first successful aeroplane flight?", "back": "The Wright brothers", "explain": "They flew in 1903.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["James Watt", "Graham Bell", "Marconi"]},
+            {"id": "c5css3-05", "front": "Who invented the telephone?", "back": "Alexander Graham Bell", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Thomas Edison", "James Watt", "Gutenberg"]},
+            {"id": "c5css3-06", "front": "Who invented the printing press?", "back": "Johannes Gutenberg", "explain": "It made books cheaper and quicker to make.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Graham Bell", "Isaac Newton", "Marconi"]},
+            {"id": "c5css3-07", "front": "In olden days, which birds were trained to carry messages?", "back": "Pigeons", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Parrots", "Crows", "Peacocks"]},
+            {"id": "c5css3-08", "front": "Newspapers, radio and TV, which reach many people at once, are called …?", "back": "Mass communication", "explain": "A letter or phone call is personal communication.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Personal communication", "Transport", "Postal service"]},
+            {"id": "c5css3-09", "front": "Which network connects computers all over the world?", "back": "The Internet", "explain": "Email and video calls use the Internet.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["The telegraph", "The postal service", "The radio"]},
+            {"id": "c5css3-10", "front": "Sending a letter by post is an example of …?", "back": "Personal communication", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Mass communication", "Air transport", "Water transport"], "tf": {"text": "Television is a means of mass communication.", "answer": true}}
+          ]
+        },
+        {
+          "id": "c5c-ss-04",
+          "number": 4,
+          "title": "India Over the Ages",
+          "pairs": [["Mohenjo-daro", "Great Bath"], ["Ashoka", "Kalinga War"], ["Aryabhata", "Gupta period"], ["Shah Jahan", "Taj Mahal"]],
+          "cards": [
+            {"id": "c5css4-01", "front": "The Harappan Civilisation grew along which river?", "back": "Indus", "explain": "It is also called the Indus Valley Civilisation.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Ganga", "Yamuna", "Godavari"]},
+            {"id": "c5css4-02", "front": "Which Harappan city had the Great Bath?", "back": "Mohenjo-daro", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Delhi", "Pataliputra", "Agra"]},
+            {"id": "c5css4-03", "front": "The oldest Veda is the …?", "back": "Rig Veda", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Sama Veda", "Yajur Veda", "Atharva Veda"]},
+            {"id": "c5css4-04", "front": "Who founded the Mauryan Empire?", "back": "Chandragupta Maurya", "explain": "He was helped by Chanakya.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Ashoka", "Akbar", "Samudragupta"]},
+            {"id": "c5css4-05", "front": "After which war did Ashoka give up violence and follow Buddhism?", "back": "Kalinga War", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Battle of Panipat", "Battle of Plassey", "Battle of Haldighati"], "tf": {"text": "Ashoka won the Kalinga War but felt sad at the loss of life.", "answer": true}},
+            {"id": "c5css4-06", "front": "Which period is called the Golden Age of ancient India?", "back": "Gupta period", "explain": "Aryabhata and Kalidasa lived at this time.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Mauryan period", "Mughal period", "British period"]},
+            {"id": "c5css4-07", "front": "Who built the Qutub Minar's first storey?", "back": "Qutb-ud-din Aibak", "explain": "It was completed by Iltutmish.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Akbar", "Ashoka", "Shah Jahan"]},
+            {"id": "c5css4-08", "front": "Who founded the Mughal Empire in India?", "back": "Babur", "explain": "He won the First Battle of Panipat in 1526.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Akbar", "Humayun", "Aurangzeb"]},
+            {"id": "c5css4-09", "front": "Which Mughal emperor was known for his tolerance and his nine gems (navratnas)?", "back": "Akbar", "explain": "Birbal and Tansen were in his court.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Babur", "Aurangzeb", "Jahangir"]},
+            {"id": "c5css4-10", "front": "Who built the Taj Mahal?", "back": "Shah Jahan", "explain": "He built it in memory of his wife Mumtaz Mahal.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Akbar", "Babur", "Humayun"]}
+          ]
+        },
+        {
+          "id": "c5c-ss-05",
+          "number": 5,
+          "title": "British Period in India",
+          "pairs": [["1600", "East India Company formed"], ["1757", "Battle of Plassey"], ["1857", "First War of Independence"], ["1853", "First train in India"]],
+          "cards": [
+            {"id": "c5css5-01", "front": "Which company came to India from Britain to trade?", "back": "East India Company", "explain": "It was formed in 1600.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Dutch Company", "Tata Company", "French Company"]},
+            {"id": "c5css5-02", "front": "Which battle in 1757 helped the British take control of Bengal?", "back": "Battle of Plassey", "explain": "Robert Clive defeated Siraj-ud-Daulah.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Battle of Panipat", "Battle of Buxar", "Kalinga War"]},
+            {"id": "c5css5-03", "front": "Who led the British at the Battle of Plassey?", "back": "Robert Clive", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Lord Dalhousie", "Lord Mountbatten", "Warren Hastings"]},
+            {"id": "c5css5-04", "front": "In which year did the Revolt of 1857 take place?", "back": "1857", "explain": "It is called the First War of Indian Independence.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["1757", "1947", "1885"]},
+            {"id": "c5css5-05", "front": "Which soldier is remembered as the first hero of the 1857 revolt?", "back": "Mangal Pandey", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Bhagat Singh", "Tantia Tope", "Chandrashekhar Azad"]},
+            {"id": "c5css5-06", "front": "Which brave queen fought the British in 1857?", "back": "Rani Lakshmibai of Jhansi", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Rani Padmini", "Razia Sultan", "Ahilyabai Holkar"]},
+            {"id": "c5css5-07", "front": "After 1858, who took over the rule of India from the Company?", "back": "The British Crown (Queen Victoria)", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["The Mughal emperor", "The French", "The Indian people"]},
+            {"id": "c5css5-08", "front": "Who worked to stop the cruel practice of sati?", "back": "Raja Ram Mohan Roy", "explain": "Sati was banned in 1829.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Mahatma Gandhi", "Robert Clive", "Akbar"]},
+            {"id": "c5css5-09", "front": "Why did the British build railways in India?", "back": "To move raw materials and troops quickly", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Only for Indians to travel", "To help farmers sell grain at good prices", "For tourism"], "tf": {"text": "The British ruled India for their own benefit.", "answer": true}}
+          ]
+        },
+        {
+          "id": "c5c-ss-06",
+          "number": 6,
+          "title": "Attaining Freedom",
+          "pairs": [["1885", "Indian National Congress founded"], ["1919", "Jallianwala Bagh"], ["1930", "Dandi March"], ["1942", "Quit India Movement"]],
+          "cards": [
+            {"id": "c5css6-01", "front": "In which year was the Indian National Congress founded?", "back": "1885", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["1857", "1905", "1947"]},
+            {"id": "c5css6-02", "front": "Where did General Dyer order firing on a peaceful crowd in 1919?", "back": "Jallianwala Bagh, Amritsar", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Dandi, Gujarat", "Champaran, Bihar", "Meerut"]},
+            {"id": "c5css6-03", "front": "Gandhiji walked to Dandi in 1930 to break which law?", "back": "The salt law", "explain": "This was the Salt Satyagraha.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["The tea law", "The land law", "The cotton law"]},
+            {"id": "c5css6-04", "front": "Which movement of 1942 told the British to leave India?", "back": "Quit India Movement", "explain": "Its slogan was \"Do or Die\".", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Non-Cooperation Movement", "Swadeshi Movement", "Chipko Movement"]},
+            {"id": "c5css6-05", "front": "Who formed the Indian National Army (Azad Hind Fauj)?", "back": "Subhas Chandra Bose", "explain": "He gave the slogan \"Jai Hind\".", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Bhagat Singh", "Jawaharlal Nehru", "Sardar Patel"]},
+            {"id": "c5css6-06", "front": "On which date did India become independent?", "back": "15 August 1947", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["26 January 1950", "2 October 1947", "15 August 1950"], "tf": {"text": "India became independent on 26 January 1950.", "answer": false}},
+            {"id": "c5css6-07", "front": "Who was the first Prime Minister of India?", "back": "Jawaharlal Nehru", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Mahatma Gandhi", "Sardar Patel", "Dr Rajendra Prasad"]},
+            {"id": "c5css6-08", "front": "Who is called the Father of the Nation?", "back": "Mahatma Gandhi", "explain": "He fought using non-violence (ahimsa).", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Jawaharlal Nehru", "Subhas Chandra Bose", "Bal Gangadhar Tilak"]},
+            {"id": "c5css6-09", "front": "Who said \"Swaraj is my birthright and I shall have it\"?", "back": "Bal Gangadhar Tilak", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Mahatma Gandhi", "Bhagat Singh", "Lala Lajpat Rai"]},
+            {"id": "c5css6-10", "front": "Who is known as the Iron Man of India?", "back": "Sardar Vallabhbhai Patel", "explain": "He united the princely states with India.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Jawaharlal Nehru", "Bhagat Singh", "Subhas Chandra Bose"]}
+          ]
+        },
+        {
+          "id": "c5c-ss-07",
+          "number": 7,
+          "title": "Indian Government",
+          "pairs": [["Parliament", "Makes laws"], ["Supreme Court", "Highest court"], ["President", "Head of the country"], ["Gram Panchayat", "Village government"]],
+          "cards": [
+            {"id": "c5css7-01", "front": "A government elected by the people is called a …?", "back": "Democracy", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Monarchy", "Dictatorship", "Empire"]},
+            {"id": "c5css7-02", "front": "When did the Constitution of India come into force?", "back": "26 January 1950", "explain": "We celebrate this day as Republic Day.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["15 August 1947", "26 November 1949", "2 October 1950"]},
+            {"id": "c5css7-03", "front": "Who led the committee that wrote the Indian Constitution?", "back": "Dr B. R. Ambedkar", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Mahatma Gandhi", "Jawaharlal Nehru", "Sardar Patel"]},
+            {"id": "c5css7-04", "front": "What are the two houses of India's Parliament?", "back": "Lok Sabha and Rajya Sabha", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Gram Sabha and Lok Sabha", "Vidhan Sabha and Rajya Sabha", "Supreme Court and High Court"]},
+            {"id": "c5css7-05", "front": "Who is the head of the country (head of state) in India?", "back": "The President", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["The Prime Minister", "The Chief Justice", "The Governor"]},
+            {"id": "c5css7-06", "front": "Who is the head of the government in India?", "back": "The Prime Minister", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["The President", "The Chief Minister", "The Speaker"]},
+            {"id": "c5css7-07", "front": "Which is the highest court in India?", "back": "Supreme Court", "explain": "It is in New Delhi.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["High Court", "District Court", "Lok Adalat"]},
+            {"id": "c5css7-08", "front": "What is the minimum age to vote in India?", "back": "18 years", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["21 years", "16 years", "25 years"], "tf": {"text": "In India you can vote at the age of 16.", "answer": false}},
+            {"id": "c5css7-09", "front": "What is the local government of a village called?", "back": "Gram Panchayat", "explain": "The head is the Sarpanch.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Municipal Corporation", "Parliament", "Vidhan Sabha"]},
+            {"id": "c5css7-10", "front": "What are the three organs of government?", "back": "Legislature, executive and judiciary", "explain": "Legislature makes laws, executive carries them out, judiciary settles disputes.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Police, army and navy", "President, PM and Governor", "Lok Sabha, Rajya Sabha and Gram Sabha"]}
+          ]
+        },
+        {
+          "id": "c5c-ss-08",
+          "number": 8,
+          "title": "United Nations",
+          "pairs": [["WHO", "Health"], ["UNICEF", "Children"], ["UNESCO", "Education and culture"], ["New York", "UN headquarters"]],
+          "cards": [
+            {"id": "c5css8-01", "front": "When was the United Nations formed?", "back": "24 October 1945", "explain": "We celebrate 24 October as UN Day.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["15 August 1947", "1 January 1900", "26 January 1950"]},
+            {"id": "c5css8-02", "front": "Why was the United Nations formed?", "back": "To keep peace in the world", "explain": "It was formed after the Second World War.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["To start wars", "To run one country", "To sell goods"]},
+            {"id": "c5css8-03", "front": "Where is the headquarters of the United Nations?", "back": "New York", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["London", "Geneva", "New Delhi"]},
+            {"id": "c5css8-04", "front": "About how many countries are members of the UN?", "back": "193", "explain": "India was one of the first members.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["50", "100", "250"], "tf": {"text": "India is a member of the United Nations.", "answer": true}},
+            {"id": "c5css8-05", "front": "Which UN body looks after the health of people?", "back": "WHO", "explain": "World Health Organization.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["UNICEF", "UNESCO", "FAO"]},
+            {"id": "c5css8-06", "front": "Which UN body works for the welfare of children?", "back": "UNICEF", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["WHO", "UNESCO", "ILO"]},
+            {"id": "c5css8-07", "front": "Which UN body works for education, science and culture?", "back": "UNESCO", "explain": "It names World Heritage Sites like the Taj Mahal.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["WHO", "UNICEF", "IMF"]},
+            {"id": "c5css8-08", "front": "How many permanent members does the UN Security Council have?", "back": "5", "explain": "USA, UK, France, Russia and China.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["10", "15", "193"]},
+            {"id": "c5css8-09", "front": "Where is the International Court of Justice?", "back": "The Hague, Netherlands", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["New York, USA", "Paris, France", "Geneva, Switzerland"]},
+            {"id": "c5css8-10", "front": "What does the UN flag show?", "back": "A world map with olive branches", "explain": "Olive branches are a sign of peace.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["A lion and a crown", "A red star", "An eagle"]}
           ]
         }
       ]
