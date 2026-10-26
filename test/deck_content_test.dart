@@ -17,7 +17,7 @@ void main() {
     2: {'maths', 'english'},
     3: {'maths', 'english', 'evs'},
     4: {'maths', 'english', 'evs'},
-    5: {'maths', 'science', 'social'},
+    5: {'maths', 'science', 'social', 'english', 'hindi'},
     6: {'maths', 'science', 'social', 'english'},
     7: {'maths', 'science', 'social', 'english'},
     8: {'maths', 'science', 'social', 'english'},
@@ -127,10 +127,10 @@ void main() {
     expect(science.glyph, 'Sc');
 
     SubjectStyle.useDeck(
-      Subject(id: 'hindi', name: 'Hindi', chapters: [], colour: 0xFFFFE4E6),
+      Subject(id: 'sanskrit', name: 'Sanskrit', chapters: [], colour: 0xFFFFE4E6),
     );
-    final hindi = SubjectStyle.of('hindi');
-    expect(hindi.background, const Color(0xFFFFE4E6));
-    expect(hindi.glyph, '•', reason: 'parts the sheet leaves empty fall back');
+    final sanskrit = SubjectStyle.of('sanskrit');
+    expect(sanskrit.background, const Color(0xFFFFE4E6));
+    expect(sanskrit.glyph, '•', reason: 'parts the sheet leaves empty fall back');
   });
 }
