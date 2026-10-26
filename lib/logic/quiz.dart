@@ -215,23 +215,58 @@ class QuizSession {
   }
 }
 
+/// How hard a quiz is. Each level asks its own cards first and borrows from
+/// the nearest level when a chapter runs short.
+enum QuizLevel {
+  basic('Basic', 1),
+  intermediate('Intermediate', 2),
+  advanced('Advanced', 3);
+
+  const QuizLevel(this.label, this.cardLevel);
+  final String label;
+  final int cardLevel;
+
+  /// [cards] shuffled, with this level's cards first, then the next nearest
+  /// level. Cards with no level count as intermediate.
+  List<Flashcard> order(Iterable<Flashcard> cards, Random random) {
+    final shuffled = [...cards]..shuffle(random);
+    int rank(Flashcard c) {
+      final gap = ((c.level ?? 2) - cardLevel).abs();
+      // On a tie, an advanced quiz borrows harder cards, the others easier.
+      final harder = (c.level ?? 2) > cardLevel;
+      return gap * 2 + (harder == (this == advanced) ? 0 : 1);
+    }
+
+    // List.sort is not stable, so ties fall back to the shuffled position.
+    final keyed = [
+      for (var i = 0; i < shuffled.length; i++) (i, rank(shuffled[i])),
+    ];
+    keyed.sort((a, b) => a.$2 != b.$2 ? a.$2 - b.$2 : a.$1 - b.$1);
+    return [for (final (i, _) in keyed) shuffled[i]];
+  }
+}
+
 abstract final class QuizBuilder {
   static const optionCount = 4;
 
   /// Builds up to [count] questions from [cards], mixing multiple choice,
   /// true/false and fill-the-blank, with one match question in quizzes of
-  /// five or more when [chapters] offer pairs.
+  /// five or more when [chapters] offer pairs. With a [level], cards of
+  /// that level are asked first.
   static List<QuizQuestion> build(
     List<Flashcard> cards, {
     required Iterable<Flashcard> pool,
     Iterable<Chapter> chapters = const [],
     int count = 10,
     bool junior = false,
+    QuizLevel? level,
     Random? random,
   }) {
     final rng = random ?? Random();
     final poolList = pool.toList();
-    final queue = [...cards]..shuffle(rng);
+    final queue = level == null
+        ? ([...cards]..shuffle(rng))
+        : level.order(cards, rng);
     final matchAt = count >= 5 ? min(4, count - 1) : -1;
     final match = matchAt < 0
         ? null

@@ -14,6 +14,7 @@ Flashcard card(
   List<String> wrong = const [],
   TrueFalse? tf,
   Blank? blank,
+  int? level,
 }) => Flashcard(
   id: id,
   subjectId: subject,
@@ -23,6 +24,7 @@ Flashcard card(
   wrong: wrong,
   trueFalse: tf,
   blank: blank,
+  level: level,
 );
 
 Chapter chapter(List<Flashcard> cards, {List<MatchPair> pairs = const []}) =>
@@ -242,6 +244,37 @@ void main() {
     expect(qs.whereType<McqQuestion>(), isNotEmpty);
     expect(qs.whereType<TrueFalseQuestion>(), isNotEmpty);
     expect(qs.whereType<FillBlankQuestion>(), isNotEmpty);
+  });
+
+  group('quiz levels', () {
+    final cards = [
+      for (var i = 1; i <= 4; i++) card('b$i', '$i', level: 1),
+      for (var i = 1; i <= 4; i++) card('m$i', '1$i'),
+      for (var i = 1; i <= 4; i++) card('a$i', '2$i', level: 3),
+    ];
+    List<String> asked(QuizLevel level, int count) => [
+      for (final q in QuizBuilder.build(
+        cards,
+        pool: cards,
+        count: count,
+        level: level,
+        random: rng,
+      ))
+        q.card!.id[0],
+    ];
+
+    test('each level asks its own cards first', () {
+      expect(asked(QuizLevel.basic, 4), everyElement('b'));
+      expect(asked(QuizLevel.intermediate, 4), everyElement('m'));
+      expect(asked(QuizLevel.advanced, 4), everyElement('a'));
+    });
+
+    test('a short level borrows from the nearest one', () {
+      // Cards with no level count as intermediate.
+      expect(asked(QuizLevel.advanced, 8).toSet(), {'a', 'm'});
+      expect(asked(QuizLevel.basic, 8).toSet(), {'b', 'm'});
+      expect(asked(QuizLevel.intermediate, 8).toSet(), {'m', 'b'});
+    });
   });
 
   test('a session scores answers and lists missed cards', () {

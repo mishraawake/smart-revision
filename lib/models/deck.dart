@@ -143,6 +143,7 @@ class Flashcard {
     this.wrong = const [],
     this.trueFalse,
     this.blank,
+    this.level,
   });
 
   factory Flashcard.fromJson(
@@ -169,6 +170,7 @@ class Flashcard {
       blank: blank == null
           ? null
           : Blank(blank['text'] as String, blank['answer'] as String),
+      level: json['level'] as int?,
     );
   }
 
@@ -192,4 +194,8 @@ class Flashcard {
 
   final TrueFalse? trueFalse;
   final Blank? blank;
+
+  /// How hard the card is: 1 basic, 2 intermediate, 3 advanced. Null when
+  /// the sheet leaves it empty.
+  final int? level;
 }

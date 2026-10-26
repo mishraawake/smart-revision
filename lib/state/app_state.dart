@@ -534,27 +534,34 @@ class AppState extends ChangeNotifier {
 
   // ---- Quizzes ------------------------------------------------------------
 
-  /// Junior quizzes are always 5 questions; Senior picks 5, 8 or 10.
+  /// Quizzes start at 5 questions for Junior and 10 for Senior; both can
+  /// pick another length on the quiz intro.
   int get defaultQuizLength => current!.isJunior ? 5 : 10;
 
   /// Questions from one chapter.
-  List<QuizQuestion> chapterQuiz(Chapter ch, {int? count, Random? random}) =>
-      QuizBuilder.build(
-        ch.cards,
-        pool: deck!.allCards,
-        chapters: [ch],
-        count: count ?? defaultQuizLength,
-        junior: current!.isJunior,
-        random: random,
-      );
+  List<QuizQuestion> chapterQuiz(
+    Chapter ch, {
+    int? count,
+    QuizLevel? level,
+    Random? random,
+  }) => QuizBuilder.build(
+    ch.cards,
+    pool: deck!.allCards,
+    chapters: [ch],
+    count: count ?? defaultQuizLength,
+    junior: current!.isJunior,
+    level: level,
+    random: random,
+  );
 
   /// Questions across every subject, spread evenly.
-  List<QuizQuestion> mixedQuiz({int? count, Random? random}) {
+  List<QuizQuestion> mixedQuiz({int? count, QuizLevel? level, Random? random}) {
     if (deck == null) return [];
     final n = count ?? (current!.isJunior ? 5 : 20);
     final rng = random ?? Random();
     final perSubject = [
-      for (final s in deck!.subjects) s.cards.toList()..shuffle(rng),
+      for (final s in deck!.subjects)
+        level?.order(s.cards, rng) ?? (s.cards.toList()..shuffle(rng)),
     ];
     final picked = <Flashcard>[];
     for (
@@ -572,6 +579,7 @@ class AppState extends ChangeNotifier {
       chapters: deck!.chapters,
       count: n,
       junior: current!.isJunior,
+      level: level,
       random: rng,
     );
   }

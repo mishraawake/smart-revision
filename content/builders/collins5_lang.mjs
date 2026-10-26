@@ -323,6 +323,72 @@ const chapters = [
   },
 ];
 
+// Advanced (level 3) cards: inference, "why" questions and grammar applied
+// to the text, so an Advanced quiz has enough of its own cards.
+const advanced = {
+  'c5c-eng-01': [
+    ['Why did the barber\'s basin glitter from more than a mile away?', 'It was always kept very clean', ['It was made of gold', 'The sun was shining on gold paint', 'It was enchanted'],
+      'Don Quixote saw the shine and believed it was a golden helmet.', '', 'The basin glittered because it was made of gold.', 'FALSE', '', '', 3, 'inference'],
+    ['Which proverb best fits Don Quixote\'s mistake about the "golden helmet"?', 'All that glitters is not gold', ['Honesty is the best policy', 'No man is an island', 'Laughter is the best medicine'],
+      'It glittered like gold but was only a brass basin.', '', '', '', '', '', 3, 'idioms'],
+    ['Why was Sancho nervous about the new adventure?', 'Last time, Don Quixote had mistaken windmills for giants', ['He was afraid of the barber', 'His donkey was tired', 'He had lost his helmet'],
+      '"I pray to God, master, that it isn\'t like our last adventure."', '', '', '', '', '', 3, 'inference'],
+    ['Why did Sancho try to hide his laughter when Don Quixote wore the "helmet"?', 'It looked like a barber\'s basin, but his master was proud of it', ['He was crying', 'He wanted the helmet himself', 'The barber was watching'],
+      'Don Quixote grew angry at him for grinning.', '', '', '', '', '', 3, 'inference'],
+    ['"He ran away as swiftly as a deer." What kind of adverb is "swiftly"?', 'Adverb of manner', ['Adverb of time', 'Adverb of place', 'Adverb of frequency'],
+      'It tells us how he ran.', '', '', '', '', '', 3, 'adverbs'],
+    ['"Wretch, save yourself or at once surrender the helmet." Which word is the conjunction?', 'or', ['save', 'at', 'once'],
+      '"Or" joins the two choices Don Quixote gives the barber.', '', '', '', '', '', 3, 'conjunctions'],
+    ['Complete with -er or -or: "My teacher wants me to be the monit__ of the class."', 'monitor', ['moniter', 'monitar', 'monitur'],
+      'Rider, baker and swimmer end in -er; monitor and creator end in -or.', '', '', '', 'J. K. Rowling is the creat___ of the Harry Potter series.', 'or', 3, 'spelling'],
+  ],
+  'c5c-eng-02': [
+    ['How did Nina find out that the manager was in league with the robbers?', 'She read his lips through the glass while he spoke to a robber', ['She heard him on the phone', 'Rekha told her', 'The robbers said so'],
+      'He thought nobody could hear because the room was sound-proof.', '', '', '', '', '', 3, 'inference'],
+    ['Why did the manager think his secret was safe?', 'He thought nobody could hear him in the sound-proof glass room', ['He spoke in another language', 'The store was empty', 'The cameras were switched off'],
+      'He forgot that the glass let people see his lips move.', '', '', '', '', '', 3, 'inference'],
+    ['What does Nina\'s wish to come back to the store show about her?', 'She is brave and not frightened by what happened', ['She wants to meet the robbers', 'She is greedy', 'She did not understand the danger'],
+      'Rekha, by contrast, said she would never set foot in the store again.', '', '', '', '', '', 3, 'values'],
+    ['Why were Nina, Rekha and Mrs Verma asked to stay after the robbery?', 'They were witnesses and had to give statements', ['They were suspects', 'They had to pay for earrings', 'The doors were locked'],
+      'Witnesses are people who have seen an event happen.', '', '', '', '', '', 3, 'plot'],
+    ['Give a sentence from the story in the past perfect tense.', 'Nina had got a dangerous brain fever.', ['Rekha has chosen some earrings.', 'The men robbed the store.', 'Nina will buy the earrings.'],
+      'Past perfect = had + past participle.', '', '', '', '', '', 3, 'tenses'],
+    ['Make a compound word from "foot" and "path".', 'Footpath', ['Kindness', 'Quickly', 'Action'],
+      'foot + path. Kindness and action are made with suffixes.', '', '', '', 'snow + flake = ___', 'snowflake', 3, 'compound words'],
+    ['Add -ion to "admit". What is the new word?', 'Admission', ['Admition', 'Admittion', 'Admitsion'],
+      'Some words change their spelling when a suffix is added.', '', '', '', '', '', 3, 'suffixes'],
+  ],
+  'c5-hin-05': [
+    ['कवि विद्या और समय में क्या अंतर बताता है?', 'खोई विद्या दोबारा पाई जा सकती है, पर खोया समय नहीं', ['दोनों दोबारा मिल जाते हैं', 'खोया समय दोबारा मिल जाता है', 'दोनों कभी नहीं मिलते'],
+      '"विद्या खो जाती, फिर भी पढ़ने से है आ जाती, लेकिन खो जाने से मिलती नहीं समय की थाती।"', '', '', '', '', '', 3, 'अर्थ'],
+    ['"जीवन भर भटको, छानो, दुनिया का कोना-कोना" – इसका भाव क्या है?', 'पूरी दुनिया ढूँढ़ने पर भी खोया हुआ समय नहीं मिलता', ['दुनिया घूमना अच्छा है', 'कोने में छिपना चाहिए', 'आटा छानना चाहिए'],
+      '', '', '', '', '', '', 3, 'अर्थ'],
+    ['"चला गया जो समय, लौटकर कभी नहीं फिर आता" को दूसरे तरीके से कैसे कहेंगे?', 'जो समय बीत गया, वह लौटकर फिर कभी नहीं आता', ['समय हमेशा लौट आता है', 'समय कभी नहीं जाता', 'समय चलता नहीं है'],
+      'किसी भी बात को हम कई तरीकों से कह सकते हैं।', '', '', '', '', '', 3, 'भाषा'],
+    ['"घड़ी" शब्द के दो अर्थ कौन-से हैं?', 'समय बताने वाला यंत्र और थोड़ा-सा समय', ['हाथ और पैर', 'वाहन और रास्ता', 'नदी और लहर'],
+      '"एक घड़ी के लिए" में घड़ी का अर्थ थोड़ा-सा समय है।', '', '', '', '', '', 3, 'अनेकार्थी शब्द'],
+    ['कविता में समय की तुलना किससे की गई है?', 'थाती यानी खज़ाने से', ['नदी से', 'पेड़ से', 'घड़ी से'],
+      '"खो जाने से मिलती नहीं समय की थाती।"', '', '', '', '', '', 3, 'अर्थ'],
+    ['"हाथ मलना" और "हाथ न आना" में क्या अंतर है?', 'हाथ मलना = पछताना; हाथ न आना = प्राप्त न होना', ['दोनों का अर्थ खुश होना है', 'हाथ मलना = हाथ धोना', 'हाथ न आना = हाथ में चोट लगना'],
+      '', '', '', '', '', '', 3, 'मुहावरे'],
+  ],
+  'c5-hin-10': [
+    ['चैतूमल ने मुफ़्तलाल की आदत का उपयोग अच्छे काम के लिए कैसे किया?', 'मुफ़्त सिनेमा और मुफ़्त फलदार पेड़ की बात कहकर उन्हें फ़िल्म में भेजा', ['उन्हें डाँटकर', 'उन्हें पैसे देकर', 'उनका मज़ाक उड़ाकर'],
+      'वह मुफ़्तलाल की मानसिकता से अच्छी तरह परिचित था।', '', '', '', '', '', 3, 'अर्थ'],
+    ['मुफ़्तलाल की मुफ़्तखोरी की आदत अंत में किस अच्छे काम में बदल गई?', 'मुफ़्त फल पाने के लिए पेड़ लगाने में, जिससे गाँव हरा-भरा हो गया', ['भोज करवाने में', 'आम बेचने में', 'सिनेमा बनाने में'],
+      '', '', '', '', '', '', 3, 'अर्थ'],
+    ['गाँववाले मुफ़्तलाल को "चलता-फिरता मनोरंजन केंद्र" क्यों मानते थे?', 'उनकी मुफ़्त चीज़ें पाने की हरकतों पर सब खूब हँसते थे', ['वे नाटक करते थे', 'उनके पास टीवी था', 'वे गाना गाते थे'],
+      '', '', '', '', '', '', 3, 'अर्थ'],
+    ['"पुरस्कार" का संधि-विच्छेद क्या है?', 'पुरः + कार', ['पुर + स्कार', 'पुरस + कार', 'पु + रस्कार'],
+      '', '', '', '', '', '', 3, 'संधि'],
+    ['"श्रद्धांजलि" का संधि-विच्छेद क्या है?', 'श्रद्धा + अंजलि', ['श्रद्ध + अंजलि', 'श्रद्धां + जलि', 'श्रद्धा + जलि'],
+      '', '', '', '', '', '', 3, 'संधि'],
+    ['"मेहनत रंग लाना" मुहावरा पाठ में किस बात के लिए आया है?', 'मुफ़्तलाल के लगाए पेड़ों में फल लगने के लिए', ['मैकू चाचा के आम के लिए', 'फ़िल्म के लिए', 'पुरस्कार के पैसों के लिए'],
+      'मेहनत रंग लाना = किसी काम में सफल होना।', '', '', '', '', '', 3, 'मुहावरे'],
+  ],
+};
+for (const c of chapters) c.cards.push(...(advanced[c.id] ?? []));
+
 const ids = new Set(chapters.map((c) => c.id));
 const ix = Object.fromEntries(columns.Cards.map((c, i) => [c, i]));
 

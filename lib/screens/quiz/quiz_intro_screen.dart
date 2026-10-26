@@ -27,15 +27,18 @@ class QuizIntroScreen extends StatefulWidget {
 }
 
 class _QuizIntroScreenState extends State<QuizIntroScreen> {
-  late int _count = AppScope.read(context).current!.isJunior ? 5 : 10;
+  late int _count = AppScope.read(context).defaultQuizLength;
+  late var _level = AppScope.read(context).current!.isJunior
+      ? QuizLevel.basic
+      : QuizLevel.intermediate;
   var _timed = false;
 
   void _start() {
     final state = AppScope.read(context);
     final ch = widget.chapter;
     final questions = ch == null
-        ? state.mixedQuiz(count: _count)
-        : state.chapterQuiz(ch, count: _count);
+        ? state.mixedQuiz(count: _count, level: _level)
+        : state.chapterQuiz(ch, count: _count, level: _level);
     if (questions.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Not enough cards here for a quiz yet.')),
@@ -64,6 +67,9 @@ class _QuizIntroScreenState extends State<QuizIntroScreen> {
             context: context_,
             title: title,
             count: _count,
+            onCount: (n) => setState(() => _count = n),
+            level: _level,
+            onLevel: (l) => setState(() => _level = l),
             onStart: _start,
             subjectId: ch?.subjectId,
           )
@@ -73,6 +79,8 @@ class _QuizIntroScreenState extends State<QuizIntroScreen> {
             title: title,
             count: _count,
             onCount: (n) => setState(() => _count = n),
+            level: _level,
+            onLevel: (l) => setState(() => _level = l),
             timed: _timed,
             onTimed: (v) => setState(() => _timed = v),
             best: ch == null ? null : state.bestQuiz(ch.id),
@@ -113,6 +121,9 @@ class _JuniorIntro extends StatelessWidget {
     required this.context,
     required this.title,
     required this.count,
+    required this.onCount,
+    required this.level,
+    required this.onLevel,
     required this.onStart,
     required this.subjectId,
   });
@@ -120,6 +131,9 @@ class _JuniorIntro extends StatelessWidget {
   final String context;
   final String title;
   final int count;
+  final ValueChanged<int> onCount;
+  final QuizLevel level;
+  final ValueChanged<QuizLevel> onLevel;
   final VoidCallback onStart;
   final String? subjectId;
 
@@ -207,7 +221,7 @@ class _JuniorIntro extends StatelessWidget {
                                 ),
                               ),
                               ReadAloudButton(
-                                '$title. $count questions. '
+                                '$title. $count questions, ${level.label} level. '
                                 'Win up to 3 stars. No timer, take your time!',
                               ),
                             ],
@@ -234,6 +248,24 @@ class _JuniorIntro extends StatelessWidget {
                                 ),
                               ),
                             ],
+                          ),
+                          const SizedBox(height: 18),
+                          const _JuniorLabel('How hard?'),
+                          const SizedBox(height: 8),
+                          _JuniorChoices<QuizLevel>(
+                            values: QuizLevel.values,
+                            selected: level,
+                            label: (l) => l.label,
+                            onSelected: onLevel,
+                          ),
+                          const SizedBox(height: 16),
+                          const _JuniorLabel('How many questions?'),
+                          const SizedBox(height: 8),
+                          _JuniorChoices<int>(
+                            values: QuizLength.options,
+                            selected: count,
+                            label: (n) => '$n',
+                            onSelected: onCount,
                           ),
                           const SizedBox(height: 16),
                           const Text(
@@ -262,6 +294,85 @@ class _JuniorIntro extends StatelessWidget {
       ),
     );
   }
+}
+
+/// Lengths a student can pick on the quiz intro.
+abstract final class QuizLength {
+  static const options = [5, 10, 15, 20];
+}
+
+class _JuniorLabel extends StatelessWidget {
+  const _JuniorLabel(this.text);
+  final String text;
+
+  @override
+  Widget build(BuildContext context) => Text(
+    text,
+    style: const TextStyle(
+      fontSize: 18,
+      fontWeight: FontWeight.w800,
+      color: Color(0xFF3B1D8F),
+    ),
+  );
+}
+
+/// A row of big tappable pills, one of which is picked.
+class _JuniorChoices<T> extends StatelessWidget {
+  const _JuniorChoices({
+    required this.values,
+    required this.selected,
+    required this.label,
+    required this.onSelected,
+  });
+
+  final List<T> values;
+  final T selected;
+  final String Function(T) label;
+  final ValueChanged<T> onSelected;
+
+  @override
+  Widget build(BuildContext context) => Row(
+    children: [
+      for (final (i, v) in values.indexed) ...[
+        if (i > 0) const SizedBox(width: 8),
+        Expanded(
+          child: Semantics(
+            button: true,
+            selected: v == selected,
+            child: Material(
+              color: v == selected ? AppColors.primary : AppColors.primaryTint,
+              borderRadius: BorderRadius.circular(18),
+              child: InkWell(
+                borderRadius: BorderRadius.circular(18),
+                onTap: () => onSelected(v),
+                child: SizedBox(
+                  height: 56,
+                  child: Center(
+                    child: FittedBox(
+                      fit: BoxFit.scaleDown,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 6),
+                        child: Text(
+                          label(v),
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w800,
+                            color: v == selected
+                                ? Colors.white
+                                : AppColors.onPrimaryTint,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+      ],
+    ],
+  );
 }
 
 class _IntroTile extends StatelessWidget {
@@ -346,6 +457,8 @@ class _SeniorIntro extends StatelessWidget {
     required this.title,
     required this.count,
     required this.onCount,
+    required this.level,
+    required this.onLevel,
     required this.timed,
     required this.onTimed,
     required this.best,
@@ -357,6 +470,8 @@ class _SeniorIntro extends StatelessWidget {
   final String title;
   final int count;
   final ValueChanged<int> onCount;
+  final QuizLevel level;
+  final ValueChanged<QuizLevel> onLevel;
   final bool timed;
   final ValueChanged<bool> onTimed;
   final QuizRecord? best;
@@ -419,13 +534,24 @@ class _SeniorIntro extends StatelessWidget {
                       style: TextStyle(fontSize: 15, color: AppColors.inkMuted),
                     ),
                     const SizedBox(height: 20),
+                    const Text('Level', style: label),
+                    const SizedBox(height: 8),
+                    SegmentedButton<QuizLevel>(
+                      segments: [
+                        for (final l in QuizLevel.values)
+                          ButtonSegment(value: l, label: Text(l.label)),
+                      ],
+                      selected: {level},
+                      showSelectedIcon: false,
+                      onSelectionChanged: (s) => onLevel(s.first),
+                    ),
+                    const SizedBox(height: 20),
                     const Text('Questions', style: label),
                     const SizedBox(height: 8),
                     SegmentedButton<int>(
-                      segments: const [
-                        ButtonSegment(value: 5, label: Text('5')),
-                        ButtonSegment(value: 8, label: Text('8')),
-                        ButtonSegment(value: 10, label: Text('10')),
+                      segments: [
+                        for (final n in QuizLength.options)
+                          ButtonSegment(value: n, label: Text('$n')),
                       ],
                       selected: {count},
                       showSelectedIcon: false,

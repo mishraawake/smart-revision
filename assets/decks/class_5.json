@@ -161,6 +161,143 @@
             {"id": "c5cs7-08", "front": "Chemicals sprayed on crops to kill pests can cause …?", "back": "Soil and water pollution", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Noise pollution", "Light pollution", "No pollution"]},
             {"id": "c5cs7-09", "front": "Planting trees helps reduce air pollution because trees …?", "back": "Take in carbon dioxide and give oxygen", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Make noise", "Give out smoke", "Use up water"]}
           ]
+        },
+        {
+          "id": "c5c2-sci-01",
+          "number": 8,
+          "title": "Growing New Plants",
+          "pairs": [["Potato", "Grows from eyes on the stem"], ["Bryophyllum", "Grows from leaves"], ["Rose", "Grows from stem cuttings"], ["Fern", "Grows from spores"]],
+          "cards": [
+            {"id": "c5c2-sci-01-01", "front": "Most plants grow from …?", "back": "Seeds", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Stones", "Leaves only", "Flowers only"], "level": 1},
+            {"id": "c5c2-sci-01-02", "front": "What is it called when a seed starts to grow into a young plant?", "back": "Germination", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Pollination", "Photosynthesis", "Evaporation"], "level": 1},
+            {"id": "c5c2-sci-01-03", "front": "What does a seed need to germinate?", "back": "Water, air and warmth", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Only sunlight", "Soil only", "Darkness and cold"], "tf": {"text": "A seed needs sunlight to germinate.", "answer": false}, "level": 1},
+            {"id": "c5c2-sci-01-04", "front": "Which part of a seed protects it?", "back": "Seed coat", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Root", "Cotyledon", "Flower"], "level": 1},
+            {"id": "c5c2-sci-01-05", "front": "Which part of the potato grows into a new plant?", "back": "The eyes (buds)", "explain": "A potato is a stem that stores food.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["The skin", "The roots", "The flowers"], "level": 1},
+            {"id": "c5c2-sci-01-06", "front": "What is a young plant growing from a seed called?", "back": "Seedling", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Spore", "Bud", "Sapling tree"], "level": 2},
+            {"id": "c5c2-sci-01-07", "front": "Which part of the seed stores food for the baby plant?", "back": "Cotyledon (seed leaf)", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Seed coat", "Stem", "Root hair"], "level": 2},
+            {"id": "c5c2-sci-01-08", "front": "Seeds of cotton and dandelion are carried by …?", "back": "Wind", "explain": "They are light and have hair-like parts.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Water", "Animals only", "Explosion"], "level": 2},
+            {"id": "c5c2-sci-01-09", "front": "Coconuts spread to new places by …?", "back": "Water", "explain": "They float on sea water.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Wind", "Explosion", "Birds"], "level": 2},
+            {"id": "c5c2-sci-01-10", "front": "Growing new plants from parts like stem, leaf or root is called …?", "back": "Vegetative propagation", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Germination", "Pollination", "Dispersal"], "level": 2},
+            {"id": "c5c2-sci-01-11", "front": "Why do plants need to spread their seeds far away?", "back": "So that new plants get enough space, light, water and food", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["So the parent plant can rest", "To make the seeds heavier", "Because seeds dislike the parent"], "level": 3},
+            {"id": "c5c2-sci-01-12", "front": "Pea and balsam pods burst open to throw out seeds. This is dispersal by …?", "back": "Explosion", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Wind", "Water", "Animals"], "level": 3},
+            {"id": "c5c2-sci-01-13", "front": "Which plant grows new plants from the edges of its leaves?", "back": "Bryophyllum", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Rose", "Mango", "Wheat"], "level": 3},
+            {"id": "c5c2-sci-01-14", "front": "Ferns and mosses do not make seeds. How do they reproduce?", "back": "By spores", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["By stem cuttings", "By bulbs", "By eyes"], "level": 3},
+            {"id": "c5c2-sci-01-15", "front": "Why does a seed kept in a dry, airtight box not germinate?", "back": "It has no water or air", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["It has too much light", "It is too warm", "It is too big"], "level": 3}
+          ]
+        },
+        {
+          "id": "c5c2-sci-02",
+          "number": 9,
+          "title": "Animal Habitats and Adaptations",
+          "pairs": [["Camel", "Desert"], ["Polar bear", "Polar region"], ["Fish", "Water"], ["Monkey", "Trees"]],
+          "cards": [
+            {"id": "c5c2-sci-02-01", "front": "The natural home of an animal is called its …?", "back": "Habitat", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Shelter", "Nest", "Zoo"], "level": 1},
+            {"id": "c5c2-sci-02-02", "front": "Animals that live on land are called …?", "back": "Terrestrial animals", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Aquatic animals", "Aerial animals", "Amphibians"], "level": 1},
+            {"id": "c5c2-sci-02-03", "front": "Animals that live in water are called …?", "back": "Aquatic animals", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Terrestrial animals", "Arboreal animals", "Aerial animals"], "level": 1},
+            {"id": "c5c2-sci-02-04", "front": "Animals that can live both on land and in water are called …?", "back": "Amphibians", "explain": "A frog is an amphibian.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Reptiles", "Mammals", "Aerial animals"], "tf": {"text": "A frog is an amphibian.", "answer": true}, "level": 1},
+            {"id": "c5c2-sci-02-05", "front": "How do fish breathe?", "back": "Through gills", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Through lungs", "Through skin only", "Through their tail"], "level": 1},
+            {"id": "c5c2-sci-02-06", "front": "Special features that help an animal live in its habitat are called …?", "back": "Adaptations", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Habits", "Seasons", "Instincts"], "level": 2},
+            {"id": "c5c2-sci-02-07", "front": "How is a camel adapted to the desert?", "back": "Long legs, a hump that stores fat, and thick eyelashes", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Thick fur and blubber", "Webbed feet", "Gills"], "level": 2},
+            {"id": "c5c2-sci-02-08", "front": "How is a polar bear adapted to the cold?", "back": "Thick white fur and a layer of fat", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Big ears to lose heat", "Thin skin", "Gills"], "level": 2},
+            {"id": "c5c2-sci-02-09", "front": "Animals that live mostly on trees are called …?", "back": "Arboreal animals", "explain": "Monkeys and squirrels are arboreal.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Aquatic animals", "Amphibians", "Burrowing animals"], "level": 2},
+            {"id": "c5c2-sci-02-10", "front": "Why do ducks have webbed feet?", "back": "To swim and paddle in water", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["To climb trees", "To dig holes", "To catch insects"], "level": 2},
+            {"id": "c5c2-sci-02-11", "front": "Why does a fish have a streamlined body?", "back": "To move easily through water", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["To stay warm", "To store food", "To see better"], "level": 3},
+            {"id": "c5c2-sci-02-12", "front": "Why are birds' bones hollow?", "back": "To make their bodies light for flying", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["To store water", "To make them strong for digging", "To keep them warm"], "level": 3},
+            {"id": "c5c2-sci-02-13", "front": "Some animals sleep through the cold winter. What is this called?", "back": "Hibernation", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Migration", "Camouflage", "Germination"], "level": 3},
+            {"id": "c5c2-sci-02-14", "front": "A chameleon changes colour to match its surroundings. This is called …?", "back": "Camouflage", "explain": "It helps it hide from enemies and catch prey.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Hibernation", "Migration", "Respiration"], "level": 3},
+            {"id": "c5c2-sci-02-15", "front": "Why do some birds fly to warmer places in winter?", "back": "To find food and escape the cold – this is migration", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["To lay eggs in snow", "To hibernate", "To change colour"], "level": 3}
+          ]
+        },
+        {
+          "id": "c5c2-sci-03",
+          "number": 10,
+          "title": "Food and Health",
+          "pairs": [["Vitamin C", "Scurvy"], ["Vitamin D", "Rickets"], ["Iodine", "Goitre"], ["Iron", "Anaemia"]],
+          "cards": [
+            {"id": "c5c2-sci-03-01", "front": "Which nutrient gives us energy?", "back": "Carbohydrates", "explain": "Rice, wheat and potatoes are rich in carbohydrates.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Vitamins", "Minerals", "Water"], "level": 1},
+            {"id": "c5c2-sci-03-02", "front": "Which nutrient helps our body grow and repair itself?", "back": "Proteins", "explain": "Pulses, milk, eggs and fish are rich in proteins.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Fats", "Carbohydrates", "Roughage"], "level": 1},
+            {"id": "c5c2-sci-03-03", "front": "A diet that has all nutrients in the right amounts is called a …?", "back": "Balanced diet", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Junk diet", "Fast diet", "Light diet"], "level": 1},
+            {"id": "c5c2-sci-03-04", "front": "Which food is rich in fats?", "back": "Butter", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Spinach", "Water", "Apple"], "level": 1},
+            {"id": "c5c2-sci-03-05", "front": "Why do we need roughage?", "back": "It helps digestion and prevents constipation", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["It gives energy", "It builds muscles", "It makes bones strong"], "tf": {"text": "Roughage gives us a lot of energy.", "answer": false}, "level": 1},
+            {"id": "c5c2-sci-03-06", "front": "Lack of vitamin C causes …?", "back": "Scurvy", "explain": "Gums bleed. Citrus fruits are rich in vitamin C.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Rickets", "Goitre", "Night blindness"], "level": 2},
+            {"id": "c5c2-sci-03-07", "front": "Lack of vitamin D causes …?", "back": "Rickets", "explain": "Bones become soft. Sunlight helps the body make vitamin D.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Scurvy", "Anaemia", "Beriberi"], "level": 2},
+            {"id": "c5c2-sci-03-08", "front": "Lack of vitamin A causes …?", "back": "Night blindness", "explain": "Carrots are rich in vitamin A.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Goitre", "Rickets", "Scurvy"], "level": 2},
+            {"id": "c5c2-sci-03-09", "front": "Lack of iodine causes …?", "back": "Goitre", "explain": "That is why we use iodised salt.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Anaemia", "Scurvy", "Night blindness"], "level": 2},
+            {"id": "c5c2-sci-03-10", "front": "Which mineral do we need for healthy blood?", "back": "Iron", "explain": "Lack of iron causes anaemia.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Calcium", "Iodine", "Salt"], "level": 2},
+            {"id": "c5c2-sci-03-11", "front": "Diseases caused by the lack of a nutrient are called …?", "back": "Deficiency diseases", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Infectious diseases", "Allergies", "Injuries"], "level": 3},
+            {"id": "c5c2-sci-03-12", "front": "Why should we not eat junk food often?", "back": "It has too much fat, salt or sugar and few nutrients", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["It has too many vitamins", "It is too healthy", "It has no taste"], "level": 3},
+            {"id": "c5c2-sci-03-13", "front": "Why are vitamins and minerals called protective foods?", "back": "They protect us from diseases", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["They give the most energy", "They protect food from insects", "They keep food fresh"], "level": 3},
+            {"id": "c5c2-sci-03-14", "front": "Which way of keeping food fresh uses cold?", "back": "Refrigeration", "explain": "Pickling, drying and salting are other ways of preserving food.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Pickling", "Sun-drying", "Salting"], "level": 3},
+            {"id": "c5c2-sci-03-15", "front": "Why should fruits and vegetables be washed before cutting, not after?", "back": "Washing after cutting washes away vitamins", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["They become sweeter", "They cook faster", "They change colour"], "level": 3}
+          ]
+        },
+        {
+          "id": "c5c2-sci-04",
+          "number": 11,
+          "title": "Skeletal and Muscular Systems",
+          "pairs": [["Skull", "Protects the brain"], ["Ribcage", "Protects the heart and lungs"], ["Backbone", "Protects the spinal cord"], ["Femur", "Longest bone"]],
+          "cards": [
+            {"id": "c5c2-sci-04-01", "front": "How many bones are there in an adult human body?", "back": "206", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["106", "306", "186"], "level": 1},
+            {"id": "c5c2-sci-04-02", "front": "Which bones protect the brain?", "back": "Skull", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Ribs", "Backbone", "Pelvis"], "level": 1},
+            {"id": "c5c2-sci-04-03", "front": "The framework of bones in our body is called the …?", "back": "Skeleton", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Muscle", "Skin", "Nerve"], "level": 1},
+            {"id": "c5c2-sci-04-04", "front": "Which part protects the heart and lungs?", "back": "Ribcage", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Skull", "Pelvis", "Kneecap"], "level": 1},
+            {"id": "c5c2-sci-04-05", "front": "What helps bones move?", "back": "Muscles", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Hair", "Nails", "Blood"], "level": 1},
+            {"id": "c5c2-sci-04-06", "front": "How many pairs of ribs do we have?", "back": "12", "explain": "12 pairs = 24 ribs.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["10", "24", "6"], "level": 2},
+            {"id": "c5c2-sci-04-07", "front": "Which is the longest bone in the body?", "back": "Femur (thigh bone)", "explain": "The smallest bone, the stapes, is in the ear.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Skull", "Rib", "Stapes"], "level": 2},
+            {"id": "c5c2-sci-04-08", "front": "The place where two bones meet is called a …?", "back": "Joint", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Muscle", "Tendon", "Marrow"], "level": 2},
+            {"id": "c5c2-sci-04-09", "front": "Which type of joint is found at the elbow and knee?", "back": "Hinge joint", "explain": "It moves in one direction, like a door hinge.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Ball and socket joint", "Pivot joint", "Fixed joint"], "level": 2},
+            {"id": "c5c2-sci-04-10", "front": "Which type of joint is found at the shoulder and hip?", "back": "Ball and socket joint", "explain": "It lets the arm and leg move in all directions.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Hinge joint", "Pivot joint", "Fixed joint"], "level": 2},
+            {"id": "c5c2-sci-04-11", "front": "Muscles we can control, like those in our arms, are called …?", "back": "Voluntary muscles", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Involuntary muscles", "Cardiac muscles", "Fixed muscles"], "level": 3},
+            {"id": "c5c2-sci-04-12", "front": "Which muscle works all our life without stopping?", "back": "Heart (cardiac) muscle", "explain": "It is an involuntary muscle.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Biceps", "Leg muscle", "Face muscle"], "tf": {"text": "We can stop our heart muscle whenever we want.", "answer": false}, "level": 3},
+            {"id": "c5c2-sci-04-13", "front": "Why do muscles work in pairs, like the biceps and triceps?", "back": "A muscle can only pull, so one bends the arm and the other straightens it", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["One rests while the other sleeps", "They share blood", "They protect each other"], "level": 3},
+            {"id": "c5c2-sci-04-14", "front": "Tough bands that join muscles to bones are called …?", "back": "Tendons", "explain": "Ligaments join bone to bone.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Ligaments", "Joints", "Cartilage"], "level": 3},
+            {"id": "c5c2-sci-04-15", "front": "The joint between the skull and the backbone lets us turn our head. What kind is it?", "back": "Pivot joint", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Hinge joint", "Fixed joint", "Ball and socket joint"], "level": 3}
+          ]
+        },
+        {
+          "id": "c5c2-sci-05",
+          "number": 12,
+          "title": "Nervous System",
+          "pairs": [["Cerebrum", "Thinking and memory"], ["Cerebellum", "Balance"], ["Medulla", "Heartbeat and breathing"], ["Spinal cord", "Carries messages to and from the brain"]],
+          "cards": [
+            {"id": "c5c2-sci-05-01", "front": "Which organ controls the whole body?", "back": "Brain", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Heart", "Stomach", "Lungs"], "level": 1},
+            {"id": "c5c2-sci-05-02", "front": "The brain, spinal cord and nerves together make the …?", "back": "Nervous system", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Digestive system", "Skeletal system", "Respiratory system"], "level": 1},
+            {"id": "c5c2-sci-05-03", "front": "What carries messages between the brain and body parts?", "back": "Nerves", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Bones", "Blood vessels", "Muscles"], "level": 1},
+            {"id": "c5c2-sci-05-04", "front": "Which bones protect the spinal cord?", "back": "Backbone (vertebrae)", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Skull", "Ribs", "Pelvis"], "level": 1},
+            {"id": "c5c2-sci-05-05", "front": "How many main sense organs do we have?", "back": "5", "explain": "Eyes, ears, nose, tongue and skin.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["3", "4", "7"], "level": 1},
+            {"id": "c5c2-sci-05-06", "front": "Which part of the brain is used for thinking and memory?", "back": "Cerebrum", "explain": "It is the largest part of the brain.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Cerebellum", "Medulla", "Spinal cord"], "level": 2},
+            {"id": "c5c2-sci-05-07", "front": "Which part of the brain keeps our balance?", "back": "Cerebellum", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Cerebrum", "Medulla", "Skull"], "level": 2},
+            {"id": "c5c2-sci-05-08", "front": "Which part of the brain controls heartbeat and breathing?", "back": "Medulla", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Cerebrum", "Cerebellum", "Nerves"], "level": 2},
+            {"id": "c5c2-sci-05-09", "front": "Nerve cells are also called …?", "back": "Neurons", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Muscles", "Tendons", "Vertebrae"], "level": 2},
+            {"id": "c5c2-sci-05-10", "front": "Which sense organ helps us feel hot and cold?", "back": "Skin", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Tongue", "Ears", "Nose"], "level": 2},
+            {"id": "c5c2-sci-05-11", "front": "You pull your hand away from a hot pan before you even think. What is this called?", "back": "Reflex action", "explain": "Reflex actions are controlled by the spinal cord.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Voluntary action", "Habit", "Memory"], "tf": {"text": "Reflex actions are controlled by the spinal cord.", "answer": true}, "level": 3},
+            {"id": "c5c2-sci-05-12", "front": "Why is a reflex action useful?", "back": "It protects the body from harm very quickly", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["It helps us sleep", "It helps us remember", "It makes us grow"], "level": 3},
+            {"id": "c5c2-sci-05-13", "front": "Why should we wear a helmet while cycling?", "back": "It protects the brain from injury", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["It keeps hair tidy", "It makes us faster", "It keeps us cool"], "level": 3},
+            {"id": "c5c2-sci-05-14", "front": "Which is a voluntary action?", "back": "Writing a letter", "explain": "Voluntary actions are controlled by the cerebrum.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Heart beating", "Blinking at a bright light", "Sneezing"], "level": 3},
+            {"id": "c5c2-sci-05-15", "front": "How does good sleep help the nervous system?", "back": "It lets the brain rest and stay alert", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["It makes nerves longer", "It stops the heart", "It is not needed"], "level": 3}
+          ]
+        },
+        {
+          "id": "c5c2-sci-06",
+          "number": 13,
+          "title": "Safety and First Aid",
+          "pairs": [["112", "Emergency helpline"], ["Burn", "Cool under running water"], ["Nosebleed", "Lean forward and pinch the nose"], ["Fracture", "Support with a splint"]],
+          "cards": [
+            {"id": "c5c2-sci-06-01", "front": "The first help given to an injured person before a doctor comes is called …?", "back": "First aid", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Surgery", "Medicine", "Treatment"], "level": 1},
+            {"id": "c5c2-sci-06-02", "front": "Where should we cross the road?", "back": "At a zebra crossing", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Anywhere", "At a bend", "Between parked cars"], "level": 1},
+            {"id": "c5c2-sci-06-03", "front": "Which traffic light colour means stop?", "back": "Red", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Green", "Yellow", "Blue"], "level": 1},
+            {"id": "c5c2-sci-06-04", "front": "What is the emergency helpline number in India?", "back": "112", "explain": "Ambulance is 108 and fire is 101.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["100", "999", "911"], "level": 1},
+            {"id": "c5c2-sci-06-05", "front": "What should you do first for a small cut?", "back": "Wash it with clean water and apply an antiseptic", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Put mud on it", "Leave it open and dirty", "Rub it hard"], "level": 2},
+            {"id": "c5c2-sci-06-06", "front": "What is the first aid for a minor burn?", "back": "Hold it under cool running water", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Put butter on it", "Burst the blisters", "Cover it with cotton wool"], "tf": {"text": "We should apply ice directly on a burn.", "answer": false}, "level": 2},
+            {"id": "c5c2-sci-06-07", "front": "What should you do for a nosebleed?", "back": "Sit, lean forward and pinch the soft part of the nose", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Lie flat on your back", "Tilt your head back", "Blow your nose hard"], "level": 2},
+            {"id": "c5c2-sci-06-08", "front": "What should a first-aid box have?", "back": "Bandages, cotton, antiseptic and scissors", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Toys and sweets", "Books and pens", "Matches and candles"], "level": 2},
+            {"id": "c5c2-sci-06-09", "front": "Which side of the road should we walk on when there is no footpath?", "back": "Facing the traffic", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["In the middle", "With our back to the traffic", "Anywhere"], "level": 2},
+            {"id": "c5c2-sci-06-10", "front": "What is a splint used for?", "back": "To keep a broken bone still", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["To clean a wound", "To stop a nosebleed", "To cool a burn"], "level": 3},
+            {"id": "c5c2-sci-06-11", "front": "What should you do if someone is bitten by a snake?", "back": "Keep them calm and still and take them to hospital quickly", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Suck out the poison", "Make them run", "Cut the bite"], "level": 3},
+            {"id": "c5c2-sci-06-12", "front": "Why should we not touch electric switches with wet hands?", "back": "Water carries electricity and we may get a shock", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Switches get dirty", "Water makes switches rust", "Hands get cold"], "level": 3},
+            {"id": "c5c2-sci-06-13", "front": "If clothes catch fire, what should you do?", "back": "Stop, drop and roll", "explain": "Running gives the fire more air.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Run fast", "Fan the flames", "Pour oil"], "level": 3},
+            {"id": "c5c2-sci-06-14", "front": "What does RICE stand for in treating a sprain?", "back": "Rest, Ice, Compress, Elevate", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Run, Ice, Cover, Exercise", "Rest, Itch, Clean, Eat", "Rub, Ice, Cut, Elevate"], "level": 3}
+          ]
         }
       ]
     },
@@ -294,6 +431,161 @@
             {"id": "c5cm7-08", "front": "A map scale says 1 cm = 5 km. 3 cm on the map is how far really?", "back": "15 km", "explain": "3 × 5 = 15 km.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["8 km", "3 km", "5 km"]},
             {"id": "c5cm7-09", "front": "If you face north, what is on your right?", "back": "East", "explain": "West is on your left.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["West", "South", "North"], "tf": {"text": "If you face north, west is on your right.", "answer": false}},
             {"id": "c5cm7-10", "front": "What is a view of something seen from directly above called?", "back": "Top view", "explain": "Maps show the top view.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["Side view", "Front view", "Back view"]}
+          ]
+        },
+        {
+          "id": "c5c2-maths-01",
+          "number": 8,
+          "title": "Large Numbers",
+          "pairs": [["1 lakh", "1,00,000"], ["10 lakh", "1 million"], ["1 crore", "10 million"], ["Greatest 5-digit number", "99,999"]],
+          "cards": [
+            {"id": "c5c2-maths-01-01", "front": "How many zeros are there in one lakh?", "back": "5", "explain": "1 lakh = 1,00,000.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["4", "6", "7"], "level": 1},
+            {"id": "c5c2-maths-01-02", "front": "How many zeros are there in one crore?", "back": "7", "explain": "1 crore = 1,00,00,000.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["6", "8", "5"], "level": 1},
+            {"id": "c5c2-maths-01-03", "front": "What is the smallest 6-digit number?", "back": "1,00,000", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["99,999", "9,99,999", "10,000"], "level": 1},
+            {"id": "c5c2-maths-01-04", "front": "What is the greatest 5-digit number?", "back": "99,999", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["10,000", "1,00,000", "99,990"], "level": 1},
+            {"id": "c5c2-maths-01-05", "front": "1 more than 99,999 is …?", "back": "1,00,000", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["99,998", "9,99,999", "1,00,001"], "tf": {"text": "99,999 + 1 = 1,00,000", "answer": true}, "level": 1},
+            {"id": "c5c2-maths-01-06", "front": "Write 3,45,678 in words.", "back": "Three lakh forty-five thousand six hundred seventy-eight", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Three crore forty-five lakh six hundred seventy-eight", "Thirty-four thousand five hundred seventy-eight", "Three million forty-five thousand"], "level": 2},
+            {"id": "c5c2-maths-01-07", "front": "What is the place value of 7 in 5,73,214?", "back": "70,000", "explain": "7 is in the ten-thousands place.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["7,000", "7", "7,00,000"], "level": 2},
+            {"id": "c5c2-maths-01-08", "front": "10 lakh is the same as …?", "back": "1 million", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["1 billion", "1 crore", "100 thousand"], "tf": {"text": "10 lakh = 1 million.", "answer": true}, "level": 2},
+            {"id": "c5c2-maths-01-09", "front": "Which is greater: 4,56,789 or 4,65,789?", "back": "4,65,789", "explain": "Compare digit by digit from the left: 6 ten-thousands > 5 ten-thousands.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["4,56,789", "They are equal", "Cannot tell"], "level": 2},
+            {"id": "c5c2-maths-01-10", "front": "In the international system, 5,000,000 is read as …?", "back": "Five million", "explain": "It is fifty lakh in the Indian system.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Fifty lakh crore", "Five crore", "Fifty thousand"], "level": 2},
+            {"id": "c5c2-maths-01-11", "front": "Round 4,67,382 to the nearest thousand.", "back": "4,67,000", "explain": "The hundreds digit is 3, which is less than 5, so round down.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["4,68,000", "4,70,000", "4,67,400"], "level": 3},
+            {"id": "c5c2-maths-01-12", "front": "What is the greatest 6-digit number using 0, 3, 5, 7, 8, 9 once each?", "back": "9,87,530", "explain": "Put the digits in decreasing order.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["9,87,503", "3,05,789", "8,97,530"], "level": 3},
+            {"id": "c5c2-maths-01-13", "front": "What is the smallest 6-digit number using 0, 3, 5, 7, 8, 9 once each?", "back": "3,05,789", "explain": "A number cannot start with 0, so start with 3 and then put 0.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["0,35,789", "3,57,890", "9,87,530"], "level": 3},
+            {"id": "c5c2-maths-01-14", "front": "What is the difference between the place value and face value of 6 in 2,63,405?", "back": "59,994", "explain": "60,000 − 6 = 59,994.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["60,000", "6", "60,006"], "level": 3},
+            {"id": "c5c2-maths-01-15", "front": "How many lakhs make one crore?", "back": "100", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["10", "1000", "50"], "level": 3}
+          ]
+        },
+        {
+          "id": "c5c2-maths-02",
+          "number": 9,
+          "title": "Addition and Subtraction",
+          "pairs": [["Sum", "Answer of addition"], ["Difference", "Answer of subtraction"], ["Minuend − Subtrahend", "Difference"], ["Any number + 0", "The same number"]],
+          "cards": [
+            {"id": "c5c2-maths-02-01", "front": "What is the answer to an addition called?", "back": "Sum", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Difference", "Product", "Quotient"], "level": 1},
+            {"id": "c5c2-maths-02-02", "front": "What is the answer to a subtraction called?", "back": "Difference", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Sum", "Product", "Remainder"], "level": 1},
+            {"id": "c5c2-maths-02-03", "front": "45,678 + 0 = ?", "back": "45,678", "explain": "Adding 0 does not change a number.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["0", "45,679", "4,567"], "tf": {"text": "Adding zero to a number gives zero.", "answer": false}, "level": 1},
+            {"id": "c5c2-maths-02-04", "front": "23,456 + 1,000 = ?", "back": "24,456", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["23,556", "33,456", "23,466"], "level": 1},
+            {"id": "c5c2-maths-02-05", "front": "50,000 − 1 = ?", "back": "49,999", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["49,000", "50,001", "40,999"], "level": 1},
+            {"id": "c5c2-maths-02-06", "front": "34,567 + 25,489 = ?", "back": "60,056", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["59,956", "60,156", "59,056"], "level": 2},
+            {"id": "c5c2-maths-02-07", "front": "80,000 − 36,754 = ?", "back": "43,246", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["44,246", "43,346", "56,754"], "level": 2},
+            {"id": "c5c2-maths-02-08", "front": "Does changing the order of numbers change their sum?", "back": "No", "explain": "This is the order (commutative) property: a + b = b + a.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Yes", "Only for big numbers", "Only for odd numbers"], "level": 2},
+            {"id": "c5c2-maths-02-09", "front": "How do you check a subtraction answer?", "back": "Add the difference to the smaller number to get the bigger number", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Subtract again", "Multiply the numbers", "Divide the answer by 2"], "level": 2},
+            {"id": "c5c2-maths-02-10", "front": "Estimate 4,789 + 3,198 by rounding to the nearest thousand.", "back": "8,000", "explain": "5,000 + 3,000 = 8,000.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["7,000", "9,000", "7,500"], "level": 2},
+            {"id": "c5c2-maths-02-11", "front": "A school had 12,450 books. It bought 3,875 more and gave away 2,100. How many books now?", "back": "14,225", "explain": "12,450 + 3,875 − 2,100 = 14,225.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["18,425", "10,325", "16,425"], "level": 3},
+            {"id": "c5c2-maths-02-12", "front": "What must be added to 47,385 to get 1,00,000?", "back": "52,615", "explain": "1,00,000 − 47,385 = 52,615.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["53,615", "52,625", "47,385"], "level": 3},
+            {"id": "c5c2-maths-02-13", "front": "The sum of two numbers is 75,000. One number is 38,642. What is the other?", "back": "36,358", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["37,358", "36,458", "1,13,642"], "level": 3},
+            {"id": "c5c2-maths-02-14", "front": "Which is the best estimate of 68,912 − 21,305?", "back": "48,000", "explain": "Round to the nearest thousand: 69,000 − 21,000 = 48,000.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["90,000", "40,000", "50,500"], "level": 3}
+          ]
+        },
+        {
+          "id": "c5c2-maths-03",
+          "number": 10,
+          "title": "Multiplication and Division",
+          "pairs": [["Product", "Answer of multiplication"], ["Quotient", "Answer of division"], ["Dividend", "Number being divided"], ["Divisor", "Number we divide by"]],
+          "cards": [
+            {"id": "c5c2-maths-03-01", "front": "What is the answer to a multiplication called?", "back": "Product", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Sum", "Quotient", "Difference"], "level": 1},
+            {"id": "c5c2-maths-03-02", "front": "In 45 ÷ 5 = 9, what is 45 called?", "back": "Dividend", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Divisor", "Quotient", "Remainder"], "level": 1},
+            {"id": "c5c2-maths-03-03", "front": "Any number multiplied by 0 gives …?", "back": "0", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["1", "The same number", "10"], "tf": {"text": "Any number multiplied by 1 gives the same number.", "answer": true}, "level": 1},
+            {"id": "c5c2-maths-03-04", "front": "345 × 10 = ?", "back": "3,450", "explain": "To multiply by 10, put one zero at the end.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["34,500", "345", "3,045"], "level": 1},
+            {"id": "c5c2-maths-03-05", "front": "8,400 ÷ 100 = ?", "back": "84", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["840", "8.4", "840,000"], "level": 1},
+            {"id": "c5c2-maths-03-06", "front": "256 × 34 = ?", "back": "8,704", "explain": "256 × 30 = 7,680 and 256 × 4 = 1,024.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["8,604", "7,804", "9,704"], "level": 2},
+            {"id": "c5c2-maths-03-07", "front": "7,296 ÷ 8 = ?", "back": "912", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["921", "902", "812"], "level": 2},
+            {"id": "c5c2-maths-03-08", "front": "In a division, Dividend = ?", "back": "Divisor × Quotient + Remainder", "explain": "Use this to check a division.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Divisor + Quotient", "Quotient − Remainder", "Divisor ÷ Quotient"], "level": 2},
+            {"id": "c5c2-maths-03-09", "front": "Can a remainder be bigger than the divisor?", "back": "No, it must be smaller", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Yes, always", "Only sometimes", "Only with big numbers"], "level": 2},
+            {"id": "c5c2-maths-03-10", "front": "1,234 ÷ 1 = ?", "back": "1,234", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["1", "0", "12,340"], "level": 2},
+            {"id": "c5c2-maths-03-11", "front": "One box holds 48 pencils. How many pencils are in 125 boxes?", "back": "6,000", "explain": "48 × 125 = 6,000.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["5,000", "6,250", "173"], "level": 3},
+            {"id": "c5c2-maths-03-12", "front": "1,000 sweets are shared equally among 32 children. How many does each get, and how many are left?", "back": "31 each, 8 left", "explain": "32 × 31 = 992; 1,000 − 992 = 8.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["32 each, 0 left", "30 each, 40 left", "31 each, 0 left"], "level": 3},
+            {"id": "c5c2-maths-03-13", "front": "Which is the quickest way to find 25 × 36?", "back": "25 × 4 × 9 = 100 × 9 = 900", "explain": "Breaking numbers into friendly parts makes multiplying easier.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Add 25 thirty-six times", "25 + 36", "36 ÷ 25"], "level": 3},
+            {"id": "c5c2-maths-03-14", "front": "What is the largest 3-digit number exactly divisible by 7?", "back": "994", "explain": "999 ÷ 7 leaves remainder 5, so 999 − 5 = 994.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["999", "997", "980"], "level": 3}
+          ]
+        },
+        {
+          "id": "c5c2-maths-04",
+          "number": 11,
+          "title": "Factors and Multiples",
+          "pairs": [["Prime number", "Exactly two factors"], ["Composite number", "More than two factors"], ["1", "Neither prime nor composite"], ["2", "Only even prime number"]],
+          "cards": [
+            {"id": "c5c2-maths-04-01", "front": "Name the factor of 12 that lies between 3 and 5.", "back": "4", "explain": "A factor divides a number exactly.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["5", "7", "24"], "level": 1},
+            {"id": "c5c2-maths-04-02", "front": "Name the multiple of 6 that lies between 15 and 20.", "back": "18", "explain": "6 × 3 = 18.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["14", "16", "20"], "level": 1},
+            {"id": "c5c2-maths-04-03", "front": "What is the only even prime number?", "back": "2", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["4", "0", "6"], "tf": {"text": "2 is the only even prime number.", "answer": true}, "level": 1},
+            {"id": "c5c2-maths-04-04", "front": "Is 1 a prime number?", "back": "No – it is neither prime nor composite", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Yes", "It is composite", "It is the smallest prime"], "level": 1},
+            {"id": "c5c2-maths-04-05", "front": "What is the smallest multiple of any number?", "back": "The number itself", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["0", "1", "Its double"], "level": 1},
+            {"id": "c5c2-maths-04-06", "front": "List all the factors of 18.", "back": "1, 2, 3, 6, 9, 18", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["2, 3, 6, 9", "1, 2, 3, 4, 6, 9, 18", "18, 36, 54"], "level": 2},
+            {"id": "c5c2-maths-04-07", "front": "Name the prime number between 28 and 30.", "back": "29", "explain": "29 has only two factors: 1 and 29.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["21", "27", "33"], "level": 2},
+            {"id": "c5c2-maths-04-08", "front": "A number is divisible by 3 if …?", "back": "The sum of its digits is divisible by 3", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["It ends in 3", "It is odd", "It ends in 0"], "level": 2},
+            {"id": "c5c2-maths-04-09", "front": "A number is divisible by 5 if it ends in …?", "back": "0 or 5", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["5 only", "Any odd digit", "2 or 5"], "level": 2},
+            {"id": "c5c2-maths-04-10", "front": "What are the first three common multiples of 4 and 6?", "back": "12, 24, 36", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["10, 20, 30", "4, 6, 24", "2, 12, 24"], "level": 2},
+            {"id": "c5c2-maths-04-11", "front": "What is the HCF of 24 and 36?", "back": "12", "explain": "HCF is the highest common factor.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["6", "4", "72"], "level": 3},
+            {"id": "c5c2-maths-04-12", "front": "What is the LCM of 4 and 6?", "back": "12", "explain": "LCM is the lowest common multiple.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["24", "2", "10"], "level": 3},
+            {"id": "c5c2-maths-04-13", "front": "Write 60 as a product of prime factors.", "back": "2 × 2 × 3 × 5", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["6 × 10", "2 × 3 × 10", "4 × 15"], "level": 3},
+            {"id": "c5c2-maths-04-14", "front": "Two bells ring every 6 and 8 minutes. They ring together now. When will they next ring together?", "back": "After 24 minutes", "explain": "This is the LCM of 6 and 8.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["After 14 minutes", "After 48 minutes", "After 2 minutes"], "level": 3}
+          ]
+        },
+        {
+          "id": "c5c2-maths-05",
+          "number": 12,
+          "title": "Fractions",
+          "pairs": [["1/2", "2/4"], ["Numerator", "Top number"], ["Denominator", "Bottom number"], ["7/4", "Improper fraction"]],
+          "cards": [
+            {"id": "c5c2-maths-05-01", "front": "In 3/5, what is 3 called?", "back": "Numerator", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Denominator", "Divisor", "Whole"], "level": 1},
+            {"id": "c5c2-maths-05-02", "front": "In 3/5, what is 5 called?", "back": "Denominator", "explain": "It tells how many equal parts the whole is divided into.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Numerator", "Quotient", "Part"], "level": 1},
+            {"id": "c5c2-maths-05-03", "front": "Which fraction is equal to 1/2?", "back": "3/6", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["2/3", "1/3", "3/4"], "level": 1},
+            {"id": "c5c2-maths-05-04", "front": "Which is a proper fraction?", "back": "4/7", "explain": "In a proper fraction the numerator is smaller than the denominator.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["7/4", "5/5", "9/2"], "level": 1},
+            {"id": "c5c2-maths-05-05", "front": "Fractions with the same denominator are called …?", "back": "Like fractions", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Unlike fractions", "Mixed fractions", "Improper fractions"], "tf": {"text": "2/7 and 5/7 are like fractions.", "answer": true}, "level": 1},
+            {"id": "c5c2-maths-05-06", "front": "Write 7/3 as a mixed fraction.", "back": "2 1/3", "explain": "7 ÷ 3 = 2 remainder 1.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["3 1/7", "1 2/3", "2 2/3"], "level": 2},
+            {"id": "c5c2-maths-05-07", "front": "Write 3 1/4 as an improper fraction.", "back": "13/4", "explain": "3 × 4 + 1 = 13.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["7/4", "12/4", "31/4"], "level": 2},
+            {"id": "c5c2-maths-05-08", "front": "2/9 + 5/9 = ?", "back": "7/9", "explain": "Add the numerators; keep the denominator.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["7/18", "10/9", "3/9"], "level": 2},
+            {"id": "c5c2-maths-05-09", "front": "Which is greater: 3/8 or 5/8?", "back": "5/8", "explain": "With the same denominator, the bigger numerator is bigger.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["3/8", "They are equal", "Cannot tell"], "level": 2},
+            {"id": "c5c2-maths-05-10", "front": "Reduce 12/16 to its lowest terms.", "back": "3/4", "explain": "Divide both by 4.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["6/8", "2/3", "4/3"], "level": 2},
+            {"id": "c5c2-maths-05-11", "front": "1/2 + 1/3 = ?", "back": "5/6", "explain": "3/6 + 2/6 = 5/6.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["2/5", "2/6", "1/6"], "level": 3},
+            {"id": "c5c2-maths-05-12", "front": "What is 3/4 of 20?", "back": "15", "explain": "20 ÷ 4 × 3 = 15.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["12", "16", "5"], "level": 3},
+            {"id": "c5c2-maths-05-13", "front": "Which is greater: 2/3 or 3/5?", "back": "2/3", "explain": "2/3 = 10/15 and 3/5 = 9/15.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["3/5", "They are equal", "Cannot tell"], "level": 3},
+            {"id": "c5c2-maths-05-14", "front": "Riya ate 2/8 of a pizza and Sam ate 3/8. What part of the pizza is left?", "back": "3/8", "explain": "1 − 5/8 = 3/8.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["5/8", "1/8", "2/8"], "level": 3}
+          ]
+        },
+        {
+          "id": "c5c2-maths-06",
+          "number": 13,
+          "title": "Decimals",
+          "pairs": [["0.5", "1/2"], ["0.25", "1/4"], ["0.1", "One tenth"], ["0.01", "One hundredth"]],
+          "cards": [
+            {"id": "c5c2-maths-06-01", "front": "Write 3/10 as a decimal.", "back": "0.3", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["3.10", "0.03", "3.0"], "level": 1},
+            {"id": "c5c2-maths-06-02", "front": "Write 7/100 as a decimal.", "back": "0.07", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["0.7", "7.0", "0.007"], "level": 1},
+            {"id": "c5c2-maths-06-03", "front": "In 4.6, which digit is in the tenths place?", "back": "6", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["4", "0", "None"], "level": 1},
+            {"id": "c5c2-maths-06-04", "front": "What is 0.5 as a fraction?", "back": "1/2", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["1/5", "5/100", "2/5"], "tf": {"text": "0.5 is the same as one half.", "answer": true}, "level": 1},
+            {"id": "c5c2-maths-06-05", "front": "The dot in a decimal number is called the …?", "back": "Decimal point", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Full stop", "Comma", "Dash"], "level": 1},
+            {"id": "c5c2-maths-06-06", "front": "Which is greater: 0.7 or 0.65?", "back": "0.7", "explain": "0.70 > 0.65.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["0.65", "They are equal", "Cannot tell"], "level": 2},
+            {"id": "c5c2-maths-06-07", "front": "2.5 + 1.75 = ?", "back": "4.25", "explain": "Line up the decimal points.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["3.80", "4.30", "42.5"], "level": 2},
+            {"id": "c5c2-maths-06-08", "front": "5.0 − 2.35 = ?", "back": "2.65", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["3.35", "2.75", "7.35"], "level": 2},
+            {"id": "c5c2-maths-06-09", "front": "What is the place value of 3 in 12.43?", "back": "3 hundredths (0.03)", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["3 tenths", "3 ones", "30"], "level": 2},
+            {"id": "c5c2-maths-06-10", "front": "Write 2 and 45 hundredths as a decimal.", "back": "2.45", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["24.5", "2.045", "245"], "level": 2},
+            {"id": "c5c2-maths-06-11", "front": "₹ 45.50 + ₹ 27.75 = ?", "back": "₹ 73.25", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["₹ 72.25", "₹ 73.75", "₹ 62.25"], "level": 3},
+            {"id": "c5c2-maths-06-12", "front": "Arrange in increasing order: 0.4, 0.04, 0.44", "back": "0.04, 0.4, 0.44", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["0.4, 0.04, 0.44", "0.44, 0.4, 0.04", "0.04, 0.44, 0.4"], "level": 3},
+            {"id": "c5c2-maths-06-13", "front": "Convert 3/4 to a decimal.", "back": "0.75", "explain": "3/4 = 75/100.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["0.34", "0.43", "3.4"], "level": 3},
+            {"id": "c5c2-maths-06-14", "front": "A ribbon is 2.5 m long. 0.75 m is cut off. How much is left?", "back": "1.75 m", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["1.25 m", "3.25 m", "2.25 m"], "level": 3}
+          ]
+        },
+        {
+          "id": "c5c2-maths-07",
+          "number": 14,
+          "title": "Applications of Four Operations",
+          "pairs": [["Altogether", "Addition"], ["How many more", "Subtraction"], ["Each … in all", "Multiplication"], ["Shared equally", "Division"]],
+          "cards": [
+            {"id": "c5c2-maths-07-01", "front": "Which operation do we use to find \"how many in all\" when groups are equal?", "back": "Multiplication", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Subtraction", "Division", "Addition only"], "level": 1},
+            {"id": "c5c2-maths-07-02", "front": "Which operation do we use when things are \"shared equally\"?", "back": "Division", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Addition", "Multiplication", "Subtraction"], "level": 1},
+            {"id": "c5c2-maths-07-03", "front": "Which operation finds \"how many more\"?", "back": "Subtraction", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Addition", "Multiplication", "Division"], "level": 1},
+            {"id": "c5c2-maths-07-04", "front": "A pen costs ₹ 15. What do 4 pens cost?", "back": "₹ 60", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["₹ 19", "₹ 45", "₹ 11"], "level": 1},
+            {"id": "c5c2-maths-07-05", "front": "In 8 + 4 × 2, which do we do first?", "back": "4 × 2", "explain": "Multiply or divide before adding or subtracting. 8 + 8 = 16.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["8 + 4", "Either one", "Neither"], "tf": {"text": "8 + 4 × 2 = 24", "answer": false}, "level": 2},
+            {"id": "c5c2-maths-07-06", "front": "36 ÷ 4 + 5 = ?", "back": "14", "explain": "9 + 5 = 14.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["4", "9", "41"], "level": 2},
+            {"id": "c5c2-maths-07-07", "front": "If 5 books cost ₹ 250, what does 1 book cost?", "back": "₹ 50", "explain": "This is the unitary method: find the cost of one first.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["₹ 1,250", "₹ 245", "₹ 25"], "level": 2},
+            {"id": "c5c2-maths-07-08", "front": "A bus has 45 seats. How many buses are needed for 180 children?", "back": "4", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["3", "5", "135"], "level": 2},
+            {"id": "c5c2-maths-07-09", "front": "Ravi had ₹ 500. He spent ₹ 175 and then ₹ 120. How much is left?", "back": "₹ 205", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["₹ 295", "₹ 325", "₹ 105"], "level": 2},
+            {"id": "c5c2-maths-07-10", "front": "If 6 pencils cost ₹ 42, what do 10 pencils cost?", "back": "₹ 70", "explain": "₹ 42 ÷ 6 = ₹ 7; ₹ 7 × 10 = ₹ 70.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["₹ 60", "₹ 420", "₹ 52"], "level": 3},
+            {"id": "c5c2-maths-07-11", "front": "(25 − 5) × 3 ÷ 4 = ?", "back": "15", "explain": "Brackets first: 20 × 3 = 60; 60 ÷ 4 = 15.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["20", "60", "5"], "level": 3},
+            {"id": "c5c2-maths-07-12", "front": "A shop sells 128 eggs a day. How many dozen eggs does it sell in 6 days?", "back": "64 dozen", "explain": "128 × 6 = 768; 768 ÷ 12 = 64.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["768 dozen", "60 dozen", "32 dozen"], "level": 3},
+            {"id": "c5c2-maths-07-13", "front": "A train travels 75 km in an hour. How far will it go in 8 hours?", "back": "600 km", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["83 km", "500 km", "675 km"], "level": 3},
+            {"id": "c5c2-maths-07-14", "front": "Meera saves ₹ 35 a week. How many weeks to save ₹ 420?", "back": "12 weeks", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["14 weeks", "10 weeks", "15 weeks"], "level": 3}
           ]
         }
       ]
@@ -446,6 +738,202 @@
             {"id": "c5css8-09", "front": "Where is the International Court of Justice?", "back": "The Hague, Netherlands", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["New York, USA", "Paris, France", "Geneva, Switzerland"]},
             {"id": "c5css8-10", "front": "What does the UN flag show?", "back": "A world map with olive branches", "explain": "Olive branches are a sign of peace.", "source": "Class 5 topic, written from the Collins chapter title", "wrong": ["A lion and a crown", "A red star", "An eagle"]}
           ]
+        },
+        {
+          "id": "c5c2-ss-01",
+          "number": 9,
+          "title": "Globes and Maps",
+          "pairs": [["Globe", "Model of the Earth"], ["Atlas", "Book of maps"], ["Legend", "Explains map symbols"], ["Scale", "Shows real distance"]],
+          "cards": [
+            {"id": "c5c2-ss-01-01", "front": "A model of the Earth is called a …?", "back": "Globe", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Map", "Atlas", "Compass"], "level": 1},
+            {"id": "c5c2-ss-01-02", "front": "A book of maps is called an …?", "back": "Atlas", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Globe", "Encyclopaedia", "Album"], "level": 1},
+            {"id": "c5c2-ss-01-03", "front": "What are the four main (cardinal) directions?", "back": "North, South, East and West", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Up, down, left and right", "North-east, north-west, south-east, south-west", "Front, back, left and right"], "level": 1},
+            {"id": "c5c2-ss-01-04", "front": "Which instrument shows directions?", "back": "Compass", "explain": "Its needle always points north.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Thermometer", "Globe", "Clock"], "level": 1},
+            {"id": "c5c2-ss-01-05", "front": "On most maps, the top of the map shows which direction?", "back": "North", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["South", "East", "West"], "level": 1},
+            {"id": "c5c2-ss-01-06", "front": "Maps showing countries and their boundaries are called …?", "back": "Political maps", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Physical maps", "Thematic maps", "Road maps"], "level": 2},
+            {"id": "c5c2-ss-01-07", "front": "Maps showing mountains, rivers and plains are called …?", "back": "Physical maps", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Political maps", "Thematic maps", "Weather maps"], "level": 2},
+            {"id": "c5c2-ss-01-08", "front": "Maps showing one topic, like rainfall or crops, are called …?", "back": "Thematic maps", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Physical maps", "Political maps", "Globes"], "level": 2},
+            {"id": "c5c2-ss-01-09", "front": "The part of a map that explains its symbols is called the …?", "back": "Legend (key)", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Scale", "Title", "Compass rose"], "level": 2},
+            {"id": "c5c2-ss-01-10", "front": "The imaginary line around which the Earth spins is its …?", "back": "Axis", "explain": "The axis is tilted at 23½°.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Equator", "Orbit", "Meridian"], "level": 2},
+            {"id": "c5c2-ss-01-11", "front": "Why is a map more useful than a globe for travelling?", "back": "It can be folded, carried and shows small places in detail", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["It shows the real shape of the Earth", "It is round", "It spins"], "tf": {"text": "A globe shows the Earth's true shape better than a map.", "answer": true}, "level": 3},
+            {"id": "c5c2-ss-01-12", "front": "What does the scale of a map tell us?", "back": "How a distance on the map compares to the real distance", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["The height of mountains", "The number of people", "The temperature"], "level": 3},
+            {"id": "c5c2-ss-01-13", "front": "Which direction lies between north and east?", "back": "North-east", "explain": "These in-between directions are called intermediate directions.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["South-east", "North-west", "South-west"], "level": 3},
+            {"id": "c5c2-ss-01-14", "front": "What is one drawback of a globe?", "back": "It cannot show small places in detail and is hard to carry", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["It shows the wrong shape", "It has no oceans", "It shows only one country"], "level": 3}
+          ]
+        },
+        {
+          "id": "c5c2-ss-02",
+          "number": 10,
+          "title": "Latitudes and Longitudes",
+          "pairs": [["Equator", "0° latitude"], ["Prime Meridian", "0° longitude"], ["Tropic of Cancer", "23½° N"], ["Arctic Circle", "66½° N"]],
+          "cards": [
+            {"id": "c5c2-ss-02-01", "front": "Which imaginary line divides the Earth into the Northern and Southern Hemispheres?", "back": "Equator", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Prime Meridian", "Tropic of Cancer", "Arctic Circle"], "level": 1},
+            {"id": "c5c2-ss-02-02", "front": "What is the latitude of the Equator?", "back": "0°", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["90°", "23½°", "180°"], "level": 1},
+            {"id": "c5c2-ss-02-03", "front": "Lines running from the North Pole to the South Pole are called …?", "back": "Longitudes (meridians)", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Latitudes", "Parallels", "Tropics"], "level": 1},
+            {"id": "c5c2-ss-02-04", "front": "Lines running east to west, parallel to the Equator, are called …?", "back": "Latitudes", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Longitudes", "Meridians", "Axes"], "level": 1},
+            {"id": "c5c2-ss-02-05", "front": "What is the latitude of the North Pole?", "back": "90° N", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["0°", "66½° N", "180°"], "level": 1},
+            {"id": "c5c2-ss-02-06", "front": "The 0° longitude is called the …?", "back": "Prime Meridian", "explain": "It passes through Greenwich, near London.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Equator", "Date Line", "Tropic of Cancer"], "level": 2},
+            {"id": "c5c2-ss-02-07", "front": "At what latitude is the Tropic of Cancer?", "back": "23½° N", "explain": "It passes through India.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["23½° S", "66½° N", "0°"], "tf": {"text": "The Tropic of Cancer passes through India.", "answer": true}, "level": 2},
+            {"id": "c5c2-ss-02-08", "front": "At what latitude is the Tropic of Capricorn?", "back": "23½° S", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["23½° N", "66½° S", "90° S"], "level": 2},
+            {"id": "c5c2-ss-02-09", "front": "At what latitude is the Arctic Circle?", "back": "66½° N", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["23½° N", "90° N", "66½° S"], "level": 2},
+            {"id": "c5c2-ss-02-10", "front": "How many degrees of longitude are there around the Earth?", "back": "360", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["180", "90", "24"], "level": 2},
+            {"id": "c5c2-ss-02-11", "front": "The network of latitudes and longitudes on a globe is called a …?", "back": "Grid", "explain": "It helps us find the exact location of any place.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Map", "Scale", "Orbit"], "level": 3},
+            {"id": "c5c2-ss-02-12", "front": "Which longitude is India's standard time based on?", "back": "82½° E", "explain": "It passes near Prayagraj (Mirzapur).", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["0°", "23½° E", "180°"], "level": 3},
+            {"id": "c5c2-ss-02-13", "front": "How many minutes does the Earth take to turn through 1° of longitude?", "back": "4 minutes", "explain": "24 hours × 60 ÷ 360 = 4 minutes.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["1 minute", "15 minutes", "60 minutes"], "level": 3},
+            {"id": "c5c2-ss-02-14", "front": "The 180° longitude, where the date changes, is called the …?", "back": "International Date Line", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Prime Meridian", "Equator", "Arctic Circle"], "level": 3},
+            {"id": "c5c2-ss-02-15", "front": "Why are latitudes also called parallels?", "back": "They are parallel to each other and never meet", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["They meet at the poles", "They are all the same length", "They run north to south"], "level": 3}
+          ]
+        },
+        {
+          "id": "c5c2-ss-03",
+          "number": 11,
+          "title": "Movements of the Earth",
+          "pairs": [["Rotation", "Day and night"], ["Revolution", "Seasons"], ["21 June", "Longest day in the north"], ["22 December", "Shortest day in the north"]],
+          "cards": [
+            {"id": "c5c2-ss-03-01", "front": "The spinning of the Earth on its axis is called …?", "back": "Rotation", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Revolution", "Orbit", "Eclipse"], "level": 1},
+            {"id": "c5c2-ss-03-02", "front": "How long does the Earth take to rotate once?", "back": "About 24 hours", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["365 days", "12 hours", "30 days"], "level": 1},
+            {"id": "c5c2-ss-03-03", "front": "What does the Earth's rotation cause?", "back": "Day and night", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Seasons", "Rain", "Earthquakes"], "level": 1},
+            {"id": "c5c2-ss-03-04", "front": "The movement of the Earth around the Sun is called …?", "back": "Revolution", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Rotation", "Gravity", "Axis"], "level": 1},
+            {"id": "c5c2-ss-03-05", "front": "How long does the Earth take to go once around the Sun?", "back": "About 365¼ days", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["24 hours", "30 days", "100 days"], "level": 1},
+            {"id": "c5c2-ss-03-06", "front": "In which direction does the Earth rotate?", "back": "West to east", "explain": "That is why the Sun seems to rise in the east.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["East to west", "North to south", "South to north"], "level": 2},
+            {"id": "c5c2-ss-03-07", "front": "Why is there a leap year every four years?", "back": "The extra ¼ day each year adds up to one day in four years", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["The Earth stops for a day", "The Moon is late", "February gets cold"], "level": 2},
+            {"id": "c5c2-ss-03-08", "front": "The path of the Earth around the Sun is called its …?", "back": "Orbit", "explain": "It is oval (elliptical) in shape.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Axis", "Equator", "Meridian"], "level": 2},
+            {"id": "c5c2-ss-03-09", "front": "What do the Earth's revolution and tilted axis together cause?", "back": "Seasons", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Day and night", "Tides", "Volcanoes"], "tf": {"text": "Seasons are caused by the rotation of the Earth.", "answer": false}, "level": 2},
+            {"id": "c5c2-ss-03-10", "front": "On which day is the longest day in the Northern Hemisphere?", "back": "21 June", "explain": "This is the summer solstice.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["22 December", "21 March", "23 September"], "level": 3},
+            {"id": "c5c2-ss-03-11", "front": "On which days are day and night equal all over the world?", "back": "21 March and 23 September", "explain": "These are the equinoxes.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["21 June and 22 December", "1 January and 1 July", "15 August and 26 January"], "level": 3},
+            {"id": "c5c2-ss-03-12", "front": "When it is summer in India, what season is it in Australia?", "back": "Winter", "explain": "They are in opposite hemispheres.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Summer", "Spring", "Monsoon"], "level": 3},
+            {"id": "c5c2-ss-03-13", "front": "Why does the Sun appear to rise in the east?", "back": "The Earth rotates from west to east", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["The Sun moves around the Earth", "The east is warmer", "The Moon pushes the Sun"], "level": 3},
+            {"id": "c5c2-ss-03-14", "front": "The imaginary line dividing the lit half of the Earth from the dark half is called the …?", "back": "Circle of illumination", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Equator", "Orbit", "Axis"], "level": 3}
+          ]
+        },
+        {
+          "id": "c5c2-ss-04",
+          "number": 12,
+          "title": "Continents and Oceans",
+          "pairs": [["Asia", "Largest continent"], ["Australia", "Smallest continent"], ["Pacific", "Largest ocean"], ["Arctic", "Smallest ocean"]],
+          "cards": [
+            {"id": "c5c2-ss-04-01", "front": "How many continents are there?", "back": "7", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["5", "6", "9"], "level": 1},
+            {"id": "c5c2-ss-04-02", "front": "How many oceans are there?", "back": "5", "explain": "Pacific, Atlantic, Indian, Southern and Arctic.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["7", "3", "4"], "level": 1},
+            {"id": "c5c2-ss-04-03", "front": "Which is the largest continent?", "back": "Asia", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Africa", "Europe", "Antarctica"], "level": 1},
+            {"id": "c5c2-ss-04-04", "front": "Which is the smallest continent?", "back": "Australia", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Europe", "Antarctica", "South America"], "level": 1},
+            {"id": "c5c2-ss-04-05", "front": "Which is the largest ocean?", "back": "Pacific Ocean", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean"], "level": 1},
+            {"id": "c5c2-ss-04-06", "front": "Which is the smallest ocean?", "back": "Arctic Ocean", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Indian Ocean", "Southern Ocean", "Atlantic Ocean"], "level": 2},
+            {"id": "c5c2-ss-04-07", "front": "In which continent is India?", "back": "Asia", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Africa", "Europe", "Australia"], "level": 2},
+            {"id": "c5c2-ss-04-08", "front": "Which ocean is named after a country?", "back": "Indian Ocean", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Pacific Ocean", "Atlantic Ocean", "Arctic Ocean"], "level": 2},
+            {"id": "c5c2-ss-04-09", "front": "Which continent is covered with ice and has no permanent population?", "back": "Antarctica", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Australia", "Europe", "Asia"], "level": 2},
+            {"id": "c5c2-ss-04-10", "front": "In which continent is the Sahara Desert?", "back": "Africa", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Asia", "Australia", "South America"], "level": 2},
+            {"id": "c5c2-ss-04-11", "front": "Where is the deepest point on Earth?", "back": "The Mariana Trench in the Pacific Ocean", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["The Indian Ocean", "The Dead Sea", "The Arctic Ocean"], "tf": {"text": "The Pacific is both the largest and the deepest ocean.", "answer": true}, "level": 3},
+            {"id": "c5c2-ss-04-12", "front": "Which ocean lies between the Americas and Europe and Africa?", "back": "Atlantic Ocean", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Pacific Ocean", "Indian Ocean", "Arctic Ocean"], "level": 3},
+            {"id": "c5c2-ss-04-13", "front": "Why is Australia called an island continent?", "back": "It is surrounded by water on all sides", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["It has many islands", "It is very small", "It is near Asia"], "level": 3},
+            {"id": "c5c2-ss-04-14", "front": "About how much of the Earth's surface is covered by water?", "back": "About 71%", "explain": "That is why the Earth is called the blue planet.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["About 29%", "About 50%", "About 90%"], "level": 3},
+            {"id": "c5c2-ss-04-15", "front": "The Amazon, the river with the most water, flows through which continent?", "back": "South America", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Africa", "Asia", "North America"], "level": 3}
+          ]
+        },
+        {
+          "id": "c5c2-ss-05",
+          "number": 13,
+          "title": "Climatic Zones of the Earth",
+          "pairs": [["Torrid Zone", "Between the two Tropics"], ["Temperate Zones", "Between the Tropics and the polar circles"], ["Frigid Zones", "Beyond the polar circles"], ["Weather", "Day-to-day condition of the air"]],
+          "cards": [
+            {"id": "c5c2-ss-05-01", "front": "How many main heat zones is the Earth divided into?", "back": "3", "explain": "Torrid, Temperate and Frigid. Counting both hemispheres, there are 5 belts.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["2", "5", "7"], "level": 1},
+            {"id": "c5c2-ss-05-02", "front": "Which zone is the hottest?", "back": "Torrid Zone", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Temperate Zone", "Frigid Zone", "Polar Zone"], "level": 1},
+            {"id": "c5c2-ss-05-03", "front": "Which zone is the coldest?", "back": "Frigid Zone", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Torrid Zone", "Temperate Zone", "Tropical Zone"], "level": 1},
+            {"id": "c5c2-ss-05-04", "front": "The usual weather of a place over many years is called its …?", "back": "Climate", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Weather", "Season", "Temperature"], "level": 1},
+            {"id": "c5c2-ss-05-05", "front": "Between which lines does the Torrid Zone lie?", "back": "The Tropic of Cancer and the Tropic of Capricorn", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["The Arctic and Antarctic Circles", "The Equator and the North Pole", "The poles"], "level": 2},
+            {"id": "c5c2-ss-05-06", "front": "Why is the Torrid Zone the hottest?", "back": "The Sun's rays fall almost straight down there", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["It is near the Moon", "It has no wind", "It has many volcanoes"], "tf": {"text": "The Sun's rays fall slanting on the Torrid Zone.", "answer": false}, "level": 2},
+            {"id": "c5c2-ss-05-07", "front": "Why are the Frigid Zones so cold?", "back": "The Sun's rays fall very slanting there", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["They are far from the sea", "They have no air", "They are high mountains"], "level": 2},
+            {"id": "c5c2-ss-05-08", "front": "The Temperate Zones have …?", "back": "Neither too hot nor too cold weather, with four seasons", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Hot weather all year", "Ice all year", "Rain every day"], "level": 2},
+            {"id": "c5c2-ss-05-09", "front": "Most of India lies in which zone?", "back": "Torrid Zone", "explain": "The Tropic of Cancer passes through the middle of India.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Frigid Zone", "North Temperate Zone only", "Polar Zone"], "level": 2},
+            {"id": "c5c2-ss-05-10", "front": "What is the difference between weather and climate?", "back": "Weather is day-to-day; climate is the average over many years", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["They mean the same", "Climate changes every hour", "Weather lasts for years"], "level": 3},
+            {"id": "c5c2-ss-05-11", "front": "Name three things that affect the climate of a place.", "back": "Distance from the Equator, height and distance from the sea", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Number of people", "Size of buildings", "Number of roads"], "level": 3},
+            {"id": "c5c2-ss-05-12", "front": "Why are hill stations cooler than plains in summer?", "back": "Temperature falls as we go higher", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["They are closer to the Sun", "They have no sunlight", "They are near the poles"], "level": 3},
+            {"id": "c5c2-ss-05-13", "front": "Coastal places have a moderate climate because …?", "back": "The sea keeps them from getting very hot or very cold", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["They have no Sun", "They are always rainy", "They are near mountains"], "level": 3}
+          ]
+        },
+        {
+          "id": "c5c2-ss-06",
+          "number": 14,
+          "title": "The Equatorial Region",
+          "pairs": [["Amazon Basin", "South America"], ["Congo Basin", "Africa"], ["Rubber", "Grows in hot, wet lands"], ["Pygmies", "People of the Congo forests"]],
+          "cards": [
+            {"id": "c5c2-ss-06-01", "front": "The equatorial region lies near the …?", "back": "Equator", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["North Pole", "Tropic of Cancer only", "Arctic Circle"], "level": 1},
+            {"id": "c5c2-ss-06-02", "front": "What is the climate of the equatorial region like?", "back": "Hot and wet all year", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Cold and dry", "Snowy", "Mild with four seasons"], "level": 1},
+            {"id": "c5c2-ss-06-03", "front": "What kind of forests grow in the equatorial region?", "back": "Dense evergreen rainforests", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Thorny bushes", "Pine forests", "Grasslands"], "level": 1},
+            {"id": "c5c2-ss-06-04", "front": "In which continent is the Amazon Basin?", "back": "South America", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Africa", "Asia", "Australia"], "level": 1},
+            {"id": "c5c2-ss-06-05", "front": "In which continent is the Congo Basin?", "back": "Africa", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["South America", "Asia", "Europe"], "level": 2},
+            {"id": "c5c2-ss-06-06", "front": "When does it usually rain in the equatorial region?", "back": "Almost every afternoon", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Only in winter", "Never", "Once a year"], "tf": {"text": "The equatorial region has a long dry season.", "answer": false}, "level": 2},
+            {"id": "c5c2-ss-06-07", "front": "Why are equatorial forests called evergreen?", "back": "Trees shed leaves at different times, so the forest is always green", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Trees never grow leaves", "Trees are painted green", "Only grass grows there"], "level": 2},
+            {"id": "c5c2-ss-06-08", "front": "Which crops grow well in the equatorial region?", "back": "Rubber, cocoa and oil palm", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Wheat and barley", "Apples and pears", "Dates and cactus"], "level": 2},
+            {"id": "c5c2-ss-06-09", "front": "Which short-statured people live in the Congo forests?", "back": "Pygmies", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Inuit", "Bedouins", "Masai"], "level": 2},
+            {"id": "c5c2-ss-06-10", "front": "Why do the tall trees form a canopy?", "back": "Their tops grow close together like an umbrella", "explain": "Very little sunlight reaches the forest floor.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["They are tied with ropes", "They have no leaves", "They grow under water"], "level": 3},
+            {"id": "c5c2-ss-06-11", "front": "Why is it hard to build roads in equatorial forests?", "back": "The forests are thick and the ground is wet and swampy", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["It is too cold", "There is no soil", "It is too windy"], "level": 3},
+            {"id": "c5c2-ss-06-12", "front": "Why are rainforests called the \"lungs of the Earth\"?", "back": "Their trees give out a large amount of oxygen", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["They breathe like animals", "They have caves", "They are shaped like lungs"], "level": 3},
+            {"id": "c5c2-ss-06-13", "front": "Why should we protect rainforests?", "back": "They give oxygen, medicines and homes to many plants and animals", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["They are too hot", "They make deserts", "They stop rain"], "level": 3}
+          ]
+        },
+        {
+          "id": "c5c2-ss-07",
+          "number": 15,
+          "title": "Temperate Grasslands",
+          "pairs": [["Prairies", "North America"], ["Pampas", "South America"], ["Steppes", "Europe and Asia"], ["Veld", "South Africa"], ["Downs", "Australia"]],
+          "cards": [
+            {"id": "c5c2-ss-07-01", "front": "What grows most in temperate grasslands?", "back": "Grass", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Tall trees", "Cactus", "Rice"], "level": 1},
+            {"id": "c5c2-ss-07-02", "front": "What are the grasslands of North America called?", "back": "Prairies", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Pampas", "Steppes", "Veld"], "level": 1},
+            {"id": "c5c2-ss-07-03", "front": "What are the grasslands of South America called?", "back": "Pampas", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Prairies", "Downs", "Steppes"], "level": 1},
+            {"id": "c5c2-ss-07-04", "front": "What are the grasslands of Europe and Asia called?", "back": "Steppes", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Veld", "Prairies", "Pampas"], "level": 1},
+            {"id": "c5c2-ss-07-05", "front": "What are the grasslands of South Africa called?", "back": "Veld", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Downs", "Pampas", "Steppes"], "level": 2},
+            {"id": "c5c2-ss-07-06", "front": "What are the grasslands of Australia called?", "back": "Downs", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Veld", "Prairies", "Steppes"], "level": 2},
+            {"id": "c5c2-ss-07-07", "front": "Which crop is grown most in temperate grasslands?", "back": "Wheat", "explain": "The prairies are called the \"wheat basket of the world\".", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Rice", "Tea", "Rubber"], "level": 2},
+            {"id": "c5c2-ss-07-08", "front": "Why are there few trees in temperate grasslands?", "back": "There is too little rain for trees", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["The soil is salty", "It is too hot", "Animals eat all the trees"], "tf": {"text": "Temperate grasslands get heavy rainfall all year.", "answer": false}, "level": 2},
+            {"id": "c5c2-ss-07-09", "front": "Which animal rearing is common in temperate grasslands?", "back": "Cattle and sheep rearing", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Camel rearing", "Reindeer rearing", "Fish farming"], "level": 2},
+            {"id": "c5c2-ss-07-10", "front": "Why do temperate grasslands have very hot summers and cold winters?", "back": "They are far from the sea, in the middle of continents", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["They are near the Equator", "They are on mountains", "They are near the poles"], "level": 3},
+            {"id": "c5c2-ss-07-11", "front": "Large farms in the prairies use machines. Why?", "back": "The farms are huge and there are few workers", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Machines are cheaper than seeds", "The soil is too hard", "It is a rule"], "level": 3},
+            {"id": "c5c2-ss-07-12", "front": "Why are the pampas famous for beef?", "back": "Large herds of cattle graze on the rich grass", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Cattle grow in water", "It is very cold", "There is no grass"], "level": 3},
+            {"id": "c5c2-ss-07-13", "front": "Large cattle farms in the grasslands are called …?", "back": "Ranches", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Orchards", "Plantations", "Oases"], "level": 3}
+          ]
+        },
+        {
+          "id": "c5c2-ss-08",
+          "number": 16,
+          "title": "Desert Region",
+          "pairs": [["Sahara", "Largest hot desert"], ["Thar", "Desert in India"], ["Oasis", "Green spot with water"], ["Camel", "Ship of the desert"]],
+          "cards": [
+            {"id": "c5c2-ss-08-01", "front": "Which is the largest hot desert in the world?", "back": "Sahara", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Thar", "Kalahari", "Gobi"], "level": 1},
+            {"id": "c5c2-ss-08-02", "front": "Which desert is in India?", "back": "Thar Desert", "explain": "It lies mostly in Rajasthan.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Sahara", "Kalahari", "Atacama"], "level": 1},
+            {"id": "c5c2-ss-08-03", "front": "Which animal is called the \"ship of the desert\"?", "back": "Camel", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Horse", "Elephant", "Donkey"], "level": 1},
+            {"id": "c5c2-ss-08-04", "front": "A green place in a desert with water is called an …?", "back": "Oasis", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Island", "Dune", "Plateau"], "level": 1},
+            {"id": "c5c2-ss-08-05", "front": "Deserts get very little …?", "back": "Rain", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Sunlight", "Sand", "Wind"], "level": 1},
+            {"id": "c5c2-ss-08-06", "front": "Hills of sand formed by wind are called …?", "back": "Sand dunes", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Plateaus", "Valleys", "Glaciers"], "level": 2},
+            {"id": "c5c2-ss-08-07", "front": "Why are desert days hot but nights cold?", "back": "Sand heats up and cools down quickly, and there are few clouds", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["The Moon is hot", "Winds blow only at night", "It rains at night"], "tf": {"text": "Deserts are hot both by day and at night.", "answer": false}, "level": 2},
+            {"id": "c5c2-ss-08-08", "front": "Which tree grows near an oasis and gives sweet fruit?", "back": "Date palm", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Mango", "Pine", "Rubber"], "level": 2},
+            {"id": "c5c2-ss-08-09", "front": "How is a cactus adapted to the desert?", "back": "It stores water in its thick stem and has spines instead of leaves", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["It has big leaves", "It grows in water", "It needs a lot of rain"], "level": 2},
+            {"id": "c5c2-ss-08-10", "front": "The wandering people of the Arabian deserts are called …?", "back": "Bedouins", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Inuit", "Pygmies", "Masai"], "level": 2},
+            {"id": "c5c2-ss-08-11", "front": "Why do desert people wear loose, long clothes?", "back": "To protect themselves from the hot sun and sandstorms", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["To look tall", "To keep warm in the day", "For festivals"], "level": 3},
+            {"id": "c5c2-ss-08-12", "front": "Why do desert people move from place to place?", "back": "To find water and grass for their animals", "explain": "People who keep moving are called nomads.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["For holidays", "To escape the cold", "To sell sand"], "level": 3},
+            {"id": "c5c2-ss-08-13", "front": "Deserts like Ladakh that are cold and dry are called …?", "back": "Cold deserts", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Hot deserts", "Rainforests", "Grasslands"], "level": 3},
+            {"id": "c5c2-ss-08-14", "front": "How is a camel adapted to sandstorms?", "back": "It has long eyelashes and can close its nostrils", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["It has gills", "It has thick white fur", "It flies away"], "level": 3}
+          ]
+        },
+        {
+          "id": "c5c2-ss-09",
+          "number": 17,
+          "title": "Frigid Zone",
+          "pairs": [["Inuit", "People of the Arctic"], ["Igloo", "Snow house"], ["Kayak", "Small boat"], ["Penguins", "Antarctica"]],
+          "cards": [
+            {"id": "c5c2-ss-09-01", "front": "What are the people of the Arctic region called?", "back": "Inuit (Eskimos)", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Bedouins", "Pygmies", "Masai"], "level": 1},
+            {"id": "c5c2-ss-09-02", "front": "A house made of blocks of snow is called an …?", "back": "Igloo", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Tent", "Hut", "Cabin"], "level": 1},
+            {"id": "c5c2-ss-09-03", "front": "Which animal lives in the Arctic?", "back": "Polar bear", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Camel", "Lion", "Monkey"], "level": 1},
+            {"id": "c5c2-ss-09-04", "front": "Which birds live in Antarctica?", "back": "Penguins", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Parrots", "Peacocks", "Sparrows"], "tf": {"text": "Penguins live in the Arctic.", "answer": false}, "level": 1},
+            {"id": "c5c2-ss-09-05", "front": "What is a small boat made of animal skin used by the Inuit called?", "back": "Kayak", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Canoe", "Ship", "Raft"], "level": 2},
+            {"id": "c5c2-ss-09-06", "front": "What pulls the Inuit sledges over the snow?", "back": "Husky dogs", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Camels", "Horses", "Elephants"], "level": 2},
+            {"id": "c5c2-ss-09-07", "front": "What do the Inuit mainly eat?", "back": "Fish and seal meat", "explain": "Few plants grow there.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Rice and wheat", "Fruits", "Dates"], "level": 2},
+            {"id": "c5c2-ss-09-08", "front": "Which plants grow in the tundra?", "back": "Mosses and lichens", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Tall trees", "Rice", "Cactus"], "level": 2},
+            {"id": "c5c2-ss-09-09", "front": "Why is the Arctic called the \"land of the midnight sun\"?", "back": "In summer the Sun does not set for months", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["The Sun rises at midnight daily", "It has two suns", "The Moon is very bright"], "level": 2},
+            {"id": "c5c2-ss-09-10", "front": "Why are there about six months of day and six months of night at the poles?", "back": "Because of the Earth's tilted axis as it goes around the Sun", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Because the Sun stops moving", "Because of clouds", "Because of the Moon"], "level": 3},
+            {"id": "c5c2-ss-09-11", "front": "How are seals and walruses protected from the cold?", "back": "A thick layer of fat called blubber", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Thin skin", "Big ears", "Long tails"], "level": 3},
+            {"id": "c5c2-ss-09-12", "front": "Why do the Inuit wear clothes made of fur and skin?", "back": "They keep the body very warm", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["They are cheap", "They are colourful", "They are light"], "level": 3},
+            {"id": "c5c2-ss-09-13", "front": "Why are igloos warm inside even though they are made of snow?", "back": "Snow traps air and keeps the cold wind out", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Snow is warm", "They have heaters in the walls", "The Sun shines inside"], "level": 3}
+          ]
         }
       ]
     },
@@ -499,7 +987,14 @@
             {"id": "c5ce1-35", "front": "\"Yesterday, the knight came across a barber\" – what kind of adverb is \"yesterday\"?", "back": "Adverb of time", "explain": "Adverbs of time tell us when: today, tomorrow, recently, soon, now.", "source": "Collins Class 5 English, Ch 1 (pp. 12–21)", "wrong": ["Adverb of manner", "Adverb of place", "Adverb of frequency"], "level": 2, "concept": "adverbs"},
             {"id": "c5ce1-36", "front": "\"Could never be attacked\" – what kind of adverb is \"never\"?", "back": "Adverb of frequency", "explain": "Adverbs of frequency tell us how often: always, rarely, sometimes.", "source": "Collins Class 5 English, Ch 1 (pp. 12–21)", "wrong": ["Adverb of time", "Adverb of manner", "Adverb of place"], "tf": {"text": "Adverbs of frequency tell us where an action happens.", "answer": false}, "level": 2, "concept": "adverbs"},
             {"id": "c5ce1-37", "front": "What are conjunctions?", "back": "Joining words that join two or more words or sentences", "explain": "Examples: and, or, because, for, nor, but, yet, so, since, as.", "source": "Collins Class 5 English, Ch 1 (pp. 12–21)", "wrong": ["Words that describe nouns", "Action words", "Names of people and places"], "blank": {"text": "I want a new cycle, ___ I don't have the money to buy one.", "answer": "but"}, "level": 2, "concept": "conjunctions"},
-            {"id": "c5ce1-38", "front": "Which spelling is correct for a person who writes books?", "back": "Author", "explain": "Words ending in -er and -or sound alike: barber, master, author, collector.", "source": "Collins Class 5 English, Ch 1 (pp. 12–21)", "wrong": ["Auther", "Authar", "Awthor"], "level": 2, "concept": "spelling"}
+            {"id": "c5ce1-38", "front": "Which spelling is correct for a person who writes books?", "back": "Author", "explain": "Words ending in -er and -or sound alike: barber, master, author, collector.", "source": "Collins Class 5 English, Ch 1 (pp. 12–21)", "wrong": ["Auther", "Authar", "Awthor"], "level": 2, "concept": "spelling"},
+            {"id": "c5ce1-39", "front": "Why did the barber's basin glitter from more than a mile away?", "back": "It was always kept very clean", "explain": "Don Quixote saw the shine and believed it was a golden helmet.", "source": "Collins Class 5 English, Ch 1 (pp. 12–21)", "wrong": ["It was made of gold", "The sun was shining on gold paint", "It was enchanted"], "tf": {"text": "The basin glittered because it was made of gold.", "answer": false}, "level": 3, "concept": "inference"},
+            {"id": "c5ce1-40", "front": "Which proverb best fits Don Quixote's mistake about the \"golden helmet\"?", "back": "All that glitters is not gold", "explain": "It glittered like gold but was only a brass basin.", "source": "Collins Class 5 English, Ch 1 (pp. 12–21)", "wrong": ["Honesty is the best policy", "No man is an island", "Laughter is the best medicine"], "level": 3, "concept": "idioms"},
+            {"id": "c5ce1-41", "front": "Why was Sancho nervous about the new adventure?", "back": "Last time, Don Quixote had mistaken windmills for giants", "explain": "\"I pray to God, master, that it isn't like our last adventure.\"", "source": "Collins Class 5 English, Ch 1 (pp. 12–21)", "wrong": ["He was afraid of the barber", "His donkey was tired", "He had lost his helmet"], "level": 3, "concept": "inference"},
+            {"id": "c5ce1-42", "front": "Why did Sancho try to hide his laughter when Don Quixote wore the \"helmet\"?", "back": "It looked like a barber's basin, but his master was proud of it", "explain": "Don Quixote grew angry at him for grinning.", "source": "Collins Class 5 English, Ch 1 (pp. 12–21)", "wrong": ["He was crying", "He wanted the helmet himself", "The barber was watching"], "level": 3, "concept": "inference"},
+            {"id": "c5ce1-43", "front": "\"He ran away as swiftly as a deer.\" What kind of adverb is \"swiftly\"?", "back": "Adverb of manner", "explain": "It tells us how he ran.", "source": "Collins Class 5 English, Ch 1 (pp. 12–21)", "wrong": ["Adverb of time", "Adverb of place", "Adverb of frequency"], "level": 3, "concept": "adverbs"},
+            {"id": "c5ce1-44", "front": "\"Wretch, save yourself or at once surrender the helmet.\" Which word is the conjunction?", "back": "or", "explain": "\"Or\" joins the two choices Don Quixote gives the barber.", "source": "Collins Class 5 English, Ch 1 (pp. 12–21)", "wrong": ["save", "at", "once"], "level": 3, "concept": "conjunctions"},
+            {"id": "c5ce1-45", "front": "Complete with -er or -or: \"My teacher wants me to be the monit__ of the class.\"", "back": "monitor", "explain": "Rider, baker and swimmer end in -er; monitor and creator end in -or.", "source": "Collins Class 5 English, Ch 1 (pp. 12–21)", "wrong": ["moniter", "monitar", "monitur"], "blank": {"text": "J. K. Rowling is the creat___ of the Harry Potter series.", "answer": "or"}, "level": 3, "concept": "spelling"}
           ]
         },
         {
@@ -539,7 +1034,120 @@
             {"id": "c5ce2-29", "front": "What is a suffix?", "back": "A set of letters added at the end of a word to make a new word", "explain": "kind + ness = kindness; confuse + ion = confusion", "source": "Collins Class 5 English, Ch 2 (pp. 24–33)", "wrong": ["A word at the start of a sentence", "A joining word", "A word with the opposite meaning"], "blank": {"text": "happy + ness = ___", "answer": "happiness"}, "level": 2, "concept": "suffixes"},
             {"id": "c5ce2-30", "front": "Add -ous to \"adventure\". What is the new word?", "back": "Adventurous", "explain": "Drop the \"e\" before adding -ous.", "source": "Collins Class 5 English, Ch 2 (pp. 24–33)", "wrong": ["Adventureous", "Adventuress", "Adventurion"], "level": 2, "concept": "suffixes"},
             {"id": "c5ce2-31", "front": "Which tense talks about an action that started in the past and has just been completed?", "back": "Present perfect tense", "explain": "Rekha has chosen some earrings to buy.", "source": "Collins Class 5 English, Ch 2 (pp. 24–33)", "wrong": ["Past perfect tense", "Simple future tense", "Simple present tense"], "blank": {"text": "The masked men ___ robbed the store today.", "answer": "have"}, "level": 2, "concept": "tenses"},
-            {"id": "c5ce2-32", "front": "Which tense talks about an action that took place before another action in the past?", "back": "Past perfect tense", "explain": "Two years ago, Nina had got a dangerous brain fever.", "source": "Collins Class 5 English, Ch 2 (pp. 24–33)", "wrong": ["Present perfect tense", "Simple present tense", "Future tense"], "blank": {"text": "He ___ come home but left before anyone woke up.", "answer": "had"}, "level": 3, "concept": "tenses"}
+            {"id": "c5ce2-32", "front": "Which tense talks about an action that took place before another action in the past?", "back": "Past perfect tense", "explain": "Two years ago, Nina had got a dangerous brain fever.", "source": "Collins Class 5 English, Ch 2 (pp. 24–33)", "wrong": ["Present perfect tense", "Simple present tense", "Future tense"], "blank": {"text": "He ___ come home but left before anyone woke up.", "answer": "had"}, "level": 3, "concept": "tenses"},
+            {"id": "c5ce2-33", "front": "How did Nina find out that the manager was in league with the robbers?", "back": "She read his lips through the glass while he spoke to a robber", "explain": "He thought nobody could hear because the room was sound-proof.", "source": "Collins Class 5 English, Ch 2 (pp. 24–33)", "wrong": ["She heard him on the phone", "Rekha told her", "The robbers said so"], "level": 3, "concept": "inference"},
+            {"id": "c5ce2-34", "front": "Why did the manager think his secret was safe?", "back": "He thought nobody could hear him in the sound-proof glass room", "explain": "He forgot that the glass let people see his lips move.", "source": "Collins Class 5 English, Ch 2 (pp. 24–33)", "wrong": ["He spoke in another language", "The store was empty", "The cameras were switched off"], "level": 3, "concept": "inference"},
+            {"id": "c5ce2-35", "front": "What does Nina's wish to come back to the store show about her?", "back": "She is brave and not frightened by what happened", "explain": "Rekha, by contrast, said she would never set foot in the store again.", "source": "Collins Class 5 English, Ch 2 (pp. 24–33)", "wrong": ["She wants to meet the robbers", "She is greedy", "She did not understand the danger"], "level": 3, "concept": "values"},
+            {"id": "c5ce2-36", "front": "Why were Nina, Rekha and Mrs Verma asked to stay after the robbery?", "back": "They were witnesses and had to give statements", "explain": "Witnesses are people who have seen an event happen.", "source": "Collins Class 5 English, Ch 2 (pp. 24–33)", "wrong": ["They were suspects", "They had to pay for earrings", "The doors were locked"], "level": 3, "concept": "plot"},
+            {"id": "c5ce2-37", "front": "Give a sentence from the story in the past perfect tense.", "back": "Nina had got a dangerous brain fever.", "explain": "Past perfect = had + past participle.", "source": "Collins Class 5 English, Ch 2 (pp. 24–33)", "wrong": ["Rekha has chosen some earrings.", "The men robbed the store.", "Nina will buy the earrings."], "level": 3, "concept": "tenses"},
+            {"id": "c5ce2-38", "front": "Make a compound word from \"foot\" and \"path\".", "back": "Footpath", "explain": "foot + path. Kindness and action are made with suffixes.", "source": "Collins Class 5 English, Ch 2 (pp. 24–33)", "wrong": ["Kindness", "Quickly", "Action"], "blank": {"text": "snow + flake = ___", "answer": "snowflake"}, "level": 3, "concept": "compound words"},
+            {"id": "c5ce2-39", "front": "Add -ion to \"admit\". What is the new word?", "back": "Admission", "explain": "Some words change their spelling when a suffix is added.", "source": "Collins Class 5 English, Ch 2 (pp. 24–33)", "wrong": ["Admition", "Admittion", "Admitsion"], "level": 3, "concept": "suffixes"}
+          ]
+        },
+        {
+          "id": "c5c2-eng-02",
+          "number": 8,
+          "title": "Johnny Head-in-Air",
+          "pairs": [["Johnny", "Always looked up at the sky"], ["Three little fishes", "Laughed at Johnny"], ["Two strong men", "Pulled Johnny out of the river"], ["Heinrich Hoffmann", "German poet and doctor"]],
+          "cards": [
+            {"id": "c5c2-eng-02-01", "front": "Who wrote the poem \"Johnny Head-in-Air\"?", "back": "Heinrich Hoffmann", "explain": "It comes from his book of funny warning poems for children, \"Struwwelpeter\".", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Ruskin Bond", "H. W. Longfellow", "Aaron Shepard"], "level": 1},
+            {"id": "c5c2-eng-02-02", "front": "Why was Johnny called \"Head-in-Air\"?", "back": "He always looked up at the sky instead of where he was going", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["He had very long hair", "He could fly", "He lived on a hill"], "tf": {"text": "Johnny always watched his step carefully.", "answer": false}, "level": 1},
+            {"id": "c5c2-eng-02-03", "front": "What did Johnny like to look at while walking?", "back": "The sky, the clouds and the birds", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["His shoes", "His books", "The road"], "level": 1},
+            {"id": "c5c2-eng-02-04", "front": "Where did Johnny fall in the end?", "back": "Into the river", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Into a well", "Down the stairs", "Into a ditch"], "level": 1},
+            {"id": "c5c2-eng-02-05", "front": "Who laughed at Johnny when he fell into the water?", "back": "Three little fishes", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["His friends", "The birds", "His teacher"], "level": 1},
+            {"id": "c5c2-eng-02-06", "front": "What did Johnny trip over on his way?", "back": "A dog", "explain": "He was looking up, so he did not see the dog in his path.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["A stone", "A cat", "A bicycle"], "level": 2},
+            {"id": "c5c2-eng-02-07", "front": "Who pulled Johnny out of the river?", "back": "Two strong men", "explain": "They used long poles to pull him out.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["His mother", "A fisherman's dog", "The three fishes"], "level": 2},
+            {"id": "c5c2-eng-02-08", "front": "What did Johnny lose in the river?", "back": "His writing-book (copybook)", "explain": "It floated away down the river.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["His shoes", "His hat", "His lunch box"], "level": 2},
+            {"id": "c5c2-eng-02-09", "front": "How did Johnny feel when he came out of the river?", "back": "Wet, cold and ashamed", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Proud and happy", "Dry and warm", "Angry with the men"], "level": 2},
+            {"id": "c5c2-eng-02-10", "front": "What kind of poem is \"Johnny Head-in-Air\"?", "back": "A funny poem that teaches a lesson", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["A sad poem about war", "A poem about seasons", "A lullaby"], "level": 2},
+            {"id": "c5c2-eng-02-11", "front": "What lesson does the poem teach?", "back": "Pay attention to where you are going", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Always look at the sky", "Never go near rivers", "Fishes are clever"], "tf": {"text": "The poem teaches us to be careful and watchful.", "answer": true}, "level": 3},
+            {"id": "c5c2-eng-02-12", "front": "Why do you think the fishes laughed at Johnny?", "back": "A boy falling into the river because he looked at the sky seemed silly to them", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["They wanted his book", "They were his friends", "They were scared"], "level": 3},
+            {"id": "c5c2-eng-02-13", "front": "In \"Johnny Head-in-Air\", \"head-in-air\" describes someone who is …?", "back": "Dreamy and careless", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Very tall", "Very clever", "Very brave"], "level": 3},
+            {"id": "c5c2-eng-02-14", "front": "Which pair of words rhymes, as in the poem?", "back": "sky – high", "explain": "Rhyming words end with the same sound.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["sky – river", "fish – water", "book – boy"], "level": 3}
+          ]
+        },
+        {
+          "id": "c5c2-eng-04",
+          "number": 10,
+          "title": "Call for Peace",
+          "pairs": [["Gitche Manito", "The Master of Life"], ["Peace-pipe", "A sign of friendship"], ["War-paint", "Washed away in the river"], ["Longfellow", "American poet"]],
+          "cards": [
+            {"id": "c5c2-eng-04-01", "front": "Who wrote the poem \"Call for Peace\"?", "back": "H. W. Longfellow", "explain": "It is taken from his long poem \"The Song of Hiawatha\".", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Heinrich Hoffmann", "Ruskin Bond", "Henry Cuyler Bunner"], "level": 1},
+            {"id": "c5c2-eng-04-02", "front": "The poem is taken from which longer work?", "back": "The Song of Hiawatha", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Struwwelpeter", "Don Quixote", "The Heart of the Tree"], "level": 1},
+            {"id": "c5c2-eng-04-03", "front": "What did the Great Spirit want the tribes to do?", "back": "Stop fighting and live in peace", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Go to war", "Leave their land", "Build a city"], "level": 1},
+            {"id": "c5c2-eng-04-04", "front": "What is a peace-pipe a sign of?", "back": "Peace and friendship", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["War", "Hunger", "Anger"], "tf": {"text": "The peace-pipe was smoked as a sign of war.", "answer": false}, "level": 1},
+            {"id": "c5c2-eng-04-05", "front": "Who called the tribes together in the poem?", "back": "Gitche Manito, the Master of Life", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Hiawatha's father", "A great king", "The chief of the warriors"], "level": 2},
+            {"id": "c5c2-eng-04-06", "front": "How did the Great Spirit call the tribes?", "back": "By smoking a peace-pipe, whose smoke rose high as a signal", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["By beating a drum", "By sending letters", "By lighting a forest fire"], "level": 2},
+            {"id": "c5c2-eng-04-07", "front": "What were the warriors told to do with their war-paint?", "back": "Wash it off in the river", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Put on more of it", "Sell it", "Give it to children"], "level": 2},
+            {"id": "c5c2-eng-04-08", "front": "What were the warriors told to do with their war-clubs?", "back": "Bury them in the earth", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Sharpen them", "Throw them at enemies", "Hang them on trees"], "level": 2},
+            {"id": "c5c2-eng-04-09", "front": "What did the tribes feel towards each other before the call?", "back": "Anger and hatred", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Love and trust", "Joy", "Pity"], "level": 2},
+            {"id": "c5c2-eng-04-10", "front": "What is the main message of \"Call for Peace\"?", "back": "People should live together as brothers, not fight", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["War makes people strong", "Each tribe should live alone", "Hunting is important"], "tf": {"text": "The poem says quarrelling only weakens people.", "answer": true}, "level": 3},
+            {"id": "c5c2-eng-04-11", "front": "Why does washing off war-paint stand for peace?", "back": "It shows the warriors giving up fighting", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["It keeps them clean for a festival", "Paint is costly", "The river needed colour"], "level": 3},
+            {"id": "c5c2-eng-04-12", "front": "In the poem, the smoke of the peace-pipe rising to the sky works like a …?", "back": "Signal to all the tribes", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Weather report", "Fire warning", "Cooking fire"], "level": 3},
+            {"id": "c5c2-eng-04-13", "front": "What is the opposite of \"peace\"?", "back": "War", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Calm", "Friendship", "Quiet"], "level": 3}
+          ]
+        },
+        {
+          "id": "c5c2-eng-05",
+          "number": 11,
+          "title": "Sudan: The End of a Species",
+          "pairs": [["Sudan", "Last male northern white rhino"], ["Najin and Fatu", "The last two females"], ["Ol Pejeta", "Conservancy in Kenya"], ["Poaching", "Illegal hunting"]],
+          "cards": [
+            {"id": "c5c2-eng-05-01", "front": "Who was Sudan?", "back": "The last male northern white rhino", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["A famous elephant", "A tiger in India", "A zookeeper"], "level": 1},
+            {"id": "c5c2-eng-05-02", "front": "In which country did Sudan spend his last years?", "back": "Kenya", "explain": "He lived at the Ol Pejeta Conservancy.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["India", "Sudan", "Brazil"], "level": 1},
+            {"id": "c5c2-eng-05-03", "front": "Why are rhinos killed by poachers?", "back": "For their horns", "explain": "Poaching means illegal hunting.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["For their milk", "For their teeth", "For their feathers"], "level": 1},
+            {"id": "c5c2-eng-05-04", "front": "When did Sudan die?", "back": "In 2018", "explain": "He died on 19 March 2018, at the age of about 45.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["In 1918", "In 2000", "In 2024"], "tf": {"text": "Sudan died in 2018.", "answer": true}, "level": 1},
+            {"id": "c5c2-eng-05-05", "front": "What does \"extinct\" mean?", "back": "No longer living anywhere on Earth", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Living only in zoos", "Very large", "Very rare but alive"], "level": 1},
+            {"id": "c5c2-eng-05-06", "front": "How many northern white rhinos are left after Sudan died?", "back": "Two, both female", "explain": "They are Najin and her daughter Fatu.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["None", "Ten", "Two, both male"], "level": 2},
+            {"id": "c5c2-eng-05-07", "front": "How was Sudan protected from poachers?", "back": "Armed guards watched him day and night", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["He lived on an island", "He was kept in a cage underground", "He was painted black"], "level": 2},
+            {"id": "c5c2-eng-05-08", "front": "What is a rhino's horn made of?", "back": "Keratin, the same material as our hair and nails", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Bone", "Ivory", "Wood"], "level": 2},
+            {"id": "c5c2-eng-05-09", "front": "Why is the northern white rhino called \"functionally extinct\"?", "back": "Only two females are left, so they cannot breed naturally", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["None are left anywhere", "They live only in films", "They have stopped eating"], "level": 2},
+            {"id": "c5c2-eng-05-10", "front": "What does \"species\" mean?", "back": "A group of living things of the same kind that can breed together", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["A kind of food", "A type of rock", "A country"], "level": 2},
+            {"id": "c5c2-eng-05-11", "front": "How are scientists trying to save the northern white rhino?", "back": "By using frozen cells and eggs to create new rhinos", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["By teaching rhinos to fly", "By moving rhinos to the Arctic", "By feeding them more grass"], "level": 3},
+            {"id": "c5c2-eng-05-12", "front": "What is the main lesson of Sudan's story?", "back": "Humans must protect animals before they disappear forever", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Rhinos are dangerous", "Zoos are bad", "Horns grow back quickly"], "tf": {"text": "Poaching was a main reason the northern white rhino died out.", "answer": true}, "level": 3},
+            {"id": "c5c2-eng-05-13", "front": "What does \"endangered\" mean?", "back": "At risk of dying out", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Very angry", "Living in danger zones only", "Hunted for sport"], "level": 3},
+            {"id": "c5c2-eng-05-14", "front": "Why is it called \"The End of a Species\" and not just \"The End of Sudan\"?", "back": "With Sudan gone, no male was left to continue the species", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Sudan was the oldest animal", "The story ends sadly", "All rhinos died"], "level": 3}
+          ]
+        },
+        {
+          "id": "c5c2-eng-06",
+          "number": 12,
+          "title": "The Heart of the Tree",
+          "pairs": [["He plants a friend", "Of sun and sky"], ["The flag", "Of breezes free"], ["Cool shade", "And tender rain"], ["Henry Cuyler Bunner", "Poet of \"The Heart of the Tree\""]],
+          "cards": [
+            {"id": "c5c2-eng-06-01", "front": "Who wrote \"The Heart of the Tree\"?", "back": "Henry Cuyler Bunner", "explain": "He was an American poet.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["H. W. Longfellow", "Heinrich Hoffmann", "Ruskin Bond"], "level": 1},
+            {"id": "c5c2-eng-06-02", "front": "Which question does the poem keep asking?", "back": "What does he plant who plants a tree?", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Who cut down the tree?", "Why do trees fall?", "Where do birds sleep?"], "level": 1},
+            {"id": "c5c2-eng-06-03", "front": "According to the poem, a tree is a friend of …?", "back": "The sun and the sky", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["The axe", "The fire", "The road"], "level": 1},
+            {"id": "c5c2-eng-06-04", "front": "Which creatures make their home in a tree, as the poem says?", "back": "Birds", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Fish", "Camels", "Whales"], "level": 1},
+            {"id": "c5c2-eng-06-05", "front": "What does the tree give on a hot day, according to the poem?", "back": "Cool shade", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Warm fire", "Bright light", "Loud music"], "tf": {"text": "The poem says trees give cool shade and tender rain.", "answer": true}, "level": 2},
+            {"id": "c5c2-eng-06-06", "front": "What does \"the flag of breezes free\" mean?", "back": "The leaves wave in the wind like a flag", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Trees are used to make flags", "Flags are hung on trees", "Trees stop the wind"], "level": 2},
+            {"id": "c5c2-eng-06-07", "front": "Who will enjoy the trees we plant today?", "back": "People of the future, even those not yet born", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Only the planter", "Nobody", "Only birds"], "level": 2},
+            {"id": "c5c2-eng-06-08", "front": "Trees help bring rain. Which line idea shows this?", "back": "He plants cool shade and tender rain", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["He plants a stone", "He plants a wall", "He plants a fire"], "level": 2},
+            {"id": "c5c2-eng-06-09", "front": "What is the \"heart of the tree\" in the poem?", "back": "The love and care of the person who plants it", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["The wood at its centre", "Its roots", "Its fruit"], "level": 3},
+            {"id": "c5c2-eng-06-10", "front": "Why does the poet say planting a tree helps a whole nation grow?", "back": "Trees give shade, rain, wood and fruit for everyone for years", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Trees make borders", "Trees pay taxes", "Trees build houses by themselves"], "level": 3},
+            {"id": "c5c2-eng-06-11", "front": "What is the main message of the poem?", "back": "Planting a tree is a gift to the world and the future", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Trees should be cut for wood", "Only farmers should plant trees", "Trees are dangerous in storms"], "level": 3},
+            {"id": "c5c2-eng-06-12", "front": "\"The shaft of beauty, towering high\" describes the tree's …?", "back": "Tall, beautiful trunk", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Deep roots", "Falling leaves", "Small seeds"], "level": 3}
+          ]
+        },
+        {
+          "id": "c5c2-eng-07",
+          "number": 13,
+          "title": "Phaethon and the Chariot of the Sun",
+          "pairs": [["Phaethon", "Son of the Sun god"], ["Helios", "Drove the chariot of the Sun"], ["Zeus", "Struck Phaethon with a thunderbolt"], ["River Eridanus", "Where Phaethon fell"]],
+          "cards": [
+            {"id": "c5c2-eng-07-01", "front": "Who was Phaethon's father?", "back": "Helios, the Sun god", "explain": "Some books call the Sun god Apollo.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Zeus, king of the gods", "A poor farmer", "The god of the sea"], "level": 1},
+            {"id": "c5c2-eng-07-02", "front": "What did Phaethon ask his father for?", "back": "To drive the chariot of the Sun for one day", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["A golden crown", "A new horse", "To live on Earth"], "level": 1},
+            {"id": "c5c2-eng-07-03", "front": "What pulled the chariot of the Sun?", "back": "Fiery winged horses", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Elephants", "Dragons", "Oxen"], "level": 1},
+            {"id": "c5c2-eng-07-04", "front": "This story is a … from ancient Greece.", "back": "Myth", "explain": "A myth is an old story about gods and heroes.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["News report", "Science fact", "Recipe"], "level": 1},
+            {"id": "c5c2-eng-07-05", "front": "Why did Phaethon go to his father's palace?", "back": "His friends did not believe he was the son of the Sun god", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["He wanted to steal the chariot", "He was lost", "His mother sent him to work"], "level": 2},
+            {"id": "c5c2-eng-07-06", "front": "Why could Helios not refuse Phaethon's wish?", "back": "He had made a promise that could not be broken", "explain": "He swore to give Phaethon whatever he asked.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["He was asleep", "Zeus ordered him", "He did not care"], "level": 2},
+            {"id": "c5c2-eng-07-07", "front": "What happened when the horses ran wild?", "back": "The chariot went too high and too low, freezing and burning the Earth", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["They flew to the Moon", "They fell asleep", "They went back home"], "level": 2},
+            {"id": "c5c2-eng-07-08", "front": "Who stopped the runaway chariot?", "back": "Zeus, with a thunderbolt", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Helios himself", "Phaethon's mother", "The horses"], "tf": {"text": "Zeus struck Phaethon with a thunderbolt to save the Earth.", "answer": true}, "level": 2},
+            {"id": "c5c2-eng-07-09", "front": "Into which river did Phaethon fall?", "back": "The river Eridanus", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["The river Ganga", "The river Nile", "The river Styx"], "level": 2},
+            {"id": "c5c2-eng-07-10", "front": "Why could Phaethon not control the horses?", "back": "He was not strong or skilled enough; only Helios could drive them", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["The reins were broken", "The horses were blind", "It was night"], "level": 3},
+            {"id": "c5c2-eng-07-11", "front": "What lesson does the story of Phaethon teach?", "back": "Do not take on a task you are not ready for, out of pride", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Always obey your friends", "Horses are dangerous", "Never visit your father"], "level": 3},
+            {"id": "c5c2-eng-07-12", "front": "Why did Helios warn Phaethon before he set off?", "back": "He knew the journey was too dangerous for him", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["He wanted the chariot for himself", "He was angry with him", "He did not love him"], "level": 3},
+            {"id": "c5c2-eng-07-13", "front": "In the myth, the Earth's deserts were made when …?", "back": "The chariot flew too close and scorched the land", "explain": "Myths often explain things in nature this way.", "source": "Class 5 Term 2 book, written from the chapter title", "wrong": ["Phaethon dug the sand", "The horses drank all the water", "Zeus planted sand"], "level": 3}
           ]
         }
       ]
@@ -578,7 +1186,13 @@
             {"id": "c5h5-19", "front": "धन + वान = ?", "back": "धनवान", "explain": "इसी तरह बल + वान = बलवान, गुण + वान = गुणवान, दया + वान = दयावान।", "source": "Class 5 Hindi book, poem (pp. 45–48)", "wrong": ["धनदान", "धनी", "धनता"], "blank": {"text": "बल + वान = ___", "answer": "बलवान"}, "level": 1, "concept": "प्रत्यय"},
             {"id": "c5h5-20", "front": "शब्दों के अंत में जो शब्दांश जोड़े जाते हैं, वे क्या कहलाते हैं?", "back": "प्रत्यय", "explain": "जैसे \"वान\", \"दान\", \"ई\" – धनवान, श्रमदान, धनी।", "source": "Class 5 Hindi book, poem (pp. 45–48)", "wrong": ["उपसर्ग", "संधि", "मुहावरे"], "level": 2, "concept": "प्रत्यय"},
             {"id": "c5h5-21", "front": "कौन-सी चीज़ एक बार जाने पर वापस नहीं आती?", "back": "समय", "explain": "कमान से निकला तीर और मुँह से निकली बात भी वापस नहीं आती।", "source": "Class 5 Hindi book, poem (pp. 45–48)", "wrong": ["बस", "नदी की लहरें", "बाल"], "level": 2, "concept": "संदेश"},
-            {"id": "c5h5-22", "front": "इस कविता से हमें क्या सीख मिलती है?", "back": "सभी काम समय पर करने चाहिए", "explain": "मैंने सीखा: समय का मूल्य पहचानना, सभी कार्य समय पर करना, समय को नष्ट न करना।", "source": "Class 5 Hindi book, poem (pp. 45–48)", "wrong": ["काम कल पर टालने चाहिए", "समय की परवाह नहीं करनी चाहिए", "केवल खेलना चाहिए"], "tf": {"text": "समय को नष्ट नहीं करना चाहिए।", "answer": true}, "level": 1, "concept": "संदेश"}
+            {"id": "c5h5-22", "front": "इस कविता से हमें क्या सीख मिलती है?", "back": "सभी काम समय पर करने चाहिए", "explain": "मैंने सीखा: समय का मूल्य पहचानना, सभी कार्य समय पर करना, समय को नष्ट न करना।", "source": "Class 5 Hindi book, poem (pp. 45–48)", "wrong": ["काम कल पर टालने चाहिए", "समय की परवाह नहीं करनी चाहिए", "केवल खेलना चाहिए"], "tf": {"text": "समय को नष्ट नहीं करना चाहिए।", "answer": true}, "level": 1, "concept": "संदेश"},
+            {"id": "c5h5-23", "front": "कवि विद्या और समय में क्या अंतर बताता है?", "back": "खोई विद्या दोबारा पाई जा सकती है, पर खोया समय नहीं", "explain": "\"विद्या खो जाती, फिर भी पढ़ने से है आ जाती, लेकिन खो जाने से मिलती नहीं समय की थाती।\"", "source": "Class 5 Hindi book, poem (pp. 45–48)", "wrong": ["दोनों दोबारा मिल जाते हैं", "खोया समय दोबारा मिल जाता है", "दोनों कभी नहीं मिलते"], "level": 3, "concept": "अर्थ"},
+            {"id": "c5h5-24", "front": "\"जीवन भर भटको, छानो, दुनिया का कोना-कोना\" – इसका भाव क्या है?", "back": "पूरी दुनिया ढूँढ़ने पर भी खोया हुआ समय नहीं मिलता", "source": "Class 5 Hindi book, poem (pp. 45–48)", "wrong": ["दुनिया घूमना अच्छा है", "कोने में छिपना चाहिए", "आटा छानना चाहिए"], "level": 3, "concept": "अर्थ"},
+            {"id": "c5h5-25", "front": "\"चला गया जो समय, लौटकर कभी नहीं फिर आता\" को दूसरे तरीके से कैसे कहेंगे?", "back": "जो समय बीत गया, वह लौटकर फिर कभी नहीं आता", "explain": "किसी भी बात को हम कई तरीकों से कह सकते हैं।", "source": "Class 5 Hindi book, poem (pp. 45–48)", "wrong": ["समय हमेशा लौट आता है", "समय कभी नहीं जाता", "समय चलता नहीं है"], "level": 3, "concept": "भाषा"},
+            {"id": "c5h5-26", "front": "\"घड़ी\" शब्द के दो अर्थ कौन-से हैं?", "back": "समय बताने वाला यंत्र और थोड़ा-सा समय", "explain": "\"एक घड़ी के लिए\" में घड़ी का अर्थ थोड़ा-सा समय है।", "source": "Class 5 Hindi book, poem (pp. 45–48)", "wrong": ["हाथ और पैर", "वाहन और रास्ता", "नदी और लहर"], "level": 3, "concept": "अनेकार्थी शब्द"},
+            {"id": "c5h5-27", "front": "कविता में समय की तुलना किससे की गई है?", "back": "थाती यानी खज़ाने से", "explain": "\"खो जाने से मिलती नहीं समय की थाती।\"", "source": "Class 5 Hindi book, poem (pp. 45–48)", "wrong": ["नदी से", "पेड़ से", "घड़ी से"], "level": 3, "concept": "अर्थ"},
+            {"id": "c5h5-28", "front": "\"हाथ मलना\" और \"हाथ न आना\" में क्या अंतर है?", "back": "हाथ मलना = पछताना; हाथ न आना = प्राप्त न होना", "source": "Class 5 Hindi book, poem (pp. 45–48)", "wrong": ["दोनों का अर्थ खुश होना है", "हाथ मलना = हाथ धोना", "हाथ न आना = हाथ में चोट लगना"], "level": 3, "concept": "मुहावरे"}
           ]
         },
         {
@@ -624,7 +1238,13 @@
             {"id": "c5h10-35", "front": "\"लाभ\" का विलोम शब्द क्या है?", "back": "हानि", "source": "Class 5 Hindi book, Ch 10 (pp. 96–105)", "wrong": ["फ़ायदा", "मुनाफ़ा", "इनाम"], "level": 1, "concept": "विलोम शब्द"},
             {"id": "c5h10-36", "front": "\"परिचित\" का विलोम शब्द क्या है?", "back": "अपरिचित", "explain": "इसी तरह शुद्ध – अशुद्ध, वास्तविक – अवास्तविक।", "source": "Class 5 Hindi book, Ch 10 (pp. 96–105)", "wrong": ["जाना-पहचाना", "मित्र", "परिवार"], "level": 1, "concept": "विलोम शब्द"},
             {"id": "c5h10-37", "front": "\"परलोक\" का विलोम शब्द क्या है?", "back": "इहलोक", "source": "Class 5 Hindi book, Ch 10 (pp. 96–105)", "wrong": ["स्वर्ग", "आकाश", "पाताल"], "level": 3, "concept": "विलोम शब्द"},
-            {"id": "c5h10-38", "front": "कारक कितने प्रकार के होते हैं?", "back": "आठ", "explain": "कारक संज्ञा अथवा सर्वनाम का संबंध वाक्य के दूसरे शब्दों से बतलाते हैं।", "source": "Class 5 Hindi book, Ch 10 (pp. 96–105)", "wrong": ["छह", "चार", "दस"], "level": 3, "concept": "कारक"}
+            {"id": "c5h10-38", "front": "कारक कितने प्रकार के होते हैं?", "back": "आठ", "explain": "कारक संज्ञा अथवा सर्वनाम का संबंध वाक्य के दूसरे शब्दों से बतलाते हैं।", "source": "Class 5 Hindi book, Ch 10 (pp. 96–105)", "wrong": ["छह", "चार", "दस"], "level": 3, "concept": "कारक"},
+            {"id": "c5h10-39", "front": "चैतूमल ने मुफ़्तलाल की आदत का उपयोग अच्छे काम के लिए कैसे किया?", "back": "मुफ़्त सिनेमा और मुफ़्त फलदार पेड़ की बात कहकर उन्हें फ़िल्म में भेजा", "explain": "वह मुफ़्तलाल की मानसिकता से अच्छी तरह परिचित था।", "source": "Class 5 Hindi book, Ch 10 (pp. 96–105)", "wrong": ["उन्हें डाँटकर", "उन्हें पैसे देकर", "उनका मज़ाक उड़ाकर"], "level": 3, "concept": "अर्थ"},
+            {"id": "c5h10-40", "front": "मुफ़्तलाल की मुफ़्तखोरी की आदत अंत में किस अच्छे काम में बदल गई?", "back": "मुफ़्त फल पाने के लिए पेड़ लगाने में, जिससे गाँव हरा-भरा हो गया", "source": "Class 5 Hindi book, Ch 10 (pp. 96–105)", "wrong": ["भोज करवाने में", "आम बेचने में", "सिनेमा बनाने में"], "level": 3, "concept": "अर्थ"},
+            {"id": "c5h10-41", "front": "गाँववाले मुफ़्तलाल को \"चलता-फिरता मनोरंजन केंद्र\" क्यों मानते थे?", "back": "उनकी मुफ़्त चीज़ें पाने की हरकतों पर सब खूब हँसते थे", "source": "Class 5 Hindi book, Ch 10 (pp. 96–105)", "wrong": ["वे नाटक करते थे", "उनके पास टीवी था", "वे गाना गाते थे"], "level": 3, "concept": "अर्थ"},
+            {"id": "c5h10-42", "front": "\"पुरस्कार\" का संधि-विच्छेद क्या है?", "back": "पुरः + कार", "source": "Class 5 Hindi book, Ch 10 (pp. 96–105)", "wrong": ["पुर + स्कार", "पुरस + कार", "पु + रस्कार"], "level": 3, "concept": "संधि"},
+            {"id": "c5h10-43", "front": "\"श्रद्धांजलि\" का संधि-विच्छेद क्या है?", "back": "श्रद्धा + अंजलि", "source": "Class 5 Hindi book, Ch 10 (pp. 96–105)", "wrong": ["श्रद्ध + अंजलि", "श्रद्धां + जलि", "श्रद्धा + जलि"], "level": 3, "concept": "संधि"},
+            {"id": "c5h10-44", "front": "\"मेहनत रंग लाना\" मुहावरा पाठ में किस बात के लिए आया है?", "back": "मुफ़्तलाल के लगाए पेड़ों में फल लगने के लिए", "explain": "मेहनत रंग लाना = किसी काम में सफल होना।", "source": "Class 5 Hindi book, Ch 10 (pp. 96–105)", "wrong": ["मैकू चाचा के आम के लिए", "फ़िल्म के लिए", "पुरस्कार के पैसों के लिए"], "level": 3, "concept": "मुहावरे"}
           ]
         }
       ]
