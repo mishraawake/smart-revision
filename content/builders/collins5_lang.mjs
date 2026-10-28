@@ -183,9 +183,9 @@ const chapters = [
     ],
   },
   {
-    id: 'c5-hin-05', subject: 'hindi', number: 5, title: 'समय का मूल्य (कविता)',
+    id: 'c5-hin-05', subject: 'hindi', number: 4, title: 'समय बहुत ही मूल्यवान है (कविता)',
     prefix: 'c5h5', source: 'Class 5 Hindi book, poem (pp. 45–48)',
-    notes: 'Poem title and chapter number are not on the photos (p. 44 missing) – check the book',
+    notes: 'Title and number from the reader contents page (Unit 1, Ch 4); id kept as c5-hin-05 so saved progress still matches',
     pairs: [['मूल्यवान', 'कीमती'], ['व्यर्थ', 'बेकार'], ['यत्न', 'कोशिश'], ['श्रम', 'मेहनत'], ['थाती', 'खज़ाना'], ['कटि', 'कमर']],
     cards: [
       ['इस कविता से क्या संदेश मिलता है?', 'समय को कभी मत खोना', ['समय पर काम न करना', 'समय का इंतज़ार करना', 'काम को कल पर टालना'],
